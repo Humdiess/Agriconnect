@@ -7,9 +7,7 @@
 
     @vite('resources/css/app.css')
     <style>
-        body {
-            font-family: 'Geist Sans', sans-serif;
-        }
+
     </style>
 </head>
 <body>
