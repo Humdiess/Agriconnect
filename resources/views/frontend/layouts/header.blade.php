@@ -8,8 +8,6 @@
     <!-- Meta Description -->
     <meta name="description" content="Agriculture Connect is an online platform for farmers">
 
-    <link href="https://cdn.jsdelivr.net/npm/@fontsource/geist-sans@5.0.3/600.min.css" rel="stylesheet">
-
     @vite('resources/css/app.css')
     <style>
         body {
