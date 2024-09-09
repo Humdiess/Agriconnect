@@ -31,14 +31,25 @@
     </div>
 </section>
 
-<section class="sponsor-container">
+<section class="sponsor-container mb-8">
     <div class="sponsor-wrapper">
         <div class="sponsor">
             <div class="sponsor-header w-100 flex justify-center py-10">
                 <h1 class="text-xl font-semibold">Kami didukung oleh</h1>
             </div>
-            <div class="sponsor-list container mx-auto py-5">
-                <img src="{{ asset('img/sponsor/kementrian.png') }}" alt="">
+            <div class="sponsor-list container mx-auto py-5 flex items-center justify-center gap-8">
+                <div class="sponsor-item w-36">
+                    <img class="w-full" src="{{ asset('img/sponsor/kementrian.png') }}" alt="">
+                </div>
+                <div class="sponsor-item w-36">
+                    <img class="w-full" src="{{ asset('img/sponsor/padi-tech.png') }}" alt="">
+                </div>
+                <div class="sponsor-item w-36">
+                    <img class="w-full" src="{{ asset('img/sponsor/open-ai.png') }}" alt="">
+                </div>
+                <div class="sponsor-item w-36">
+                    <img class="w-full" src="{{ asset('img/sponsor/tokopedia.png') }}" alt="">
+                </div>
             </div>
         </div>
     </div>
