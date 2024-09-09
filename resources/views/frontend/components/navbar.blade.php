@@ -1,4 +1,4 @@
-<nav>
+<nav class="fixed left-0 right-0">
     <div class="navbar-wrapper flex justify-center">
         <div class="navbar bg-white border border-gray-200 m-2 rounded-full flex items-center justify-between gap-72 w-fit px-3 py-4">
             <div class="navbar-logo">
