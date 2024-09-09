@@ -8,10 +8,10 @@
     <div class="menu">
         <ul class="flex gap-4">
             <li>
-                <a href="#">Beranda</a>
+                <a href="home">Beranda</a>
             </li>
-            <li></li>
-                <a href="#">Tentang Kami</a>
+            <li>
+                <a href="#about">Tentang Kami</a>
             </li>
             <li>
                 <a href="#">Layanan Kami</a>

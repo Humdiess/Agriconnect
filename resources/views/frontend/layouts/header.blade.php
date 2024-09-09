@@ -18,6 +18,7 @@
     <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
         }
     </style>
 </head>
