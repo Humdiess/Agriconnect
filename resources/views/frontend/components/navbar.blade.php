@@ -1,18 +1,28 @@
-<nav class="fixed left-0 right-0">
-    <div class="navbar-wrapper flex justify-center">
-        <div class="navbar bg-white border border-gray-200 m-2 rounded-full flex items-center justify-between gap-72 w-fit px-3 py-4">
-            <div class="navbar-logo">
-                <a href="#">AgriConnect</a>
-            </div>
-            <div class="navbar-list flex items-center gap-6">
-                <a href="#">Home</a>
+<nav class="flex container mx-auto justify-between py-5">
+    <div class="logo">
+        <a href="#">
+            AgriConnect
+        </a>
+    </div>
+
+    <div class="menu">
+        <ul class="flex gap-4">
+            <li>
+                <a href="#">Beranda</a>
+            </li>
+            <li></li>
                 <a href="#">Tentang Kami</a>
-                <a href="#">Layanan kami</a>
+            </li>
+            <li>
+                <a href="#">Layanan Kami</a>
+            </li>
+            <li>
                 <a href="#">Tani AI</a>
-            </div>
-            <div class="navbar-auth">
-                <a href="#" class="navbar-auth-button bg-[#5DBB63] text-white px-4 py-3 rounded-full">Sign Up</a>
-            </div>
-        </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="button">
+        <a class="bg-[#5DBB63] px-8 py-[0.8rem] text-white text-sm rounded-full" href="#">Sign Up</a>
     </div>
 </nav>
