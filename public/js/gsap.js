@@ -62,14 +62,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     gsap.from(".hero-image", {
         scale: 0.8,
-        opacity: 0,
+        opacity: 0.9,
         duration: 1.5,
         scrollTrigger: {
             trigger: ".hero-image",
             start: "top 80%",
             end: "bottom 40%",
-            scrub: true
-        }
+            scrub: true,
+        },
+        // scroll marker
     });
 
     // About Section Animations
@@ -97,4 +98,31 @@ document.addEventListener("DOMContentLoaded", () => {
             scrub: true
         }
     });
+});
+
+let posX = 0;
+let posY = 0;
+
+let mouseX = 0;
+let mouseY = 0;
+
+gsap.to(".cursor-example", {
+  duration: 0.018,
+  repeat: -1,
+  onRepeat: () => {
+    posX += (mouseX - posX) / 8;
+    posY += (mouseY - posY) / 8;
+
+    gsap.set(".cursor-example", {
+      css: {
+        left: posX - 1,
+        top: posY - 2
+      }
+    });
+  }
+});
+
+document.addEventListener("mousemove", (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
 });

@@ -25,6 +25,9 @@
 </head>
 <body class="antialiased">
 
+
+<div class="cursor-example"></div>
+
     @include('frontend.components.navbar')
 
 
