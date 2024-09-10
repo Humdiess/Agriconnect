@@ -2,7 +2,7 @@
     <div class="menu items-center flex gap-6 py-4 px-6 rounded-xl bg-white/80  backdrop-blur-lg border border-gray-200">
         <ul class="flex gap-6 items-center">
             <li>
-                <a href="home">Beranda</a>
+                <a href="/">Beranda</a>
             </li>
             <li>
                 <a href="#about">Tentang Kami</a>
