@@ -7,15 +7,30 @@
         </a>
     </div>
 
-    <div class="button">
-        <a class="bg-[#5DBB63] px-8 py-[0.8rem] text-white text-sm rounded-full" href="#">Sign Up</a>
-    </div>
+    @auth
+        <form id="logout-form" method="POST" action="{{ route('auth.logout') }}">
+            @csrf
+            <button type="button" class="bg-[#5DBB63] px-8 py-[0.8rem] text-white text-sm rounded-full"
+                onclick="confirmLogout()">Logout</button>
+        </form>
+        {{-- <div class="button">
+            <a class="bg-[#5DBB63] px-8 py-[0.8rem] text-white text-sm rounded-full" href="/logout">Logout</a>
+        </div> --}}
+    @else
+        <div class="button">
+            <a class="bg-[#5DBB63] px-8 py-[0.8rem] text-white text-sm rounded-full" href="/sign-up">Sign Up</a>
+        </div>
+    @endauth
 </section>
 
 <section class="hero-container container mx-auto relative" id="home">
     <!-- Aurora Effects -->
-    <div class="aurora-green absolute w-[20rem] h-[20rem] bg-gradient-to-r from-[#5DBB63] to-[#27a002] opacity-10 blur-3xl rounded-full top-[-10rem] left-[10rem] clip-aurora"></div>
-    <div class="aurora-green absolute w-[20rem] h-[20rem] bg-gradient-to-r from-[#5DBB63] to-[#27a002] opacity-10 blur-3xl rounded-full bottom-[20rem] right-[15rem] clip-aurora"></div>
+    <div
+        class="aurora-green absolute w-[20rem] h-[20rem] bg-gradient-to-r from-[#5DBB63] to-[#27a002] opacity-10 blur-3xl rounded-full top-[-10rem] left-[10rem] clip-aurora">
+    </div>
+    <div
+        class="aurora-green absolute w-[20rem] h-[20rem] bg-gradient-to-r from-[#5DBB63] to-[#27a002] opacity-10 blur-3xl rounded-full bottom-[20rem] right-[15rem] clip-aurora">
+    </div>
 
     <div class="triangle-patterns top-[13rem] right-[22rem] rotate-12 absolute">
         <img src="{{ asset('img/triangle.svg') }}" alt="">
@@ -42,7 +57,9 @@
 
         <div class="hero-image-wrapper w-full flex justify-center mt-16">
             <div class="hero-image w-[60rem] h-[33.75rem] bg-white rounded-3xl border border-gray-200 p-2">
-                <img class="w-full h-full rounded-2xl" src="https://images.unsplash.com/photo-1662099892443-0c241cbb700d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="image">
+                <img class="w-full h-full rounded-2xl"
+                    src="https://images.unsplash.com/photo-1662099892443-0c241cbb700d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="image">
             </div>
         </div>
     </div>
