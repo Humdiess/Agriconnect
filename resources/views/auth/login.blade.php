@@ -1,89 +1,71 @@
 @include('auth.layouts.header')
 
-<section class="login">
-    <div class="flex flex-col h-svh items-center justify-center">
-        <div class="title-login">
-            <div class="logo">
-                <a class="text-2xl font-bold w-6" href="#">
-                    <img class="w-28" src="{{ asset('img/logo/logo-light.png') }}" alt="">
-                </a>
+<section class="login flex flex-col lg:flex-row h-screen bg-white">
+    <!-- Left Side: Login Form -->
+    <div class="login-left w-full lg:w-1/2 flex flex-col justify-center items-center p-6 lg:p-12">
+        <div class="max-w-md w-full mx-auto">
+            <!-- Logo Section -->
+            <div class="mb-6 flex items-center">
+                <h1 class="text-xl lg:text-3xl font-semibold border-r-2 pr-3">Login</h1>
+                <img src="{{ asset('img/logo/logo-light.png') }}" alt="Logo" class="h-16"> <!-- Update the path to your logo -->
             </div>
-            <h1 class="text-5xl text-green-500 font-semibold my-4">Halaman Login</h1>
 
-            <!-- Flash Message for Success -->
-            @if (session('success'))
-                <div class="bg-green-100 border border-green-400 text-green-700 px-16 py-3 rounded relative max-w-xl mx-auto my-4"
-                    role="alert">
-                    <strong class="font-bold">Sukses!</strong>
-                    <span class="block sm:inline">{{ session('success') }}</span>
-                    <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
-                        <svg class="fill-current h-6 w-6 text-green-500" role="button"
-                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                            <title>Close</title>
-                            <path
-                                d="M14.348 14.849a1 1 0 01-1.414 0L10 11.414l-2.934 2.935a1 1 0 11-1.414-1.414L8.586 10 5.652 7.065a1 1 0 111.414-1.414L10 8.586l2.934-2.935a1 1 0 111.414 1.414L11.414 10l2.934 2.935a1 1 0 010 1.414z" />
-                        </svg>
-                    </span>
-                </div>
-            @endif
-
-            <!-- Flash Message for Errors -->
-            @if ($errors->any())
-                <div class="bg-red-100 border border-red-400 text-red-700 px-16 py-3 rounded relative max-w-xl mx-auto my-4"
-                    role="alert">
-                    <strong class="font-bold">Ada Kesalahan!</strong>
-                    <ul class="list-disc pl-5">
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                    <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
-                        <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 20 20">
-                            <title>Close</title>
-                            <path
-                                d="M14.348 14.849a1 1 0 01-1.414 0L10 11.414l-2.934 2.935a1 1 0 11-1.414-1.414L8.586 10 5.652 7.065a1 1 0 111.414-1.414L10 8.586l2.934-2.935a1 1 0 111.414 1.414L11.414 10l2.934 2.935a1 1 0 010 1.414z" />
-                        </svg>
-                    </span>
-                </div>
-            @endif
-        </div>
-
-        <div class="form-login mx-auto w-full max-w-xl ">
-            <form action="/login" method="POST">
+            <form action="/login" method="POST" class="space-y-6">
                 @csrf
-                <div class="flex flex-col w-full my-4">
-                    <label for="username_or_email" class="text-xl font-semibold">Username atau Email :</label>
-                    <input type="text" name="username_or_email" value="{{ old('username_or_email') }}"
-                        class="rounded-md px-2 py-4 border-4 border-[#5DBB63] @error('username_or_email') border-red-500 @enderror"
-                        required>
+                <div class="relative">
+                    <div class="relative">
+                        <input type="text" name="username_or_email" value="{{ old('username_or_email') }}" required
+                            placeholder="Masukkan username / email"
+                            class="w-full px-4 py-3 rounded-2xl bg-gray-100 @error('username_or_email') bg-red-100 @enderror focus:border-black focus:outline-none pl-12">
+                        <i class="fas fa-user text-gray-500 absolute left-5 top-1/2 transform -translate-y-1/2"></i>
+                    </div>
                     @error('username_or_email')
-                        <p class="text-red-500 text-sm mt-2">{{ $message }}</p>
+                        <i class="fas fa-exclamation-circle text-red-500 absolute right-3 top-12"></i>
                     @enderror
                 </div>
 
-                <div class="flex flex-col w-full my-4">
-                    <label for="password" class="text-xl font-semibold">Password :</label>
-                    <input type="password" name="password"
-                        class="rounded-md px-2 py-4 border-4 border-[#5DBB63] @error('password') border-red-500 @enderror"
-                        required>
+                <div class="relative">
+                    <div class="relative">
+                        <input type="password" name="password" id="password" required
+                            placeholder="Masukkan kata sandi"
+                            class="w-full px-4 py-3 rounded-2xl bg-gray-100 @error('password') bg-red-100 @enderror focus:border-black focus:outline-none pl-12">
+                        <i class="fas fa-lock text-gray-500 absolute left-5 top-1/2 transform -translate-y-1/2"></i>
+                        <button type="button" id="togglePassword" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-700">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
                     @error('password')
-                        <p class="text-red-500 text-sm mt-2">{{ $message }}</p>
+                        <i class="fas fa-exclamation-circle text-red-500 absolute right-10 top-12"></i>
                     @enderror
                 </div>
 
-                <div class="my-5 mx-auto text-center">
-                    <span class="font-medium text-lg">Belum Punya Akun ?
-                        <a href="/sign-up" class="text-hijau1 hover:opacity-80">Klik untuk Daftar</a>
-                    </span>
-                </div>
-
-                <div class="mx-auto text-center">
-                    <button type="submit" class="text-white py-1 px-4 text-xl rounded-md bg-[#5DBB63]">Login</button>
+                <div>
+                    <button type="submit"
+                        class="w-full bg-[#5DBB63] text-white py-3 px-4 rounded-2xl font-semibold hover:bg-[#27a002] transition-transform transform hover:scale-105">
+                        Login
+                    </button>
                 </div>
             </form>
+
+            <div class="text-center mt-6">
+                <span>Don't have an account?</span>
+                <a href="{{ route('auth.addUser') }}" class="ml-2 text-black font-bold hover:underline">
+                    Sign Up
+                </a>
+            </div>
         </div>
     </div>
+
+    <!-- Right Side: Image Section -->
+    <div class="login-right w-full lg:w-1/2 h-full bg-cover bg-center lg:pe-4 lg:py-4">
+        <img id="login-image" src="https://images.unsplash.com/photo-1624033441874-82f56d494d83?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            class="w-full h-full object-cover rounded-2xl"
+            alt="login image">
+    </div>
 </section>
+
+<script>
+
+</script>
 
 @include('auth.layouts.footer')

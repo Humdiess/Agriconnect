@@ -28,8 +28,4 @@
 
 </head>
 
-<body class="antialiased">
-
-
-    <div class="cursor-example"></div>
-
+<body class="antialiased bg-gray-100">

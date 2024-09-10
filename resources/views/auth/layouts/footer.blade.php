@@ -6,7 +6,7 @@
 
 @include('frontend.components.gsap')
 <script src="{{ asset('js/script.js') }}"></script>
-<script src="{{ asset('js/gsap.js') }}"></script>
+<script src="{{ asset('js/auth-gsap.js') }}"></script>
 @include('sweetalert::alert')
 </body>
 
