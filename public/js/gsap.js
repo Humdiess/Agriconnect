@@ -126,3 +126,27 @@ document.addEventListener("mousemove", (e) => {
   mouseX = e.clientX;
   mouseY = e.clientY;
 });
+
+const dropdownButton = document.getElementById('user-dropdown');
+const dropdownMenu = document.getElementById('dropdown-menu');
+let isDropdownOpen = false;
+
+dropdownButton.addEventListener('click', function () {
+    if (!isDropdownOpen) {
+        gsap.to(dropdownMenu, {
+            duration: 0.3,
+            height: 'auto',
+            opacity: 1,
+            ease: 'power1.out',
+        });
+    } else {
+        gsap.to(dropdownMenu, {
+            duration: 0.3,
+            height: 0,
+            opacity: 0,
+            ease: 'power1.in',
+        });
+    }
+    isDropdownOpen = !isDropdownOpen;
+});
+

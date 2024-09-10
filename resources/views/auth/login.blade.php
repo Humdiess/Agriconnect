@@ -1,4 +1,4 @@
-@include('frontend.layouts.header')
+@include('auth.layouts.header')
 
 <section class="login">
     <div class="flex flex-col h-svh items-center justify-center">
@@ -86,4 +86,4 @@
     </div>
 </section>
 
-@include('frontend.layouts.footer')
+@include('auth.layouts.footer')

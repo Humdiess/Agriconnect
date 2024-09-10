@@ -8,19 +8,27 @@
     </div>
 
     @auth
-        <form id="logout-form" method="POST" action="{{ route('auth.logout') }}">
-            @csrf
-            <button type="button" class="bg-[#5DBB63] px-8 py-[0.8rem] text-white text-sm rounded-full"
-                onclick="confirmLogout()">Logout</button>
-        </form>
-        {{-- <div class="button">
-            <a class="bg-[#5DBB63] px-8 py-[0.8rem] text-white text-sm rounded-full" href="/logout">Logout</a>
-        </div> --}}
-    @else
-        <div class="button">
-            <a class="bg-[#5DBB63] px-8 py-[0.8rem] text-white text-sm rounded-full" href="/sign-up">Sign Up</a>
+    <div class="relative">
+        <button id="user-dropdown" class="bg-[#5DBB63] px-8 py-[0.8rem] text-white text-sm rounded-full flex items-center justify-between">
+            {{ Auth::user()->name }}
+            <span class="ml-2">&#9662;</span>
+        </button>
+
+        <div id="dropdown-menu" class="absolute mt-2 w-full bg-white rounded shadow-lg overflow-hidden" style="min-width: 200px; height: 0; opacity: 0;">
+            <form id="logout-form" method="POST" action="{{ route('auth.logout') }}">
+                @csrf
+                <button type="submit" class="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                    Logout
+                </button>
+            </form>
         </div>
+    </div>
+    @else
+    <div class="button">
+        <a class="bg-[#5DBB63] px-8 py-[0.8rem] text-white text-sm rounded-full" href="/sign-up">Sign Up</a>
+    </div>
     @endauth
+
 </section>
 
 <section class="hero-container container mx-auto relative" id="home">

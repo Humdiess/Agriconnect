@@ -13,14 +13,14 @@ class AuthController extends Controller
     //
     public function login()
     {
-        return view('frontend.auth.login', [
+        return view('auth.login', [
             'active' => 'login',
             'title' => 'Login'
         ]);
     }
     public function signup()
     {
-        return view('frontend.auth.signup', [
+        return view('auth.signup', [
             'active' => 'signup',
             'title' => 'signup'
         ]);
