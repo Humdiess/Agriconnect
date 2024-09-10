@@ -20,6 +20,7 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
             scroll-behavior: smooth;
         }
+        
     </style>
 </head>
 <body class="antialiased">
