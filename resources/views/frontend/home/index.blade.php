@@ -80,11 +80,36 @@
             </div>
             <div class="storyWrapper h-screen">
                 <div class="story">
-                    <h2>Monaco</h2>
-                    <h2>Austria</h2>
-                    <h2>Hungary</h2>
-                    <h2>Netherlands</h2>
-                    <h2>Japan</h2>
+                    <div class="card w-screen h-screen flex items-center m-8 rounded-3xl">
+                        <h1 class="text-white text-3xl">halo</h1>
+                    </div>
+                    <div class="card w-screen h-screen flex items-center m-8 rounded-3xl">
+                        <h1 class="text-white text-3xl">halo</h1>
+                    </div>
+                    <div class="card w-screen h-screen flex items-center m-8 rounded-3xl">
+                        <h1 class="text-white text-3xl">halo</h1>
+                    </div>
+                    <div class="card w-screen h-screen flex items-center m-8 rounded-3xl">
+                        <h1 class="text-white text-3xl">halo</h1>
+                    </div>
+                    <div class="card w-screen h-screen flex items-center m-8 rounded-3xl">
+                        <h1 class="text-white text-3xl">halo</h1>
+                    </div>
+                    <div class="card w-screen h-screen flex items-center m-8 rounded-3xl">
+                        <h1 class="text-white text-3xl">halo</h1>
+                    </div>
+                    <div class="card w-screen h-screen flex items-center m-8 rounded-3xl">
+                        <h1 class="text-white text-3xl">halo</h1>
+                    </div>
+                    <div class="card w-screen h-screen flex items-center m-8 rounded-3xl">
+                        <h1 class="text-white text-3xl">halo</h1>
+                    </div>
+                    <div class="card w-screen h-screen flex items-center m-8 rounded-3xl">
+                        <h1 class="text-white text-3xl">halo</h1>
+                    </div>
+                    <div class="card w-screen h-screen flex items-center m-8 rounded-3xl">
+                        <h1 class="text-white text-3xl">halo</h1>
+                    </div>
                 </div>
             </div>
         </div>
