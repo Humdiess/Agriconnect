@@ -14,10 +14,15 @@
             <span class="ml-2">&#9662;</span>
         </button>
 
-        <div id="dropdown-menu" class="absolute mt-2 w-full bg-white rounded shadow-lg overflow-hidden" style="min-width: 200px; height: 0; opacity: 0;">
+        <div id="dropdown-menu" class="absolute border rounded-3xl mt-2 p-1 w-full bg-white rounded overflow-hidden" style="min-width: 200px; height: 0; opacity: 0;">
+            <a href="#" class="w-full text-left px-4 py-2 text-sm hover:bg-red-500 rounded-3xl hover:text-white flex items-center">
+                <i class="fa-solid fa-user mr-2"></i>
+                Profile
+            </a>
             <form id="logout-form" method="POST" action="{{ route('auth.logout') }}">
                 @csrf
-                <button type="submit" class="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                <button type="submit" class="w-full text-left px-4 py-2 text-sm text-red-500 hover:bg-red-500 rounded-3xl hover:text-white flex items-center">
+                    <i class="fa-solid fa-sign-out-alt mr-2"></i>
                     Logout
                 </button>
             </form>
@@ -33,12 +38,8 @@
 
 <section class="hero-container container mx-auto relative" id="home">
     <!-- Aurora Effects -->
-    <div
-        class="aurora-green absolute w-[20rem] h-[20rem] bg-gradient-to-r from-[#5DBB63] to-[#27a002] opacity-10 blur-3xl rounded-full top-[-10rem] left-[10rem] clip-aurora">
-    </div>
-    <div
-        class="aurora-green absolute w-[20rem] h-[20rem] bg-gradient-to-r from-[#5DBB63] to-[#27a002] opacity-10 blur-3xl rounded-full bottom-[20rem] right-[15rem] clip-aurora">
-    </div>
+    <div class="aurora-green absolute w-[20rem] h-[20rem] bg-gradient-to-r from-[#5DBB63] to-[#27a002] opacity-10 blur-3xl rounded-full top-[-10rem] left-[10rem] clip-aurora"></div>
+    <div class="aurora-green absolute w-[20rem] h-[20rem] bg-gradient-to-r from-[#5DBB63] to-[#27a002] opacity-10 blur-3xl rounded-full bottom-[20rem] right-[15rem] clip-aurora"></div>
 
     <div class="triangle-patterns top-[13rem] right-[22rem] rotate-12 absolute">
         <img src="{{ asset('img/triangle.svg') }}" alt="">
@@ -108,33 +109,7 @@
                     <div class="card w-screen h-screen flex items-center m-8 rounded-3xl">
                         <h1 class="text-white text-3xl">halo</h1>
                     </div>
-                    <div class="card w-screen h-screen flex items-center m-8 rounded-3xl">
-                        <h1 class="text-white text-3xl">halo</h1>
-                    </div>
-                    <div class="card w-screen h-screen flex items-center m-8 rounded-3xl">
-                        <h1 class="text-white text-3xl">halo</h1>
-                    </div>
-                    <div class="card w-screen h-screen flex items-center m-8 rounded-3xl">
-                        <h1 class="text-white text-3xl">halo</h1>
-                    </div>
-                    <div class="card w-screen h-screen flex items-center m-8 rounded-3xl">
-                        <h1 class="text-white text-3xl">halo</h1>
-                    </div>
-                    <div class="card w-screen h-screen flex items-center m-8 rounded-3xl">
-                        <h1 class="text-white text-3xl">halo</h1>
-                    </div>
-                    <div class="card w-screen h-screen flex items-center m-8 rounded-3xl">
-                        <h1 class="text-white text-3xl">halo</h1>
-                    </div>
-                    <div class="card w-screen h-screen flex items-center m-8 rounded-3xl">
-                        <h1 class="text-white text-3xl">halo</h1>
-                    </div>
-                    <div class="card w-screen h-screen flex items-center m-8 rounded-3xl">
-                        <h1 class="text-white text-3xl">halo</h1>
-                    </div>
-                    <div class="card w-screen h-screen flex items-center m-8 rounded-3xl">
-                        <h1 class="text-white text-3xl">halo</h1>
-                    </div>
+                    <!-- Add more story cards here if needed -->
                 </div>
             </div>
         </div>
