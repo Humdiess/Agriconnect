@@ -17,19 +17,19 @@
     <div class="aurora-green absolute w-[20rem] h-[20rem] bg-gradient-to-r from-[#5DBB63] to-[#27a002] opacity-10 blur-3xl rounded-full top-[-10rem] left-[10rem] clip-aurora"></div>
     <div class="aurora-green absolute w-[20rem] h-[20rem] bg-gradient-to-r from-[#5DBB63] to-[#27a002] opacity-10 blur-3xl rounded-full bottom-[20rem] right-[15rem] clip-aurora"></div>
 
-    <div class="triangle-patterns top-[17rem] right-[22rem] rotate-12 absolute">
+    <div class="triangle-patterns top-[13rem] right-[22rem] rotate-12 absolute">
         <img src="{{ asset('img/triangle.svg') }}" alt="">
     </div>
-    <div class="triangle-patterns top-[4rem] right-[38rem] rotate-12 absolute">
+    <div class="triangle-patterns top-[1rem] right-[38rem] rotate-12 absolute">
         <img src="{{ asset('img/triangle.svg') }}" alt="">
     </div>
-    <div class="triangle-patterns top-[13rem] left-[18rem] -rotate-12 absolute">
+    <div class="triangle-patterns top-[10rem] left-[18rem] -rotate-12 absolute">
         <img src="{{ asset('img/triangle.svg') }}" alt="">
     </div>
 
     <div class="hero-wrapper w-full relative z-10">
         <div class="hero w-100 flex flex-col items-center justify-center">
-            <div class="hero-title max-w-[29rem] mt-32">
+            <div class="hero-title max-w-[29rem] mt-[4rem]">
                 <h1 class="hero-title-text text-center text-3xl font-bold">
                     <span class="bg-gradient-to-r from-[#27a002] to-[#1d1515] bg-clip-text text-transparent">Agri</span>Connect: Membangun Petani Maju dengan AI, IoT, dan Pemasaran Digital
                 </h1>
@@ -39,7 +39,7 @@
 
         <div class="hero-image-wrapper w-full flex justify-center mt-16">
             <div class="hero-image w-[60rem] h-[33.75rem] bg-white rounded-3xl border border-gray-200 p-2">
-                <img class="w-full h-full rounded-2xl" src="https://img.freepik.com/free-vector/technology-background-with-statistics_23-2148924486.jpg?t=st=1725889564~exp=1725893164~hmac=a5267c60cfe0fe9f4f64f8ddc730d52b00825eb05bdff29dc0a2becc61a014af&w=740" alt="image">
+                <img class="w-full h-full rounded-2xl" src="https://plus.unsplash.com/premium_photo-1721487064031-a394c7267785?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="image">
             </div>
         </div>
     </div>

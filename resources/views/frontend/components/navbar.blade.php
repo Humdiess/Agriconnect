@@ -1,5 +1,5 @@
 <nav class="fixed top-0 left-1/2 transform -translate-x-1/2 py-3 z-30">
-    <div class="menu items-center flex gap-6 py-4 px-6 rounded-xl bg-white/60 backdrop-blur-lg border border-gray-200">
+    <div class="menu items-center flex gap-6 py-4 px-6 rounded-xl bg-white/80 backdrop-blur-lg border border-gray-200">
         <ul class="flex gap-6 items-center">
             <li>
                 <a href="home">Beranda</a>
@@ -30,7 +30,6 @@
     .menu-visible {
         transform: translateY(0);
         opacity: 1;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 </style>
 
