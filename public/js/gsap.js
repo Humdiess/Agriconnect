@@ -150,3 +150,24 @@ dropdownButton.addEventListener('click', function () {
     isDropdownOpen = !isDropdownOpen;
 });
 
+
+    // SplitText untuk memecah teks menjadi kata-kata atau karakter
+    const splitText = new SplitText("#hero-title-animated", { type: "chars, words" });
+
+    // Animasi menggunakan GSAP untuk setiap karakter
+    gsap.from(splitText.chars, {
+        opacity: 0,
+        y: 50,
+        stagger: 0.05,
+        duration: 1,
+        ease: "back.out(1.7)"
+    });
+
+    // ScrambleText untuk efek pengacakan teks
+    gsap.to("#hero-title-animated", {
+        text: "Agriculture",
+        scrambleText: { chars: "upperCase", revealDelay: 0.5 },
+        duration: 2,
+        delay: 2,
+        ease: "power2.inOut"
+    });

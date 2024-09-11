@@ -55,7 +55,7 @@
         <div class="hero w-100 flex flex-col items-center justify-center">
             <div class="hero-title max-w-[29rem] mt-[4rem]">
                 <h1 class="hero-title-text text-center text-3xl font-bold">
-                    <span class="bg-gradient-to-r from-[#27a002] to-[#1d1515] bg-clip-text text-transparent">Agri</span>
+                    <span id="hero-title-animated" class="bg-gradient-to-r from-[#27a002] to-[#1d1515] bg-clip-text text-transparent">Agri</span>
                     Connect: Membangun Petani Maju dengan AI, IoT, dan Pemasaran Digital
                 </h1>
             </div>
