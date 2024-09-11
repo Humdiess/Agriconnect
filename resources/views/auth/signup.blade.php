@@ -36,31 +36,21 @@
                             <p class="text-red-500 text-sm mt-2">{{ $message }}</p>
                         @enderror
                     </div>
+                </div>
 
-                    <!-- Email -->
-                    <div class="relative">
-                        <label for="email" class="block text-sm lg:text-base font-medium text-gray-700 mb-2">Email</label>
-                        <input type="email" name="email" value="{{ old('email') }}" required
-                            placeholder="Enter your email"
-                            class="w-full px-4 py-3 rounded-2xl bg-gray-100 @error('email') bg-red-100 @enderror focus:border-black focus:outline-none">
-                        @error('email')
-                            <p class="text-red-500 text-sm mt-2">{{ $message }}</p>
-                        @enderror
-                    </div>
+                <!-- Email: full width input -->
+                <div class="relative">
+                    <label for="email" class="block text-sm lg:text-base font-medium text-gray-700 mb-2">Email</label>
+                    <input type="email" name="email" value="{{ old('email') }}" required
+                        placeholder="Enter your email"
+                        class="w-full px-4 py-3 rounded-2xl bg-gray-100 @error('email') bg-red-100 @enderror focus:border-black focus:outline-none">
+                    @error('email')
+                        <p class="text-red-500 text-sm mt-2">{{ $message }}</p>
+                    @enderror
+                </div>
 
-                    <!-- Gender -->
-                    <div class="relative">
-                        <label for="gender" class="block text-sm lg:text-base font-medium text-gray-700 mb-2">Gender</label>
-                        <select name="gender" required
-                            class="w-full px-4 py-3 rounded-2xl bg-gray-100 @error('gender') bg-red-100 @enderror focus:border-black focus:outline-none">
-                            <option value="laki-laki" {{ old('gender') == 'laki-laki' ? 'selected' : '' }}>Laki-laki</option>
-                            <option value="perempuan" {{ old('gender') == 'perempuan' ? 'selected' : '' }}>Perempuan</option>
-                        </select>
-                        @error('gender')
-                            <p class="text-red-500 text-sm mt-2">{{ $message }}</p>
-                        @enderror
-                    </div>
-
+                <!-- Grid for Password Fields -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     <!-- Password -->
                     <div class="relative">
                         <label for="password" class="block text-sm lg:text-base font-medium text-gray-700 mb-2">Password</label>
