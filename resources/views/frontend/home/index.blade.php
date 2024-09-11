@@ -109,9 +109,29 @@
                     <div class="card w-screen h-screen flex items-center m-8 rounded-3xl">
                         <h1 class="text-white text-3xl">halo</h1>
                     </div>
+                    <div class="card w-screen h-screen flex items-center m-8 rounded-3xl">
+                        <h1 class="text-white text-3xl">halo</h1>
+                    </div>
+                    <div class="card w-screen h-screen flex items-center m-8 rounded-3xl">
+                        <h1 class="text-white text-3xl">halo</h1>
+                    </div>
+                    <div class="card w-screen h-screen flex items-center m-8 rounded-3xl">
+                        <h1 class="text-white text-3xl">halo</h1>
+                    </div>
+                    <div class="card w-screen h-screen flex items-center m-8 rounded-3xl">
+                        <h1 class="text-white text-3xl">halo</h1>
+                    </div>
                     <!-- Add more story cards here if needed -->
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-containe container mx-auto">
+    <div class="section-wrapper">
+        <div class="section">
+            
         </div>
     </div>
 </section>
