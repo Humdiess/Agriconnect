@@ -53,8 +53,8 @@
                         <label for="gender" class="block text-sm lg:text-base font-medium text-gray-700 mb-2">Gender</label>
                         <select name="gender" required
                             class="w-full px-4 py-3 rounded-2xl bg-gray-100 @error('gender') bg-red-100 @enderror focus:border-black focus:outline-none">
-                            <option value="male" {{ old('gender') == 'male' ? 'selected' : '' }}>Male</option>
-                            <option value="female" {{ old('gender') == 'female' ? 'selected' : '' }}>Female</option>
+                            <option value="laki-laki" {{ old('gender') == 'laki-laki' ? 'selected' : '' }}>Laki-laki</option>
+                            <option value="perempuan" {{ old('gender') == 'perempuan' ? 'selected' : '' }}>Perempuan</option>
                         </select>
                         @error('gender')
                             <p class="text-red-500 text-sm mt-2">{{ $message }}</p>
