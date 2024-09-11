@@ -30,7 +30,7 @@
     </div>
     @else
     <div class="button">
-        <a class="bg-[#5DBB63] px-8 py-[0.8rem] text-white text-sm rounded-full" href="/sign-up">Sign Up</a>
+        <a class="bg-[#5DBB63] px-8 py-[0.8rem] text-white text-sm rounded-lg" href="/sign-up">Sign Up</a>
     </div>
     @endauth
 
@@ -59,7 +59,7 @@
                     Connect: Membangun Petani Maju dengan AI, IoT, dan Pemasaran Digital
                 </h1>
             </div>
-            <a href="#" class="hero-button mt-6 px-6 py-2 bg-[#5DBB63] text-white mb-0 rounded-full font-light">
+            <a href="#" class="hero-button mt-6 px-6 py-2 bg-[#5DBB63] text-white mb-0 rounded-lg font-light">
                 Pelajari lebih lanjut <i class="fa-solid ms-2 fa-chevron-right"></i>
             </a>
         </div>
@@ -131,7 +131,7 @@
 <section class="section-containe container mx-auto">
     <div class="section-wrapper">
         <div class="section">
-            
+
         </div>
     </div>
 </section>
