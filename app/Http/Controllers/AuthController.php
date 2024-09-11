@@ -18,6 +18,7 @@ class AuthController extends Controller
             'title' => 'Login'
         ]);
     }
+
     public function signup()
     {
         return view('auth.signup', [
@@ -28,7 +29,6 @@ class AuthController extends Controller
 
     public function authenticate(Request $request)
     {
-
         $request->validate([
             'username_or_email' => 'required|string',
             'password' => 'required|string',
@@ -59,9 +59,8 @@ class AuthController extends Controller
 
     public function logout(Request $request)
     {
-
-        $title = 'Apakah Anda ingin Logout !';
-        $text = "pastikan semua progress sudah tersimpan!";
+        $title = 'Apakah Anda ingin Logout!';
+        $text = "Pastikan semua progress sudah tersimpan!";
         confirmDelete($title, $text);
 
         Auth::logout();
@@ -69,21 +68,17 @@ class AuthController extends Controller
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
-        // Alert::alert('Berhasil', 'Anda telah berhasil keluar.', 'success');
+
         return redirect('/login')->with('success', 'Anda telah berhasil keluar.');
     }
 
-
-
     public function addUser(Request $request)
     {
-        // dd($request);
         // Validasi input
         $request->validate([
             'name' => 'required|string|max:255',
             'username' => 'required|string|max:255|unique:users,username',
             'email' => 'required|email|max:255|unique:users,email',
-            'gender' => 'required|in:laki-laki,perempuan',
             'password' => 'required|string|min:8|confirmed', // Confirmed akan otomatis mengecek kecocokan password dan confirm_password
         ]);
 
@@ -92,9 +87,9 @@ class AuthController extends Controller
         $user->name = $request->input('name');
         $user->username = $request->input('username');
         $user->email = $request->input('email');
-        $user->gender = $request->input('gender');
         $user->password = Hash::make($request->input('password')); // Hashing password untuk keamanan
         $user->save();
+
         Alert::alert('Berhasil', 'Registrasi berhasil, silakan login.', 'success');
         // Redirect atau response sukses
         return redirect('/login')->with('success', 'Registrasi berhasil, silakan login.');
