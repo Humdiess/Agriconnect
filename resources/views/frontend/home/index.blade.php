@@ -102,7 +102,7 @@
     <div class="about-wrapper">
         <div class="about">
             <div class="about-header w-100 flex justify-center py-10">
-                <h1 class="text-xl font-semibold">Tentang Kami</h1>
+                <h1 class="text-3xl text-white font-semibold">Tentang Kami</h1>
             </div>
             <div class="storyWrapper h-screen">
                 <div class="story">
