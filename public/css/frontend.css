@@ -31,41 +31,6 @@ body {
     background: rgba(0, 128, 0, 0.5);
 }
 
-.story{
-	width:fit-content;
-	display:flex;
-	flex-wrap:nowrap;
-}
-
-.story h2 {
-	font-family: 'Staatliches', cursive;
-	font-size:30vw;
-	flex-shrink:0;
-	padding-right:0.3em;
-	padding-left:0.3em;
-	color:#e10600;
-	margin:0;
-}
-
-.lightBG {
-	background:#313143;
-}
-
-.space-20vh {
-	height:20vh;
-}
-
-.space-30vh {
-	height:30vh;
-}
-
-.space-50vh {
-	height:50vh;
-}
-
-.space-100vh {
-	height:100vh;
-}
 
 .hero-button {
     transition: all 0.3s ease;

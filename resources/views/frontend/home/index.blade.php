@@ -9,7 +9,7 @@
 
     @auth
     <div class="relative">
-        <button id="user-dropdown" class="bg-[#5DBB63] px-8 py-[0.8rem] text-white text-sm rounded-full flex items-center justify-between">
+        <button id="user-dropdown" class="bg-[#5DBB63] px-8 py-[0.8rem] text-white text-sm rounded-lg flex items-center justify-between">
             {{ Auth::user()->name }}
             <span class="ml-2">&#9662;</span>
         </button>
@@ -41,13 +41,13 @@
     <div class="aurora-green absolute w-[20rem] h-[20rem] bg-gradient-to-r from-[#5DBB63] to-[#27a002] opacity-10 blur-3xl rounded-full top-[-10rem] left-[10rem] clip-aurora"></div>
     <div class="aurora-green absolute w-[20rem] h-[20rem] bg-gradient-to-r from-[#5DBB63] to-[#27a002] opacity-10 blur-3xl rounded-full bottom-[20rem] right-[15rem] clip-aurora"></div>
 
-    <div class="triangle-patterns top-[13rem] right-[22rem] rotate-12 absolute">
+    <div class="triangle-patterns top-[13rem] right-[22rem] -rotate-45 absolute">
         <img src="{{ asset('img/triangle.svg') }}" alt="">
     </div>
-    <div class="triangle-patterns top-[1rem] right-[38rem] rotate-12 absolute">
+    <div class="triangle-patterns top-[1rem] right-[38rem] rotate-45 absolute">
         <img src="{{ asset('img/triangle.svg') }}" alt="">
     </div>
-    <div class="triangle-patterns top-[10rem] left-[18rem] -rotate-12 absolute">
+    <div class="triangle-patterns top-[10rem] left-[18rem] -rotate-45 absolute">
         <img src="{{ asset('img/triangle.svg') }}" alt="">
     </div>
 
