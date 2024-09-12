@@ -14,14 +14,10 @@
             <span class="ml-2">&#9662;</span>
         </button>
 
-        <div id="dropdown-menu" class="absolute border rounded-3xl mt-2 p-1 w-full bg-white overflow-hidden" style="min-width: 200px; height: 0; opacity: 0;">
-            <a href="#" class="w-full text-left px-4 py-2 text-sm hover:bg-red-500 rounded-3xl hover:text-white flex items-center">
-                <i class="fa-solid fa-user mr-2"></i>
-                Profile
-            </a>
+        <div id="dropdown-menu" class="absolute border rounded-lg mt-2 p-1 w-full bg-white overflow-hidden" style="min-width: 150px; height: 0; opacity: 0; z-index: 999999999;">
             <form id="logout-form" method="POST" action="{{ route('auth.logout') }}">
                 @csrf
-                <button type="submit" class="w-full text-left px-4 py-2 text-sm text-red-500 hover:bg-red-500 rounded-3xl hover:text-white flex items-center">
+                <button type="submit" class="w-full text-left px-3 py-2 text-sm text-red-500 hover:bg-red-500 rounded-md hover:text-white flex items-center">
                     <i class="fa-solid fa-sign-out-alt mr-2"></i>
                     Logout
                 </button>
