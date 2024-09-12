@@ -109,8 +109,8 @@
         </div>
     </div>
 </section> --}}
-<section id="about" class="about-container container mx-auto px-16 py-12">
-    <div class="about-wrapper">
+<section class="about-container container mx-auto px-16 py-12">
+    <div class="about-wrapper" id="about">
         <div class="about">
             <div class="about-header w-100 py-10 max-w-[46rem]">
                 <p class="text-[#5DBB63] mb-2">AGRICONNECT</p>
