@@ -52,13 +52,13 @@
 
     <div class="hero-wrapper w-full relative z-10">
         <div class="hero w-100 flex flex-col items-center justify-center">
-            <div class="hero-title max-w-[29rem] mt-[4rem]">
-                <h1 class="hero-title-text text-center text-3xl"  style="font-weight: 900">
+            <div class="hero-title max-w-[36rem] mt-[4rem]">
+                <h1 class="hero-title-text text-center text-4xl"  style="font-weight: 900">
                     <span id="hero-title-animated" class="bg-gradient-to-r from-[#27a002] to-[#1d1515] bg-clip-text text-transparent">Agri</span>
                     Connect: Membangun Petani Maju dengan AI, IoT, dan Pemasaran Digital
                 </h1>
             </div>
-            <a href="#" class="hero-button mt-6 px-6 py-2 bg-[#5DBB63] text-white mb-0 rounded-lg font-light">
+            <a href="#" class="hero-button mt-8 px-6 py-2 bg-[#5DBB63] text-white mb-0 rounded-lg font-light">
                 Pelajari lebih lanjut <i class="fa-solid ms-2 fa-chevron-right"></i>
             </a>
         </div>
@@ -184,13 +184,22 @@
     </div>
 </section>
 
-<section class="section-containe container mx-auto">
-    <div class="section-wrapper">
-        <div class="section">
-            <h1>halo</h1>
+<section class="services-container container mx-auto px-16 py-12">
+    <div class="services-wrapper" id="services">
+        <div class="services">
+            <div class="services-header w-100 py-10 max-w-[46rem]">
+                <p class="text-[#5DBB63] mb-2">AGRICONNECT</p>
+                <h1 class="text-[36px] leading-tight font-semibold">Layanan Terbaik untuk Teknologi Pertanian Indonesia</h1>
+            </div>
+            <div class="services-content">
+                <div class="services-content-list flex items-center justify-between">
+
+                </div>
+            </div>
         </div>
     </div>
 </section>
+
 
 <section class="apalah h-[200vh]"></section>
 
