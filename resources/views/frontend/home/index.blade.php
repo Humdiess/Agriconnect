@@ -109,7 +109,7 @@
         </div>
     </div>
 </section> --}}
-<section class="about-container container mx-auto px-16 py-12">
+<section id="about" class="about-container container mx-auto px-16 py-12">
     <div class="about-wrapper">
         <div class="about">
             <div class="about-header w-100 py-10 max-w-[46rem]">
@@ -117,7 +117,45 @@
                 <h1 class="text-[36px] leading-tight font-semibold">AGRICONNECT  Solusi Terbaik Untuk Masa Depan dan Teknologi Pertanian Indonesia </h1>
             </div>
             <div class="about-content">
-                <div class="about-content-list">
+                <div class="about-content-list flex items-center justify-between">
+                    <div class="content-card p-6 border rounded-2xl max-w-[22rem]">
+                        <div class="card-header">
+                            <div class="card-icon p-8 w-8 h-8 rounded-xl flex items-center justify-center bg-green-400">
+                                {{-- icon --}}
+                                <i class="fa-solid fa-circle-check text-[#5DBB63]"></i>
+                            </div>
+                        </div>
+                        <div class="card-body mt-6">
+                            <div class="card-header">
+                                <h1 class="text-[20px] font-semibold">Agriculture Connect</h1>
+                                <p class="mt-4">
+                                    Lorem ipsum dolor sit amet woilah aku cape ngetiknya, apa sih nama plugin lorem ipsumnya, alamakk apa sih nama plugin lorem ipsumnya, alamakk
+                                    <br>
+                                    <br>
+                                    Lorem ipsum dolor sit amet woilah aku cape ngetiknya, apa sih nama plugin lorem ipsumnya, alamakk apa sih nama plugin lorem ipsumnya, alamakk
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-card p-6 border rounded-2xl max-w-[22rem]">
+                        <div class="card-header">
+                            <div class="card-icon p-8 w-8 h-8 rounded-xl flex items-center justify-center bg-green-400">
+                                {{-- icon --}}
+                                <i class="fa-solid fa-circle-check text-[#5DBB63]"></i>
+                            </div>
+                        </div>
+                        <div class="card-body mt-6">
+                            <div class="card-header">
+                                <h1 class="text-[20px] font-semibold">Agriculture Connect</h1>
+                                <p class="mt-4">
+                                    Lorem ipsum dolor sit amet woilah aku cape ngetiknya, apa sih nama plugin lorem ipsumnya, alamakk apa sih nama plugin lorem ipsumnya, alamakk
+                                    <br>
+                                    <br>
+                                    Lorem ipsum dolor sit amet woilah aku cape ngetiknya, apa sih nama plugin lorem ipsumnya, alamakk apa sih nama plugin lorem ipsumnya, alamakk
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                     <div class="content-card p-6 border rounded-2xl max-w-[22rem]">
                         <div class="card-header">
                             <div class="card-icon p-8 w-8 h-8 rounded-xl flex items-center justify-center bg-green-400">

@@ -5,7 +5,7 @@
                 <a href="/">Beranda</a>
             </li>
             <li>
-                <a href="#about">Tentang Kami</a>
+                <a href="#about" onclick="lenis.scrollTo('#about')">Tentang Kami</a>
             </li>
             <li>
                 <a href="#">Layanan Kami</a>
