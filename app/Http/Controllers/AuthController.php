@@ -46,14 +46,13 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials)) {
             // Authentication passed
-            Alert::alert('Berhasil', 'Login berhasil.', 'success');
+            Alert::success('Berhasil', 'Login berhasil.');
             return redirect()->intended('/')->with('success', 'Login berhasil!');
         }
 
         // Authentication failed
         return back()->withErrors([
             'username_or_email' => 'Username atau Email dan password tidak cocok.',
-            'password' => 'Username atau Email dan password tidak cocok.',
         ])->withInput();
     }
 
@@ -66,9 +65,9 @@ class AuthController extends Controller
         Auth::logout();
 
         $request->session()->invalidate();
-
         $request->session()->regenerateToken();
 
+        Alert::success('Berhasil', 'Anda telah berhasil keluar.');
         return redirect('/')->with('success', 'Anda telah berhasil keluar.');
     }
 
@@ -79,7 +78,7 @@ class AuthController extends Controller
             'name' => 'required|string|max:255',
             'username' => 'required|string|max:255|unique:users,username',
             'email' => 'required|email|max:255|unique:users,email',
-            'password' => 'required|string|min:8|confirmed', // Confirmed akan otomatis mengecek kecocokan password dan confirm_password
+            'password' => 'required|string|min:8|confirmed',
         ]);
 
         // Jika validasi lolos, simpan user ke database
@@ -87,11 +86,10 @@ class AuthController extends Controller
         $user->name = $request->input('name');
         $user->username = $request->input('username');
         $user->email = $request->input('email');
-        $user->password = Hash::make($request->input('password')); // Hashing password untuk keamanan
+        $user->password = Hash::make($request->input('password'));
         $user->save();
 
-        Alert::alert('Berhasil', 'Registrasi berhasil, silakan login.', 'success');
-        // Redirect atau response sukses
+        Alert::success('Berhasil', 'Registrasi berhasil, silakan login.');
         return redirect('/login')->with('success', 'Registrasi berhasil, silakan login.');
     }
 }
