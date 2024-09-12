@@ -14,7 +14,7 @@
             <span class="ml-2">&#9662;</span>
         </button>
 
-        <div id="dropdown-menu" class="absolute border rounded-3xl mt-2 p-1 w-full bg-white rounded overflow-hidden" style="min-width: 200px; height: 0; opacity: 0;">
+        <div id="dropdown-menu" class="absolute border rounded-3xl mt-2 p-1 w-full bg-white overflow-hidden" style="min-width: 200px; height: 0; opacity: 0;">
             <a href="#" class="w-full text-left px-4 py-2 text-sm hover:bg-red-500 rounded-3xl hover:text-white flex items-center">
                 <i class="fa-solid fa-user mr-2"></i>
                 Profile
@@ -54,7 +54,7 @@
     <div class="hero-wrapper w-full relative z-10">
         <div class="hero w-100 flex flex-col items-center justify-center">
             <div class="hero-title max-w-[29rem] mt-[4rem]">
-                <h1 class="hero-title-text text-center text-3xl font-bold">
+                <h1 class="hero-title-text text-center text-3xl"  style="font-weight: 900">
                     <span id="hero-title-animated" class="bg-gradient-to-r from-[#27a002] to-[#1d1515] bg-clip-text text-transparent">Agri</span>
                     Connect: Membangun Petani Maju dengan AI, IoT, dan Pemasaran Digital
                 </h1>
@@ -98,7 +98,7 @@
     </div>
 </section>
 
-<section class="about-container bg-[#5DBB63]">
+{{-- <section class="about-container bg-[#5DBB63]">
     <div class="about-wrapper">
         <div class="about">
             <div class="about-header w-100 flex justify-center py-10">
@@ -106,22 +106,41 @@
             </div>
             <div class="storyWrapper h-screen">
                 <div class="story">
-                    <div class="card w-screen h-screen flex items-center m-8 rounded-3xl">
-                        <h1 class="text-white text-3xl">halo</h1>
+                    <h1 class="text-[356px] font-bold">MENGAPA</h1>
+                    <h1 class="text-[356px] font-bold"> AGRIONNECT?</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> --}}
+<section class="about-container container mx-auto px-16 py-12">
+    <div class="about-wrapper">
+        <div class="about">
+            <div class="about-header w-100 py-10 max-w-[46rem]">
+                <p class="text-[#5DBB63] mb-2">AGRICONNECT</p>
+                <h1 class="text-[36px] leading-tight font-semibold">AGRICONNECT  Solusi Terbaik Untuk Masa Depan dan Teknologi Pertanian Indonesia </h1>
+            </div>
+            <div class="about-content">
+                <div class="about-content-list">
+                    <div class="content-card p-6 border rounded-2xl max-w-[22rem]">
+                        <div class="card-header">
+                            <div class="card-icon p-8 w-8 h-8 rounded-xl flex items-center justify-center bg-green-400">
+                                {{-- icon --}}
+                                <i class="fa-solid fa-circle-check text-[#5DBB63]"></i>
+                            </div>
+                        </div>
+                        <div class="card-body mt-6">
+                            <div class="card-header">
+                                <h1 class="text-[20px] font-semibold">Agriculture Connect</h1>
+                                <p class="mt-4">
+                                    Lorem ipsum dolor sit amet woilah aku cape ngetiknya, apa sih nama plugin lorem ipsumnya, alamakk apa sih nama plugin lorem ipsumnya, alamakk
+                                    <br>
+                                    <br>
+                                    Lorem ipsum dolor sit amet woilah aku cape ngetiknya, apa sih nama plugin lorem ipsumnya, alamakk apa sih nama plugin lorem ipsumnya, alamakk
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card w-screen h-screen flex items-center m-8 rounded-3xl">
-                        <h1 class="text-white text-3xl">halo</h1>
-                    </div>
-                    <div class="card w-screen h-screen flex items-center m-8 rounded-3xl">
-                        <h1 class="text-white text-3xl">halo</h1>
-                    </div>
-                    <div class="card w-screen h-screen flex items-center m-8 rounded-3xl">
-                        <h1 class="text-white text-3xl">halo</h1>
-                    </div>
-                    <div class="card w-screen h-screen flex items-center m-8 rounded-3xl">
-                        <h1 class="text-white text-3xl">halo</h1>
-                    </div>
-                    <!-- Add more story cards here if needed -->
                 </div>
             </div>
         </div>
@@ -131,7 +150,7 @@
 <section class="section-containe container mx-auto">
     <div class="section-wrapper">
         <div class="section">
-
+            <h1>halo</h1>
         </div>
     </div>
 </section>
