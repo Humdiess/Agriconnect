@@ -1,6 +1,6 @@
 
 body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: 'Satoshi', sans-serif;
     scroll-behavior: smooth;
     overflow-x: hidden;
     background-color: white;
@@ -31,41 +31,6 @@ body {
     background: rgba(0, 128, 0, 0.5);
 }
 
-.story{
-	width:fit-content;
-	display:flex;
-	flex-wrap:nowrap;
-}
-
-.story h2 {
-	font-family: 'Staatliches', cursive;
-	font-size:30vw;
-	flex-shrink:0;
-	padding-right:0.3em;
-	padding-left:0.3em;
-	color:#e10600;
-	margin:0;
-}
-
-.lightBG {
-	background:#313143;
-}
-
-.space-20vh {
-	height:20vh;
-}
-
-.space-30vh {
-	height:30vh;
-}
-
-.space-50vh {
-	height:50vh;
-}
-
-.space-100vh {
-	height:100vh;
-}
 
 .hero-button {
     transition: all 0.3s ease;
@@ -82,4 +47,24 @@ body {
     mix-blend-mode: difference;
     z-index: 9999;
 }
+
+/* custom scrollbar */
+::-webkit-scrollbar {
+    width: 20px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #a8bbbf;
+  }
 

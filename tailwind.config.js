@@ -26,6 +26,17 @@ export default {
       animation: {
         "bounce-slow": "bounce 3.5s linear infinite",
       },
+      keyframes: {
+        shake: {
+            '0%, 100%': { transform: 'translateX(0)' },
+            '25%': { transform: 'translateX(-4px)' },
+            '50%': { transform: 'translateX(4px)' },
+            '75%': { transform: 'translateX(-4px)' },
+        },
+      },
+      animations: {
+        shake: "shake 0.4s ease-in-out infinite",
+      },
     },
   },
   plugins: [],
