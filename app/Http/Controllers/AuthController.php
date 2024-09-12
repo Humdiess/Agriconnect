@@ -10,7 +10,6 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 class AuthController extends Controller
 {
-    //
     public function login()
     {
         return view('auth.login', [
@@ -23,7 +22,7 @@ class AuthController extends Controller
     {
         return view('auth.signup', [
             'active' => 'signup',
-            'title' => 'signup'
+            'title' => 'Signup'
         ]);
     }
 
@@ -54,13 +53,14 @@ class AuthController extends Controller
         // Authentication failed
         return back()->withErrors([
             'username_or_email' => 'Username atau Email dan password tidak cocok.',
+            'password' => 'Username atau Email dan password tidak cocok.',
         ])->withInput();
     }
 
     public function logout(Request $request)
     {
         $title = 'Apakah Anda ingin Logout!';
-        $text = "Pastikan semua progress sudah tersimpan!";
+        $text = 'Pastikan semua progress sudah tersimpan!';
         confirmDelete($title, $text);
 
         Auth::logout();

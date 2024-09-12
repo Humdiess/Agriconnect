@@ -26,4 +26,18 @@
         passwordInput.setAttribute('type', type);
         this.classList.toggle('fa-eye-slash');
     });
-    
+
+
+    function togglePasswordVisibility(passwordId, toggleIconId) {
+        const passwordInput = document.getElementById(passwordId);
+        const toggleIcon = document.getElementById(toggleIconId);
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            toggleIcon.classList.remove('fa-eye-slash');
+            toggleIcon.classList.add('fa-eye');
+        } else {
+            passwordInput.type = 'password';
+            toggleIcon.classList.remove('fa-eye');
+            toggleIcon.classList.add('fa-eye-slash');
+        }
+    }
