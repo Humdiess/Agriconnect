@@ -23,19 +23,22 @@
                 </button>
             </form>
         </div>
-    </div>
     @else
-    <div class="button">
-        <a class="bg-[#5DBB63] px-8 py-[0.8rem] text-white text-sm rounded-lg" href="/sign-up">Sign Up</a>
-    </div>
+        <div class="button">
+            <a class="bg-[#5DBB63] px-8 py-[0.8rem] text-white text-sm rounded-lg" href="/sign-up">Sign Up</a>
+        </div>
     @endauth
 
 </section>
 
 <section class="hero-container container mx-auto relative" id="home">
     <!-- Aurora Effects -->
-    <div class="aurora-green absolute w-[20rem] h-[20rem] bg-gradient-to-r from-[#5DBB63] to-[#27a002] opacity-10 blur-3xl rounded-full top-[-10rem] left-[10rem] clip-aurora"></div>
-    <div class="aurora-green absolute w-[20rem] h-[20rem] bg-gradient-to-r from-[#5DBB63] to-[#27a002] opacity-10 blur-3xl rounded-full bottom-[20rem] right-[15rem] clip-aurora"></div>
+    <div
+        class="aurora-green absolute w-[20rem] h-[20rem] bg-gradient-to-r from-[#5DBB63] to-[#27a002] opacity-10 blur-3xl rounded-full top-[-10rem] left-[10rem] clip-aurora">
+    </div>
+    <div
+        class="aurora-green absolute w-[20rem] h-[20rem] bg-gradient-to-r from-[#5DBB63] to-[#27a002] opacity-10 blur-3xl rounded-full bottom-[20rem] right-[15rem] clip-aurora">
+    </div>
 
     <div class="triangle-patterns top-[13rem] right-[22rem] -rotate-45 absolute">
         <img src="{{ asset('img/triangle.svg') }}" alt="">
