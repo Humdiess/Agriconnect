@@ -13,16 +13,17 @@
             <form action="/login" method="POST" class="space-y-6">
                 @csrf
 
-                <!-- Email Input -->
-                <div class="relative">
-                    <label for="email" class="block text-sm lg:text-base font-medium text-gray-700 mb-2">Email</label>
-                    <input type="email" name="email" value="{{ old('email') }}" required
-                        placeholder="Masukkan email"
-                        class="w-full px-4 py-3 rounded-lg bg-gray-100 @error('email') bg-red-100 border-red-500 @enderror focus:border-black focus:outline-none focus:ring-2 focus:ring-green-500 transition-all duration-200 ease-in-out">
-                    @error('email')
-                        <p class="text-red-500 text-sm mt-2">Email tidak valid.</p>
-                    @enderror
-                </div>
+        <!-- Email/Username Input -->
+        <div class="relative">
+            <label for="email" class="block text-sm lg:text-base font-medium text-gray-700 mb-2">Email/Username</label>
+            <input type="text" name="email" value="{{ old('email') }}" required
+                placeholder="Masukkan email atau username"
+                class="w-full px-4 py-3 rounded-lg bg-gray-100 @error('email') bg-red-100 border-red-500 @enderror focus:border-black focus:outline-none focus:ring-2 focus:ring-green-500 transition-all duration-200 ease-in-out">
+            @error('email')
+                <p class="text-red-500 text-sm mt-2">Email atau username tidak valid.</p>
+            @enderror
+        </div>
+
 
                 <!-- Password Input -->
                 <div class="relative">
