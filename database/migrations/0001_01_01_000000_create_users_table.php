@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('name');
             $table->string('username')->unique();
             $table->string('email')->unique();
-            $table->string('gender');
             // $table->timestamp('email_verified_at')->nullable();
             $table->boolean('is_farmer')->default(false);
             $table->string('password');
