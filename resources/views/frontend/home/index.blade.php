@@ -11,7 +11,7 @@
     @auth
     <!-- User Dropdown -->
     <div class="relative">
-        <button id="user-dropdown" class="bg-[#5DBB63] px-8 py-[0.8rem] text-white text-sm rounded-lg flex items-center justify-between">
+        <button id="user-dropdown" class="bg-accent px-8 py-[0.8rem] text-white text-sm rounded-lg flex items-center justify-between">
             {{ Auth::user()->name }}
             <span class="ml-2">&#9662;</span>
         </button>
@@ -30,7 +30,7 @@
     @else
     <!-- Sign Up Button -->
     <div class="button">
-        <a class="bg-[#5DBB63] px-8 py-[0.8rem] text-white text-sm rounded-lg" href="/sign-up">Sign Up</a>
+        <a class="bg-accent px-8 py-[0.8rem] text-white text-sm rounded-lg" href="/sign-up">Sign Up</a>
     </div>
     @endauth
 </section>
@@ -99,12 +99,15 @@
 
 
 <!-- About Section -->
-<section class="about-container container mx-auto px-16 py-12">
+<section class="about-container container mx-auto px-16 py-12 h-[200vh]">
     <div class="about-wrapper" id="about">
         <div class="about">
-            <div class="about-header w-100 py-10 max-w-[46rem]">
+            <div class="about-header w-100 pt-10 max-w-[58rem]">
                 <p class="text-accent mb-2">AGRICONNECT</p>
                 <h1 class="text-[36px] leading-tight text-zinc-900 font-semibold dark:text-white">AGRICONNECT: Solusi Terbaik Untuk Masa Depan dan Teknologi Pertanian Indonesia</h1>
+            </div>
+            <div class="about-description mt-4 max-w-[52rem]">
+                <p>Indonesia menghadapi tantangan di sektor pertanian dengan semakin menurunnya minat generasi muda, yang dapat mengancam keberlanjutan sektor ini. AgriConnect hadir sebagai solusi dengan menghubungkan petani, teknologi, dan pasar melalui platform digital untuk mendorong adopsi teknologi modern dan membuka akses pasar yang lebih luas.</p>
             </div>
             <div class="about-content">
                 <!-- Content to be added here -->
