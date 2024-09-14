@@ -1,9 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
     const lenis = new Lenis()
 
-    lenis.on('scroll', (e) => {
-      console.log(e)
-    })
+    console.log(lenis)
+
 
     lenis.on('scroll', ScrollTrigger.update)
 
@@ -134,3 +133,35 @@ gsap.to("#hero-title-animated", {
     delay: 2,
     ease: "power2.inOut"
 });
+
+    // GSAP and Scroll Behavior
+    const backToTopButton = document.getElementById('backToTop');
+
+    // Function to show the button
+    const showButton = () => {
+        gsap.to(backToTopButton, { opacity: 1, visibility: "visible", duration: 0.5, ease: "power2.out" });
+        backToTopButton.classList.add('show');
+    };
+
+    // Function to hide the button
+    const hideButton = () => {
+        gsap.to(backToTopButton, { opacity: 0, visibility: "hidden", duration: 0.5, ease: "power2.out" });
+        backToTopButton.classList.remove('show');
+    };
+
+    // Scroll listener to trigger the button visibility
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            showButton();
+        } else {
+            hideButton();
+        }
+    });
+
+    // Smooth scroll back to top
+    backToTopButton.addEventListener('click', () => {
+        gsap.to(window, { scrollTo: { y: 0 }, duration: 1, ease: "power2.inOut" });
+    });
+
+
+

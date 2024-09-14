@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" >
 
 <head>
     <meta charset="UTF-8">
@@ -30,7 +30,7 @@
 
 </head>
 
-<body class="antialiased" data-lenis-prevent data-speed="0.5">
+<body class="antialiased bg-white dark:bg-zinc-950 transition-all" data-lenis-prevent data-speed="0.5">
 
 
     <div class="cursor-example"></div>

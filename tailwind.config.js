@@ -9,10 +9,11 @@ export default {
     "./resources/**/*.js",
     "./resources/**/*.vue",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
-        hijau1: "#5DBB63",
+        accent: "#5DBB63",
         hijau2: "#A7D49B",
         abu1: "#333333",
         abu2: "#666666",
