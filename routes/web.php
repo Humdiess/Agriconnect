@@ -2,11 +2,12 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PetaniController;
+use App\Http\Controllers\ProductController;
+use App\Http\Middleware\IsFarmer;
 use Illuminate\Support\Facades\Route;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+// Home / Landing Page
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // Auth
@@ -15,3 +16,22 @@ Route::post('/login', [AuthController::class, 'authenticate'])->name('auth.authe
 Route::get('/sign-up', [AuthController::class, 'signup'])->name('auth.signup');
 Route::post('/sign-up', [AuthController::class, 'addUser'])->name('auth.addUser');
 Route::post('/logout', [AuthController::class, 'logout'])->name('auth.logout');
+
+// Tani Shop (is_farmer=true)
+Route::middleware([IsFarmer::class])->group(function () {
+    Route::get('/dashboard-tani', [PetaniController::class, 'index'])->name('petani.index');
+    // Fitur Pantau Pertanian 
+    // ... 
+});
+
+// Products
+Route::get('/product', [ProductController::class, 'index'])->name('product.index');
+Route::get('/product/{product}', [ProductController::class, 'show'])->name('product.show');
+
+Route::middleware([IsFarmer::class])->group(function () {
+    Route::get('/product-create', [ProductController::class, 'create'])->name('product.create');
+    Route::post('/product-create', [ProductController::class, 'store'])->name('product.store');
+    Route::get('/product-edit/{product}', [ProductController::class, 'edit'])->name('product.edit');
+    Route::put('/product-edit/{product}', [ProductController::class, 'update'])->name('product.update');
+    Route::delete('/product-delete/{product}', [ProductController::class, 'destroy'])->name('product.destroy');
+});
