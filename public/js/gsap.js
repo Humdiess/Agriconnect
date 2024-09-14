@@ -163,5 +163,14 @@ gsap.to("#hero-title-animated", {
         gsap.to(window, { scrollTo: { y: 0 }, duration: 1, ease: "power2.inOut" });
     });
 
+    gsap.to("#tani-ai", {
+        duration: 1.5,
+        repeat: -1,
+        yoyo: true,
+        ease: "power1.inOut",
+        color: "#f00",  // Change text color to red during animation
+        textShadow: "0px 0px 10px rgba(255, 0, 0, 0.7)",  // Add glowing effect
+    });
+
 
 

@@ -1,7 +1,7 @@
 @include('frontend.layouts.header')
 
 <!-- Navbar Section -->
-<section class="navbar flex justify-between py-8 px-16 items-center z-50">
+<section class="navbar flex justify-between py-6 px-16 items-center z-50">
     <div class="logo">
         <a class="text-2xl font-bold w-6" href="#">
             <img class="w-28" src="{{ asset('img/logo/logo-light.png') }}" alt="Logo">
@@ -40,7 +40,8 @@
         </div>
     @else
     <!-- Sign Up Button -->
-    <div class="button">
+    <div class="button flex items-center">
+        <a class="px-8 py-[0.8rem] text-accent text-sm rounded-lg" href="/login">Sign In</a>
         <a class="bg-accent px-8 py-[0.8rem] text-white text-sm rounded-lg" href="/sign-up">Sign Up</a>
     </div>
     @endauth
@@ -124,10 +125,40 @@
                 <h1 class="text-[36px] leading-tight text-zinc-900 font-semibold dark:text-white">AGRICONNECT: Solusi Terbaik Untuk Masa Depan dan Teknologi Pertanian Indonesia</h1>
             </div>
             <div class="about-description mt-4 max-w-[52rem]">
-                <p>Indonesia menghadapi tantangan di sektor pertanian dengan semakin menurunnya minat generasi muda, yang dapat mengancam keberlanjutan sektor ini. AgriConnect hadir sebagai solusi dengan menghubungkan petani, teknologi, dan pasar melalui platform digital untuk mendorong adopsi teknologi modern dan membuka akses pasar yang lebih luas.</p>
+                <p class="text-zinc-900 dark:text-zinc-300">Indonesia menghadapi tantangan di sektor pertanian dengan semakin menurunnya minat generasi muda, yang dapat mengancam keberlanjutan sektor ini. AgriConnect hadir sebagai solusi dengan menghubungkan petani, teknologi, dan pasar melalui platform digital untuk mendorong adopsi teknologi modern dan membuka akses pasar yang lebih luas.</p>
             </div>
-            <div class="about-content">
+               <div class="absolute w-[25rem] h-[25rem] bg-gradient-to-r from-[#5DBB63] to-[#27a002] opacity-20 blur-3xl rounded-full top-[112rem] left-[32rem] z-0"></div>
+            <div class="about-content h-[46rem] mt-8">
                 <!-- Content to be added here -->
+                <div class="flex h-full w-full items-center justify-center">
+                    <div class="grid h-full w-full grid-cols-3 grid-rows-2 gap-4">
+                      <div
+                        class="font-sans col-span-1 row-span-1 bg-white/30 dark:bg-zinc-900/30 backdrop-blur-3xl border dark:border-white/30 rounded-xl flex items-center justify-center"
+                      >
+                        <p>Salmon</p>
+                      </div>
+
+                      <div
+                        class="font-sans col-span-1 row-span-1 bg-white/30 dark:bg-zinc-900/30 backdrop-blur-3xl border dark:border-white/30 rounded-xl flex items-center justify-center"
+                      >
+                        <p>Broccoli</p>
+                      </div>
+
+                      <div
+                        class="font-sans col-span-1 row-span-2 bg-white/30 dark:bg-zinc-900/30 backdrop-blur-3xl border dark:border-white/30 rounded-xl flex items-center justify-center"
+                      >
+                        <p>Tamago</p>
+                      </div>
+
+                      <div
+                        class="font-sans col-span-2 row-span-1 bg-white/30 dark:bg-zinc-900/30 backdrop-blur-3xl border dark:border-white/30 rounded-xl flex items-center justify-center"
+                      >
+                        <p>Pork</p>
+                      </div>
+
+                    </div>
+                  </div>
+
             </div>
         </div>
     </div>

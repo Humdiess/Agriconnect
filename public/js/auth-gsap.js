@@ -41,3 +41,5 @@
             toggleIcon.classList.add('fa-eye-slash');
         }
     }
+
+    

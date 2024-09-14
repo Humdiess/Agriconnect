@@ -11,10 +11,10 @@
                 <a href="#">Layanan Kami</a>
             </li>
             <li>
-                <a href="#">Tani AI</a>
+                <a href="#" id="tani-ai">Tani AI</a>
             </li>
             <li>
-                <button id="theme-toggle" class="ml-2 p-2 rounded-full dark:bg-zinc-700 dark:hover:bg-zinc-600 hover:bg-gray-200 dark:text-white transition-colors">
+                <button id="theme-toggle" class="ml-2 px-2 py-1 rounded-full dark:bg-zinc-700 dark:hover:bg-zinc-600 hover:bg-gray-200 dark:text-white transition-colors">
                     <i id="theme-icon" class="fas fa-moon"></i>
                 </button>
             </li>
