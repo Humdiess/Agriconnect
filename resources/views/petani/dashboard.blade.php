@@ -21,7 +21,7 @@
                 <a href="#" class="bg-accent text-white rounded-md w-full px-3 py-1">Dashboard Tani</a>
                 <a href="#"
                     class="bg-white text-black rounded-md w-full px-3 py-1 hover:bg-accent hover:text-white">Pantau AI</a>
-                <a href="#"
+                <a href="/product"
                     class="bg-white text-black rounded-md w-full px-3 py-1 hover:bg-accent hover:text-white">Toko</a>
             </div>
         </section>
