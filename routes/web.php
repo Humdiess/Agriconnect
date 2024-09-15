@@ -7,6 +7,23 @@ use App\Http\Controllers\ProductController;
 use App\Http\Middleware\IsFarmer;
 use Illuminate\Support\Facades\Route;
 
+// php artisan storage:link untuk hosting 
+Route::get('/create-storage-link', function () {
+    $targetFolder = base_path('storage/app/public'); // Folder tujuan
+    $linkFolder = $_SERVER['DOCUMENT_ROOT'] . '/storage'; // Lokasi symbolic link di public_html
+
+    if (file_exists($linkFolder)) {
+        return 'Link folder sudah ada.';
+    }
+
+    try {
+        symlink($targetFolder, $linkFolder); // Membuat symbolic link
+        return 'Symlink berhasil dibuat.';
+    } catch (Exception $e) {
+        return 'Gagal membuat symlink: ' . $e->getMessage();
+    }
+});
+
 // Home / Landing Page
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
