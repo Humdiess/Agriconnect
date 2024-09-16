@@ -141,6 +141,8 @@
                         <div class="card-info absolute bottom-0 left-0 p-4 text-zinc-900 dark:text-white">
                             <h2 class="text-lg font-semibold">Pemantauan Kondisi lahan</h2>
                             <p>AgriConnect memungkinkan para petani untuk memantau lahan real-time dengan IoT, sensor, dan akses aplikasi.</p>
+                            <!-- Menggunakan CTA Button di blade file -->
+                            <x-cta-button route="home" text="Pelajari lebih lanjut" />
                         </div>
                       </div>
 
@@ -153,6 +155,7 @@
                         <div class="card-info absolute bottom-0 left-0 p-4 text-zinc-900 dark:text-white">
                             <h2 class="text-lg font-semibold">Pemantauan Kondisi lahan</h2>
                             <p>AgriConnect memungkinkan para petani untuk memantau lahan real-time dengan IoT, sensor, dan akses aplikasi.</p>
+                            <x-cta-button route="home" text="Pelajari lebih lanjut" />
                         </div>
                       </div>
 
@@ -165,6 +168,7 @@
                         <div class="card-info absolute bottom-0 left-0 p-4 text-zinc-900 dark:text-white">
                             <h2 class="text-lg font-semibold">Pemantauan Kondisi lahan</h2>
                             <p>AgriConnect memungkinkan para petani untuk memantau lahan real-time dengan IoT, sensor, dan akses aplikasi.</p>
+                            <x-cta-button route="home" text="Pelajari lebih lanjut" />
                         </div>
                       </div>
 
@@ -177,6 +181,7 @@
                         <div class="card-info text-zinc-900 dark:text-white absolute bottom-0 left-0 p-4">
                             <h2 class="text-lg font-semibold">Pemantauan Kondisi lahan</h2>
                             <p>AgriConnect memungkinkan para petani untuk memantau lahan real-time dengan IoT, sensor, dan akses aplikasi.</p>
+                            <x-cta-button route="home" text="Pelajari lebih lanjut" />
                         </div>
                       </div>
                     </div>
@@ -217,6 +222,54 @@
         </div>
     </div>
 </section>
+
+<!-- Footer Section -->
+<footer class=" text-zinc-900 dark:text-white py-10">
+    <div class="container mx-auto px-6 md:px-12 lg:px-16">
+        <!-- Footer Top -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
+            <!-- Footer Logo and Description -->
+            <div class="footer-logo mb-6 md:mb-0 flex flex-col items-center md:items-start">
+                <a href="#" class="flex items-center">
+                    <img class="w-28" src="{{ asset('img/logo/logo-light.png') }}" alt="Logo">
+                    <span class="text-2xl font-bold ml-3">AgriConnect</span>
+                </a>
+                <p class="mt-3 text-center md:text-left">Connecting farmers with modern technology and digital markets to enhance agricultural productivity and sustainability.</p>
+            </div>
+
+            <!-- Footer Links -->
+            <div class="footer-links">
+                <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-accent transition">Home</a></li>
+                    <li><a href="#" class="hover:text-accent transition">About Us</a></li>
+                    <li><a href="#" class="hover:text-accent transition">Services</a></li>
+                    <li><a href="#" class="hover:text-accent transition">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Footer Social Media -->
+            <div class="footer-social">
+                <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+                <div class="flex space-x-4">
+                    <a href="#" target="_blank" class="hover:text-accent transition">
+                        <i class="fab fa-facebook-f fa-2x"></i>
+                    </a>
+                    <a href="#" target="_blank" class="hover:text-accent transition">
+                        <i class="fab fa-twitter fa-2x"></i>
+                    </a>
+                    <a href="#" target="_blank" class="hover:text-accent transition">
+                        <i class="fab fa-instagram fa-2x"></i>
+                    </a>
+                    <a href="#" target="_blank" class="hover:text-accent transition">
+                        <i class="fab fa-linkedin-in fa-2x"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
 
 
 @include('frontend.layouts.footer')
