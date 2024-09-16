@@ -3,6 +3,16 @@
     ⬆ Back to Top
 </button>
 
+    <script>
+            // JavaScript to toggle accordion active class
+    document.querySelectorAll('.accordion-toggle').forEach((button) => {
+      button.addEventListener('click', function () {
+        const accordion = this.parentElement;
+        accordion.classList.toggle('active');
+      });
+    });
+    </script>
+
     <script src="{{ asset('js/navbar.js') }}"></script>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

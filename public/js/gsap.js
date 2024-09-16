@@ -172,5 +172,24 @@ gsap.to("#hero-title-animated", {
         textShadow: "0px 0px 10px rgba(255, 0, 0, 0.7)",  // Add glowing effect
     });
 
+    // GSAP Accordion Animation
+    const faqs = document.querySelectorAll('.faq-question');
+    faqs.forEach(faq => {
+        faq.addEventListener('click', () => {
+            const answer = faq.nextElementSibling;
+            const icon = faq.querySelector('.faq-icon');
+            if (answer.classList.contains('hidden')) {
+                // Show the answer with GSAP
+                gsap.to(answer, { height: 'auto', duration: 0.5, ease: 'power2.inOut' });
+                answer.classList.remove('hidden');
+                icon.textContent = '-'; // Change icon to minus
+            } else {
+                // Hide the answer with GSAP
+                gsap.to(answer, { height: 0, duration: 0.5, ease: 'power2.inOut', onComplete: () => answer.classList.add('hidden') });
+                icon.textContent = '+'; // Change icon to plus
+            }
+        });
+    });
+
 
 

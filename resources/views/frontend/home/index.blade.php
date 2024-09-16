@@ -17,7 +17,7 @@
         </button>
 
             <div id="dropdown-menu"
-                class="absolute border rounded-lg mt-2 p-1 w-full bg-white overflow-hidden transition-all duration-300"
+                class="absolute border rounded-lg mt-2 p-1 w-full bg-white dark:bg-zinc-900 dark:border-zinc-300 overflow-hidden transition-all duration-300"
                 style="min-width: 150px; height: 0; opacity: 0; z-index: 999999999;">
 
                 @can('is_farmer')
@@ -133,29 +133,52 @@
                 <div class="flex h-full w-full items-center justify-center">
                     <div class="grid h-full w-full grid-cols-3 grid-rows-2 gap-4">
                       <div
-                        class="font-sans col-span-1 row-span-1 bg-white/30 dark:bg-zinc-900/30 backdrop-blur-3xl border dark:border-white/30 rounded-xl flex items-center justify-center"
+                        class="card  relative font-sans col-span-1 row-span-1 bg-white/30 dark:bg-zinc-900/30 backdrop-blur-3xl border dark:border-white/30 rounded-xl"
                       >
-                        <p>Salmon</p>
+                      <div class="card-image p-16">
+                          <img src="{{ asset('img/services/IoT.png') }}" alt="Card Image">
+                      </div>
+                        <div class="card-info absolute bottom-0 left-0 p-4 text-zinc-900 dark:text-white">
+                            <h2 class="text-lg font-semibold">Pemantauan Kondisi lahan</h2>
+                            <p>AgriConnect memungkinkan para petani untuk memantau lahan real-time dengan IoT, sensor, dan akses aplikasi.</p>
+                        </div>
                       </div>
 
                       <div
-                        class="font-sans col-span-1 row-span-1 bg-white/30 dark:bg-zinc-900/30 backdrop-blur-3xl border dark:border-white/30 rounded-xl flex items-center justify-center"
+                        class="card  relative font-sans col-span-1 row-span-1 bg-white/30 dark:bg-zinc-900/30 backdrop-blur-3xl border dark:border-white/30 rounded-xl"
                       >
-                        <p>Broccoli</p>
+                        <div class="card-image p-16 flex justify-center items-center -mt-8">
+                            <img src="{{ asset('img/services/dashboard.png') }}" alt="Card Image">
+                        </div>
+                        <div class="card-info absolute bottom-0 left-0 p-4 text-zinc-900 dark:text-white">
+                            <h2 class="text-lg font-semibold">Pemantauan Kondisi lahan</h2>
+                            <p>AgriConnect memungkinkan para petani untuk memantau lahan real-time dengan IoT, sensor, dan akses aplikasi.</p>
+                        </div>
                       </div>
 
                       <div
-                        class="font-sans col-span-1 row-span-2 bg-white/30 dark:bg-zinc-900/30 backdrop-blur-3xl border dark:border-white/30 rounded-xl flex items-center justify-center"
+                        class="card relative flex font-sans col-span-1 row-span-2 bg-white/30 dark:bg-zinc-900/30 backdrop-blur-3xl border dark:border-white/30 rounded-xl"
                       >
-                        <p>Tamago</p>
+                        <div class="card-image p-16 flex justify-center items-center">
+                            <img src="{{ asset('img/services/analytics-ai.png') }}" alt="Card Image">
+                        </div>
+                        <div class="card-info absolute bottom-0 left-0 p-4 text-zinc-900 dark:text-white">
+                            <h2 class="text-lg font-semibold">Pemantauan Kondisi lahan</h2>
+                            <p>AgriConnect memungkinkan para petani untuk memantau lahan real-time dengan IoT, sensor, dan akses aplikasi.</p>
+                        </div>
                       </div>
 
                       <div
-                        class="font-sans col-span-2 row-span-1 bg-white/30 dark:bg-zinc-900/30 backdrop-blur-3xl border dark:border-white/30 rounded-xl flex items-center justify-center"
+                        class="card relative font-sans col-span-2 row-span-1 bg-white/30 dark:bg-zinc-900/30 backdrop-blur-3xl border dark:border-white/30 rounded-xl"
                       >
-                        <p>Pork</p>
+                        <div class="card-image p-16 flex justify-center items-center w-96 -mt-12 right-0 absolute mr-32">
+                            <img src="{{ asset('img/services/ai-chatbot.png') }}" class="w-full h-full" alt="Card Image">
+                        </div>
+                        <div class="card-info text-zinc-900 dark:text-white absolute bottom-0 left-0 p-4">
+                            <h2 class="text-lg font-semibold">Pemantauan Kondisi lahan</h2>
+                            <p>AgriConnect memungkinkan para petani untuk memantau lahan real-time dengan IoT, sensor, dan akses aplikasi.</p>
+                        </div>
                       </div>
-
                     </div>
                   </div>
 
@@ -163,5 +186,37 @@
         </div>
     </div>
 </section>
+
+<section class="faq-container container mx-auto px-16 py-12">
+    <div class="about-wrapper">
+        <div class="about">
+            <div class="about-content flex">
+                <div class="question-illustration w-1/2 flex items-center justify-center">
+                    <img src="{{ asset('img/FaQ.png') }}" class="motion-safe:animate-bounce" alt="Illustration">
+                </div>
+                <div class="question w-1/2">
+                    <div class="about-hedaer">
+                        <p class="text-accent mb-2">AGRICONNECT</p>
+                        <h1 class="text-4xl font-bold dark:text-white">Frequently Asked Questions</h1>
+                    </div>
+                    <div class="question-list">
+                        <x-f-a-q-accordion
+                            id="1"
+                            question="What is AgriConnect?"
+                            answer="AgriConnect is a web application that allows farmers to monitor their crops, analyze their soil conditions, and provide them with real-time data."
+                        />
+
+                        <x-f-a-q-accordion
+                            id="2"
+                            question="What is AgriConnect?"
+                            answer="AgriConnect is a web application that allows farmers to monitor their crops, analyze their soil conditions, and provide them with real-time data."
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 @include('frontend.layouts.footer')

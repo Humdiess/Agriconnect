@@ -81,3 +81,32 @@ body {
     pointer-events: all;
 }
 
+    /* Accordion base styles */
+    .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+      }
+
+      .accordion.active .accordion-content {
+        max-height: 200px; /* Set a maximum height */
+      }
+
+      /* Accordion toggle button */
+      .accordion-toggle {
+        cursor: pointer;
+      }
+
+      /* Simple styling for hover */
+      .accordion-toggle:hover {
+        color: #4f46e5; /* Indigo */
+      }
+
+      /* Transition for the icon rotation */
+      svg {
+        transition: transform 0.4s ease;
+      }
+
+      .accordion.active svg {
+        transform: rotate(180deg);
+      }
