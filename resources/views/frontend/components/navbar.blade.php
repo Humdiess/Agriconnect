@@ -2,19 +2,24 @@
     <div class="menu items-center flex gap-6 py-4 dark:text-white px-6 rounded-xl dark:bg-zinc-900/80 backdrop-blur-lg border dark:border-zinc-600 border-gray-300">
         <ul class="flex gap-6 items-center">
             <li>
-                <a href="/">Beranda</a>
+                <a class="hidden md:block" href="/">Beranda</a>
+                <i class="fa-solid fa-house md:hidden"></i>
             </li>
             <li>
-                <a href="#about" onclick="lenis.scrollTo('#about')">Tentang Kami</a>
+                <a class="hidden md:block" href="#about" onclick="lenis.scrollTo('#about')">Tentang Kami</a>
+                <i class="fa-solid fa-circle-info md:hidden"></i>
             </li>
             <li>
-                <a href="#">Layanan Kami</a>
+                <a class="hidden md:block" href="#" id="tani-ai">Tani AI</a>
+                <i class="fa-solid fa-briefcase md:hidden"></i>
+            </li>
+            <li class="block md:hidden">
+                <a href="{{ route('auth.login') }}" class="text-white text-sm">
+                    <i class="fa-solid fa-user"></i>
+                </a>
             </li>
             <li>
-                <a href="#" id="tani-ai">Tani AI</a>
-            </li>
-            <li>
-                <button id="theme-toggle" class="ml-2 px-2 py-1 rounded-full dark:bg-zinc-700 dark:hover:bg-zinc-600 hover:bg-gray-200 dark:text-white transition-colors">
+                <button id="theme-toggle" class="md:ml-2 md:px-2 py-1 rounded-full dark:bg-zinc-700 dark:hover:bg-zinc-600 hover:bg-gray-200 dark:text-white transition-colors">
                     <i id="theme-icon" class="fas fa-moon"></i>
                 </button>
             </li>

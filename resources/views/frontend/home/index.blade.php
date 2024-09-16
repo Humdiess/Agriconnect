@@ -1,7 +1,7 @@
 @include('frontend.layouts.header')
 
 <!-- Navbar Section -->
-<section class="navbar flex justify-between py-6 px-16 items-center z-50">
+<section class="navbar justify-between py-6 px-16 items-center z-50 hidden md:flex">
     <div class="logo">
         <a class="text-2xl font-bold w-6" href="#">
             <img class="w-28" src="{{ asset('img/logo/logo-light.png') }}" alt="Logo">
@@ -70,15 +70,15 @@
 
     <!-- Hero Content -->
     <div class="hero-wrapper w-full relative z-10">
-        <div class="hero w-100 flex flex-col items-center justify-center">
-            <div class="hero-title max-w-[36rem] mt-[4rem]">
-                <h1 class="hero-title-text text-center text-zinc-900 dark:text-white text-4xl font-bold">
+        <div class="hero w-100 flex flex-col md:items-center md:justify-center mx-8">
+            <div class="hero-title md:max-w-[36rem] mt-[12rem] md:mt-[4rem]">
+                <h1 class="hero-title-text md:text-center text-zinc-900 dark:text-white text-2xl md:text-4xl font-bold">
                     <span id="hero-title-animated"
                         class="bg-gradient-to-r from-accent to-zinc-900 dark:to-white bg-clip-text text-transparent">Agri</span>
                     Connect: Membangun Petani Maju dengan AI, IoT, dan Pemasaran Digital
                 </h1>
             </div>
-            <a href="#" class="hero-button mt-10 px-6 py-2 bg-accent text-white mb-0 rounded-lg font-light">
+            <a href="#" class="hero-button w-fit mt-10 px-6 py-2 bg-accent text-white mb-0 rounded-lg font-light">
                 Pelajari lebih lanjut <i class="fa-solid ms-2 fa-chevron-right"></i>
             </a>
         </div>
