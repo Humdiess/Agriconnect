@@ -85,17 +85,18 @@
 
         <!-- Hero Image -->
         <div class="hero-image-wrapper w-full flex justify-center mt-16">
-            <div class="hero-image w-[60rem] h-[33.75rem] rounded-3xl border border-zinc-200 p-2">
-                <img class="w-full h-full rounded-2xl"
+            <div class="hero-image w-full max-w-[60rem] aspect-w-16 aspect-h-9 rounded-3xl border border-zinc-200">
+                <img class="w-full h-full object-cover rounded-2xl"
                     src="https://images.unsplash.com/photo-1662099892443-0c241cbb700d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                     alt="Hero Image">
             </div>
         </div>
+
     </div>
 </section>
 
 <!-- Sponsor Section -->
-<section class="sponsor-container mb-8">
+<section class="sponsor-container containe mx-auto mb-8 px-8">
     <div class="sponsor-wrapper">
         <div class="sponsor">
             <div class="sponsor-header w-100 flex justify-center py-10">
