@@ -118,25 +118,25 @@
 
 
 <!-- About Section -->
-<section class="about-container container mx-auto px-16 py-12 h-[200vh]">
+<section class="about-container container mx-auto px-8 md:px-16 py-8 md:py-12">
     <div class="about-wrapper" id="about">
         <div class="about">
             <div class="about-header w-100 pt-10 max-w-[58rem]">
                 <p class="text-accent mb-2">AGRICONNECT</p>
-                <h1 class="text-[36px] leading-tight text-zinc-900 font-semibold dark:text-white">AGRICONNECT: Solusi Terbaik Untuk Masa Depan dan Teknologi Pertanian Indonesia</h1>
+                <h1 class="text-xl md:text-[36px] leading-tight text-zinc-900 font-semibold dark:text-white">AGRICONNECT: Solusi Terbaik Untuk Masa Depan dan Teknologi Pertanian Indonesia</h1>
             </div>
             <div class="about-description mt-4 max-w-[52rem]">
                 <p class="text-zinc-900 dark:text-zinc-300">Indonesia menghadapi tantangan di sektor pertanian dengan semakin menurunnya minat generasi muda, yang dapat mengancam keberlanjutan sektor ini. AgriConnect hadir sebagai solusi dengan menghubungkan petani, teknologi, dan pasar melalui platform digital untuk mendorong adopsi teknologi modern dan membuka akses pasar yang lebih luas.</p>
             </div>
                <div class="absolute w-[25rem] h-[25rem] bg-gradient-to-r from-[#5DBB63] to-[#27a002] opacity-20 blur-3xl rounded-full top-[112rem] left-[32rem] z-0"></div>
-            <div class="about-content h-[46rem] mt-8">
+            <div class="about-content md:h-[46rem] mt-8">
                 <!-- Content to be added here -->
                 <div class="flex h-full w-full items-center justify-center">
-                    <div class="grid h-full w-full grid-cols-3 grid-rows-2 gap-4">
+                    <div class="grid h-full w-full md:grid-cols-3 md:grid-rows-2 gap-4">
                       <div
-                        class="card  relative font-sans col-span-1 row-span-1 bg-white/30 dark:bg-zinc-900/30 backdrop-blur-3xl border dark:border-white/30 rounded-xl"
+                        class="card h-fit mt-[10rem] md:mt-0 relative font-sans md:col-span-1 md:row-span-1 bg-white/30 dark:bg-zinc-900/30 backdrop-blur-3xl border dark:border-white/30 rounded-xl"
                       >
-                      <div class="card-image p-16">
+                      <div class="card-image p-16 hidden md:block">
                           <img src="{{ asset('img/services/IoT.png') }}" alt="Card Image">
                       </div>
                         <div class="card-info absolute bottom-0 left-0 p-4 text-zinc-900 dark:text-white">
@@ -148,9 +148,9 @@
                       </div>
 
                       <div
-                        class="card  relative font-sans col-span-1 row-span-1 bg-white/30 dark:bg-zinc-900/30 backdrop-blur-3xl border dark:border-white/30 rounded-xl"
+                        class="card h-fit mt-[10rem] md:mt-0 relative font-sans md:col-span-1 md:row-span-1 bg-white/30 dark:bg-zinc-900/30 backdrop-blur-3xl border dark:border-white/30 rounded-xl"
                       >
-                        <div class="card-image p-16 flex justify-center items-center -mt-8">
+                        <div class="card-image p-16 justify-center items-center -mt-8 hidden md:blcok">
                             <img src="{{ asset('img/services/dashboard.png') }}" alt="Card Image">
                         </div>
                         <div class="card-info absolute bottom-0 left-0 p-4 text-zinc-900 dark:text-white">
@@ -161,9 +161,9 @@
                       </div>
 
                       <div
-                        class="card relative flex font-sans col-span-1 row-span-2 bg-white/30 dark:bg-zinc-900/30 backdrop-blur-3xl border dark:border-white/30 rounded-xl"
+                        class="card h-fit mt-[10rem] md:mt-0 relative flex font-sans md:col-span-1 md:row-span-2 bg-white/30 dark:bg-zinc-900/30 backdrop-blur-3xl border dark:border-white/30 rounded-xl"
                       >
-                        <div class="card-image p-16 flex justify-center items-center">
+                        <div class="card-image p-16 hidden md:flex justify-center items-center">
                             <img src="{{ asset('img/services/analytics-ai.png') }}" alt="Card Image">
                         </div>
                         <div class="card-info absolute bottom-0 left-0 p-4 text-zinc-900 dark:text-white">
@@ -174,9 +174,9 @@
                       </div>
 
                       <div
-                        class="card relative font-sans col-span-2 row-span-1 bg-white/30 dark:bg-zinc-900/30 backdrop-blur-3xl border dark:border-white/30 rounded-xl"
+                        class="card h-fit mt-[10rem] md:mt-0 relative font-sans md:col-span-2 md:row-span-1 bg-white/30 dark:bg-zinc-900/30 backdrop-blur-3xl border dark:border-white/30 rounded-xl"
                       >
-                        <div class="card-image p-16 flex justify-center items-center w-96 -mt-12 right-0 absolute mr-32">
+                        <div class="card-image p-16 hidden md:flex justify-center items-center w-96 -mt-12 right-0 absolute mr-32">
                             <img src="{{ asset('img/services/ai-chatbot.png') }}" class="w-full h-full" alt="Card Image">
                         </div>
                         <div class="card-info text-zinc-900 dark:text-white absolute bottom-0 left-0 p-4">
@@ -186,21 +186,21 @@
                         </div>
                       </div>
                     </div>
-                  </div>
+                </div>
 
             </div>
         </div>
     </div>
 </section>
 
-<section class="faq-container container mx-auto px-16 py-12">
+<section class="faq-container container mx-auto md:px-16 py-12">
     <div class="about-wrapper">
         <div class="about">
             <div class="about-content flex">
-                <div class="question-illustration w-1/2 flex items-center justify-center">
+                <div class="question-illustration hidden w-full md:w-1/2 md:flex items-center justify-center">
                     <img src="{{ asset('img/FaQ.png') }}" class="motion-safe:animate-bounce" alt="Illustration">
                 </div>
-                <div class="question w-1/2">
+                <div class="question w-full md:w-1/2">
                     <div class="about-hedaer">
                         <p class="text-accent mb-2">AGRICONNECT</p>
                         <h1 class="text-4xl font-bold dark:text-white">Frequently Asked Questions</h1>
