@@ -3,18 +3,30 @@
         <ul class="flex gap-6 items-center">
             <li>
                 <a class="hidden md:block" href="/">Beranda</a>
-                <i class="fa-solid fa-house md:hidden"></i>
+                <a class="block md:hidden" href="">
+                    <i class="fa-solid fa-house"></i>
+                </a>
             </li>
             <li>
-                <a class="hidden md:block" href="#about" onclick="lenis.scrollTo('#about')">Tentang Kami</a>
-                <i class="fa-solid fa-circle-info md:hidden"></i>
+                <a class="hidden md:block" href="#about" onclick="lenis.scrollTo('#about')">Tani Shop</a>
+                <a class="block md:hidden" href="">
+                    <i class="fa-solid fa-circle-info"></i>
+                </a>
             </li>
             <li>
                 <a class="hidden md:block" href="#" id="tani-ai">Tani AI</a>
-                <i class="fa-solid fa-briefcase md:hidden"></i>
+                <a class="block md:hidden" href="">
+                    <i class="fa-solid fa-briefcase"></i>
+                </a>
+            </li>
+            <li>
+                <a class="hidden md:block" href="#" id="tani-ai">Hubungi Kami</a>
+                <a class="block md:hidden" href="">
+                    <i class="fa-solid fa-briefcase"></i>
+                </a>
             </li>
             <li class="block md:hidden">
-                <a href="{{ route('auth.login') }}" class="text-white text-sm">
+                <a href="{{ route('auth.login') }}" class="md:text-white text-zinc-900 text-sm">
                     <i class="fa-solid fa-user"></i>
                 </a>
             </li>

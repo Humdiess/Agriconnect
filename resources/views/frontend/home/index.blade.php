@@ -116,8 +116,6 @@
     </div>
 </section>
 
-
-<!-- About Section -->
 <section class="about-container container mx-auto px-8 md:px-16 py-8 md:py-12">
     <div class="about-wrapper" id="about">
         <div class="about">
@@ -134,9 +132,9 @@
                 <div class="flex h-full w-full items-center justify-center">
                     <div class="grid h-full w-full md:grid-cols-3 md:grid-rows-2 gap-4">
                       <div
-                        class="card h-fit mt-[10rem] md:mt-0 relative font-sans md:col-span-1 md:row-span-1 bg-white/30 dark:bg-zinc-900/30 backdrop-blur-3xl border dark:border-white/30 rounded-xl"
+                        class="card h-fit md:h-full mt-[10rem] md:mt-0 relative font-sans md:col-span-1 md:row-span-1 bg-white/30 dark:bg-zinc-900/30 backdrop-blur-3xl border dark:border-white/30 rounded-xl"
                       >
-                      <div class="card-image p-16 hidden md:block">
+                      <div class="card-image p-20 hidden lg:block -mt-8">
                           <img src="{{ asset('img/services/IoT.png') }}" alt="Card Image">
                       </div>
                         <div class="card-info absolute bottom-0 left-0 p-4 text-zinc-900 dark:text-white">
@@ -148,9 +146,9 @@
                       </div>
 
                       <div
-                        class="card h-fit mt-[10rem] md:mt-0 relative font-sans md:col-span-1 md:row-span-1 bg-white/30 dark:bg-zinc-900/30 backdrop-blur-3xl border dark:border-white/30 rounded-xl"
+                        class="card h-fit md:h-full mt-[10rem] md:mt-0 relative font-sans md:col-span-1 md:row-span-1 bg-white/30 dark:bg-zinc-900/30 backdrop-blur-3xl border dark:border-white/30 rounded-xl"
                       >
-                        <div class="card-image p-16 justify-center items-center -mt-8 hidden md:blcok">
+                        <div class="card-image p-16 justify-center items-center -mt-10 hidden lg:block">
                             <img src="{{ asset('img/services/dashboard.png') }}" alt="Card Image">
                         </div>
                         <div class="card-info absolute bottom-0 left-0 p-4 text-zinc-900 dark:text-white">
@@ -161,9 +159,9 @@
                       </div>
 
                       <div
-                        class="card h-fit mt-[10rem] md:mt-0 relative flex font-sans md:col-span-1 md:row-span-2 bg-white/30 dark:bg-zinc-900/30 backdrop-blur-3xl border dark:border-white/30 rounded-xl"
+                        class="card h-fit md:h-full mt-[10rem] md:mt-0 relative flex font-sans md:col-span-1 md:row-span-2 bg-white/30 dark:bg-zinc-900/30 backdrop-blur-3xl border dark:border-white/30 rounded-xl"
                       >
-                        <div class="card-image p-16 hidden md:flex justify-center items-center">
+                        <div class="card-image p-16 hidden lg:flex justify-center items-center">
                             <img src="{{ asset('img/services/analytics-ai.png') }}" alt="Card Image">
                         </div>
                         <div class="card-info absolute bottom-0 left-0 p-4 text-zinc-900 dark:text-white">
@@ -174,9 +172,9 @@
                       </div>
 
                       <div
-                        class="card h-fit mt-[10rem] md:mt-0 relative font-sans md:col-span-2 md:row-span-1 bg-white/30 dark:bg-zinc-900/30 backdrop-blur-3xl border dark:border-white/30 rounded-xl"
+                        class="card h-fit md:h-full mt-[10rem] md:mt-0 relative font-sans md:col-span-2 md:row-span-1 bg-white/30 dark:bg-zinc-900/30 backdrop-blur-3xl border dark:border-white/30 rounded-xl"
                       >
-                        <div class="card-image p-16 hidden md:flex justify-center items-center w-96 -mt-12 right-0 absolute mr-32">
+                        <div class="card-image p-20 hidden lg:flex justify-center items-center w-96 -mt-12 right-0 absolute mr-32">
                             <img src="{{ asset('img/services/ai-chatbot.png') }}" class="w-full h-full" alt="Card Image">
                         </div>
                         <div class="card-info text-zinc-900 dark:text-white absolute bottom-0 left-0 p-4">
@@ -193,12 +191,12 @@
     </div>
 </section>
 
-<section class="faq-container container mx-auto md:px-16 py-12">
+<section class="faq-container container mt-[8rem] mx-auto px-8 md:px-16 py-12">
     <div class="about-wrapper">
         <div class="about">
             <div class="about-content flex">
                 <div class="question-illustration hidden w-full md:w-1/2 md:flex items-center justify-center">
-                    <img src="{{ asset('img/FaQ.png') }}" class="motion-safe:animate-bounce" alt="Illustration">
+                    <img src="{{ asset('img/FaQ.png') }}" class="animate-floating" alt="Illustration">
                 </div>
                 <div class="question w-full md:w-1/2">
                     <div class="about-hedaer">
@@ -225,7 +223,7 @@
 </section>
 
 <!-- Footer Section -->
-<footer class=" text-zinc-900 dark:text-white py-10">
+<footer class=" text-zinc-900 dark:text-white py-10 mt-[8rem]">
     <div class="container mx-auto px-6 md:px-12 lg:px-16">
         <!-- Footer Top -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
