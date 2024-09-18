@@ -37,9 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     gsap.from(".hero-image", {
-        scale: 0.8,
-        opacity: 0.9,
-        duration: 1.5,
+        scale: 0.9,
+        duration: 1.2,
         scrollTrigger: {
             trigger: ".hero-image",
             start: "top 80%",

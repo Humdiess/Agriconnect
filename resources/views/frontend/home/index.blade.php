@@ -1,51 +1,7 @@
 @include('frontend.layouts.header')
 
 <!-- Navbar Section -->
-<section class="navbar justify-between py-6 px-16 items-center z-50 hidden md:flex">
-    <div class="logo">
-        <a class="text-2xl font-bold w-6" href="#">
-            <img class="w-28" src="{{ asset('img/logo/logo-light.png') }}" alt="Logo">
-        </a>
-    </div>
-
-    @auth
-    <!-- User Dropdown -->
-    <div class="relative">
-        <button id="user-dropdown" class="bg-accent px-8 py-[0.8rem] text-white text-sm rounded-lg flex items-center justify-between">
-            {{ Auth::user()->name }}
-            <span class="ml-2">&#9662;</span>
-        </button>
-
-            <div id="dropdown-menu"
-                class="absolute border rounded-lg mt-2 p-1 w-full bg-white dark:bg-zinc-900 dark:border-zinc-900 overflow-hidden transition-all duration-300"
-                style="min-width: 150px; height: 0; opacity: 0; z-index: 999999999;">
-
-                @can('is_farmer')
-                    <a href="/dashboard-tani"
-                        class="w-full text-left px-3 py-2 text-sm text-green-500 hover:bg-green-500 rounded-md hover:text-white flex items-center">
-                        <i class="fa-solid fa-table-columns mr-2"></i>
-                        Dashboard Tani
-                    </a>
-                @endcan
-
-                <form id="logout-form" method="POST" action="{{ route('auth.logout') }}">
-                    @csrf
-                    <button type="submit"
-                        class="w-full text-left px-3 py-2 text-sm text-red-500 hover:bg-red-500 rounded-md hover:text-white flex items-center">
-                        <i class="fa-solid fa-sign-out-alt mr-2"></i>
-                        Logout
-                    </button>
-                </form>
-            </div>
-        </div>
-    @else
-    <!-- Sign Up Button -->
-    <div class="button flex items-center">
-        <a class="px-8 py-[0.8rem] text-accent text-sm rounded-lg" href="/login">Sign In</a>
-        <a class="bg-accent px-8 py-[0.8rem] text-white text-sm rounded-lg" href="/sign-up">Sign Up</a>
-    </div>
-    @endauth
-</section>
+<x-navbar />
 
 <!-- Hero Section -->
 <section class="hero-container container mx-auto relative" id="home">
@@ -72,9 +28,9 @@
     <div class="hero-wrapper w-full relative z-10">
         <div class="hero w-100 flex flex-col items-center justify-center mx-8">
             <div class="hero-title mt-[12rem] md:mt-[4rem] text-center">
-                <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white sm:text-5xl md:text-6xl">
+                <h1 class="text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white sm:text-5xl md:text-6xl">
                     <span class="block">AgriConnect:</span>
-                    <span class="block text-accent-600">Membangun Petani Maju</span>
+                    <span class="block text-accent">Membangun Petani Maju</span>
                   </h1>
                 <p class="mt-3 max-w-md mx-auto text-base text-gray-500 dark:text-gray-300 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
                   Dengan AI, IoT, dan Pemasaran Digital
@@ -86,8 +42,8 @@
         </div>
 
         <!-- Hero Image -->
-        <div class="hero-image-wrapper w-full flex justify-center mt-16">
-            <div class="hero-image w-full max-w-[58rem] h-[36rem] rounded-3xl border border-zinc-200">
+        <div class="hero-image-wrapper w-full flex justify-center mt-12">
+            <div class="hero-image w-full max-w-[58rem] h-[32rem] rounded-xl border border-zinc-200">
                 <img class="w-full h-full object-cover rounded-2xl"
                     src="https://images.unsplash.com/photo-1662099892443-0c241cbb700d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                     alt="Hero Image">
