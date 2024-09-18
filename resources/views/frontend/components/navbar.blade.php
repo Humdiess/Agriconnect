@@ -14,8 +14,8 @@
                 </a>
             </li>
             <li>
-                <a class="hidden md:block" href="#" id="tani-ai">Tani AI</a>
-                <a class="block md:hidden" href="">
+                <a class="hidden md:block" href="{{ route('tani') }}" id="tani-ai">Tani AI</a>
+                <a class="block md:hidden" href="{{ route('tani') }}">
                     <i class="fa-solid fa-briefcase"></i>
                 </a>
             </li>

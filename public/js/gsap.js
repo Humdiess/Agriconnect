@@ -27,7 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // Hero Section Animations
     gsap.from(".hero-title", {
         y: 100,
-        opacity: 0,
         duration: 1.5,
         scrollTrigger: {
             trigger: ".hero-title",
@@ -49,18 +48,18 @@ document.addEventListener("DOMContentLoaded", () => {
         },
     });
 
-    // About Section Animations
-    gsap.from(".about-header", {
-        y: 100,
-        opacity: 0,
-        duration: 1.5,
-        scrollTrigger: {
-            trigger: ".about-header",
-            start: "top 80%",
-            end: "bottom 40%",
-            scrub: true
-        }
-    });
+    // // About Section Animations
+    // gsap.from(".about-header", {
+    //     y: 100,
+    //     opacity: 0,
+    //     duration: 1.5,
+    //     scrollTrigger: {
+    //         trigger: ".about-header",
+    //         start: "top 80%",
+    //         end: "bottom 40%",
+    //         scrub: true
+    //     }
+    // });
 });
 
 let posX = 0;

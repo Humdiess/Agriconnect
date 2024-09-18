@@ -4,10 +4,11 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PetaniController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\TaniController;
 use App\Http\Middleware\IsFarmer;
 use Illuminate\Support\Facades\Route;
 
-// php artisan storage:link untuk hosting 
+// php artisan storage:link untuk hosting
 Route::get('/create-storage-link', function () {
     $targetFolder = base_path('storage/app/public'); // Folder tujuan
     $linkFolder = $_SERVER['DOCUMENT_ROOT'] . '/storage'; // Lokasi symbolic link di public_html
@@ -26,6 +27,9 @@ Route::get('/create-storage-link', function () {
 
 // Home / Landing Page
 Route::get('/', [HomeController::class, 'index'])->name('home');
+// Tani Ai
+Route::get('/tani-ai', [TaniController::class, 'index'])->name('tani');
+Route::post('/tani-ai', [TaniController::class, 'chat'])->name('tani.chat');
 
 // Auth
 Route::get('/login', [AuthController::class, 'login'])->name('auth.login');
@@ -37,8 +41,8 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('auth.logout');
 // Tani Shop (is_farmer=true)
 Route::middleware([IsFarmer::class])->group(function () {
     Route::get('/dashboard-tani', [PetaniController::class, 'index'])->name('petani.index');
-    // Fitur Pantau Pertanian 
-    // ... 
+    // Fitur Pantau Pertanian
+    // ...
 });
 
 // Products

@@ -17,7 +17,7 @@
         </button>
 
             <div id="dropdown-menu"
-                class="absolute border rounded-lg mt-2 p-1 w-full bg-white dark:bg-zinc-900 dark:border-zinc-300 overflow-hidden transition-all duration-300"
+                class="absolute border rounded-lg mt-2 p-1 w-full bg-white dark:bg-zinc-900 dark:border-zinc-900 overflow-hidden transition-all duration-300"
                 style="min-width: 150px; height: 0; opacity: 0; z-index: 999999999;">
 
                 @can('is_farmer')
@@ -70,22 +70,24 @@
 
     <!-- Hero Content -->
     <div class="hero-wrapper w-full relative z-10">
-        <div class="hero w-100 flex flex-col md:items-center md:justify-center mx-8">
-            <div class="hero-title md:max-w-[36rem] mt-[12rem] md:mt-[4rem]">
-                <h1 class="hero-title-text md:text-center text-zinc-900 dark:text-white text-2xl md:text-4xl font-bold">
-                    <span id="hero-title-animated"
-                        class="bg-gradient-to-r from-accent to-zinc-900 dark:to-white bg-clip-text text-transparent">Agri</span>
-                    Connect: Membangun Petani Maju dengan AI, IoT, dan Pemasaran Digital
-                </h1>
+        <div class="hero w-100 flex flex-col items-center justify-center mx-8">
+            <div class="hero-title mt-[12rem] md:mt-[4rem] text-center">
+                <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white sm:text-5xl md:text-6xl">
+                    <span class="block">AgriConnect:</span>
+                    <span class="block text-accent-600">Membangun Petani Maju</span>
+                  </h1>
+                <p class="mt-3 max-w-md mx-auto text-base text-gray-500 dark:text-gray-300 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+                  Dengan AI, IoT, dan Pemasaran Digital
+                </p>
             </div>
-            <a href="#" class="hero-button w-fit mt-10 px-6 py-2 bg-accent text-white mb-0 rounded-lg font-light">
+            <a href="#about" class="hero-button w-fit mt-10 px-6 py-2 bg-accent text-white mb-0 rounded-lg font-light">
                 Pelajari lebih lanjut <i class="fa-solid ms-2 fa-chevron-right"></i>
             </a>
         </div>
 
         <!-- Hero Image -->
         <div class="hero-image-wrapper w-full flex justify-center mt-16">
-            <div class="hero-image w-full max-w-[60rem] aspect-w-16 aspect-h-9 rounded-3xl border border-zinc-200">
+            <div class="hero-image w-full max-w-[58rem] h-[36rem] rounded-3xl border border-zinc-200">
                 <img class="w-full h-full object-cover rounded-2xl"
                     src="https://images.unsplash.com/photo-1662099892443-0c241cbb700d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                     alt="Hero Image">
@@ -96,37 +98,36 @@
 </section>
 
 <!-- Sponsor Section -->
-<section class="sponsor-container containe mx-auto mb-8 px-8">
+<section class="sponsor-container mx-auto px-8 py-16">
     <div class="sponsor-wrapper">
-        <div class="sponsor">
-            <div class="sponsor-header w-100 flex justify-center py-10">
-                <h1 class="text-xl dark:text-white text-zinc-900 font-semibold">Kami didukung oleh</h1>
-            </div>
-            <div class="sponsor-list container mx-auto py-3 flex items-center justify-center gap-8">
-                @foreach (['kementrian.png', 'padi-tech.png', 'open-ai.png', 'tokopedia.png'] as $sponsor)
-                    <div class="sponsor-item w-36">
-                        <div class="p-3 bg-white dark:bg-zinc-white rounded-lg dark:border  dark:border-zinc-600">
-                            <img class="w-full" src="{{ asset("img/sponsor/$sponsor") }}" alt="Sponsor Logo"
-                                loading="lazy">
-                        </div>
+        <div class="sponsor-list container mx-auto flex items-center justify-center gap-8 overflow-x-auto whitespace-nowrap scrollbar-hide">
+            @foreach (['kementrian.png', 'padi-tech.png', 'open-ai.png', 'tokopedia.png'] as $sponsor)
+                <div class="sponsor-item w-36 shrink-0">
+                    <div class="p-3 bg-white dark:bg-zinc-white rounded-lg dark:border dark:border-zinc-600">
+                        <img class="w-full" src="{{ asset("img/sponsor/$sponsor") }}" alt="Sponsor Logo" loading="lazy">
                     </div>
-                @endforeach
-            </div>
+                </div>
+            @endforeach
         </div>
     </div>
 </section>
+{{-- end sponsor section --}}
 
-<section class="about-container container mx-auto px-8 md:px-16 py-8 md:py-12">
-    <div class="about-wrapper" id="about">
-        <div class="about">
-            <div class="about-header w-100 pt-10 max-w-[58rem]">
-                <p class="text-accent mb-2">AGRICONNECT</p>
-                <h1 class="text-xl md:text-[36px] leading-tight text-zinc-900 font-semibold dark:text-white">AGRICONNECT: Solusi Terbaik Untuk Masa Depan dan Teknologi Pertanian Indonesia</h1>
+<section class="about-container container mx-auto px-8 md:px-16 py-8">
+    <div class="about-wrapper w-full" id="about">
+        <div class="about w-full">
+            <div class="about-header w-full pt-8 text-center">
+                <h2 class="text-base text-accent font-semibold tracking-wide uppercase">AGRICONNECT</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
+                  Solusi Terbaik Untuk Masa Depan dan Teknologi Pertanian Indonesia
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 dark:text-gray-300 lg:mx-auto">
+                  AgriConnect hadir sebagai solusi dengan menghubungkan petani, teknologi, dan pasar melalui platform digital untuk mendorong adopsi teknologi modern dan membuka akses pasar yang lebih luas.
+                </p>
             </div>
-            <div class="about-description mt-4 max-w-[52rem]">
-                <p class="text-zinc-900 dark:text-zinc-300">Indonesia menghadapi tantangan di sektor pertanian dengan semakin menurunnya minat generasi muda, yang dapat mengancam keberlanjutan sektor ini. AgriConnect hadir sebagai solusi dengan menghubungkan petani, teknologi, dan pasar melalui platform digital untuk mendorong adopsi teknologi modern dan membuka akses pasar yang lebih luas.</p>
-            </div>
-               <div class="absolute w-[25rem] h-[25rem] bg-gradient-to-r from-[#5DBB63] to-[#27a002] opacity-20 blur-3xl rounded-full top-[112rem] left-[32rem] z-0"></div>
+            {{-- aurora --}}
+            <div class="absolute w-[25rem] h-[25rem] bg-gradient-to-r from-[#5DBB63] to-[#27a002] opacity-20 blur-3xl rounded-full top-[112rem] left-[32rem] z-0"></div>
+            {{-- end --}}
             <div class="about-content md:h-[46rem] mt-8">
                 <!-- Content to be added here -->
                 <div class="flex h-full w-full items-center justify-center">
@@ -191,36 +192,78 @@
     </div>
 </section>
 
-<section class="faq-container container mt-[8rem] mx-auto px-8 md:px-16 py-12">
-    <div class="about-wrapper">
-        <div class="about">
-            <div class="about-content flex">
-                <div class="question-illustration hidden w-full md:w-1/2 md:flex items-center justify-center">
-                    <img src="{{ asset('img/FaQ.png') }}" class="animate-floating" alt="Illustration">
-                </div>
-                <div class="question w-full md:w-1/2">
-                    <div class="about-hedaer">
-                        <p class="text-accent mb-2">AGRICONNECT</p>
-                        <h1 class="text-4xl font-bold dark:text-white">Frequently Asked Questions</h1>
-                    </div>
-                    <div class="question-list">
-                        <x-f-a-q-accordion
-                            id="1"
-                            question="What is AgriConnect?"
-                            answer="AgriConnect is a web application that allows farmers to monitor their crops, analyze their soil conditions, and provide them with real-time data."
-                        />
+{{-- start-faq --}}
+<section class="faq-container container mx-auto px-8 md:px-16 py-16">
+    <div class="faq-wrapper w-full">
+        <div class="faq w-full">
+            <div class="faq-header w-full pt-8 text-center">
+                <h2 class="text-base text-accent font-semibold tracking-wide uppercase">FAQ</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
+                    Pertanyaan yang Sering Diajukan
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 dark:text-gray-300 lg:mx-auto">
+                    Temukan jawaban untuk pertanyaan umum tentang AgriConnect dan layanan kami
+                </p>
+            </div>
 
-                        <x-f-a-q-accordion
-                            id="2"
-                            question="What is AgriConnect?"
-                            answer="AgriConnect is a web application that allows farmers to monitor their crops, analyze their soil conditions, and provide them with real-time data."
-                        />
-                    </div>
+            <div class="faq-content mt-12">
+                <div class="space-y-4">
+                    @php
+                        $faqs = [
+                            [
+                                'question' => 'Apa itu AgriConnect?',
+                                'answer' => 'AgriConnect adalah platform yang menghubungkan petani dengan teknologi modern dan pasar digital untuk meningkatkan produktivitas dan keberlanjutan pertanian.'
+                            ],
+                            [
+                                'question' => 'Bagaimana cara mendaftar di AgriConnect?',
+                                'answer' => 'Anda dapat mendaftar dengan mengklik tombol "Sign Up" di halaman utama kami dan mengikuti langkah-langkah pendaftaran yang mudah.'
+                            ],
+                            [
+                                'question' => 'Apakah layanan AgriConnect berbayar?',
+                                'answer' => 'Kami menawarkan paket layanan gratis dan berbayar. Paket dasar kami gratis, sementara fitur-fitur lanjutan tersedia dalam paket berbayar.'
+                            ],
+                            [
+                                'question' => 'Bagaimana AgriConnect membantu petani?',
+                                'answer' => 'AgriConnect membantu petani dengan menyediakan akses ke teknologi IoT untuk pemantauan lahan, analisis AI untuk pengambilan keputusan, dan platform pemasaran digital untuk menjangkau pasar yang lebih luas.'
+                            ],
+                            [
+                                'question' => 'Apakah AgriConnect menyediakan dukungan teknis?',
+                                'answer' => 'Ya, kami menyediakan dukungan teknis melalui chat langsung, email, dan panggilan telepon untuk semua pengguna AgriConnect.'
+                            ]
+                        ];
+                    @endphp
+
+                    @foreach($faqs as $index => $faq)
+                        <div class="faq-item bg-white dark:bg-zinc-900 rounded-lg border border-gray-200 dark:border-zinc-700 overflow-hidden">
+                            <button class="faq-question w-full text-left px-6 py-4 focus:outline-none" onclick="toggleFaq({{ $index }})">
+                                <div class="flex justify-between items-center">
+                                    <span class="font-medium text-gray-900 dark:text-white">{{ $faq['question'] }}</span>
+                                    <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200" id="arrow-{{ $index }}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </div>
+                            </button>
+                            <div class="faq-answer px-6 py-4 bg-gray-50 dark:bg-zinc-700 hidden" id="answer-{{ $index }}">
+                                <p class="text-gray-600 dark:text-gray-300">{{ $faq['answer'] }}</p>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<script>
+    function toggleFaq(index) {
+        const answer = document.getElementById(`answer-${index}`);
+        const arrow = document.getElementById(`arrow-${index}`);
+        answer.classList.toggle('hidden');
+        arrow.classList.toggle('rotate-180');
+    }
+</script>
+{{-- end-faq --}}
+{{-- end-faq --}}
 
 <!-- Footer Section -->
 <footer class=" text-zinc-900 dark:text-white py-10 mt-[8rem]">
