@@ -3,37 +3,36 @@
         class="menu items-center flex gap-6 py-4 dark:text-white px-6 rounded-xl dark:bg-zinc-900/80 backdrop-blur-lg border dark:border-zinc-600 border-gray-300">
         <ul class="flex gap-6 items-center">
             <li>
-                <a class="hidden md:block" href="/">Beranda</a>
-                <a class="block md:hidden" href="/">
+                <a class="hidden md:block text-sm" href="/">Beranda</a>
+                <a class="block md:hidden" href="">
                     <i class="fa-solid fa-house"></i>
                 </a>
             </li>
             <li>
-                <a class="hidden md:block" href="/agrishop">Tani Shop</a>
-                <a class="block md:hidden" href="/agrishop">
-                    <i class="fa-solid fa-circle-info"></i>
+                <a class="hidden md:block text-sm" href="#">Tani Shop</a>
+                <a class="block md:hidden" href="#">
+                    <i class="fa-solid fa-cart-shopping"></i>
                 </a>
             </li>
             <li>
-                <a class="hidden md:block" href="#" id="tani-ai">Tani AI</a>
-                <a class="block md:hidden" href="">
-                    <i class="fa-solid fa-briefcase"></i>
+                <a class="hidden md:block text-sm" href="{{ route('tani') }}" id="tani-ai">Tani AI</a>
+                <a class="block md:hidden" href="{{ route('tani') }}">
+                    <i class="fa-solid fa-wand-sparkles"></i>
                 </a>
             </li>
             <li>
-                <a class="hidden md:block" href="#" id="tani-ai">Hubungi Kami</a>
+                <a class="hidden md:block text-sm" href="#" id="tani-ai">Hubungi Kami</a>
                 <a class="block md:hidden" href="">
-                    <i class="fa-solid fa-briefcase"></i>
+                    <i class="fa-solid fa-phone"></i>
                 </a>
             </li>
             <li class="block md:hidden">
-                <a href="{{ route('auth.login') }}" class="md:text-white text-zinc-900 text-sm">
+                <a href="{{ route('auth.login') }}" class="md:text-white text-zinc-900 dark:text-white text-sm">
                     <i class="fa-solid fa-user"></i>
                 </a>
             </li>
             <li>
-                <button id="theme-toggle"
-                    class="md:ml-2 md:px-2 py-1 rounded-full dark:bg-zinc-700 dark:hover:bg-zinc-600 hover:bg-gray-200 dark:text-white transition-colors">
+                <button id="theme-toggle" class="md:ml-2 md:px-2 rounded-full dark:bg-zinc-700 dark:hover:bg-zinc-600 hover:bg-gray-200 dark:text-white transition-colors">
                     <i id="theme-icon" class="fas fa-moon"></i>
                 </button>
             </li>

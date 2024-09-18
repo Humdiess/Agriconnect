@@ -3,8 +3,7 @@
     ⬆ Back to Top
 </button>
 
-<script>
-    // JavaScript to toggle accordion active class
+    <script>
     document.querySelectorAll('.accordion-toggle').forEach((button) => {
         button.addEventListener('click', function() {
             const accordion = this.parentElement;
