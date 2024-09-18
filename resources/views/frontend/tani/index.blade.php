@@ -19,7 +19,7 @@
             <div id="cards" class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
                 <div class="bg-gray-50 dark:bg-zinc-900 rounded-xl p-4 hover:shadow-md transition-shadow duration-300">
                     <div class="w-8 h-8 bg-gray-200 rounded-full mb-3 flex items-center justify-center">
-                        <svg class="w-4 h-4 text-gray-500 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                         </svg>
                     </div>
@@ -46,7 +46,7 @@
                 </div>
             </div>
 
-            <div class="relative">
+            <div class="input-field relative">
                 <input
                     id="userInput"
                     type="text"
@@ -60,6 +60,9 @@
                 >
                     Send
                 </button>
+            </div>
+            <div class="ai-footer">
+                <p class="text-xs text-gray-500 dark:text-zinc-300 text-center mt-4">Powered by <a href="https://google.gemini.com" class="text-accent hover:underline">Google Gemini</a></p>
             </div>
         </div>
     </div>

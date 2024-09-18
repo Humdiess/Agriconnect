@@ -45,7 +45,7 @@
         <div class="hero-image-wrapper w-full flex justify-center mt-12">
             <div class="hero-image w-full max-w-[58rem] h-[32rem] rounded-xl border border-zinc-200 p-2">
                 <img class="w-full h-full object-cover rounded-lg"
-                    src="https://images.unsplash.com/photo-1662099892443-0c241cbb700d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    src="{{ asset('img/tani/tani-dark.png') }}"
                     alt="Hero Image">
             </div>
         </div>
@@ -129,7 +129,7 @@
                       </div>
 
                       <div
-                        class="card h-fit md:h-full mt-[10rem] md:mt-0 relative font-sans md:col-span-2 md:row-span-1 bg-white/30 dark:bg-zinc-900/30 backdrop-blur-3xl border dark:border-white/30 rounded-xl"
+                        class="card h-fit md:h-full mt-[10rem] md:mt-0 relative font-sans md:col-span-2 md:row-span-1 bg-white/30 dark:bg-zinc-900/30 backdrop-blur-3xl border dark:border-white/30 rounded-xl shadow-accent/50"
                       >
                         <div class="card-image p-20 hidden lg:flex justify-center items-center w-96 -mt-12 right-0 absolute mr-32">
                             <img src="{{ asset('img/services/ai-chatbot.png') }}" class="w-full h-full" alt="Card Image">
