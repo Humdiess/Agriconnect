@@ -67,27 +67,6 @@ let posY = 0;
 let mouseX = 0;
 let mouseY = 0;
 
-gsap.to(".cursor-example", {
-  duration: 0.018,
-  repeat: -1,
-  onRepeat: () => {
-    posX += (mouseX - posX) / 8;
-    posY += (mouseY - posY) / 8;
-
-    gsap.set(".cursor-example", {
-      css: {
-        left: posX - 1,
-        top: posY - 2
-      }
-    });
-  }
-});
-
-document.addEventListener("mousemove", (e) => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-});
-
 
 
 
