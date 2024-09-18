@@ -8,25 +8,25 @@
                 </a>
             </li>
             <li>
-                <a class="hidden md:block text-sm" href="#about" onclick="lenis.scrollTo('#about')">Tani Shop</a>
-                <a class="block md:hidden" href="">
-                    <i class="fa-solid fa-circle-info"></i>
+                <a class="hidden md:block text-sm" href="#">Tani Shop</a>
+                <a class="block md:hidden" href="#">
+                    <i class="fa-solid fa-cart-shopping"></i>
                 </a>
             </li>
             <li>
                 <a class="hidden md:block text-sm" href="{{ route('tani') }}" id="tani-ai">Tani AI</a>
                 <a class="block md:hidden" href="{{ route('tani') }}">
-                    <i class="fa-solid fa-briefcase"></i>
+                    <i class="fa-solid fa-wand-sparkles"></i>
                 </a>
             </li>
             <li>
                 <a class="hidden md:block text-sm" href="#" id="tani-ai">Hubungi Kami</a>
                 <a class="block md:hidden" href="">
-                    <i class="fa-solid fa-briefcase"></i>
+                    <i class="fa-solid fa-phone"></i>
                 </a>
             </li>
             <li class="block md:hidden">
-                <a href="{{ route('auth.login') }}" class="md:text-white text-zinc-900 text-sm">
+                <a href="{{ route('auth.login') }}" class="md:text-white text-zinc-900 dark:text-white text-sm">
                     <i class="fa-solid fa-user"></i>
                 </a>
             </li>
