@@ -38,13 +38,14 @@ Route::get('/sign-up', [AuthController::class, 'signup'])->name('auth.signup');
 Route::post('/sign-up', [AuthController::class, 'addUser'])->name('auth.addUser');
 Route::post('/logout', [AuthController::class, 'logout'])->name('auth.logout');
 
-// Tani Shop (is_farmer=true)
+// Petani Fiturs (is_farmer=true)
 Route::middleware([IsFarmer::class])->group(function () {
     Route::get('/dashboard-tani', [PetaniController::class, 'index'])->name('petani.index');
     // Fitur Pantau Pertanian
     // ...
 });
-
+// Agri Shop
+Route::get('/agrishop', [HomeController::class, 'agrishop'])->name('home.agrishop');
 // Products
 Route::get('/product/{product}', [ProductController::class, 'show'])->name('product.show');
 

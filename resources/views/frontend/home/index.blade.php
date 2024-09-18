@@ -1,4 +1,11 @@
 @include('frontend.layouts.header')
+<!--=== Loader Start ======-->
+<div id="loader-overlay">
+    <div class="loader">
+        <div class="loader-inner"></div>
+    </div>
+</div>
+<!--=== Loader End ======-->
 
 <!-- Navbar Section -->
 <x-navbar />
@@ -90,45 +97,45 @@
                 <!-- Content to be added here -->
                 <div class="flex h-full w-full items-center justify-center">
                     <div class="grid h-full w-full md:grid-cols-3 md:grid-rows-2 gap-4">
-                      <div
-                        class="card h-fit md:h-full mt-[10rem] md:mt-0 relative font-sans md:col-span-1 md:row-span-1 bg-white/30 dark:bg-zinc-900/30 backdrop-blur-3xl border dark:border-white/30 rounded-xl"
-                      >
-                      <div class="card-image p-20 hidden lg:block -mt-8">
-                          <img src="{{ asset('img/services/IoT.png') }}" alt="Card Image">
-                      </div>
-                        <div class="card-info absolute bottom-0 left-0 p-4 text-zinc-900 dark:text-white">
-                            <h2 class="text-lg font-semibold">Pemantauan Kondisi lahan</h2>
-                            <p>AgriConnect memungkinkan para petani untuk memantau lahan real-time dengan IoT, sensor, dan akses aplikasi.</p>
-                            <!-- Menggunakan CTA Button di blade file -->
-                            <x-cta-button route="home" text="Pelajari lebih lanjut" />
+                        <div
+                            class="card h-fit md:h-full mt-[10rem] md:mt-0 relative font-sans md:col-span-1 md:row-span-1 bg-white/30 dark:bg-zinc-900/30 backdrop-blur-3xl border dark:border-white/30 rounded-xl">
+                            <div class="card-image p-20 hidden lg:block -mt-8">
+                                <img src="{{ asset('img/services/IoT.png') }}" alt="Card Image">
+                            </div>
+                            <div class="card-info absolute bottom-0 left-0 p-4 text-zinc-900 dark:text-white">
+                                <h2 class="text-lg font-semibold">Pemantauan Kondisi lahan</h2>
+                                <p>AgriConnect memungkinkan para petani untuk memantau lahan real-time dengan IoT,
+                                    sensor, dan akses aplikasi.</p>
+                                <!-- Menggunakan CTA Button di blade file -->
+                                <x-cta-button route="home" text="Pelajari lebih lanjut" />
+                            </div>
                         </div>
-                      </div>
 
-                      <div
-                        class="card h-fit md:h-full mt-[10rem] md:mt-0 relative font-sans md:col-span-1 md:row-span-1 bg-white/30 dark:bg-zinc-900/30 backdrop-blur-3xl border dark:border-white/30 rounded-xl"
-                      >
-                        <div class="card-image p-16 justify-center items-center -mt-10 hidden lg:block">
-                            <img src="{{ asset('img/services/dashboard.png') }}" alt="Card Image">
+                        <div
+                            class="card h-fit md:h-full mt-[10rem] md:mt-0 relative font-sans md:col-span-1 md:row-span-1 bg-white/30 dark:bg-zinc-900/30 backdrop-blur-3xl border dark:border-white/30 rounded-xl">
+                            <div class="card-image p-16 justify-center items-center -mt-10 hidden lg:block">
+                                <img src="{{ asset('img/services/dashboard.png') }}" alt="Card Image">
+                            </div>
+                            <div class="card-info absolute bottom-0 left-0 p-4 text-zinc-900 dark:text-white">
+                                <h2 class="text-lg font-semibold">Pemantauan Kondisi lahan</h2>
+                                <p>AgriConnect memungkinkan para petani untuk memantau lahan real-time dengan IoT,
+                                    sensor, dan akses aplikasi.</p>
+                                <x-cta-button route="home" text="Pelajari lebih lanjut" />
+                            </div>
                         </div>
-                        <div class="card-info absolute bottom-0 left-0 p-4 text-zinc-900 dark:text-white">
-                            <h2 class="text-lg font-semibold">Pemantauan Kondisi lahan</h2>
-                            <p>AgriConnect memungkinkan para petani untuk memantau lahan real-time dengan IoT, sensor, dan akses aplikasi.</p>
-                            <x-cta-button route="home" text="Pelajari lebih lanjut" />
-                        </div>
-                      </div>
 
-                      <div
-                        class="card h-fit md:h-full mt-[10rem] md:mt-0 relative flex font-sans md:col-span-1 md:row-span-2 bg-white/30 dark:bg-zinc-900/30 backdrop-blur-3xl border dark:border-white/30 rounded-xl"
-                      >
-                        <div class="card-image p-16 hidden lg:flex justify-center items-center">
-                            <img src="{{ asset('img/services/analytics-ai.png') }}" alt="Card Image">
+                        <div
+                            class="card h-fit md:h-full mt-[10rem] md:mt-0 relative flex font-sans md:col-span-1 md:row-span-2 bg-white/30 dark:bg-zinc-900/30 backdrop-blur-3xl border dark:border-white/30 rounded-xl">
+                            <div class="card-image p-16 hidden lg:flex justify-center items-center">
+                                <img src="{{ asset('img/services/analytics-ai.png') }}" alt="Card Image">
+                            </div>
+                            <div class="card-info absolute bottom-0 left-0 p-4 text-zinc-900 dark:text-white">
+                                <h2 class="text-lg font-semibold">Pemantauan Kondisi lahan</h2>
+                                <p>AgriConnect memungkinkan para petani untuk memantau lahan real-time dengan IoT,
+                                    sensor, dan akses aplikasi.</p>
+                                <x-cta-button route="home" text="Pelajari lebih lanjut" />
+                            </div>
                         </div>
-                        <div class="card-info absolute bottom-0 left-0 p-4 text-zinc-900 dark:text-white">
-                            <h2 class="text-lg font-semibold">Pemantauan Kondisi lahan</h2>
-                            <p>AgriConnect memungkinkan para petani untuk memantau lahan real-time dengan IoT, sensor, dan akses aplikasi.</p>
-                            <x-cta-button route="home" text="Pelajari lebih lanjut" />
-                        </div>
-                      </div>
 
                       <div
                         class="card h-fit md:h-full mt-[10rem] md:mt-0 relative font-sans md:col-span-2 md:row-span-1 bg-white/30 dark:bg-zinc-900/30 backdrop-blur-3xl border dark:border-white/30 rounded-xl shadow-accent/50"
@@ -136,12 +143,6 @@
                         <div class="card-image p-20 hidden lg:flex justify-center items-center w-96 -mt-12 right-0 absolute mr-32">
                             <img src="{{ asset('img/services/ai-chatbot.png') }}" class="w-full h-full" alt="Card Image">
                         </div>
-                        <div class="card-info text-zinc-900 dark:text-white absolute bottom-0 left-0 p-4">
-                            <h2 class="text-lg font-semibold">Pemantauan Kondisi lahan</h2>
-                            <p>AgriConnect memungkinkan para petani untuk memantau lahan real-time dengan IoT, sensor, dan akses aplikasi.</p>
-                            <x-cta-button route="home" text="Pelajari lebih lanjut" />
-                        </div>
-                      </div>
                     </div>
                 </div>
 
@@ -236,7 +237,8 @@
                     <img class="w-28" src="{{ asset('img/logo/logo-light.png') }}" alt="Logo">
                     <span class="text-2xl font-bold ml-3">AgriConnect</span>
                 </a>
-                <p class="mt-3 text-center md:text-left">Connecting farmers with modern technology and digital markets to enhance agricultural productivity and sustainability.</p>
+                <p class="mt-3 text-center md:text-left">Connecting farmers with modern technology and digital markets
+                    to enhance agricultural productivity and sustainability.</p>
             </div>
 
             <!-- Footer Links -->
@@ -273,5 +275,21 @@
 </footer>
 
 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Tampilkan preloader saat halaman dimuat
+        var preloader = document.querySelector(".preload");
 
+        // Tunda penghilangan preloader dan munculnya konten
+        setTimeout(function() {
+            // Sembunyikan preloader
+            preloader.style.opacity = "0";
+            preloader.style.pointerEvents = "none";
+
+            // Tampilkan konten
+            var content = document.querySelector(".content");
+            content.style.opacity = "1";
+        }, 5000); // Sesuaikan waktu penundaan sesuai kebutuhan (dalam milidetik)
+    });
+</script>
 @include('frontend.layouts.footer')
