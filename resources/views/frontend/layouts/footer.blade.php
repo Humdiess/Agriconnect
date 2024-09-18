@@ -20,11 +20,12 @@
 
 {{-- gsap --}}
 
-{{-- @include('frontend.components.gsap') --}}
+{{-- @include('frontend.components.gsap') --}}'
+
 @include('frontend.components.gsap')
-<script src="{{ asset('js/preload.js') }}"></script>
 <script src="{{ asset('js/script.js') }}"></script>
 <script src="{{ asset('js/gsap.js') }}"></script>
+<script src="{{ asset('js/preload.js') }}"></script>
 @include('sweetalert::alert')
 </body>
 

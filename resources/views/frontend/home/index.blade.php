@@ -35,12 +35,14 @@
     <div class="hero-wrapper w-full relative z-10">
         <div class="hero w-100 flex flex-col items-center justify-center mx-8">
             <div class="hero-title mt-[12rem] md:mt-[4rem] text-center">
-                <h1 class="text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white sm:text-5xl md:text-6xl">
+                <h1
+                    class="text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white sm:text-5xl md:text-6xl">
                     <span class="block">AgriConnect:</span>
                     <span class="block text-accent">Membangun Petani Maju</span>
-                  </h1>
-                <p class="mt-3 max-w-md mx-auto text-base text-gray-500 dark:text-gray-300 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-                  Dengan AI, IoT, dan Pemasaran Digital
+                </h1>
+                <p
+                    class="mt-3 max-w-md mx-auto text-base text-gray-500 dark:text-gray-300 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+                    Dengan AI, IoT, dan Pemasaran Digital
                 </p>
             </div>
             <a href="#about" class="hero-button w-fit mt-10 px-6 py-2 bg-accent text-white mb-0 rounded-lg font-light">
@@ -52,11 +54,9 @@
         <div class="hero-image-wrapper w-full flex justify-center mt-12 aspect-video">
             <div class="hero-image w-[60rem] h-[33.75rem] aspect-video rounded-xl border border-zinc-200 p-2">
                 <img class="w-full h-full object-cover rounded-lg hidden dark:block aspect-video"
-                    src="{{ asset('img/tani/tani-dark.png') }}"
-                    alt="Hero Image">
+                    src="{{ asset('img/tani/tani-dark.png') }}" alt="Hero Image">
                 <img class="w-full h-full object-cover rounded-lg block dark:hidden aspect-video"
-                    src="{{ asset('img/tani/tani-light.png') }}"
-                    alt="Hero Image">
+                    src="{{ asset('img/tani/tani-light.png') }}" alt="Hero Image">
             </div>
         </div>
     </div>
@@ -65,7 +65,8 @@
 <!-- Sponsor Section -->
 <section class="sponsor-container mx-auto px-8 py-16">
     <div class="sponsor-wrapper">
-        <div class="sponsor-list container mx-auto flex items-center justify-center gap-8 overflow-x-auto whitespace-nowrap scrollbar-hide">
+        <div
+            class="sponsor-list container mx-auto flex items-center justify-center gap-8 overflow-x-auto whitespace-nowrap scrollbar-hide">
             @foreach (['kementrian.png', 'padi-tech.png', 'open-ai.png', 'tokopedia.png'] as $sponsor)
                 <div class="sponsor-item w-36 shrink-0">
                     <div class="p-3 bg-white dark:bg-zinc-white rounded-lg dark:border dark:border-zinc-600">
@@ -83,15 +84,19 @@
         <div class="about w-full">
             <div class="about-header w-full pt-8 text-center">
                 <h2 class="text-base text-accent font-semibold tracking-wide uppercase">AGRICONNECT</h2>
-                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
-                  Solusi Terbaik Untuk Masa Depan dan Teknologi Pertanian Indonesia
+                <p
+                    class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
+                    Solusi Terbaik Untuk Masa Depan dan Teknologi Pertanian Indonesia
                 </p>
                 <p class="mt-4 max-w-2xl text-xl text-gray-500 dark:text-gray-300 lg:mx-auto">
-                  AgriConnect hadir sebagai solusi dengan menghubungkan petani, teknologi, dan pasar melalui platform digital untuk mendorong adopsi teknologi modern dan membuka akses pasar yang lebih luas.
+                    AgriConnect hadir sebagai solusi dengan menghubungkan petani, teknologi, dan pasar melalui platform
+                    digital untuk mendorong adopsi teknologi modern dan membuka akses pasar yang lebih luas.
                 </p>
             </div>
             {{-- aurora --}}
-            <div class="absolute w-[25rem] h-[25rem] bg-gradient-to-r from-[#5DBB63] to-[#27a002] opacity-20 blur-3xl rounded-full top-[112rem] left-[32rem] z-0"></div>
+            <div
+                class="absolute w-[25rem] h-[25rem] bg-gradient-to-r from-[#5DBB63] to-[#27a002] opacity-20 blur-3xl rounded-full top-[112rem] left-[32rem] z-0">
+            </div>
             {{-- end --}}
             <div class="about-content md:h-[46rem] mt-8">
                 <!-- Content to be added here -->
@@ -137,18 +142,19 @@
                             </div>
                         </div>
 
-                      <div
-                        class="card h-fit md:h-full mt-[10rem] md:mt-0 relative font-sans md:col-span-2 md:row-span-1 bg-white/30 dark:bg-zinc-900/30 backdrop-blur-3xl border dark:border-white/30 rounded-xl shadow-accent/50"
-                      >
-                        <div class="card-image p-20 hidden lg:flex justify-center items-center w-96 -mt-12 right-0 absolute mr-32">
-                            <img src="{{ asset('img/services/ai-chatbot.png') }}" class="w-full h-full" alt="Card Image">
+                        <div
+                            class="card h-fit md:h-full mt-[10rem] md:mt-0 relative font-sans md:col-span-2 md:row-span-1 bg-white/30 dark:bg-zinc-900/30 backdrop-blur-3xl border dark:border-white/30 rounded-xl shadow-accent/50">
+                            <div
+                                class="card-image p-20 hidden lg:flex justify-center items-center w-96 -mt-12 right-0 absolute mr-32">
+                                <img src="{{ asset('img/services/ai-chatbot.png') }}" class="w-full h-full"
+                                    alt="Card Image">
+                            </div>
                         </div>
                     </div>
-                </div>
 
+                </div>
             </div>
         </div>
-    </div>
 </section>
 
 {{-- start-faq --}}
@@ -157,7 +163,8 @@
         <div class="faq w-full">
             <div class="faq-header w-full pt-8 text-center">
                 <h2 class="text-base text-accent font-semibold tracking-wide uppercase">FAQ</h2>
-                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
+                <p
+                    class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
                     Pertanyaan yang Sering Diajukan
                 </p>
                 <p class="mt-4 max-w-2xl text-xl text-gray-500 dark:text-gray-300 lg:mx-auto">
@@ -171,38 +178,50 @@
                         $faqs = [
                             [
                                 'question' => 'Apa itu AgriConnect?',
-                                'answer' => 'AgriConnect adalah platform yang menghubungkan petani dengan teknologi modern dan pasar digital untuk meningkatkan produktivitas dan keberlanjutan pertanian.'
+                                'answer' =>
+                                    'AgriConnect adalah platform yang menghubungkan petani dengan teknologi modern dan pasar digital untuk meningkatkan produktivitas dan keberlanjutan pertanian.',
                             ],
                             [
                                 'question' => 'Bagaimana cara mendaftar di AgriConnect?',
-                                'answer' => 'Anda dapat mendaftar dengan mengklik tombol "Sign Up" di halaman utama kami dan mengikuti langkah-langkah pendaftaran yang mudah.'
+                                'answer' =>
+                                    'Anda dapat mendaftar dengan mengklik tombol "Sign Up" di halaman utama kami dan mengikuti langkah-langkah pendaftaran yang mudah.',
                             ],
                             [
                                 'question' => 'Apakah layanan AgriConnect berbayar?',
-                                'answer' => 'Kami menawarkan paket layanan gratis dan berbayar. Paket dasar kami gratis, sementara fitur-fitur lanjutan tersedia dalam paket berbayar.'
+                                'answer' =>
+                                    'Kami menawarkan paket layanan gratis dan berbayar. Paket dasar kami gratis, sementara fitur-fitur lanjutan tersedia dalam paket berbayar.',
                             ],
                             [
                                 'question' => 'Bagaimana AgriConnect membantu petani?',
-                                'answer' => 'AgriConnect membantu petani dengan menyediakan akses ke teknologi IoT untuk pemantauan lahan, analisis AI untuk pengambilan keputusan, dan platform pemasaran digital untuk menjangkau pasar yang lebih luas.'
+                                'answer' =>
+                                    'AgriConnect membantu petani dengan menyediakan akses ke teknologi IoT untuk pemantauan lahan, analisis AI untuk pengambilan keputusan, dan platform pemasaran digital untuk menjangkau pasar yang lebih luas.',
                             ],
                             [
                                 'question' => 'Apakah AgriConnect menyediakan dukungan teknis?',
-                                'answer' => 'Ya, kami menyediakan dukungan teknis melalui chat langsung, email, dan panggilan telepon untuk semua pengguna AgriConnect.'
-                            ]
+                                'answer' =>
+                                    'Ya, kami menyediakan dukungan teknis melalui chat langsung, email, dan panggilan telepon untuk semua pengguna AgriConnect.',
+                            ],
                         ];
                     @endphp
 
-                    @foreach($faqs as $index => $faq)
-                        <div class="faq-item bg-white dark:bg-zinc-900 rounded-lg border border-gray-200 dark:border-zinc-700 overflow-hidden">
-                            <button class="faq-question w-full text-left px-6 py-4 focus:outline-none" onclick="toggleFaq({{ $index }})">
+                    @foreach ($faqs as $index => $faq)
+                        <div
+                            class="faq-item bg-white dark:bg-zinc-900 rounded-lg border border-gray-200 dark:border-zinc-700 overflow-hidden">
+                            <button class="faq-question w-full text-left px-6 py-4 focus:outline-none"
+                                onclick="toggleFaq({{ $index }})">
                                 <div class="flex justify-between items-center">
-                                    <span class="font-medium text-gray-900 dark:text-white">{{ $faq['question'] }}</span>
-                                    <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200" id="arrow-{{ $index }}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                    <span
+                                        class="font-medium text-gray-900 dark:text-white">{{ $faq['question'] }}</span>
+                                    <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200"
+                                        id="arrow-{{ $index }}" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7" />
                                     </svg>
                                 </div>
                             </button>
-                            <div class="faq-answer px-6 py-4 bg-gray-50 dark:bg-zinc-700 hidden" id="answer-{{ $index }}">
+                            <div class="faq-answer px-6 py-4 bg-gray-50 dark:bg-zinc-700 hidden"
+                                id="answer-{{ $index }}">
                                 <p class="text-gray-600 dark:text-gray-300">{{ $faq['answer'] }}</p>
                             </div>
                         </div>
@@ -246,9 +265,9 @@
                 <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
                 <ul class="space-y-2">
                     <li><a href="#" class="hover:text-accent transition">Home</a></li>
-                    <li><a href="#" class="hover:text-accent transition">About Us</a></li>
+                    <li><a href="#about" class="hover:text-accent transition">About Us</a></li>
                     <li><a href="#" class="hover:text-accent transition">Services</a></li>
-                    <li><a href="#" class="hover:text-accent transition">Contact</a></li>
+                    <li><a href="/contact" class="hover:text-accent transition">Contact</a></li>
                 </ul>
             </div>
 
