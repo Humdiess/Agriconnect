@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->onDelete('cascade'); // User (petani) yang menjual produk
             $table->string('name');
             $table->text('description')->nullable();
-            $table->decimal('price', 10, 2);
+            $table->string('price');
             $table->integer('stock');
             $table->string('category')->nullable();
             $table->string('image')->nullable(); // Optional: Menyimpan gambar produk

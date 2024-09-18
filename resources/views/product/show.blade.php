@@ -16,8 +16,8 @@
                         <a href="#"
                             class="text-white hover:text-green-200 px-3 py-2 rounded-md text-sm font-medium">Cart</a>
                         @can('is_farmer')
-                            <p class="text-white hover:text-green-200 px-3 py-2 rounded-md text-sm font-medium">
-                                Welcome Back,
+                            <p class="text-white px-3 py-2 rounded-md text-sm font-medium">
+                                Hallo,
                                 {{ auth()->user()->name }}</p>
                         @endcan
                     </div>

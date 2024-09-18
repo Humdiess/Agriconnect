@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Middleware\CheckIfAuthenticated;
 use App\Http\Middleware\IsFarmer;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 use Illuminate\Http\Request; // Pastikan ini terimpor
+use Psy\VersionUpdater\Checker;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 return Application::configure(basePath: dirname(__DIR__))
@@ -15,7 +17,8 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->alias([
-            'is_farmer' => IsFarmer::class
+            'is_farmer' => IsFarmer::class,
+            'req_auth' => CheckIfAuthenticated::class
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

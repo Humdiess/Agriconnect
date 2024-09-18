@@ -29,7 +29,8 @@
                         <div class="detail-product p-3">
                             <h4 class="nama-product texl-xl font-semibold">{{ $product->name }}</h4>
                             <p class="harga-product font-bold text-accent">Rp.{{ $product->price }},-</p>
-                            <p class="deskripsi-product truncate font-light text-sm">📌Lokasi</p>
+                            <p class="stok-product font-light text-sm">Stok : {{ $product->stock }}</p>
+                            <p class="lokasi-product font-light text-sm">📌Lokasi</p>
                             <br>
                             <div class="flex flex-wrap gap-3">
                                 <a href="/product/{{ $product->id }}"

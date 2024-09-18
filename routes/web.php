@@ -32,10 +32,11 @@ Route::get('/agrishop', [HomeController::class, 'agrishop'])->name('home.agrisho
 Route::get('/blog', [HomeController::class, 'blog'])->name('home.blog');
 
 // Tani Ai
-Route::get('/tani-ai', [TaniController::class, 'index'])->name('tani');
-Route::post('/tani-ai', [TaniController::class, 'chat'])->name('tani.chat');
+Route::get('/tani-ai', [TaniController::class, 'index'])->name('tani')->middleware('req_auth');
+Route::post('/tani-ai', [TaniController::class, 'chat'])->name('tani.chat')->middleware('req_auth');
 
 // Auth
+Route::get('/req-auth', [AuthController::class, 'reqAuth'])->name('auth.reqAuth');
 Route::get('/login', [AuthController::class, 'login'])->name('auth.login');
 Route::post('/login', [AuthController::class, 'authenticate'])->name('auth.authenticate');
 Route::get('/sign-up', [AuthController::class, 'signup'])->name('auth.signup');

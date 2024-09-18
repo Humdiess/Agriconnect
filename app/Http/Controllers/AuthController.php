@@ -11,6 +11,10 @@ use RealRashid\SweetAlert\Facades\Alert;
 class AuthController extends Controller
 {
     //
+    public function reqAuth()
+    {
+        return view('errors.auth');
+    }
     public function login()
     {
         return view('auth.login', [

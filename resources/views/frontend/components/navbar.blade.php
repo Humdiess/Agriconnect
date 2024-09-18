@@ -21,6 +21,12 @@
                 </a>
             </li>
             <li>
+                <a class="hidden md:block text-sm" href="/blog">Agri News</a>
+                <a class="block md:hidden" href="/blog">
+                    <i class="fa-solid fa-newspaper"></i>
+                </a>
+            </li>
+            <li>
                 <a class="hidden md:block text-sm" href="/contact">Hubungi Kami</a>
                 <a class="block md:hidden" href="/contact">
                     <i class="fa-solid fa-phone"></i>
