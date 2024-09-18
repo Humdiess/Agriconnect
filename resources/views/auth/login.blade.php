@@ -10,7 +10,8 @@
             <!-- Logo Section -->
             <div class="mb-6 flex items-center">
                 <h1 class="text-xl lg:text-3xl font-semibold border-r-2 pr-3 text-black dark:text-white">Masuk</h1>
-                <img src="{{ asset('img/logo/logo-light.png') }}" alt="Logo" class="h-16">
+                <img src="{{ asset('img/logo/logo-light.png') }}" alt="Logo" class="h-16 block dark:hidden">
+                <img src="{{ asset('img/logo/logo-dark.png') }}" alt="Logo" class="h-16 hidden dark:block">
             </div>
 
             <form action="/login" method="POST" class="space-y-6">
