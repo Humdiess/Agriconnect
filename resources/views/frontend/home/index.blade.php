@@ -42,14 +42,16 @@
         </div>
 
         <!-- Hero Image -->
-        <div class="hero-image-wrapper w-full flex justify-center mt-12">
-            <div class="hero-image w-full max-w-[58rem] h-[32rem] rounded-xl border border-zinc-200 p-2">
-                <img class="w-full h-full object-cover rounded-lg"
+        <div class="hero-image-wrapper w-full flex justify-center mt-12 aspect-video">
+            <div class="hero-image w-[60rem] h-[33.75rem] aspect-video rounded-xl border border-zinc-200 p-2">
+                <img class="w-full h-full object-cover rounded-lg hidden dark:block aspect-video"
                     src="{{ asset('img/tani/tani-dark.png') }}"
+                    alt="Hero Image">
+                <img class="w-full h-full object-cover rounded-lg block dark:hidden aspect-video"
+                    src="{{ asset('img/tani/tani-light.png') }}"
                     alt="Hero Image">
             </div>
         </div>
-
     </div>
 </section>
 
@@ -209,6 +211,8 @@
         </div>
     </div>
 </section>
+
+<script src="{{ asset('js/gsap.js') }}"></script>
 
 <script>
     function toggleFaq(index) {

@@ -4,7 +4,6 @@
 </button>
 
     <script>
-            // JavaScript to toggle accordion active class
     document.querySelectorAll('.accordion-toggle').forEach((button) => {
       button.addEventListener('click', function () {
         const accordion = this.parentElement;
@@ -24,7 +23,6 @@
     {{-- @include('frontend.components.gsap') --}}
     @include('frontend.components.gsap')
     <script src="{{ asset('js/script.js') }}"></script>
-    <script src="{{ asset('js/gsap.js') }}"></script>
     @include('sweetalert::alert')
 </body>
 
