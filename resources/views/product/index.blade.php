@@ -1,4 +1,4 @@
-@extends('mylayout.main')
+@extends('templates.main')
 
 @section('content')
     <main class="">
@@ -6,6 +6,7 @@
         <section class="product-wrapper px-16 py-8">
             <div class="product-header mb-2">
                 <h1 class="text-4xl font-bold">TANI SHOP</h1>
+                <p class="mt-2">Admin Panel | {{ auth()->user()->name }}</p>
                 <hr class="my-4">
                 <a href="/dashboard-tani" class="px-2 py-1 text-accent rounded-sm">Kembali ke Dashboard</a>
                 <a href="/product-create" class="px-2 py-1 bg-accent text-white rounded-sm">Add New Product</a>

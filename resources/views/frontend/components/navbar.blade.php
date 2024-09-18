@@ -4,13 +4,13 @@
         <ul class="flex gap-6 items-center">
             <li>
                 <a class="hidden md:block text-sm" href="/">Beranda</a>
-                <a class="block md:hidden" href="">
+                <a class="block md:hidden" href="/">
                     <i class="fa-solid fa-house"></i>
                 </a>
             </li>
             <li>
-                <a class="hidden md:block text-sm" href="#">Tani Shop</a>
-                <a class="block md:hidden" href="#">
+                <a class="hidden md:block text-sm" href="/agrishop">Agri Shop</a>
+                <a class="block md:hidden" href="/agrishop">
                     <i class="fa-solid fa-cart-shopping"></i>
                 </a>
             </li>
@@ -21,8 +21,8 @@
                 </a>
             </li>
             <li>
-                <a class="hidden md:block text-sm" href="#" id="tani-ai">Hubungi Kami</a>
-                <a class="block md:hidden" href="">
+                <a class="hidden md:block text-sm" href="/contact">Hubungi Kami</a>
+                <a class="block md:hidden" href="/contact">
                     <i class="fa-solid fa-phone"></i>
                 </a>
             </li>
@@ -32,7 +32,8 @@
                 </a>
             </li>
             <li>
-                <button id="theme-toggle" class="md:ml-2 md:px-2 rounded-full dark:bg-zinc-700 dark:hover:bg-zinc-600 hover:bg-gray-200 dark:text-white transition-colors">
+                <button id="theme-toggle"
+                    class="md:ml-2 md:px-2 rounded-full dark:bg-zinc-700 dark:hover:bg-zinc-600 hover:bg-gray-200 dark:text-white transition-colors">
                     <i id="theme-icon" class="fas fa-moon"></i>
                 </button>
             </li>

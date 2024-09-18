@@ -4,7 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/** @format */
+html,
+body {
+  scroll-behavior: smooth;
+}
 
 #loader-overlay {
   width: 100%;

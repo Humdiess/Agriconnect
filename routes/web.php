@@ -25,8 +25,12 @@ Route::get('/create-storage-link', function () {
     }
 });
 
-// Home / Landing Page
+// For Umum
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/contact', [HomeController::class, 'contact'])->name('home.contact');
+Route::get('/agrishop', [HomeController::class, 'agrishop'])->name('home.agrishop');
+Route::get('/blog', [HomeController::class, 'blog'])->name('home.blog');
+
 // Tani Ai
 Route::get('/tani-ai', [TaniController::class, 'index'])->name('tani');
 Route::post('/tani-ai', [TaniController::class, 'chat'])->name('tani.chat');
@@ -44,11 +48,9 @@ Route::middleware([IsFarmer::class])->group(function () {
     // Fitur Pantau Pertanian
     // ...
 });
-// Agri Shop
-Route::get('/agrishop', [HomeController::class, 'agrishop'])->name('home.agrishop');
+
 // Products
 Route::get('/product/{product}', [ProductController::class, 'show'])->name('product.show');
-
 Route::middleware([IsFarmer::class])->group(function () {
     Route::get('/product', [ProductController::class, 'index'])->name('product.index');
     Route::get('/product-create', [ProductController::class, 'create'])->name('product.create');

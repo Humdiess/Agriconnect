@@ -1,4 +1,4 @@
-@extends('mylayout.main')
+@extends('templates.main')
 
 @section('content')
     <main class="">
