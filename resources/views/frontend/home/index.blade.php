@@ -1,29 +1,11 @@
 @include('frontend.layouts.header')
-<style>
-    .preload {
-        z-index: 9999;
-        opacity: 1;
-        height: 100%;
-        width: 100%;
-        position: fixed;
-        background: #fff;
-        top: 0;
-        left: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: opacity 0.5s ease-out;
-    }
-
-    .preload img {
-        /* Sesuaikan ukuran gambar preloader */
-        width: 926px;
-        height: 520px;
-    }
-</style>
-<div class="preload" style="background-color: #2b2f31">
-    <img src="img/Rander.gif" alt="" />
+<!--=== Loader Start ======-->
+<div id="loader-overlay">
+    <div class="loader">
+        <div class="loader-inner"></div>
+    </div>
 </div>
+<!--=== Loader End ======-->
 
 <!-- Navbar Section -->
 <section class="navbar justify-between py-6 px-16 items-center z-50 hidden md:flex">

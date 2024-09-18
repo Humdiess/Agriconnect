@@ -1,5 +1,55 @@
+/** @format */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/** @format */
 
+#loader-overlay {
+  width: 100%;
+  height: 100vh;
+  @apply bg-gradient-to-r from-white to-white dark:from-zinc-900 dark:to-zinc-900;
+  position: fixed;
+  z-index: 999999;
+}
+
+.loader {
+  width: 70px;
+  height: 35px;
+  overflow: hidden;
+  position: absolute;
+  top: calc(50% - 17px);
+  left: calc(50% - 35px);
+}
+.loader-inner {
+  width: 70px;
+  height: 70px;
+  border-style: solid;
+  border-top-color: #5dbb63;
+  border-right-color: #5dbb63;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  box-sizing: border-box;
+  animation: rotate 3s ease-in-out infinite;
+  transform: rotate(-200deg);
+}
+@keyframes rotate {
+  0% {
+    border-width: 10px;
+  }
+  25% {
+    border-width: 3px;
+  }
+  50% {
+    transform: rotate(115deg);
+    border-width: 10px;
+  }
+  75% {
+    border-width: 3px;
+  }
+  100% {
+    border-width: 10px;
+  }
+}
