@@ -43,8 +43,8 @@
 
         <!-- Hero Image -->
         <div class="hero-image-wrapper w-full flex justify-center mt-12">
-            <div class="hero-image w-full max-w-[58rem] h-[32rem] rounded-xl border border-zinc-200">
-                <img class="w-full h-full object-cover rounded-2xl"
+            <div class="hero-image w-full max-w-[58rem] h-[32rem] rounded-xl border border-zinc-200 p-2">
+                <img class="w-full h-full object-cover rounded-lg"
                     src="https://images.unsplash.com/photo-1662099892443-0c241cbb700d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                     alt="Hero Image">
             </div>
