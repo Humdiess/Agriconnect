@@ -13,7 +13,10 @@ class HomeController extends Controller
     {
         return view('frontend.home.index');
     }
-
+    public function agrishop()
+    {
+        return view('frontend.home.agrishop');
+    }
     /**
      * Show the form for creating a new resource.
      */
