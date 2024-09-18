@@ -2,8 +2,8 @@
 
 <x-navbar />
 
-<div class="min-h-screen bg-white dark:bg-zinc-950 flex justify-center p-4 mt-14 md:mt-0">
-    <div id="container" class="w-full max-w-2xl bg-white dark:bg-zinc-950 rounded-3xl overflow-hidden flex flex-col">
+<div class="min-h-screen flex justify-center p-4 mt-14 md:mt-0">
+    <div id="container" class="w-full max-w-2xl rounded-3xl overflow-hidden flex flex-col">
         <div class="p-8 flex-grow overflow-hidden flex flex-col">
             <div id="content" class="text-center mb-12">
                 <div class="w-16 h-16 bg-gray-200 rounded-full pt-4 overflow-hidden mx-auto mb-4 flex items-center justify-center">

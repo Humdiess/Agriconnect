@@ -1,7 +1,8 @@
 <section class="navbar justify-between py-6 px-16 items-center z-50 hidden md:flex">
     <div class="logo">
         <a class="text-2xl font-bold w-6" href="#">
-            <img class="w-28" src="{{ asset('img/logo/logo-light.png') }}" alt="Logo">
+            <img class="w-28 block dark:hidden" src="{{ asset('img/logo/logo-light.png') }}" alt="Logo">
+            <img class="w-28 hidden dark:block" src="{{ asset('img/logo/logo-dark.png') }}" alt="Logo">
         </a>
     </div>
 
