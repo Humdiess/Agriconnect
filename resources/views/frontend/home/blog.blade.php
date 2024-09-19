@@ -1,137 +1,94 @@
 @extends('templates.main')
 
 @section('content')
-    <div class="bg-gray-100 min-h-screen">
-        <header class="bg-white shadow">
-            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                <h1 class="text-3xl font-bold text-gray-900">Our Blog</h1>
-                <a href="/" class="mt-2 text-accent font-medium hover:text-hijau2">Kembali Ke Beranda</a>
+    @include('frontend.components.navbar')
+    <x-navbar />
+    <div class="bg-white dark:bg-zinc-950 min-h-screen">
+        <header class="bg-white dark:bg-zinc-900 shadow">
+            <div class="mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                <h1 class="text-3xl ml-8 font-bold text-gray-900 dark:text-white">Berita Seputar Pertanian</h1>
             </div>
         </header>
 
-        <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+        <main class="mx-auto py-6 sm:px-6 lg:px-8">
             <div class="px-4 py-6 sm:px-0">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     @php
                         $articles = [
                             [
-                                'title' => 'Sustainable Farming Practices',
+                                'title' => 'Upaya Bersama Dorong Pemuda Turun Bertani di Pangandaran',
                                 'excerpt' =>
-                                    'Learn about the latest sustainable farming techniques that can help increase yield while protecting the environment.',
-                                'image' => 'sustainable-farming.jpg',
-                                'date' => '2023-05-15',
+                                    'Berbagai upaya dilakukan berbagai pihak untuk tetap mempertahankan profesi petani tetap ada. Salah satunya yang dilakukan Jaringan Masyarakat Tani Indonesia (Jamtani).',
+                                'image' => 'berita1.jpeg',
+                                'link' =>
+                                    'https://www.detik.com/jabar/berita/d-7537032/upaya-bersama-dorong-pemuda-turun-bertani-di-pangandaran',
+                                'date' => '2024-09-12',
                             ],
                             [
-                                'title' => 'The Rise of Vertical Farming',
+                                'title' => 'Catatan DPRD untuk Pemprov soal Nasib Pertanian di Jawa Barat',
                                 'excerpt' =>
-                                    'Discover how vertical farming is revolutionizing agriculture in urban areas and its potential for future food production.',
-                                'image' => 'vertical-farming.jpg',
-                                'date' => '2023-05-10',
+                                    'Pemprov Jawa Barat mencatat sejumlah tantangan yang dihadapi dalam sektor pertanian, terutama kesejahteraan petani dan buruh tani. Hal ini turut disorot oleh Sekretaris Komisi 2 DPRD Jawa Barat, R Yunandar Rukhiadi Eka Perwira.',
+                                'image' => 'berita2.jpeg',
+                                'link' =>
+                                    'https://www.detik.com/jabar/bisnis/d-7492897/catatan-dprd-untuk-pemprov-soal-nasib-pertanian-di-jawa-barat',
+                                'date' => '2024-08-16',
                             ],
                             [
-                                'title' => 'Organic vs. Conventional Farming',
+                                'title' => 'Masalah Petani RI, Lahan Sawah Berkurang & Teknologi Rendah!',
                                 'excerpt' =>
-                                    'We compare organic and conventional farming methods, discussing the pros and cons of each approach.',
-                                'image' => 'organic-farming.jpg',
-                                'date' => '2023-05-05',
+                                    'Ketua Gabungan Asosiasi Petani Perkebunan Indonesia (Gapperindo), Agus Pakpahan menyebutkan konsistensi kebijakan dan peningkatan teknologi pertanian sebagai kunci bagi peningkatan produksi pangan di Indonesia termasuk gula dan beras.',
+                                'image' => 'berita3.png',
+                                'link' =>
+                                    'https://www.cnbcindonesia.com/news/20230825140559-8-466171/masalah-petani-ri-lahan-sawah-berkurang-teknologi-rendah',
+                                'date' => '2023-08-27',
                             ],
                             [
-                                'title' => 'Technology in Agriculture',
+                                'title' => 'Payah! Level Ketahanan Pangan RI Kalah dari Singapura',
                                 'excerpt' =>
-                                    'Explore how modern technology is transforming traditional farming practices and increasing efficiency.',
-                                'image' => 'agri-tech.jpg',
-                                'date' => '2023-04-30',
+                                    'Indonesia masih payah untuk urusan ketahanan pangan. Bahkan dengan klaim sebagai negara agraris, level ketahanan pangan Indonesia kalah dari Singapura.',
+                                'image' => 'berita4.jpeg',
+                                'link' =>
+                                    'https://www.cnbcindonesia.com/news/20240814151037-4-563046/payah-level-ketahanan-pangan-ri-kalah-dari-singapura',
+                                'date' => '2024-08-04',
                             ],
                             [
-                                'title' => 'Climate Change and Agriculture',
+                                'title' => 'Produksi Beras Turun, Ada Kesalahan Pengelolaan Sistem Pertanian?',
                                 'excerpt' =>
-                                    'Understand the impact of climate change on agriculture and strategies farmers are using to adapt.',
-                                'image' => 'climate-change.jpg',
-                                'date' => '2023-04-25',
+                                    'Anggota Komisi IV DPR RI, Firman Soebagyo mengungkapkan berbagai permasalahan yang menyebabkan terus turunnya produksi beras Nasional.',
+                                'image' => 'berita5.png',
+                                'link' =>
+                                    'https://www.cnbcindonesia.com/news/20240530100441-8-542365/produksi-beras-turun-ada-kesalahan-pengelolaan-sistem-pertanian',
+                                'date' => '2024-06-02',
                             ],
                             [
-                                'title' => 'The Importance of Crop Rotation',
+                                'title' => 'Potret Pertanian RI 10 Tahun Terakhir, Minim Teknologi!',
                                 'excerpt' =>
-                                    'Learn why crop rotation is crucial for soil health and how it can improve your farm\'s productivity.',
-                                'image' => 'crop-rotation.jpg',
-                                'date' => '2023-04-20',
+                                    'Hasil Sensus Pertanian 2023 Badan Pusat Statistik (BPS) menunjukkan kondisi pertanian di Indonesia tidak banyak berubah selama 10 tahun terakhir. Mulai dari mayoritas didominasi tenaga kerja tua, juga masih minim menggunakan teknologi.',
+                                'image' => 'berita6.jpeg',
+                                'date' => '2023-12-04',
+                                'link' =>
+                                    'https://www.cnbcindonesia.com/news/20231204120654-4-494316/potret-pertanian-ri-10-tahun-terakhir-minim-teknologi',
                             ],
                         ];
                     @endphp
 
                     @foreach ($articles as $article)
-                        <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                            <img class="h-48 w-full object-cover" src="{{ asset('img/blog/' . $article['image']) }}"
+                        <div class="bg-white dark:bg-zinc-800 overflow-hidden shadow-sm sm:rounded-lg">
+                            <img class="h-48 w-full object-cover" src="{{ asset('img/blogs/' . $article['image']) }}"
                                 alt="{{ $article['title'] }}">
                             <div class="p-6">
-                                <h2 class="text-xl font-semibold text-gray-900 mb-2">{{ $article['title'] }}</h2>
-                                <p class="text-gray-600 text-sm mb-4">{{ date('F j, Y', strtotime($article['date'])) }}</p>
-                                <p class="text-gray-600 mb-4">{{ $article['excerpt'] }}</p>
-                                <a href="#"
+                                <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">{{ $article['title'] }}
+                                </h2>
+                                <p class="text-gray-600 dark:text-gray-200 text-sm mb-4">
+                                    {{ date('F j, Y', strtotime($article['date'])) }}</p>
+                                <p class="text-gray-600 dark:text-gray-200 mb-4 line-clamp-3">{{ $article['excerpt'] }}</p>
+                                <a href="{{ $article['link'] }}" target="_blank"
                                     class="inline-flex items-center px-4 py-2 bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-blue-700 active:bg-blue-800 focus:outline-none focus:border-blue-800 focus:ring ring-blue-300 disabled:opacity-25 transition ease-in-out duration-150">
                                     Read More
                                 </a>
                             </div>
                         </div>
                     @endforeach
-                </div>
-
-                <div class="mt-8">
-                    <nav class="flex items-center justify-between">
-                        <div class="flex-1 flex justify-between sm:hidden">
-                            <a href="#"
-                                class="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
-                                Previous
-                            </a>
-                            <a href="#"
-                                class="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
-                                Next
-                            </a>
-                        </div>
-                        <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
-                            <div>
-                                <p class="text-sm text-gray-700">
-                                    Showing <span class="font-medium">1</span> to <span class="font-medium">6</span> of
-                                    <span class="font-medium">12</span> results
-                                </p>
-                            </div>
-                            <div>
-                                <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px"
-                                    aria-label="Pagination">
-                                    <a href="#"
-                                        class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
-                                        <span class="sr-only">Previous</span>
-                                        <!-- Heroicon name: solid/chevron-left -->
-                                        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                                            fill="currentColor" aria-hidden="true">
-                                            <path fill-rule="evenodd"
-                                                d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                                                clip-rule="evenodd" />
-                                        </svg>
-                                    </a>
-                                    <a href="#"
-                                        class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">
-                                        1
-                                    </a>
-                                    <a href="#"
-                                        class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">
-                                        2
-                                    </a>
-                                    <a href="#"
-                                        class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
-                                        <span class="sr-only">Next</span>
-                                        <!-- Heroicon name: solid/chevron-right -->
-                                        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                                            fill="currentColor" aria-hidden="true">
-                                            <path fill-rule="evenodd"
-                                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                                                clip-rule="evenodd" />
-                                        </svg>
-                                    </a>
-                                </nav>
-                            </div>
-                        </div>
-                    </nav>
                 </div>
             </div>
         </main>
