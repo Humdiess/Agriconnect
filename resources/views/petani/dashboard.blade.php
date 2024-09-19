@@ -66,7 +66,7 @@
                             <i id="theme-icon" class="fas fa-moon"></i>
                         </button>
                         <button
-                            class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
+                            class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800 dark:text-gray-100 hover:dark:text-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
                             <img class="h-8 w-8 rounded-full" src="/img/farmer.svg" alt="">
                             <span class="ml-2 mr-1">{{ auth()->user()->name }}</span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
