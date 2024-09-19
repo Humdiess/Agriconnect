@@ -46,23 +46,27 @@
                 </div>
             </div>
 
-            <div class="input-field relative">
-                <input
-                    id="userInput"
-                    type="text"
-                    placeholder="Tanya tentang pertanian"
-                    class="w-full py-3 px-4 bg-gray-100 dark:bg-zinc-900 rounded-full text-gray-700 dark:text-zinc-200 focus:outline-none focus:ring-2 focus:ring-green-300"
-                    autocomplete="off"
-                >
-                <button
-                    id="sendButton"
-                    class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-accent text-white px-4 py-2 rounded-full text-sm hover:bg-accent transition-colors duration-300"
-                >
-                    Send
-                </button>
-            </div>
-            <div class="ai-footer">
-                <p class="text-xs text-gray-500 dark:text-zinc-300 text-center mt-4">Powered by <a href="https://google.gemini.com" class="text-accent hover:underline">Google Gemini</a></p>
+            <div class="fixed bottom-0 left-0 right-0 p-4">
+                <div class="max-w-2xl mx-auto">
+                    <div class="input-field relative">
+                        <input
+                            id="userInput"
+                            type="text"
+                            placeholder="Tanya tentang pertanian"
+                            class="w-full py-3 px-4 bg-gray-100 dark:bg-zinc-900 rounded-full text-gray-700 dark:text-zinc-200 focus:outline-none focus:ring-2 focus:ring-green-300"
+                            autocomplete="off"
+                        >
+                        <button
+                            id="sendButton"
+                            class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-accent text-white px-4 py-2 rounded-full text-sm hover:bg-accent transition-colors duration-300"
+                        >
+                            Send
+                        </button>
+                    </div>
+                    <div class="ai-footer">
+                        <p class="text-xs text-gray-500 dark:text-zinc-300 text-center mt-4">Powered by <a href="https://google.gemini.com" class="text-accent hover:underline">Google Gemini</a></p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
