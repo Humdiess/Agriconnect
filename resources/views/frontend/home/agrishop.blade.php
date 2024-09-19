@@ -3,15 +3,14 @@
 @section('content')
     @include('frontend.components.navbar')
     <x-navbar />
-    <div class="bg-gray-100 dark:bg-zinc-900 min-h-svh px-12">
-        <nav class="bg-gray-100 dark:bg-zinc-900">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-zinc-900 dark:text-white font-bold text-2xl mt-4 ml-4 pt-6">AgriConnect |
-                    AgriShop</h2>
+    <div class="bg-white dark:bg-zinc-950 min-h-svh">
+        <header class="bg-gray-100 dark:bg-zinc-900 shadow">
+            <div class="mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                <h1 class="text-3xl ml-8 font-bold text-gray-900 dark:text-white">Agri Shop</h1>
             </div>
-        </nav>
+        </header>
 
-        <main class="container mx-auto px-4 py-8">
+        <main class="container mx-auto px-12 py-8">
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
 
                 @foreach ($products as $product)

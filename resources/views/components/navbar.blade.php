@@ -29,7 +29,7 @@
 
                 <form id="logout-form" method="POST" action="{{ route('auth.logout') }}">
                     @csrf
-                    <button type="submit"
+                    <button type="button" onclick="confirmLogout()"
                         class="w-full text-left px-3 py-2 text-sm text-red-500 hover:bg-red-500 rounded-md hover:text-white flex items-center">
                         <i class="fa-solid fa-sign-out-alt mr-2"></i>
                         Logout

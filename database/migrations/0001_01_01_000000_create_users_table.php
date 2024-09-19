@@ -19,6 +19,9 @@ return new class extends Migration
             // $table->timestamp('email_verified_at')->nullable();
             $table->boolean('is_farmer')->default(false);
             $table->string('password');
+            $table->string('address')->nullable();
+            $table->string('phone_number')->nullable();
+            $table->string('city')->nullable();
             // $table->rememberToken();
             $table->timestamps();
         });

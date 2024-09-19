@@ -15,4 +15,9 @@ class Product extends Model
     protected $keyType = 'string'; // Atur tipe data primary key sebagai string
     public $incrementing = false; // Nonaktifkan incrementing ID
     // public $timestamps = false; // Menonaktifkan fitur timestamps
+    // Relationship Many-to-One dengan model User
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id', 'id');
+    }
 }
