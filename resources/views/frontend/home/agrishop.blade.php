@@ -17,13 +17,15 @@
                 @foreach ($products as $product)
                     <a href="/product/{{ $product->id }}">
                         <div
-                            class="bg-white rounded-lg shadow-md overflow-hidden hover:-translate-y-4 transition ease-in-out">
+                            class="bg-white dark:bg-zinc-800 rounded-lg shadow-md overflow-hidden hover:-translate-y-4 transition ease-in-out">
                             <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product['name'] }}"
                                 class="w-full h-48 object-cover">
                             <div class="p-4">
-                                <h2 class="text-xl font-semibold text-gray-800">{{ $product['name'] }}</h2>
-                                <p class="text-gray-600">📌 Location</p>
-                                <p class="text-gray-600 mt-2">Rp {{ number_format($product['price'], 0, ',', '.') }}</p>
+                                <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-100">{{ $product['name'] }}
+                                </h2>
+                                <p class="text-gray-600 dark:text-gray-300">📌 Location</p>
+                                <p class="text-gray-600 dark:text-gray-300 mt-2">Rp
+                                    {{ number_format($product['price'], 0, ',', '.') }}</p>
                             </div>
                         </div>
                 @endforeach
