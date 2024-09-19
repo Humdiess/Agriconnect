@@ -39,7 +39,7 @@
                 </p>
             </div>
             <a href="#about" class="hero-button w-fit mt-10 px-6 py-2 bg-accent text-white mb-0 rounded-lg font-light">
-                Pelajari lebih lanjut <i class="fa-solid ms-2 fa-chevron-right"></i>
+                Pelajari lebih lanjut <i class="fa-solid ms-2 fa-chevron-down"></i>
             </a>
         </div>
 
