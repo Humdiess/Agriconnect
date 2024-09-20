@@ -29,7 +29,7 @@ Route::get('/create-storage-link', function () {
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/contact', [HomeController::class, 'contact'])->name('home.contact');
 Route::get('/agrishop', [HomeController::class, 'agrishop'])->name('home.agrishop');
-Route::get('/blog', [HomeController::class, 'blog'])->name('home.blog');
+Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
 
 // Tani Ai
 Route::get('/tani-ai', [TaniController::class, 'index'])->name('tani')->middleware('req_auth');

@@ -3,13 +3,13 @@
         class="menu items-center flex gap-6 py-4 dark:text-white px-6 rounded-xl dark:bg-zinc-900/80 backdrop-blur-lg border dark:border-zinc-600 border-gray-300">
         <ul class="flex gap-6 items-center">
             <li>
-                <a class="hidden md:block text-sm" href="/">Beranda</a>
+                <a class="hidden md:block text-sm @if (request()->routeIs('home')) text-accent @endif" href="/">Beranda</a>
                 <a class="block md:hidden" href="/">
                     <i class="fa-solid fa-house"></i>
                 </a>
             </li>
             <li>
-                <a class="hidden md:block text-sm" href="/agrishop">Agri Shop</a>
+                <a class="hidden md:block text-sm @if (request()->routeIs('agrishop')) text-accent @endif " href="/agrishop">Agri Shop</a>
                 <a class="block md:hidden" href="/agrishop">
                     <i class="fa-solid fa-cart-shopping"></i>
                 </a>
@@ -21,7 +21,7 @@
                 </a>
             </li>
             <li>
-                <a class="hidden md:block text-sm" href="{{ route('') }}">Agri News</a>
+                <a class="hidden md:block text-sm" href="{{ route('blog') }}">Agri News</a>
                 <a class="block md:hidden" href="/blog">
                     <i class="fa-solid fa-newspaper"></i>
                 </a>

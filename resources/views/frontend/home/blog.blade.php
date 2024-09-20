@@ -1,6 +1,5 @@
-@extends('templates.main')
+@include('frontend.layouts.header')
 
-@section('content')
     <x-navbar />
 
     <main class="container mx-auto px-4 py-8">
@@ -163,7 +162,7 @@
                         <p class="text-gray-600 mb-4">{{ Str::limit($item['excerpt'], 100) }}</p>
                         <div class="flex justify-between items-center">
                             <span class="text-sm text-gray-500">{{ $item['date'] }}</span>
-                            <a href="{{ route('news.show', $item['id']) }}" class="text-blue-600 hover:text-blue-800 font-medium">Read More</a>
+                            <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">Read More</a>
                         </div>
                     </div>
                 </article>
@@ -171,7 +170,7 @@
         </section>
 
         <div class="mt-12 text-center">
-            <a href="{{ route('news.index') }}" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+            <a href="#" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                 View All News
             </a>
         </div>
@@ -182,4 +181,5 @@
             <p>&copy; 2023 AgriNews. All rights reserved.</p>
         </div>
     </footer>
-@endsection
+@include('frontend.layouts.footer')
+
