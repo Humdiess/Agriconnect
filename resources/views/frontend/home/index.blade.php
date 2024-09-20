@@ -168,33 +168,48 @@
             <div class="faq-content mt-12">
                 <div class="space-y-4">
                     @php
-                        $faqs = [
-                            [
-                                'question' => 'Apa itu AgriConnect?',
-                                'answer' =>
-                                    'AgriConnect adalah platform yang menghubungkan petani dengan teknologi modern dan pasar digital untuk meningkatkan produktivitas dan keberlanjutan pertanian.',
-                            ],
-                            [
-                                'question' => 'Bagaimana cara mendaftar di AgriConnect?',
-                                'answer' =>
-                                    'Anda dapat mendaftar dengan mengklik tombol "Sign Up" di halaman utama kami dan mengikuti langkah-langkah pendaftaran yang mudah.',
-                            ],
-                            [
-                                'question' => 'Apakah layanan AgriConnect berbayar?',
-                                'answer' =>
-                                    'Kami menawarkan paket layanan gratis dan berbayar. Paket dasar kami gratis, sementara fitur-fitur lanjutan tersedia dalam paket berbayar.',
-                            ],
-                            [
-                                'question' => 'Bagaimana AgriConnect membantu petani?',
-                                'answer' =>
-                                    'AgriConnect membantu petani dengan menyediakan akses ke teknologi IoT untuk pemantauan lahan, analisis AI untuk pengambilan keputusan, dan platform pemasaran digital untuk menjangkau pasar yang lebih luas.',
-                            ],
-                            [
-                                'question' => 'Apakah AgriConnect menyediakan dukungan teknis?',
-                                'answer' =>
-                                    'Ya, kami menyediakan dukungan teknis melalui chat langsung, email, dan panggilan telepon untuk semua pengguna AgriConnect.',
-                            ],
-                        ];
+                    $faqs = [
+                        [
+                            'question' => 'Apa itu AgriConnect dan bagaimana ini bisa membantu saya sebagai petani?',
+                            'answer' => 'AgriConnect adalah platform yang menghubungkan petani dengan teknologi seperti kecerdasan buatan (AI) dan Internet of Things (IoT), serta membuka akses ke pasar digital. Platform ini dirancang untuk membantu petani mengelola lahan dengan lebih efisien, memprediksi cuaca, serta menemukan harga pasar yang lebih baik.'
+                        ],
+                        [
+                            'question' => 'Saya petani kecil di pedesaan, apakah saya bisa menggunakan teknologi AgriConnect?',
+                            'answer' => 'Ya, AgriConnect dirancang agar mudah diakses oleh petani dari berbagai skala usaha, termasuk petani kecil. Kami menyediakan teknologi yang mudah digunakan dan bisa disesuaikan dengan kebutuhan Anda, baik untuk memantau lahan, memprediksi cuaca, atau menjual hasil panen langsung ke pasar digital.'
+                        ],
+                        [
+                            'question' => 'Bagaimana Tani AI bisa membantu saya di ladang?',
+                            'answer' => 'Tani AI menggunakan data seperti cuaca, kondisi tanah, dan pola tanaman untuk memberikan saran terbaik kepada Anda. Dengan Tani AI, Anda bisa mengetahui kapan waktu terbaik untuk menanam, berapa banyak air yang dibutuhkan tanaman, serta peringatan dini jika ada ancaman hama atau penyakit.'
+                        ],
+                        [
+                            'question' => 'Apa manfaat menggunakan sensor IoT di lahan saya?',
+                            'answer' => 'Sensor IoT memungkinkan Anda untuk memantau kondisi lahan secara real-time tanpa harus selalu berada di lapangan. Misalnya, sensor ini bisa memantau kelembapan tanah, suhu, dan kualitas udara. Data tersebut dikirim langsung ke ponsel Anda melalui aplikasi AgriConnect, sehingga Anda bisa membuat keputusan yang lebih cepat dan tepat, seperti kapan harus menyiram atau menambah pupuk. Ini akan membantu Anda menghemat waktu dan mengelola sumber daya dengan lebih efisien.'
+                        ],
+                        [
+                            'question' => 'Bagaimana saya bisa menjual produk langsung ke pasar melalui AgriConnect?',
+                            'answer' => 'AgriConnect memiliki fitur pasar digital yang memungkinkan Anda menjual hasil panen secara langsung ke pembeli tanpa perlu melalui perantara. Platform ini memberi Anda akses ke pasar yang lebih luas dan memungkinkan Anda menetapkan harga yang lebih adil untuk produk Anda. Hal ini diharapkan dapat meningkatkan pendapatan petani dan mengurangi ketergantungan pada tengkulak.'
+                        ],
+                        [
+                            'question' => 'Bagaimana cara memulai menggunakan AgriConnect?',
+                            'answer' => 'Untuk memulai, Anda hanya perlu mendaftar melalui situs web atau aplikasi AgriConnect. Setelah itu, Anda dapat mengatur profil lahan Anda, mulai memantau data cuaca dan kondisi tanah, serta terhubung dengan pasar digital. Jika Anda memerlukan bantuan, kami memiliki tim dukungan yang siap membantu Anda memahami cara menggunakan setiap fitur.'
+                        ],
+                        [
+                            'question' => 'Apakah AgriConnect dapat membantu saya meningkatkan hasil panen?',
+                            'answer' => 'Tentu! Dengan memanfaatkan teknologi seperti Tani AI dan IoT, AgriConnect membantu Anda membuat keputusan yang lebih baik terkait waktu tanam, penggunaan air, dan pemantauan kondisi tanaman. Ini diharapkan dapat meningkatkan hasil panen Anda, mengurangi risiko kerugian, dan memastikan tanaman tumbuh dalam kondisi optimal.'
+                        ],
+                        [
+                            'question' => 'Saya tinggal di daerah terpencil. Apakah AgriConnect masih bisa digunakan di sana?',
+                            'answer' => 'AgriConnect bisa digunakan di berbagai wilayah di Indonesia, termasuk daerah terpencil, selama ada akses internet. Kami juga sedang mengembangkan solusi untuk membantu petani di daerah dengan koneksi terbatas agar tetap bisa memanfaatkan teknologi IoT dan AI.'
+                        ],
+                        [
+                            'question' => 'Bagaimana cara saya mendapatkan dukungan jika mengalami masalah teknis?',
+                            'answer' => 'Jika Anda mengalami kesulitan atau masalah teknis saat menggunakan AgriConnect, tim dukungan kami selalu siap membantu. Anda dapat menghubungi kami melalui email, layanan chat di aplikasi, atau melalui nomor telepon hotline kami. Kami juga menyediakan tutorial dan panduan pengguna untuk membantu Anda mengatasi kendala umum.'
+                        ],
+                        [
+                            'question' => 'Apakah saya perlu keahlian teknologi untuk menggunakan AgriConnect?',
+                            'answer' => 'Tidak perlu! AgriConnect dirancang agar mudah digunakan oleh petani dari berbagai latar belakang. Kami menyadari bahwa tidak semua petani terbiasa dengan teknologi, sehingga platform kami intuitif dan disertai panduan yang jelas. Selain itu, kami menyediakan dukungan teknis untuk membantu Anda jika ada kesulitan.'
+                        ],
+                    ];
                     @endphp
 
                     @foreach ($faqs as $index => $faq)

@@ -21,7 +21,7 @@
                 </a>
             </li>
             <li>
-                <a class="hidden md:block text-sm" href="/blog">Agri News</a>
+                <a class="hidden md:block text-sm" href="{{ route('') }}">Agri News</a>
                 <a class="block md:hidden" href="/blog">
                     <i class="fa-solid fa-newspaper"></i>
                 </a>

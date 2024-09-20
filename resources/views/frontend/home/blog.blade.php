@@ -1,96 +1,185 @@
 @extends('templates.main')
 
 @section('content')
-    @include('frontend.components.navbar')
     <x-navbar />
-    <div class="bg-white dark:bg-zinc-950 min-h-screen">
-        <header class="bg-white dark:bg-zinc-900 shadow">
-            <div class="mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                <h1 class="text-3xl ml-8 font-bold text-gray-900 dark:text-white">Berita Seputar Pertanian</h1>
-            </div>
+
+    <main class="container mx-auto px-4 py-8">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-900 mb-2">AgriNews</h1>
+            <p class="text-xl text-gray-600">Your Source for Agricultural Insights</p>
         </header>
 
-        <main class="mx-auto py-6 sm:px-6 lg:px-8">
-            <div class="px-4 py-6 sm:px-0">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    @php
-                        $articles = [
-                            [
-                                'title' => 'Upaya Bersama Dorong Pemuda Turun Bertani di Pangandaran',
-                                'excerpt' =>
-                                    'Berbagai upaya dilakukan berbagai pihak untuk tetap mempertahankan profesi petani tetap ada. Salah satunya yang dilakukan Jaringan Masyarakat Tani Indonesia (Jamtani).',
-                                'image' => 'berita1.jpeg',
-                                'link' =>
-                                    'https://www.detik.com/jabar/berita/d-7537032/upaya-bersama-dorong-pemuda-turun-bertani-di-pangandaran',
-                                'date' => '2024-09-12',
-                            ],
-                            [
-                                'title' => 'Catatan DPRD untuk Pemprov soal Nasib Pertanian di Jawa Barat',
-                                'excerpt' =>
-                                    'Pemprov Jawa Barat mencatat sejumlah tantangan yang dihadapi dalam sektor pertanian, terutama kesejahteraan petani dan buruh tani. Hal ini turut disorot oleh Sekretaris Komisi 2 DPRD Jawa Barat, R Yunandar Rukhiadi Eka Perwira.',
-                                'image' => 'berita2.jpeg',
-                                'link' =>
-                                    'https://www.detik.com/jabar/bisnis/d-7492897/catatan-dprd-untuk-pemprov-soal-nasib-pertanian-di-jawa-barat',
-                                'date' => '2024-08-16',
-                            ],
-                            [
-                                'title' => 'Masalah Petani RI, Lahan Sawah Berkurang & Teknologi Rendah!',
-                                'excerpt' =>
-                                    'Ketua Gabungan Asosiasi Petani Perkebunan Indonesia (Gapperindo), Agus Pakpahan menyebutkan konsistensi kebijakan dan peningkatan teknologi pertanian sebagai kunci bagi peningkatan produksi pangan di Indonesia termasuk gula dan beras.',
-                                'image' => 'berita3.png',
-                                'link' =>
-                                    'https://www.cnbcindonesia.com/news/20230825140559-8-466171/masalah-petani-ri-lahan-sawah-berkurang-teknologi-rendah',
-                                'date' => '2023-08-27',
-                            ],
-                            [
-                                'title' => 'Payah! Level Ketahanan Pangan RI Kalah dari Singapura',
-                                'excerpt' =>
-                                    'Indonesia masih payah untuk urusan ketahanan pangan. Bahkan dengan klaim sebagai negara agraris, level ketahanan pangan Indonesia kalah dari Singapura.',
-                                'image' => 'berita4.jpeg',
-                                'link' =>
-                                    'https://www.cnbcindonesia.com/news/20240814151037-4-563046/payah-level-ketahanan-pangan-ri-kalah-dari-singapura',
-                                'date' => '2024-08-04',
-                            ],
-                            [
-                                'title' => 'Produksi Beras Turun, Ada Kesalahan Pengelolaan Sistem Pertanian?',
-                                'excerpt' =>
-                                    'Anggota Komisi IV DPR RI, Firman Soebagyo mengungkapkan berbagai permasalahan yang menyebabkan terus turunnya produksi beras Nasional.',
-                                'image' => 'berita5.png',
-                                'link' =>
-                                    'https://www.cnbcindonesia.com/news/20240530100441-8-542365/produksi-beras-turun-ada-kesalahan-pengelolaan-sistem-pertanian',
-                                'date' => '2024-06-02',
-                            ],
-                            [
-                                'title' => 'Potret Pertanian RI 10 Tahun Terakhir, Minim Teknologi!',
-                                'excerpt' =>
-                                    'Hasil Sensus Pertanian 2023 Badan Pusat Statistik (BPS) menunjukkan kondisi pertanian di Indonesia tidak banyak berubah selama 10 tahun terakhir. Mulai dari mayoritas didominasi tenaga kerja tua, juga masih minim menggunakan teknologi.',
-                                'image' => 'berita6.jpeg',
-                                'date' => '2023-12-04',
-                                'link' =>
-                                    'https://www.cnbcindonesia.com/news/20231204120654-4-494316/potret-pertanian-ri-10-tahun-terakhir-minim-teknologi',
-                            ],
-                        ];
-                    @endphp
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            @php
+                $news = [
+                    [
+                        'id' => 1,
+                        'title' => 'Teknologi Terbaru dalam Pertanian Modern',
+                        'excerpt' => 'Pertanian modern semakin maju dengan penerapan teknologi terbaru seperti drone dan sistem irigasi otomatis...',
+                        'image' => 'https://picsum.photos/id/1011/400/300',
+                        'date' => '2024-09-20',
+                    ],
+                    [
+                        'id' => 2,
+                        'title' => 'Cara Meningkatkan Produktivitas Lahan Pertanian',
+                        'excerpt' => 'Dengan teknik pemupukan yang tepat, Anda dapat meningkatkan produktivitas lahan hingga dua kali lipat...',
+                        'image' => 'https://picsum.photos/id/1012/400/300',
+                        'date' => '2024-09-19',
+                    ],
+                    [
+                        'id' => 3,
+                        'title' => 'Manfaat Penggunaan Pupuk Organik',
+                        'excerpt' => 'Penggunaan pupuk organik dapat membantu menjaga kesuburan tanah secara alami tanpa merusak ekosistem...',
+                        'image' => 'https://picsum.photos/id/1013/400/300',
+                        'date' => '2024-09-18',
+                    ],
+                    [
+                        'id' => 4,
+                        'title' => 'Panduan Menanam Padi di Musim Kemarau',
+                        'excerpt' => 'Menanam padi di musim kemarau memerlukan teknik khusus untuk mempertahankan kadar air pada tanah...',
+                        'image' => 'https://picsum.photos/id/1014/400/300',
+                        'date' => '2024-09-17',
+                    ],
+                    [
+                        'id' => 5,
+                        'title' => 'Keuntungan Sistem Pertanian Hidroponik',
+                        'excerpt' => 'Hidroponik menjadi salah satu metode pertanian yang hemat lahan dan air, cocok untuk perkotaan...',
+                        'image' => 'https://picsum.photos/id/1015/400/300',
+                        'date' => '2024-09-16',
+                    ],
+                    [
+                        'id' => 6,
+                        'title' => 'Inovasi Pertanian Berkelanjutan untuk Masa Depan',
+                        'excerpt' => 'Pertanian berkelanjutan semakin penting untuk menghadapi perubahan iklim dan menjaga ketersediaan pangan...',
+                        'image' => 'https://picsum.photos/id/1016/400/300',
+                        'date' => '2024-09-15',
+                    ],
+                    [
+                        'id' => 7,
+                        'title' => 'Mengelola Hama Tanpa Pestisida Kimia',
+                        'excerpt' => 'Pengendalian hama secara alami kini menjadi tren dalam pertanian organik, meminimalisir penggunaan bahan kimia...',
+                        'image' => 'https://picsum.photos/id/1017/400/300',
+                        'date' => '2024-09-14',
+                    ],
+                    [
+                        'id' => 8,
+                        'title' => 'Cara Efektif Menghemat Air untuk Pertanian',
+                        'excerpt' => 'Di tengah krisis air global, mengelola air dengan bijak menjadi kunci keberlanjutan pertanian...',
+                        'image' => 'https://picsum.photos/id/1018/400/300',
+                        'date' => '2024-09-13',
+                    ],
+                    [
+                        'id' => 9,
+                        'title' => 'Diversifikasi Tanaman untuk Meningkatkan Keuntungan',
+                        'excerpt' => 'Diversifikasi tanaman adalah strategi penting untuk meningkatkan pendapatan petani dan menjaga keberlanjutan tanah...',
+                        'image' => 'https://picsum.photos/id/1019/400/300',
+                        'date' => '2024-09-12',
+                    ],
+                    [
+                        'id' => 10,
+                        'title' => 'Pertanian Cerdas dengan IoT dan AI',
+                        'excerpt' => 'Penggunaan IoT dan AI dalam pertanian memungkinkan pemantauan tanaman secara real-time untuk meningkatkan hasil panen...',
+                        'image' => 'https://picsum.photos/id/1020/400/300',
+                        'date' => '2024-09-11',
+                    ],
+                    [
+                        'id' => 11,
+                        'title' => 'Mengenal Teknologi Penyiraman Otomatis',
+                        'excerpt' => 'Sistem penyiraman otomatis memudahkan petani dalam menjaga kelembaban tanah, terutama di musim kemarau...',
+                        'image' => 'https://picsum.photos/id/1021/400/300',
+                        'date' => '2024-09-10',
+                    ],
+                    [
+                        'id' => 12,
+                        'title' => 'Pentingnya Rotasi Tanaman untuk Kesuburan Tanah',
+                        'excerpt' => 'Rotasi tanaman membantu menjaga kesuburan tanah dan mengurangi risiko serangan hama yang berulang...',
+                        'image' => 'https://picsum.photos/id/1022/400/300',
+                        'date' => '2024-09-09',
+                    ],
+                    [
+                        'id' => 13,
+                        'title' => 'Potensi Pasar Ekspor Produk Pertanian Indonesia',
+                        'excerpt' => 'Produk pertanian Indonesia memiliki potensi besar di pasar internasional, terutama komoditas unggulan seperti kopi dan kakao...',
+                        'image' => 'https://picsum.photos/id/1023/400/300',
+                        'date' => '2024-09-08',
+                    ],
+                    [
+                        'id' => 14,
+                        'title' => 'Cara Menghadapi Perubahan Iklim dalam Pertanian',
+                        'excerpt' => 'Perubahan iklim menjadi tantangan utama bagi petani, tetapi ada beberapa langkah adaptasi yang bisa diambil...',
+                        'image' => 'https://picsum.photos/id/1024/400/300',
+                        'date' => '2024-09-07',
+                    ],
+                    [
+                        'id' => 15,
+                        'title' => 'Inovasi Benih Unggul untuk Meningkatkan Hasil Panen',
+                        'excerpt' => 'Pengembangan benih unggul sangat penting untuk meningkatkan kualitas dan kuantitas hasil panen petani...',
+                        'image' => 'https://picsum.photos/id/1025/400/300',
+                        'date' => '2024-09-06',
+                    ],
+                    [
+                        'id' => 16,
+                        'title' => 'Pentingnya Pemberdayaan Petani Lokal',
+                        'excerpt' => 'Pemberdayaan petani lokal adalah kunci untuk mencapai kemandirian pangan dan meningkatkan kesejahteraan petani...',
+                        'image' => 'https://picsum.photos/id/1026/400/300',
+                        'date' => '2024-09-05',
+                    ],
+                    [
+                        'id' => 17,
+                        'title' => 'Perkembangan Teknologi Pertanian di Indonesia',
+                        'excerpt' => 'Indonesia terus berinovasi dalam sektor pertanian dengan teknologi yang memudahkan proses penanaman hingga panen...',
+                        'image' => 'https://picsum.photos/id/1027/400/300',
+                        'date' => '2024-09-04',
+                    ],
+                    [
+                        'id' => 18,
+                        'title' => 'Mengoptimalkan Lahan Sempit untuk Pertanian Perkotaan',
+                        'excerpt' => 'Dengan pertanian vertikal dan hidroponik, lahan sempit di perkotaan dapat dimanfaatkan untuk produksi pangan...',
+                        'image' => 'https://picsum.photos/id/1028/400/300',
+                        'date' => '2024-09-03',
+                    ],
+                    [
+                        'id' => 19,
+                        'title' => 'Peluang Bisnis Pertanian Organik',
+                        'excerpt' => 'Pertanian organik menawarkan peluang bisnis yang besar seiring meningkatnya permintaan pasar akan produk yang sehat...',
+                        'image' => 'https://picsum.photos/id/1029/400/300',
+                        'date' => '2024-09-02',
+                    ],
+                    [
+                        'id' => 20,
+                        'title' => 'Kiat Sukses Menjalankan Usaha Pertanian Kecil',
+                        'excerpt' => 'Usaha pertanian skala kecil bisa sukses dengan manajemen yang baik, inovasi, dan penerapan teknologi modern...',
+                        'image' => 'https://picsum.photos/id/1030/400/300',
+                        'date' => '2024-09-01',
+                    ],
+                ];
 
-                    @foreach ($articles as $article)
-                        <div class="bg-white dark:bg-zinc-800 overflow-hidden shadow-sm sm:rounded-lg">
-                            <img class="h-48 w-full object-cover" src="{{ asset('img/blogs/' . $article['image']) }}"
-                                alt="{{ $article['title'] }}">
-                            <div class="p-6">
-                                <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">{{ $article['title'] }}
-                                </h2>
-                                <p class="text-gray-600 dark:text-gray-200 text-sm mb-4">
-                                    {{ date('F j, Y', strtotime($article['date'])) }}</p>
-                                <p class="text-gray-600 dark:text-gray-200 mb-4 line-clamp-3">{{ $article['excerpt'] }}</p>
-                                <a href="{{ $article['link'] }}" target="_blank"
-                                    class="inline-flex items-center px-4 py-2 bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-blue-700 active:bg-blue-800 focus:outline-none focus:border-blue-800 focus:ring ring-blue-300 disabled:opacity-25 transition ease-in-out duration-150">
-                                    Read More
-                                </a>
-                            </div>
+            @endphp
+            @foreach($news as $item)
+                <article class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
+                    <img src="{{ $item['image'] }}" alt="{{ $item['title'] }}" class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <h2 class="text-xl font-semibold text-gray-900 mb-2">{{ $item['title'] }}</h2>
+                        <p class="text-gray-600 mb-4">{{ Str::limit($item['excerpt'], 100) }}</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">{{ $item['date'] }}</span>
+                            <a href="{{ route('news.show', $item['id']) }}" class="text-blue-600 hover:text-blue-800 font-medium">Read More</a>
                         </div>
-                    @endforeach
-                </div>
-            </div>
-        </main>
-    </div>
+                    </div>
+                </article>
+            @endforeach
+        </section>
+
+        <div class="mt-12 text-center">
+            <a href="{{ route('news.index') }}" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                View All News
+            </a>
+        </div>
+    </main>
+
+    <footer class="bg-gray-100 mt-16 py-8">
+        <div class="container mx-auto px-4 text-center text-gray-600">
+            <p>&copy; 2023 AgriNews. All rights reserved.</p>
+        </div>
+    </footer>
 @endsection

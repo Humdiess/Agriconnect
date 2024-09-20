@@ -16,26 +16,27 @@
             </button>
 
             <div id="dropdown-menu"
-                class="absolute border rounded-lg mt-2 p-1 w-full bg-white dark:bg-zinc-900 dark:border-zinc-900 overflow-hidden transition-all duration-300"
-                style="min-width: 150px; height: 0; opacity: 0; z-index: 999999999;">
+            class="absolute border rounded-lg mt-2 p-1 min-w-[200px] w-auto bg-white dark:bg-zinc-900 dark:border-zinc-900 overflow-hidden transition-all duration-300"
+            style="height: 0; opacity: 0; z-index: 999999999;">
 
-                @can('is_farmer')
-                    <a href="/dashboard-tani"
-                        class="w-full text-left px-3 py-2 text-sm text-green-500 hover:bg-green-500 rounded-md hover:text-white flex items-center">
-                        <i class="fa-solid fa-table-columns mr-2"></i>
-                        Dashboard Tani
-                    </a>
-                @endcan
+            @can('is_farmer')
+                <a href="/dashboard-tani"
+                    class="w-full text-left px-3 py-2 text-sm text-green-500 hover:bg-green-500 rounded-md hover:text-white flex items-center whitespace-nowrap">
+                    <i class="fa-solid fa-table-columns mr-2"></i>
+                    Dashboard Tani
+                </a>
+            @endcan
 
-                <form id="logout-form" method="POST" action="{{ route('auth.logout') }}">
-                    @csrf
-                    <button type="button" onclick="confirmLogout()"
-                        class="w-full text-left px-3 py-2 text-sm text-red-500 hover:bg-red-500 rounded-md hover:text-white flex items-center">
-                        <i class="fa-solid fa-sign-out-alt mr-2"></i>
-                        Logout
-                    </button>
-                </form>
-            </div>
+            <form id="logout-form" method="POST" action="{{ route('auth.logout') }}">
+                @csrf
+                <button type="button" onclick="confirmLogout()"
+                    class="w-full text-left px-3 py-2 text-sm text-red-500 hover:bg-red-500 rounded-md hover:text-white flex items-center whitespace-nowrap">
+                    <i class="fa-solid fa-sign-out-alt mr-2"></i>
+                    Logout
+                </button>
+            </form>
+        </div>
+
         </div>
     @else
         <!-- Sign In and Sign Up Buttons -->
