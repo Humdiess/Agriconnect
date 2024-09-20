@@ -1,14 +1,15 @@
 @include('frontend.layouts.header')
 
+<div class="min-h-screen">
     <x-navbar />
 
-    <main class="container mx-auto px-4 py-8">
-        <header class="text-center mb-12">
-            <h1 class="text-4xl font-bold text-gray-900 mb-2">AgriNews</h1>
-            <p class="text-xl text-gray-600">Your Source for Agricultural Insights</p>
+    <main class="container mx-auto px-8 lg:px-16 py-32 lg:py-12">
+        <header class="text-center mb-16">
+            <h1 class="text-5xl font-bold text-gray-900 dark:text-white mb-4 animate-fade-in-up">AgriNews</h1>
+            <p class="text-xl text-gray-600 dark:text-gray-400 animate-fade-in-up animation-delay-200">Your Source for Agricultural Insights</p>
         </header>
 
-        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             @php
                 $news = [
                     [
@@ -155,31 +156,91 @@
 
             @endphp
             @foreach($news as $item)
-                <article class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
-                    <img src="{{ $item['image'] }}" alt="{{ $item['title'] }}" class="w-full h-48 object-cover" />
-                    <div class="p-6">
-                        <h2 class="text-xl font-semibold text-gray-900 mb-2">{{ $item['title'] }}</h2>
-                        <p class="text-gray-600 mb-4">{{ Str::limit($item['excerpt'], 100) }}</p>
+                <article class="rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-lg transform">
+                    <img src="{{ $item['image'] }}" alt="{{ $item['title'] }}" class="w-full h-40 object-cover" />
+                    <div class="p-5">
+                        <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-2 line-clamp-2">{{ $item['title'] }}</h2>
+                        <p class="text-sm text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">{{ Str::limit($item['excerpt'], 80) }}</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-sm text-gray-500">{{ $item['date'] }}</span>
-                            <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">Read More</a>
+                            <span class="text-xs text-gray-500 dark:text-gray-400">{{ $item['date'] }}</span>
+                            <a href="#" class="inline-flex items-center justify-center px-3 py-1.5 text-xs font-medium rounded-full text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-300">
+                                Read More
+                            </a>
                         </div>
                     </div>
                 </article>
             @endforeach
         </section>
 
-        <div class="mt-12 text-center">
-            <a href="#" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+        <div class="mt-16 text-center">
+            <a href="#" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-full text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300 hover:scale-105 transform">
                 View All News
             </a>
         </div>
     </main>
+</div>
 
-    <footer class="bg-gray-100 mt-16 py-8">
-        <div class="container mx-auto px-4 text-center text-gray-600">
-            <p>&copy; 2023 AgriNews. All rights reserved.</p>
-        </div>
-    </footer>
+@push('styles')
+<style>
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    .animate-fade-in-up {
+        animation: fadeInUp 0.6s ease-out forwards;
+    }
+    .animation-delay-200 {
+        animation-delay: 0.2s;
+    }
+    .line-clamp-2 {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    .line-clamp-3 {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+</style>
+@endpush
+
+@push('scripts')
+<script>
+    // Dark mode toggle
+    function toggleDarkMode() {
+        document.documentElement.classList.toggle('dark');
+        localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+    }
+
+    // Check for saved theme preference or use system preference
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+    } else {
+        document.documentElement.classList.remove('dark');
+    }
+
+    // Intersection Observer for fade-in effect
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-fade-in-up');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('article').forEach(article => {
+        observer.observe(article);
+    });
+</script>
+@endpush
+
 @include('frontend.layouts.footer')
-

@@ -70,118 +70,120 @@
             </div>
         </div>
     </div>
-
-    <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const container = document.getElementById('container');
-    const content = document.getElementById('content');
-    const cards = document.getElementById('cards');
-    const chat = document.getElementById('chat');
-    const userInput = document.getElementById('userInput');
-    const sendButton = document.getElementById('sendButton');
-
-    gsap.from(container, { opacity: 0, duration: 1 });
-    gsap.from(content, { y: 20, opacity: 0, duration: 0.8, delay: 0.5 });
-    gsap.from(cards.children, {
-        y: 30,
-        opacity: 0,
-        duration: 0.5,
-        stagger: 0.2,
-        delay: 1
-    });
-    gsap.from(userInput, { y: 20, opacity: 0, duration: 0.5, delay: 1.5 });
-    gsap.from(sendButton, { y: 20, opacity: 0, duration: 0.5, delay: 1.5 });
-
-    function addMessage(type, message) {
-        const messageDiv = document.createElement('div');
-        messageDiv.className = `mb-4 ${type === 'user' ? 'text-right' : 'text-left'}`;
-        messageDiv.innerHTML = `
-            <div class="inline-block p-3 rounded-lg ${type === 'user' ? 'bg-accent text-white' : 'text-gray-800 dark:text-zinc-200'}">
-                ${message}
-            </div>
-        `;
-        chat.appendChild(messageDiv);
-
-        // Ensure the chat always scrolls to the latest message
-        setTimeout(() => {
-            chat.scrollTop = chat.scrollHeight;
-        }, 100);
-    }
-
-    function addSkeleton() {
-        const skeletonDiv = document.createElement('div');
-        skeletonDiv.id = 'skeleton-loader';
-        skeletonDiv.className = 'mb-4 text-left';
-        skeletonDiv.innerHTML = `
-            <div class="inline-block p-3 rounded-lg text-gray-800 animate-pulse w-[20rem]">
-                <div class="h-4 bg-gray-300 rounded w-3/4 mb-2"></div>
-                <div class="h-4 bg-gray-300 rounded w-1/2"></div>
-            </div>
-        `;
-        chat.appendChild(skeletonDiv);
-
-        // Ensure the chat always scrolls to the latest message
-        setTimeout(() => {
-            chat.scrollTop = chat.scrollHeight;
-        }, 100);
-    }
-
-    function removeSkeleton() {
-        const skeleton = document.getElementById('skeleton-loader');
-        if (skeleton) skeleton.remove();
-    }
-
-    function handleSendMessage() {
-        const message = userInput.value.trim();
-        if (message === '') return;
-
-        if (chat.children.length === 0) {
-            content.classList.add('hidden');
-            cards.classList.add('hidden');
-            chat.classList.remove('hidden');
-        }
-
-        addMessage('user', message);
-        userInput.value = '';
-
-        addSkeleton();
-
-        generateResponse(message);
-    }
-
-    function generateResponse(text) {
-        fetch("/tani-ai", {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-            },
-            body: JSON.stringify({ text: text })
-        })
-        .then(response => response.json())
-        .then(data => {
-            // Remove skeleton loader
-            removeSkeleton();
-
-            // Add AI message
-            addMessage('ai', data.text);
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            removeSkeleton();  // Remove skeleton in case of error
-        });
-    }
-
-    sendButton.addEventListener('click', handleSendMessage);
-    userInput.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-            handleSendMessage();
-        }
-    });
-
-    // Always focus input for better UX
-    userInput.focus();
-});
-    </script>
+</div>
 
 @include('frontend.layouts.footer')
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.getElementById('container');
+            const content = document.getElementById('content');
+            const cards = document.getElementById('cards');
+            const chat = document.getElementById('chat');
+            const userInput = document.getElementById('userInput');
+            const sendButton = document.getElementById('sendButton');
+        
+            gsap.from(container, { opacity: 0, duration: 1 });
+            gsap.from(content, { y: 20, opacity: 0, duration: 0.8, delay: 0.5 });
+            gsap.from(cards.children, {
+                y: 30,
+                opacity: 0,
+                duration: 0.5,
+                stagger: 0.2,
+                delay: 1
+            });
+            gsap.from(userInput, { y: 20, opacity: 0, duration: 0.5, delay: 1.5 });
+            gsap.from(sendButton, { y: 20, opacity: 0, duration: 0.5, delay: 1.5 });
+        
+            function addMessage(type, message) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `mb-4 ${type === 'user' ? 'text-right' : 'text-left'}`;
+                messageDiv.innerHTML = `
+                    <div class="inline-block p-3 rounded-lg ${type === 'user' ? 'bg-accent text-white' : 'text-gray-800 dark:text-zinc-200'}">
+                        ${message}
+                    </div>
+                `;
+                chat.appendChild(messageDiv);
+                
+                // Ensure the chat always scrolls to the latest message
+                setTimeout(() => {
+                    chat.scrollTop = chat.scrollHeight;
+                }, 100);
+            }
+        
+            function addSkeleton() {
+                const skeletonDiv = document.createElement('div');
+                skeletonDiv.id = 'skeleton-loader';
+                skeletonDiv.className = 'mb-4 text-left';
+                skeletonDiv.innerHTML = `
+                    <div class="inline-block p-3 rounded-lg text-gray-800 animate-pulse w-[20rem]">
+                        <div class="h-4 bg-gray-300 rounded w-3/4 mb-2"></div>
+                        <div class="h-4 bg-gray-300 rounded w-1/2"></div>
+                    </div>
+                `;
+                chat.appendChild(skeletonDiv);
+                
+                // Ensure the chat always scrolls to the latest message
+                setTimeout(() => {
+                    chat.scrollTop = chat.scrollHeight;
+                }, 100);
+            }
+        
+            function removeSkeleton() {
+                const skeleton = document.getElementById('skeleton-loader');
+                if (skeleton) skeleton.remove();
+            }
+        
+            function handleSendMessage() {
+                const message = userInput.value.trim();
+                if (message === '') return;
+            
+                if (chat.children.length === 0) {
+                    content.classList.add('hidden');
+                    cards.classList.add('hidden');
+                    chat.classList.remove('hidden');
+                }
+            
+                addMessage('user', message);
+                userInput.value = '';
+            
+                addSkeleton();
+            
+                generateResponse(message);
+            }
+        
+            function generateResponse(text) {
+                fetch("/tani-ai", {
+                    method: "POST",
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                    },
+                    body: JSON.stringify({ text: text })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Remove skeleton loader
+                    removeSkeleton();
+                
+                    // Add AI message
+                    addMessage('ai', data.text);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    removeSkeleton();  // Remove skeleton in case of error
+                });
+            }
+        
+            sendButton.addEventListener('click', handleSendMessage);
+            userInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    handleSendMessage();
+                }
+            });
+        
+            // Always focus input for better UX
+            userInput.focus();
+        });
+    </script>
+
