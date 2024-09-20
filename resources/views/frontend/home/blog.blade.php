@@ -6,10 +6,10 @@
     <main class="container mx-auto px-8 lg:px-16 py-32 lg:py-12">
         <header class="text-center mb-16">
             <h1 class="text-5xl font-bold text-gray-900 dark:text-white mb-4 animate-fade-in-up">AgriNews</h1>
-            <p class="text-xl text-gray-600 dark:text-gray-400 animate-fade-in-up animation-delay-200">Your Source for Agricultural Insights</p>
+            <p class="text-xl text-gray-600 dark:text-gray-400 animate-fade-in-up animation-delay-200">Dapatkan informasi tentang pertanian di Indonesia ter-update</p>
         </header>
 
-        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             @php
                 $news = [
                     [
@@ -156,7 +156,7 @@
 
             @endphp
             @foreach($news as $item)
-                <article class="rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-lg transform">
+                <article class="rounded-xl border border-gray-200 dark:border-zinc-800 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-lg transform">
                     <img src="{{ $item['image'] }}" alt="{{ $item['title'] }}" class="w-full h-40 object-cover" />
                     <div class="p-5">
                         <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-2 line-clamp-2">{{ $item['title'] }}</h2>
@@ -173,9 +173,15 @@
         </section>
 
         <div class="mt-16 text-center">
-            <a href="#" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-full text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300 hover:scale-105 transform">
-                View All News
-            </a>
+            <x-magic-button
+                borderRadius="1.75rem"
+                containerClassName="bg-black"
+                borderClassName="border-blue-500"
+                duration="2000"
+                className="text-white"
+                href="{{ route('blog') }}">
+                Lihat Selengkapnya
+            </x-magic-button>
         </div>
     </main>
 </div>
