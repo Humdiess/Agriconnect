@@ -9,6 +9,7 @@ class PetaniController extends Controller
     //
     public function index() // Dashboard
     {
-        return view('petani.dashboard');
+        $active = 'dashboard';
+        return view('petani.dashboard', compact('active'));
     }
 }

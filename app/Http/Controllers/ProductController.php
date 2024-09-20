@@ -17,7 +17,8 @@ class ProductController extends Controller
     {
         $userId = auth()->user()->id;
         $products = Product::where('user_id', $userId)->get();
-        return view('product.index', compact('products'));
+        $active = 'product';
+        return view('product.index', compact('products', 'active'));
     }
 
     /**
@@ -25,7 +26,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('product.create');
+        $active = 'product';
+        return view('product.create', compact('active'));
     }
 
     /**
@@ -67,7 +69,8 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        return view('product.show', compact('product'));
+        $active = 'product';
+        return view('product.show', compact('product', 'active'));
     }
 
     /**
@@ -75,7 +78,8 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        return view('product.edit', compact('product'));
+        $active = 'product';
+        return view('product.edit', compact('product', 'active'));
     }
 
     /**
