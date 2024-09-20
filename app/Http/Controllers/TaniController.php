@@ -11,7 +11,8 @@ class TaniController extends Controller
 {
     public function index()
     {
-        return view('frontend.tani.index');
+        $active = 'tani-ai';
+        return view('frontend.tani.index', compact('active'));
     }
 
     public function chat(Request $request)

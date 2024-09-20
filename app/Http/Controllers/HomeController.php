@@ -9,19 +9,23 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('frontend.home.index');
+        $active = 'home';
+        return view('frontend.home.index', compact('active'));
     }
     public function contact()
     {
-        return view('frontend.home.contact');
+        $active = 'contact';
+        return view('frontend.home.contact', compact('active'));
     }
     public function blog()
     {
-        return view('frontend.home.blog');
+        $active = 'blog';
+        return view('frontend.home.blog', compact('active'));
     }
     public function agrishop()
     {
+        $active = 'agrishop';
         $products = Product::all();
-        return view('frontend.home.agrishop', compact('products'));
+        return view('frontend.home.agrishop', compact('products', 'active'));
     }
 }

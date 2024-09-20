@@ -1,9 +1,8 @@
-@extends('templates.main')
+@extends('frontend.layouts.main')
 
 @section('content')
     @include('frontend.components.navbar')
     <x-navbar />
-
     <div class="bg-white dark:bg-zinc-950 min-h-screen">
         <nav class="bg-gray-100 dark:bg-zinc-900">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

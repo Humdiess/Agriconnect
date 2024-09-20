@@ -1,4 +1,4 @@
-@extends('templates.main')
+@extends('frontend.layouts.main')
 
 @section('content')
     @include('frontend.components.navbar')

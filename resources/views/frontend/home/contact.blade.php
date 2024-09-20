@@ -1,7 +1,6 @@
-@extends('templates.main')
+@extends('frontend.layouts.main')
 
 @section('content')
-    @include('frontend.components.navbar')
     <x-navbar />
     <div class="bg-white dark:bg-zinc-950 min-h-screen">
         <header class="bg-gray-100 dark:bg-zinc-900 shadow">
