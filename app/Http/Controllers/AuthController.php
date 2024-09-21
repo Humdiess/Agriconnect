@@ -13,7 +13,10 @@ class AuthController extends Controller
     //
     public function reqAuth()
     {
-        return view('errors.auth');
+        return view('errors.auth', [
+            'active' => 'req-auth',
+            'title' => 'req-auth'
+        ]);
     }
     public function login()
     {
