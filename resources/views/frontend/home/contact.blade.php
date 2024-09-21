@@ -2,14 +2,8 @@
 
 @section('content')
     <x-navbar />
-    <div class="bg-white dark:bg-zinc-950 min-h-screen">
-        <header class="bg-gray-100 dark:bg-zinc-900 shadow">
-            <div class="mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                <h1 class="text-3xl ml-8 font-bold text-gray-900 dark:text-white">Hubungi Kami</h1>
-            </div>
-        </header>
-
-        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="min-h-screen">
+        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 py-12">
             <div class="lg:grid lg:grid-cols-2 lg:gap-8">
                 <div>
                     <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl">
@@ -44,7 +38,7 @@
                     </dl>
                 </div>
                 <div class="mt-8 lg:mt-0">
-                    <div class="bg-gray-100 dark:bg-zinc-900 shadow sm:rounded-lg">
+                    <div class="border dark:border-neutral-700 rounded-lg shadow sm:rounded-lg">
                         <div class="px-4 py-5 sm:p-6">
                             <h3 class="text-lg font-medium leading-6 text-gray-900 dark:text-gray-100">Send us a message
                             </h3>
@@ -54,27 +48,27 @@
                                     <div>
                                         <label for="name"
                                             class="block text-sm font-medium text-gray-700 dark:text-gray-300">Name</label>
-                                        <div class="mt-1">
+                                        <div class="mt-2">
                                             <input type="text" name="name" id="name"
-                                                class="shadow-sm py-2 px-1 focus:ring-green-500 focus:border-green-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                                                class="shadow-sm bg-transparent border dark:border-neutral-700 py-2 px-1 focus:ring-green-500 focus:border-green-500 block w-full sm:text-sm border-gray-300 rounded-md"
                                                 required>
                                         </div>
                                     </div>
                                     <div class="mt-4">
                                         <label for="email"
                                             class="block text-sm font-medium text-gray-700 dark:text-gray-300">Email</label>
-                                        <div class="mt-1">
+                                        <div class="mt-2">
                                             <input type="email" name="email" id="email"
-                                                class="shadow-sm py-2 px-1 focus:ring-green-500 focus:border-green-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                                                class="shadow-sm bg-transparent border dark:border-neutral-700 py-2 px-1 focus:ring-green-500 focus:border-green-500 block w-full sm:text-sm border-gray-300 rounded-md"
                                                 required>
                                         </div>
                                     </div>
                                     <div class="mt-4">
                                         <label for="message"
                                             class="block text-sm font-medium text-gray-700 dark:text-gray-300">Message</label>
-                                        <div class="mt-1">
+                                        <div class="mt-2">
                                             <textarea id="message" name="message" rows="4"
-                                                class="shadow-sm py-2 px-1 focus:ring-green-500 focus:border-green-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                                                class="shadow-sm bg-transparent border dark:border-neutral-700 py-2 px-1 focus:ring-green-500 focus:border-green-500 block w-full sm:text-sm border-gray-300 rounded-md"
                                                 required></textarea>
                                         </div>
                                     </div>
