@@ -2,7 +2,7 @@
 
 <div class="flex w-full bg-gray-100 h-screen dark:bg-black">
     <aside
-        class="w-64 fixed left-0 top-0 bottom-0 hidden lg:block bg-white dark:bg-zinc-900 overflow-y-auto flex-col justify-between">
+        class="w-64 fixed left-0 top-0 bottom-0 hidden lg:block bg-white dark:bg-zinc-900 overflow-y-auto flex-col justify-between border-r">
         <!-- Sidebar content (logo, nav links, etc.) -->
         <div>
             <div class="p-4 border-b dark:border-zinc-800">
