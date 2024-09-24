@@ -40,4 +40,4 @@
     <div class="cursor-example"></div>
 
     @include('frontend.components.navbar')
-    @include('frontend.components.preload')
+    {{-- @include('frontend.components.preload') --}}

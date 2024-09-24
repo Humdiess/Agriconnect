@@ -80,21 +80,47 @@
             <div class="absolute w-[25rem] h-[25rem] bg-gradient-to-r from-[#5DBB63] to-[#27a002] opacity-20 blur-3xl rounded-full top-[112rem] left-[32rem] z-0"></div>
             <div class="about-content mt-8">
                 <div class="flex items-center justify-center h-full w-full">
-                    <div class="grid grid-cols-2 grid-rows-10 gap-4 p-2 rounded-lg shadow-md h-full w-full">
+                    <div class="grid grid-cols-5 grid-rows-10 gap-4 p-2 rounded-lg shadow-md h-full w-full">
 
-                      <div class="col-span-2 row-span-2 rounded-lg border border-zinc-800 bg-zinc-900/30 h-[20rem] shadow-md flex items-center justify-center">
-                        <p class="font-mplus2variable">Salmon</p>
+                      <div class="col-span-5 row-span-2 rounded-lg border dark:border-zinc-800 bg-white/70 dark:bg-zinc-900/30 h-[20rem] shadow-md flex items-center justify-between">
+                        <div class="explore-services flex flex-col gap-2 px-[5.5rem]">
+                            <h1 class="text-3xl font-bold dark:text-white">Eksplor Layanan Kami</h1>
+                            <p class="text-neutral-400 dark:text-neutral-300 max-w-80">kami menyediakan berbagai macam layanan yang dapat meningkatkan dan membantu mempermudah apalah petani tebu dan parbik gula di sidoarjo</p>
+                        </div>
+                        <div class="service-illustration relative flex-1 h-full">
+                            <img class="absolute bottom-12 right-8 dark:block hidden" src="{{ asset('img/svg/service-1.svg') }}" alt="tebu">
+                            <img class="absolute bottom-12 right-8 block dark:hidden" src="{{ asset('img/svg/service-4-dark.svg') }}" alt="tebu">
+
+                            <img class="absolute top-12 right-16 dark:block hidden" src="{{ asset('img/svg/service-2.svg') }}" alt="tebu">
+                            <img class="absolute top-12 right-16 block dark:hidden" src="{{ asset('img/svg/service-3-dark.svg') }}" alt="tebu">
+
+                            <img class="absolute bottom-16 left-8 dark:block hidden" src="{{ asset('img/svg/service-3.svg') }}" alt="tebu">
+                            <img class="absolute bottom-16 left-8 dark:hidden block" src="{{ asset('img/svg/service-2-dark.svg') }}" alt="tebu">
+
+                            <img class="absolute top-10 left-8 hidden dark:block" src="{{ asset('img/svg/service-4.svg') }}" alt="tebu">
+                            <img class="absolute top-10 left-8 dark:hidden block" src="{{ asset('img/svg/service-1-dark.svg') }}" alt="tebu">
+                        </div>
                       </div>
 
-                      <div class="col-span-1 row-span-2 rounded-lg border border-zinc-800 bg-zinc-900/30 h-[20rem] shadow-md flex items-center justify-center">
-                        <p class="font-mplus2variable">Broccoli</p>
+                      <div class="col-span-3 row-span-2 rounded-lg overflow-hidden border relative border-zinc-800 bg-white/30 dark:bg-card/30 h-[20rem] shadow-md flex items-center">
+                        <div class="explore-services flex flex-col gap-2 px-[2.5rem]">
+                            <h1 class="text-3xl font-bold dark:text-white">Eksplor Layanan Kami</h1>
+                            <p class="text-neutral-400 dark:text-neutral-300 max-w-80">kami menyediakan berbagai macam layanan yang dapat meningkatkan dan membantu mempermudah apalah petani tebu dan parbik gula di sidoarjo</p>
+                        </div>
+                        <img class="absolute -right-16 -bottom-2" src="{{ asset('img/svg/dashboard-service.svg') }}" alt="">
                       </div>
 
-                      <div class="col-span-1 row-span-2 rounded-lg border border-zinc-800 bg-zinc-900/30 h-[20rem] shadow-md flex items-center justify-center">
-                        <p class="font-mplus2variable">Tamago</p>
+                      <div class="col-span-2 row-span-2 flex-col rounded-lg border border-zinc-800 bg-zinc-900/30 h-[20rem] shadow-md flex justify-center">
+                        <div class="ai-services ms-8">
+                            <h1 class="text-2xl font-bold dark:text-white">Tingkatkan automasi</h1>
+                            <p class="dark:text-neutral-300 max-w-80 mt-2">Dapatkan rekomendasi aktivitas untuk menjaga lahan anda dengan bantuan Agriconnect Dashboard</p>
+                        </div>
+                        <div class="ai-services-image ms-16">
+                            <img src="{{ asset('img/svg/service-ai-small.svg') }}" alt="">
+                        </div>
                       </div>
 
-                      <div class="col-span-2 row-span-2 rounded-lg border border-zinc-800 bg-zinc-900/30 h-[20rem] shadow-md flex items-center justify-center">
+                      <div class="col-span-5 row-span-2 rounded-lg border border-zinc-800 bg-zinc-900/30 h-[20rem] shadow-md flex items-center justify-center">
                         <p class="font-mplus2variable">Pork</p>
                       </div>
 
