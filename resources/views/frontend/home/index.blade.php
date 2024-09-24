@@ -6,12 +6,8 @@
 <!-- Hero Section -->
 <section class="hero-container container mx-auto relative" id="home">
     <!-- Aurora Effects -->
-    <div
-        class="aurora-green absolute w-[20rem] h-[20rem] bg-gradient-to-r from-accent to-[#27a002] opacity-10 blur-3xl rounded-full top-[-10rem] left-[10rem] clip-aurora">
-    </div>
-    <div
-        class="aurora-green absolute w-[20rem] h-[20rem] bg-gradient-to-r from-accent to-[#27a002] opacity-10 blur-3xl rounded-full bottom-[20rem] right-[15rem] clip-aurora">
-    </div>
+    <div class="aurora-green absolute w-[20rem] h-[20rem] bg-gradient-to-r from-accent to-[#27a002] opacity-10 blur-3xl rounded-full top-[-10rem] left-[10rem] clip-aurora"></div>
+    <div class="aurora-green absolute w-[20rem] h-[20rem] bg-gradient-to-r from-accent to-[#27a002] opacity-10 blur-3xl rounded-full bottom-[20rem] right-[15rem] clip-aurora"></div>
 
     <!-- Triangle Patterns -->
     <div class="triangle-patterns top-[13rem] right-[22rem] -rotate-45 absolute">
@@ -28,14 +24,11 @@
     <div class="hero-wrapper w-full relative z-10">
         <div class="hero w-100 flex flex-col items-center justify-center mx-8">
             <div class="hero-title mt-[8rem] md:mt-[3rem] text-center">
-                <h1
-                    class="text-3xl text-center leading-9 font-bold text-gray-900 dark:text-white sm:text-5xl md:text-6xl">
+                <h1 class="text-3xl text-center leading-9 font-bold text-gray-900 dark:text-white sm:text-5xl md:text-6xl">
                     <span class="block">AgriConnect:</span>
-                    <span class="block text-accent max-w-[46rem] text-center">Mendukung Pertanian Tebu di
-                        Sidoarjo</span>
+                    <span class="block text-accent max-w-[46rem] text-center">Mendukung Pertanian Tebu di Sidoarjo</span>
                 </h1>
-                <p
-                    class="mt-3 max-w-md mx-auto text-base text-gray-500 dark:text-gray-300 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+                <p class="mt-3 max-w-md mx-auto text-base text-gray-500 dark:text-gray-300 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
                     Meningkatkan Produktivitas dan Kualitas melalui Teknologi
                 </p>
             </div>
@@ -59,8 +52,7 @@
 <!-- Sponsor Section -->
 <section class="sponsor-container mx-auto px-8 py-16">
     <div class="sponsor-wrapper">
-        <div
-            class="sponsor-list container mx-auto flex items-center justify-center gap-8 overflow-x-auto whitespace-nowrap scrollbar-hide">
+        <div class="sponsor-list container mx-auto flex items-center justify-center gap-8 overflow-x-auto whitespace-nowrap scrollbar-hide">
             @foreach (['kementrian.png', 'padi-tech.png', 'open-ai.png', 'tokopedia.png'] as $sponsor)
                 <div class="sponsor-item w-36 shrink-0">
                     <div class="p-3 bg-white dark:bg-zinc-white rounded-lg dark:border dark:border-zinc-600">
@@ -78,84 +70,62 @@
         <div class="about w-full">
             <div class="about-header w-full pt-8 text-center">
                 <h2 class="text-base text-accent font-semibold tracking-wide uppercase">AGRICONNECT</h2>
-                <p
-                    class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
                     Solusi untuk Peningkatan Produktivitas Tebu di Sidoarjo
                 </p>
                 <p class="mt-4 max-w-2xl text-xl text-gray-500 dark:text-gray-300 lg:mx-auto">
-                    AgriConnect hadir untuk mendukung petani tebu di Sidoarjo dalam meningkatkan produktivitas dan
-                    kualitas melalui teknologi modern dan pelatihan yang tepat.
+                    AgriConnect hadir untuk mendukung petani tebu di Sidoarjo dalam meningkatkan produktivitas dan kualitas melalui teknologi modern dan pelatihan yang tepat.
                 </p>
             </div>
-            <div
-                class="absolute w-[25rem] h-[25rem] bg-gradient-to-r from-[#5DBB63] to-[#27a002] opacity-20 blur-3xl rounded-full top-[112rem] left-[32rem] z-0">
-            </div>
+            <div class="absolute w-[25rem] h-[25rem] bg-gradient-to-r from-[#5DBB63] to-[#27a002] opacity-20 blur-3xl rounded-full top-[112rem] left-[32rem] z-0"></div>
             <div class="about-content mt-8">
                 <div class="flex items-center justify-center h-full w-full">
                     <div class="grid grid-cols-5 grid-rows-10 gap-4 p-2 rounded-lg shadow-md h-full w-full">
 
-                        <div
-                            class="col-span-5 row-span-2 rounded-lg border dark:border-zinc-800 bg-white/70 dark:bg-zinc-900/30 h-[20rem] shadow-md flex items-center justify-between">
-                            <div class="explore-services flex flex-col gap-2 px-[5.5rem]">
-                                <h1 class="text-3xl font-bold dark:text-white">Eksplor Layanan Kami</h1>
-                                <p class="text-neutral-400 dark:text-neutral-300 max-w-80">kami menyediakan berbagai
-                                    macam layanan yang dapat meningkatkan dan membantu mempermudah apalah petani tebu
-                                    dan parbik gula di sidoarjo</p>
-                            </div>
-                            <div class="service-illustration relative flex-1 h-full">
-                                <img class="absolute bottom-12 right-8 dark:block hidden"
-                                    src="{{ asset('img/svg/service-1.svg') }}" alt="tebu">
-                                <img class="absolute bottom-12 right-8 block dark:hidden"
-                                    src="{{ asset('img/svg/service-4-dark.svg') }}" alt="tebu">
-
-                                <img class="absolute top-12 right-16 dark:block hidden"
-                                    src="{{ asset('img/svg/service-2.svg') }}" alt="tebu">
-                                <img class="absolute top-12 right-16 block dark:hidden"
-                                    src="{{ asset('img/svg/service-3-dark.svg') }}" alt="tebu">
-
-                                <img class="absolute bottom-16 left-8 dark:block hidden"
-                                    src="{{ asset('img/svg/service-3.svg') }}" alt="tebu">
-                                <img class="absolute bottom-16 left-8 dark:hidden block"
-                                    src="{{ asset('img/svg/service-2-dark.svg') }}" alt="tebu">
-
-                                <img class="absolute top-10 left-8 hidden dark:block"
-                                    src="{{ asset('img/svg/service-4.svg') }}" alt="tebu">
-                                <img class="absolute top-10 left-8 dark:hidden block"
-                                    src="{{ asset('img/svg/service-1-dark.svg') }}" alt="tebu">
-                            </div>
+                      <div class="col-span-5 row-span-2 rounded-lg border dark:border-zinc-800 bg-white/70 dark:bg-zinc-900/30 h-[20rem] shadow-md flex items-center justify-between">
+                        <div class="explore-services flex flex-col gap-2 px-[5.5rem]">
+                            <h1 class="text-3xl font-bold dark:text-white">Eksplor Layanan Kami</h1>
+                            <p class="text-neutral-400 dark:text-neutral-300 max-w-80">kami menyediakan berbagai macam layanan yang dapat meningkatkan dan membantu mempermudah apalah petani tebu dan parbik gula di sidoarjo</p>
                         </div>
+                        <div class="service-illustration relative flex-1 h-full">
+                            <img class="absolute bottom-12 right-8 dark:block hidden" src="{{ asset('img/svg/service-1.svg') }}" alt="tebu">
+                            <img class="absolute bottom-12 right-8 block dark:hidden" src="{{ asset('img/svg/service-4-dark.svg') }}" alt="tebu">
 
-                        <div
-                            class="col-span-3 row-span-2 rounded-lg overflow-hidden border relative border-zinc-800 bg-white/30 dark:bg-card/30 h-[20rem] shadow-md flex items-center">
-                            <div class="explore-services flex flex-col gap-2 px-[2.5rem]">
-                                <h1 class="text-3xl font-bold dark:text-white">Eksplor Layanan Kami</h1>
-                                <p class="text-neutral-400 dark:text-neutral-300 max-w-80">kami menyediakan berbagai
-                                    macam layanan yang dapat meningkatkan dan membantu mempermudah apalah petani tebu
-                                    dan parbik gula di sidoarjo</p>
-                            </div>
-                            <img class="absolute -right-16 -bottom-2"
-                                src="{{ asset('img/svg/dashboard-service.svg') }}" alt="">
-                        </div>
+                            <img class="absolute top-12 right-16 dark:block hidden" src="{{ asset('img/svg/service-2.svg') }}" alt="tebu">
+                            <img class="absolute top-12 right-16 block dark:hidden" src="{{ asset('img/svg/service-3-dark.svg') }}" alt="tebu">
 
-                        <div
-                            class="col-span-2 row-span-2 flex-col rounded-lg border border-zinc-800 bg-zinc-900/30 h-[20rem] shadow-md flex justify-center">
-                            <div class="ai-services ms-8">
-                                <h1 class="text-2xl font-bold dark:text-white">Tingkatkan automasi</h1>
-                                <p class="dark:text-neutral-300 max-w-80 mt-2">Dapatkan rekomendasi aktivitas untuk
-                                    menjaga lahan anda dengan bantuan Agriconnect Dashboard</p>
-                            </div>
-                            <div class="ai-services-image ms-16">
-                                <img src="{{ asset('img/svg/service-ai-small.svg') }}" alt="">
-                            </div>
-                        </div>
+                            <img class="absolute bottom-16 left-8 dark:block hidden" src="{{ asset('img/svg/service-3.svg') }}" alt="tebu">
+                            <img class="absolute bottom-16 left-8 dark:hidden block" src="{{ asset('img/svg/service-2-dark.svg') }}" alt="tebu">
 
-                        <div
-                            class="col-span-5 row-span-2 rounded-lg border border-zinc-800 bg-zinc-900/30 h-[20rem] shadow-md flex items-center justify-center">
-                            <p class="font-mplus2variable">Pork</p>
+                            <img class="absolute top-10 left-8 hidden dark:block" src="{{ asset('img/svg/service-4.svg') }}" alt="tebu">
+                            <img class="absolute top-10 left-8 dark:hidden block" src="{{ asset('img/svg/service-1-dark.svg') }}" alt="tebu">
                         </div>
+                      </div>
+
+                      <div class="col-span-3 row-span-2 rounded-lg overflow-hidden border relative border-zinc-800 bg-white/30 dark:bg-card/30 h-[20rem] shadow-md flex items-center">
+                        <div class="explore-services flex flex-col gap-2 px-[2.5rem]">
+                            <h1 class="text-3xl font-bold dark:text-white">Eksplor Layanan Kami</h1>
+                            <p class="text-neutral-400 dark:text-neutral-300 max-w-80">kami menyediakan berbagai macam layanan yang dapat meningkatkan dan membantu mempermudah apalah petani tebu dan parbik gula di sidoarjo</p>
+                        </div>
+                        <img class="absolute -right-16 -bottom-2" src="{{ asset('img/svg/dashboard-service.svg') }}" alt="">
+                      </div>
+
+                      <div class="col-span-2 row-span-2 flex-col rounded-lg border border-zinc-800 bg-zinc-900/30 h-[20rem] shadow-md flex justify-center">
+                        <div class="ai-services ms-8">
+                            <h1 class="text-2xl font-bold dark:text-white">Tingkatkan automasi</h1>
+                            <p class="dark:text-neutral-300 max-w-80 mt-2">Dapatkan rekomendasi aktivitas untuk menjaga lahan anda dengan bantuan Agriconnect Dashboard</p>
+                        </div>
+                        <div class="ai-services-image ms-16">
+                            <img src="{{ asset('img/svg/service-ai-small.svg') }}" alt="">
+                        </div>
+                      </div>
+
+                      <div class="col-span-5 row-span-2 rounded-lg border border-zinc-800 bg-zinc-900/30 h-[20rem] shadow-md flex items-center justify-center">
+                        <p class="font-mplus2variable">Pork</p>
+                      </div>
 
                     </div>
-                </div>
+                  </div>
 
             </div>
         </div>
@@ -173,66 +143,107 @@
                     Pertanyaan yang Sering Diajukan
                 </p>
                 <p class="mt-4 max-w-2xl text-xl text-gray-500 dark:text-gray-300 lg:mx-auto">
-                    Temukan jawaban untuk pertanyaan umum tentang AgriConnect dan layanan kami untuk petani tebu di
-                    Sidoarjo
+                    Temukan jawaban untuk pertanyaan umum tentang AgriConnect dan layanan kami
                 </p>
             </div>
 
-            @php
-                $faqs = [
-                    [
-                        'question' => 'Apa itu AgriConnect dan bagaimana ini bisa membantu saya sebagai petani tebu?',
-                        'answer' =>
-                            'AgriConnect adalah platform yang menghubungkan petani tebu dengan teknologi modern untuk meningkatkan produktivitas dan akses pasar, membantu Anda dalam manajemen lahan yang lebih efisien.',
-                    ],
-                    [
-                        'question' => 'Apa saja layanan yang ditawarkan oleh AgriConnect?',
-                        'answer' =>
-                            'Kami menawarkan berbagai layanan, termasuk pelatihan, teknologi pertanian, dan akses ke pasar untuk hasil panen Anda.',
-                    ],
-                    [
-                        'question' => 'Bagaimana cara bergabung dengan AgriConnect?',
-                        'answer' =>
-                            'Anda dapat mendaftar melalui situs web kami dan mengikuti langkah-langkah pendaftaran yang mudah.',
-                    ],
-                    [
-                        'question' => 'Apakah ada biaya untuk menggunakan layanan AgriConnect?',
-                        'answer' =>
-                            'Sebagian besar layanan kami gratis untuk petani. Untuk layanan premium, kami akan memberikan informasi lebih lanjut setelah pendaftaran.',
-                    ],
-                ];
-            @endphp
+            <div class="faq-content mt-12">
+                <div class="space-y-4">
+                    @php
+                    $faqs = [
+                        [
+                            'question' => 'Apa itu AgriConnect dan bagaimana ini bisa membantu saya sebagai petani?',
+                            'answer' => 'AgriConnect adalah platform yang menghubungkan petani dengan teknologi seperti kecerdasan buatan (AI) dan Internet of Things (IoT), serta membuka akses ke pasar digital. Platform ini dirancang untuk membantu petani mengelola lahan dengan lebih efisien, memprediksi cuaca, serta menemukan harga pasar yang lebih baik.'
+                        ],
+                        [
+                            'question' => 'Saya petani kecil di pedesaan, apakah saya bisa menggunakan teknologi AgriConnect?',
+                            'answer' => 'Ya, AgriConnect dirancang agar mudah diakses oleh petani dari berbagai skala usaha, termasuk petani kecil. Kami menyediakan teknologi yang mudah digunakan dan bisa disesuaikan dengan kebutuhan Anda, baik untuk memantau lahan, memprediksi cuaca, atau menjual hasil panen langsung ke pasar digital.'
+                        ],
+                        [
+                            'question' => 'Bagaimana Tani AI bisa membantu saya di ladang?',
+                            'answer' => 'Tani AI menggunakan data seperti cuaca, kondisi tanah, dan pola tanaman untuk memberikan saran terbaik kepada Anda. Dengan Tani AI, Anda bisa mengetahui kapan waktu terbaik untuk menanam, berapa banyak air yang dibutuhkan tanaman, serta peringatan dini jika ada ancaman hama atau penyakit.'
+                        ],
+                        [
+                            'question' => 'Apa manfaat menggunakan sensor IoT di lahan saya?',
+                            'answer' => 'Sensor IoT memungkinkan Anda untuk memantau kondisi lahan secara real-time tanpa harus selalu berada di lapangan. Misalnya, sensor ini bisa memantau kelembapan tanah, suhu, dan kualitas udara. Data tersebut dikirim langsung ke ponsel Anda melalui aplikasi AgriConnect, sehingga Anda bisa membuat keputusan yang lebih cepat dan tepat, seperti kapan harus menyiram atau menambah pupuk. Ini akan membantu Anda menghemat waktu dan mengelola sumber daya dengan lebih efisien.'
+                        ],
+                        [
+                            'question' => 'Bagaimana saya bisa menjual produk langsung ke pasar melalui AgriConnect?',
+                            'answer' => 'AgriConnect memiliki fitur pasar digital yang memungkinkan Anda menjual hasil panen secara langsung ke pembeli tanpa perlu melalui perantara. Platform ini memberi Anda akses ke pasar yang lebih luas dan memungkinkan Anda menetapkan harga yang lebih adil untuk produk Anda. Hal ini diharapkan dapat meningkatkan pendapatan petani dan mengurangi ketergantungan pada tengkulak.'
+                        ],
+                        [
+                            'question' => 'Bagaimana cara memulai menggunakan AgriConnect?',
+                            'answer' => 'Untuk memulai, Anda hanya perlu mendaftar melalui situs web atau aplikasi AgriConnect. Setelah itu, Anda dapat mengatur profil lahan Anda, mulai memantau data cuaca dan kondisi tanah, serta terhubung dengan pasar digital. Jika Anda memerlukan bantuan, kami memiliki tim dukungan yang siap membantu Anda memahami cara menggunakan setiap fitur.'
+                        ],
+                        [
+                            'question' => 'Apakah AgriConnect dapat membantu saya meningkatkan hasil panen?',
+                            'answer' => 'Tentu! Dengan memanfaatkan teknologi seperti Tani AI dan IoT, AgriConnect membantu Anda membuat keputusan yang lebih baik terkait waktu tanam, penggunaan air, dan pemantauan kondisi tanaman. Ini diharapkan dapat meningkatkan hasil panen Anda, mengurangi risiko kerugian, dan memastikan tanaman tumbuh dalam kondisi optimal.'
+                        ],
+                        [
+                            'question' => 'Saya tinggal di daerah terpencil. Apakah AgriConnect masih bisa digunakan di sana?',
+                            'answer' => 'AgriConnect bisa digunakan di berbagai wilayah di Indonesia, termasuk daerah terpencil, selama ada akses internet. Kami juga sedang mengembangkan solusi untuk membantu petani di daerah dengan koneksi terbatas agar tetap bisa memanfaatkan teknologi IoT dan AI.'
+                        ],
+                        [
+                            'question' => 'Bagaimana cara saya mendapatkan dukungan jika mengalami masalah teknis?',
+                            'answer' => 'Jika Anda mengalami kesulitan atau masalah teknis saat menggunakan AgriConnect, tim dukungan kami selalu siap membantu. Anda dapat menghubungi kami melalui email, layanan chat di aplikasi, atau melalui nomor telepon hotline kami. Kami juga menyediakan tutorial dan panduan pengguna untuk membantu Anda mengatasi kendala umum.'
+                        ],
+                        [
+                            'question' => 'Apakah saya perlu keahlian teknologi untuk menggunakan AgriConnect?',
+                            'answer' => 'Tidak perlu! AgriConnect dirancang agar mudah digunakan oleh petani dari berbagai latar belakang. Kami menyadari bahwa tidak semua petani terbiasa dengan teknologi, sehingga platform kami intuitif dan disertai panduan yang jelas. Selain itu, kami menyediakan dukungan teknis untuk membantu Anda jika ada kesulitan.'
+                        ],
+                    ];
+                    @endphp
 
-            {{-- <div class="preload fixed top-0 left-0 w-full h-full bg-white z-50 flex justify-center items-center">
-                <!-- Preloader content (e.g., spinner) -->
-                <div class="loader"></div>
-            </div> --}}
-
-            <div class="content opacity-0 transition-opacity duration-500 mt-12">
-                <div class="faq-content">
-                    <div class="space-y-4">
-                        @foreach ($faqs as $index => $faq)
-                            <div class="border border-neutral-300 dark:border-zinc-800 rounded-lg p-4">
-                                <div class="flex justify-between items-center cursor-pointer"
-                                    onclick="toggleFaq({{ $index }})">
+                    @foreach ($faqs as $index => $faq)
+                        <div
+                            class="faq-item bg-white dark:bg-zinc-900 rounded-lg border border-gray-200 dark:border-zinc-700 overflow-hidden">
+                            <button class="faq-question w-full text-left px-6 py-4 focus:outline-none"
+                                onclick="toggleFaq({{ $index }})">
+                                <div class="flex justify-between items-center">
                                     <span
-                                        class="font-medium text-lg text-gray-900 dark:text-white">{{ $faq['question'] }}</span>
-                                    <i id="arrow-{{ $index }}"
-                                        class="fa-solid fa-chevron-down transition-transform duration-300 dark:text-white"></i>
+                                        class="font-medium text-gray-900 dark:text-white">{{ $faq['question'] }}</span>
+                                    <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-200"
+                                        id="arrow-{{ $index }}" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7" />
+                                    </svg>
                                 </div>
-                                <p id="answer-{{ $index }}"
-                                    class="mt-2 text-gray-500 dark:text-gray-300 hidden">{{ $faq['answer'] }}</p>
+                            </button>
+                            <div class="faq-answer px-6 py-4 bg-gray-50 dark:bg-zinc-700 hidden"
+                                id="answer-{{ $index }}">
+                                <p class="text-gray-600 dark:text-gray-300">{{ $faq['answer'] }}</p>
                             </div>
-                        @endforeach
-                    </div>
+                        </div>
+                    @endforeach
                 </div>
+                <div class="flex items-center justify-center w-full py-20">
+                    <div class="flex flex-col items-center w-full">
+                        <div style="opacity: 1; transform: none; will-change: auto;">
+                            <div class="grid w-full place-items-center grid-cols-1 p-6 md:p-8 md:grid-cols-[.55fr_1fr] rounded-2xl bg-[#121212]/50 border border-border">
+                                <div class="flex flex-col items-start justify-center lg:pl-6">
+                                    <h4 class="text-xl font-semibold lg:text-2xl">Explore our services</h4>
+                                    <p class="mt-4 text-neutral-500 lg:text-lg">We provide the best services for our customers with the best quality and the best price.</p>
+                                </div>
+                                <div class="flex items-center justify-center w-full mt-8 sm:mt-0 lg:py-4 lg:px-10"></div>
             </div>
-
         </div>
     </div>
 </section>
 
 <script src="{{ asset('js/gsap.js') }}"></script>
+
+<script>
+    function toggleFaq(index) {
+        const answer = document.getElementById(`answer-${index}`);
+        const arrow = document.getElementById(`arrow-${index}`);
+        answer.classList.toggle('hidden');
+        arrow.classList.toggle('rotate-180');
+    }
+</script>
+{{-- end-faq --}}
+{{-- end-faq --}}
+
 
 <script>
     function toggleFaq(index) {
