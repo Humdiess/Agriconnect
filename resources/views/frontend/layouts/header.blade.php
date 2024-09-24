@@ -34,7 +34,7 @@
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 
-<body class="antialiased bg-white dark:bg-zinc-950 transition-all" data-lenis-prevent data-speed="0.5">
+<body class="antialiased bg-white dark:bg-ireng transition-all" data-lenis-prevent data-speed="0.5">
 
 
     <div class="cursor-example"></div>

@@ -156,7 +156,7 @@
 
             @endphp
             @foreach($news as $item)
-                <article class="rounded-xl border border-gray-200 dark:border-zinc-800 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-lg transform">
+                <article class="rounded-xl border border-gray-200 dark:border-zinc-800 dark:bg-card shadow-sm overflow-hidden transition-all duration-300 hover:shadow-lg transform">
                     <img src="{{ $item['image'] }}" alt="{{ $item['title'] }}" class="w-full h-40 object-cover" />
                     <div class="p-5">
                         <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-2 line-clamp-2">{{ $item['title'] }}</h2>

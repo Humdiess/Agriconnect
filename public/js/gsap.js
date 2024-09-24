@@ -1,16 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const lenis = new Lenis()
-
-    console.log(lenis)
-
-
-    lenis.on('scroll', ScrollTrigger.update)
-
-    gsap.ticker.add((time)=>{
-      lenis.raf(time * 1000)
-    })
-
-    gsap.ticker.lagSmoothing(0)
 
     // Register ScrollTrigger plugin
     gsap.registerPlugin(ScrollTrigger);

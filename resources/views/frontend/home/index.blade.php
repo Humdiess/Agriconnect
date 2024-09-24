@@ -6,8 +6,8 @@
 <!-- Hero Section -->
 <section class="hero-container container mx-auto relative" id="home">
     <!-- Aurora Effects -->
-    <div class="aurora-green absolute w-[20rem] h-[20rem] bg-gradient-to-r from-[#5DBB63] to-[#27a002] opacity-10 blur-3xl rounded-full top-[-10rem] left-[10rem] clip-aurora"></div>
-    <div class="aurora-green absolute w-[20rem] h-[20rem] bg-gradient-to-r from-[#5DBB63] to-[#27a002] opacity-10 blur-3xl rounded-full bottom-[20rem] right-[15rem] clip-aurora"></div>
+    <div class="aurora-green absolute w-[20rem] h-[20rem] bg-gradient-to-r from-accent to-[#27a002] opacity-10 blur-3xl rounded-full top-[-10rem] left-[10rem] clip-aurora"></div>
+    <div class="aurora-green absolute w-[20rem] h-[20rem] bg-gradient-to-r from-accent to-[#27a002] opacity-10 blur-3xl rounded-full bottom-[20rem] right-[15rem] clip-aurora"></div>
 
     <!-- Triangle Patterns -->
     <div class="triangle-patterns top-[13rem] right-[22rem] -rotate-45 absolute">
@@ -23,10 +23,10 @@
     <!-- Hero Content -->
     <div class="hero-wrapper w-full relative z-10">
         <div class="hero w-100 flex flex-col items-center justify-center mx-8">
-            <div class="hero-title mt-[12rem] md:mt-[4rem] text-center">
-                <h1 class="text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white sm:text-5xl md:text-6xl">
+            <div class="hero-title mt-[8rem] md:mt-[3rem] text-center">
+                <h1 class="text-3xl text-center leading-9 font-bold text-gray-900 dark:text-white sm:text-5xl md:text-6xl">
                     <span class="block">AgriConnect:</span>
-                    <span class="block text-accent">Mendukung Pertanian Tebu di Sidoarjo</span>
+                    <span class="block text-accent max-w-[46rem] text-center">Mendukung Pertanian Tebu di Sidoarjo</span>
                 </h1>
                 <p class="mt-3 max-w-md mx-auto text-base text-gray-500 dark:text-gray-300 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
                     Meningkatkan Produktivitas dan Kualitas melalui Teknologi

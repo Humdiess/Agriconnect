@@ -3,8 +3,8 @@
 @section('content')
     @include('frontend.components.navbar')
     <x-navbar />
-    <div class="bg-white dark:bg-zinc-950 min-h-svh">
-        <header class="bg-gray-100 dark:bg-zinc-900 shadow">
+    <div class="min-h-svh">
+        <header class="shop-header">
             <div class="mx-auto py-6 px-4 sm:px-6 lg:px-8">
                 <h1 class="text-3xl ml-8 font-bold text-gray-900 dark:text-white">Agri Shop</h1>
             </div>
@@ -16,7 +16,7 @@
                 @foreach ($products as $product)
                     <a href="/product/{{ $product->id }}">
                         <div
-                            class="bg-white dark:bg-zinc-800 rounded-lg shadow-md overflow-hidden hover:-translate-y-4 transition ease-in-out">
+                            class="bg-white dark:bg-card rounded-lg shadow-md overflow-hidden hover:-translate-y-4 transition ease-in-out">
                             <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product['name'] }}"
                                 class="w-full h-48 object-cover">
                             <div class="p-4">

@@ -19,7 +19,7 @@
             <div id="chat" class="flex-grow overflow-y-auto mb-4 hidden"></div>
 
             <div id="cards" class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-                <div class="bg-gray-50 dark:bg-zinc-900 rounded-xl p-4 hover:shadow-md transition-shadow duration-300">
+                <div class="bg-gray-50 dark:bg-card rounded-xl p-4 hover:shadow-md transition-shadow duration-300">
                     <div class="w-8 h-8 bg-gray-200 rounded-full mb-3 flex items-center justify-center">
                         <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg">
@@ -30,7 +30,7 @@
                     <h3 class="text-sm font-medium text-gray-800 dark:text-white">Peluang Pertanian 2024</h3>
                     <p class="text-xs text-gray-500 mt-1">Inovasi & Peluang</p>
                 </div>
-                <div class="bg-gray-50 dark:bg-zinc-900 rounded-xl p-4 hover:shadow-md transition-shadow duration-300">
+                <div class="bg-gray-50 dark:bg-card rounded-xl p-4 hover:shadow-md transition-shadow duration-300">
                     <div class="w-8 h-8 bg-gray-200 rounded-full mb-3 flex items-center justify-center">
                         <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg">
@@ -41,7 +41,7 @@
                     <h3 class="text-sm font-medium text-gray-800 dark:text-white">Teknologi Pertanian Modern</h3>
                     <p class="text-xs text-gray-500 mt-1">Tren Teknologi</p>
                 </div>
-                <div class="bg-gray-50 dark:bg-zinc-900 rounded-xl p-4 hover:shadow-md transition-shadow duration-300">
+                <div class="bg-gray-50 dark:bg-card rounded-xl p-4 hover:shadow-md transition-shadow duration-300">
                     <div class="w-8 h-8 bg-gray-200 rounded-full mb-3 flex items-center justify-center">
                         <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg">
@@ -54,11 +54,11 @@
                 </div>
             </div>
 
-            <div class="fixed bottom-0 left-0 right-0 p-4 bg-white dark:bg-zinc-950">
+            <div class="fixed bottom-0 left-0 right-0 p-4 bg-white dark:bg-ireng">
                 <div class="max-w-2xl mx-auto">
                     <div class="input-field relative">
                         <input id="userInput" type="text" placeholder="Tanya tentang pertanian"
-                            class="w-full py-3 px-4 bg-gray-100 dark:bg-zinc-900 rounded-full text-gray-700 dark:text-zinc-200 focus:outline-none focus:ring-2 focus:ring-green-300"
+                            class="w-full py-3 px-4 bg-gray-100 dark:bg-card rounded-full text-gray-700 dark:text-zinc-200 focus:outline-none focus:ring-2 focus:ring-green-300"
                             autocomplete="off">
                         <button id="sendButton"
                             class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-accent text-white px-4 py-2 rounded-full text-sm hover:bg-accent transition-colors duration-300">
