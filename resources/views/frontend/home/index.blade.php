@@ -226,12 +226,14 @@
                                     <p class="mt-4 text-neutral-500 lg:text-lg">We provide the best services for our customers with the best quality and the best price.</p>
                                 </div>
                                 <div class="flex items-center justify-center w-full mt-8 sm:mt-0 lg:py-4 lg:px-10"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
-
-<script src="{{ asset('js/gsap.js') }}"></script>
 
 <script>
     function toggleFaq(index) {
@@ -242,17 +244,8 @@
     }
 </script>
 {{-- end-faq --}}
-{{-- end-faq --}}
-
 
 <script>
-    function toggleFaq(index) {
-        const answer = document.getElementById(`answer-${index}`);
-        const arrow = document.getElementById(`arrow-${index}`);
-        answer.classList.toggle('hidden');
-        arrow.classList.toggle('rotate-180');
-    }
-
     document.addEventListener("DOMContentLoaded", function() {
         // Tampilkan preloader saat halaman dimuat
         var preloader = document.querySelector(".preload");
