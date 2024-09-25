@@ -49,22 +49,6 @@
     </div>
 </section>
 
-<!-- Sponsor Section -->
-<section class="sponsor-container mx-auto px-8 py-16">
-    <div class="sponsor-wrapper">
-        <div class="sponsor-list container mx-auto flex items-center justify-center gap-8 overflow-x-auto whitespace-nowrap scrollbar-hide">
-            @foreach (['kementrian.png', 'padi-tech.png', 'open-ai.png', 'tokopedia.png'] as $sponsor)
-                <div class="sponsor-item w-36 shrink-0">
-                    <div class="p-3 bg-white dark:bg-zinc-white rounded-lg dark:border dark:border-zinc-600">
-                        <img class="w-full" src="{{ asset("img/sponsor/$sponsor") }}" alt="Sponsor Logo" loading="lazy">
-                    </div>
-                </div>
-            @endforeach
-        </div>
-    </div>
-</section>
-{{-- end sponsor section --}}
-
 <section class="about-container container mx-auto px-8 md:px-16 py-8">
     <div class="about-wrapper w-full" id="about">
         <div class="about w-full">
