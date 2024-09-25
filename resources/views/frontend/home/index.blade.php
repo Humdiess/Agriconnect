@@ -80,7 +80,7 @@
             <div class="absolute w-[25rem] h-[25rem] bg-gradient-to-r from-[#5DBB63] to-[#27a002] opacity-20 blur-3xl rounded-full top-[112rem] left-[32rem] z-0"></div>
             <div class="about-content mt-8">
                 <div class="flex items-center justify-center h-full w-full">
-                    <div class="grid grid-cols-5 grid-rows-10 gap-4 p-2 rounded-lg shadow-md h-full w-full">
+                    <div class="grid grid-cols-5 grid-rows-6 gap-4 p-2 rounded-lg shadow-md h-full w-full">
 
                       <div class="col-span-5 row-span-2 rounded-lg border dark:border-zinc-800 bg-white/70 dark:bg-zinc-900/30 h-[20rem] shadow-md flex items-center justify-between">
                         <div class="explore-services flex flex-col gap-2 px-[5.5rem]">
