@@ -1,8 +1,8 @@
 @include('templates.header')
 
-<div class="flex w-full bg-gray-100 h-screen dark:bg-black">
+<div class="flex w-full bg-gray-100 h-screen dark:bg-zinc-900">
     <aside
-        class="w-64 fixed left-0 top-0 bottom-0 hidden lg:block bg-white dark:bg-zinc-900 overflow-y-auto flex-col justify-between border-r">
+        class="w-64 fixed left-0 top-0 bottom-0 hidden lg:block bg-white dark:bg-zinc-900 overflow-y-auto flex-col justify-between border-r dark:border-zinc-800">
         <!-- Sidebar content (logo, nav links, etc.) -->
         <div>
             <div class="p-4 border-b dark:border-zinc-800">
@@ -25,7 +25,7 @@
                     Kembali Ke Beranda
                 </a>
                 <a href="{{ url('/dashboard-tani') }}"
-                    class="flex items-center px-4 py-2 mt-2  {{ $active == 'dashboard' ? 'text-white bg-accent dark:bg-zinc-800 dark:text-white' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800' }} rounded-lg transition-colors duration-200">
+                    class="flex items-center px-4 py-2 mt-2 {{ $active == 'dashboard' ? 'text-white bg-accent dark:text-white' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800' }} rounded-lg transition-colors duration-200">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -33,17 +33,44 @@
                     </svg>
                     Dashboard Tani
                 </a>
-                <a href="#"
-                    class="flex items-center px-4 py-2 mt-2 {{ $active == 'pantau-ai' ? 'text-white bg-accent dark:bg-zinc-800 dark:text-white' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800' }} rounded-lg transition-colors duration-200">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                    Pantau AI
-                </a>
+
+                <!-- Pantau Dropdown Start -->
+                <div class="relative">
+                    <button id="pantau-dropdown-toggle"
+                        class="flex items-center w-full px-4 py-2 mt-2 {{ $active == 'pantau-ai' ? 'text-white bg-accent dark:bg-zinc-800 dark:text-white' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800' }} rounded-lg transition-colors duration-200">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        Pantau
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-auto" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <!-- Dropdown menu for Pantau -->
+                    <div id="pantau-dropdown"
+                        class="hidden absolute left-0 right-0 z-10 bg-white dark:bg-zinc-800 shadow-lg rounded-lg">
+                        <a href="{{ url('/pantau/tanah') }}"
+                            class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors duration-200">
+                            Pantau Tanah
+                        </a>
+                        <a href="{{ url('/pantau/cuaca') }}"
+                            class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors duration-200">
+                            Pantau Cuaca
+                        </a>
+                        <a href="{{ url('/pantau/kesehatan-tebu') }}"
+                            class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors duration-200">
+                            Pantau Kesehatan Tebu
+                        </a>
+                    </div>
+                </div>
+                <!-- Pantau Dropdown End -->
+
                 <a href="{{ url('/product') }}"
                     class="flex items-center px-4 py-2 mt-2 {{ $active == 'product' ? 'text-white bg-accent dark:bg-zinc-800 dark:text-white' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800' }} rounded-lg transition-colors duration-200">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24"
@@ -79,11 +106,6 @@
                         class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors duration-200">
                         Logout
                     </a>
-                    {{-- darkmode toggle --}}
-                    <button id="theme-toggle"
-                        class="md:ml-2 md:px-2 rounded-full dark:bg-zinc-700 dark:hover:bg-zinc-600 hover:bg-gray-200 dark:text-white transition-colors">
-                        <i id="theme-icon" class="fas fa-moon"></i>
-                    </button>
                 </div>
             </div>
         </div>
@@ -92,3 +114,15 @@
 </div>
 
 @include('templates.footer')
+
+<script>
+    document.getElementById('pantau-dropdown-toggle').addEventListener('click', function() {
+        const dropdown = document.getElementById('pantau-dropdown');
+        dropdown.classList.toggle('hidden');
+    });
+
+    document.getElementById('profile-dropdown-toggle').addEventListener('click', function() {
+        const dropdown = document.getElementById('profile-dropdown');
+        dropdown.classList.toggle('hidden');
+    });
+</script>
