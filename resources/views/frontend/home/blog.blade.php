@@ -1,170 +1,85 @@
 @include('frontend.layouts.header')
 
-<div class="min-h-screen">
+<div class="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white">
     <x-navbar />
 
-    <main class="container mx-auto px-8 lg:px-16 py-32 lg:py-12">
-        <header class="text-center mb-16">
-            <h1 class="text-5xl font-bold text-gray-900 dark:text-white mb-4 animate-fade-in-up">AgriNews</h1>
-            <p class="text-xl text-gray-600 dark:text-gray-400 animate-fade-in-up animation-delay-200">Dapatkan informasi tentang pertanian di Indonesia ter-update</p>
-        </header>
+    <!-- Hero Section -->
+    <section class="hero-container container mx-auto relative py-16">
+        <!-- Aurora Effects -->
+        <div class="aurora-green absolute w-[20rem] h-[20rem] bg-gradient-to-r from-accent to-[#27a002] opacity-10 blur-3xl rounded-full top-[-10rem] left-[10rem] clip-aurora"></div>
+        <div class="aurora-green absolute w-[20rem] h-[20rem] bg-gradient-to-r from-accent to-[#27a002] opacity-10 blur-3xl rounded-full bottom-[20rem] right-[15rem] clip-aurora"></div>
 
-        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        <!-- Triangle Patterns -->
+        <div class="triangle-patterns top-[13rem] right-[22rem] -rotate-45 absolute">
+            <img src="{{ asset('img/triangle.svg') }}" alt="Triangle Pattern">
+        </div>
+        <div class="triangle-patterns top-[1rem] right-[38rem] rotate-45 absolute">
+            <img src="{{ asset('img/triangle.svg') }}" alt="Triangle Pattern">
+        </div>
+
+        <!-- Hero Content -->
+        <div class="hero-wrapper w-full relative z-10">
+            <div class="hero w-100 flex flex-col items-center justify-center mx-8">
+                <div class="hero-title text-center">
+                    <h1 class="text-3xl text-center leading-9 font-bold text-white sm:text-5xl md:text-6xl">
+                        <span class="block">AgriNews</span>
+                        <span class="block text-accent max-w-[46rem] text-center">Berita Terkini Seputar Pertanian</span>
+                    </h1>
+                    <p class="mt-3 max-w-md mx-auto text-base text-gray-300 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+                        Dapatkan informasi terbaru tentang perkembangan pertanian di Indonesia
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Content -->
+    <main class="container mx-auto px-8 lg:px-16 py-12">
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             @php
                 $news = [
                     [
-                        'id' => 1,
-                        'title' => 'Teknologi Terbaru dalam Pertanian Modern',
-                        'excerpt' => 'Pertanian modern semakin maju dengan penerapan teknologi terbaru seperti drone dan sistem irigasi otomatis...',
-                        'image' => 'https://picsum.photos/id/1011/400/300',
-                        'date' => '2024-09-20',
+                        'image' => 'https://picsum.photos/id/1/200/300',
+                        'title' => 'Pertanian di Indonesia: Ini Faktanya',
+                        'excerpt' => 'Pertanian di Indonesia: Ini Faktanya',
+                        'date' => '2022-03-01'
                     ],
                     [
-                        'id' => 2,
-                        'title' => 'Cara Meningkatkan Produktivitas Lahan Pertanian',
-                        'excerpt' => 'Dengan teknik pemupukan yang tepat, Anda dapat meningkatkan produktivitas lahan hingga dua kali lipat...',
-                        'image' => 'https://picsum.photos/id/1012/400/300',
-                        'date' => '2024-09-19',
+                        'image' => 'https://picsum.photos/id/1/200/300',
+                        'title' => 'Pertanian di Indonesia: Ini Faktanya',
+                        'excerpt' => 'Pertanian di Indonesia: Ini Faktanya',
+                        'date' => '2022-03-01'
                     ],
                     [
-                        'id' => 3,
-                        'title' => 'Manfaat Penggunaan Pupuk Organik',
-                        'excerpt' => 'Penggunaan pupuk organik dapat membantu menjaga kesuburan tanah secara alami tanpa merusak ekosistem...',
-                        'image' => 'https://picsum.photos/id/1013/400/300',
-                        'date' => '2024-09-18',
+                        'image' => 'https://picsum.photos/id/1/200/300',
+                        'title' => 'Pertanian di Indonesia: Ini Faktanya',
+                        'excerpt' => 'Pertanian di Indonesia: Ini Faktanya',
+                        'date' => '2022-03-01'
                     ],
                     [
-                        'id' => 4,
-                        'title' => 'Panduan Menanam Padi di Musim Kemarau',
-                        'excerpt' => 'Menanam padi di musim kemarau memerlukan teknik khusus untuk mempertahankan kadar air pada tanah...',
-                        'image' => 'https://picsum.photos/id/1014/400/300',
-                        'date' => '2024-09-17',
+                        'image' => 'https://picsum.photos/id/1/200/300',
+                        'title' => 'Pertanian di Indonesia: Ini Faktanya',
+                        'excerpt' => 'Pertanian di Indonesia: Ini Faktanya',
+                        'date' => '2022-03-01'
                     ],
                     [
-                        'id' => 5,
-                        'title' => 'Keuntungan Sistem Pertanian Hidroponik',
-                        'excerpt' => 'Hidroponik menjadi salah satu metode pertanian yang hemat lahan dan air, cocok untuk perkotaan...',
-                        'image' => 'https://picsum.photos/id/1015/400/300',
-                        'date' => '2024-09-16',
-                    ],
-                    [
-                        'id' => 6,
-                        'title' => 'Inovasi Pertanian Berkelanjutan untuk Masa Depan',
-                        'excerpt' => 'Pertanian berkelanjutan semakin penting untuk menghadapi perubahan iklim dan menjaga ketersediaan pangan...',
-                        'image' => 'https://picsum.photos/id/1016/400/300',
-                        'date' => '2024-09-15',
-                    ],
-                    [
-                        'id' => 7,
-                        'title' => 'Mengelola Hama Tanpa Pestisida Kimia',
-                        'excerpt' => 'Pengendalian hama secara alami kini menjadi tren dalam pertanian organik, meminimalisir penggunaan bahan kimia...',
-                        'image' => 'https://picsum.photos/id/1017/400/300',
-                        'date' => '2024-09-14',
-                    ],
-                    [
-                        'id' => 8,
-                        'title' => 'Cara Efektif Menghemat Air untuk Pertanian',
-                        'excerpt' => 'Di tengah krisis air global, mengelola air dengan bijak menjadi kunci keberlanjutan pertanian...',
-                        'image' => 'https://picsum.photos/id/1018/400/300',
-                        'date' => '2024-09-13',
-                    ],
-                    [
-                        'id' => 9,
-                        'title' => 'Diversifikasi Tanaman untuk Meningkatkan Keuntungan',
-                        'excerpt' => 'Diversifikasi tanaman adalah strategi penting untuk meningkatkan pendapatan petani dan menjaga keberlanjutan tanah...',
-                        'image' => 'https://picsum.photos/id/1019/400/300',
-                        'date' => '2024-09-12',
-                    ],
-                    [
-                        'id' => 10,
-                        'title' => 'Pertanian Cerdas dengan IoT dan AI',
-                        'excerpt' => 'Penggunaan IoT dan AI dalam pertanian memungkinkan pemantauan tanaman secara real-time untuk meningkatkan hasil panen...',
-                        'image' => 'https://picsum.photos/id/1020/400/300',
-                        'date' => '2024-09-11',
-                    ],
-                    [
-                        'id' => 11,
-                        'title' => 'Mengenal Teknologi Penyiraman Otomatis',
-                        'excerpt' => 'Sistem penyiraman otomatis memudahkan petani dalam menjaga kelembaban tanah, terutama di musim kemarau...',
-                        'image' => 'https://picsum.photos/id/1021/400/300',
-                        'date' => '2024-09-10',
-                    ],
-                    [
-                        'id' => 12,
-                        'title' => 'Pentingnya Rotasi Tanaman untuk Kesuburan Tanah',
-                        'excerpt' => 'Rotasi tanaman membantu menjaga kesuburan tanah dan mengurangi risiko serangan hama yang berulang...',
-                        'image' => 'https://picsum.photos/id/1022/400/300',
-                        'date' => '2024-09-09',
-                    ],
-                    [
-                        'id' => 13,
-                        'title' => 'Potensi Pasar Ekspor Produk Pertanian Indonesia',
-                        'excerpt' => 'Produk pertanian Indonesia memiliki potensi besar di pasar internasional, terutama komoditas unggulan seperti kopi dan kakao...',
-                        'image' => 'https://picsum.photos/id/1023/400/300',
-                        'date' => '2024-09-08',
-                    ],
-                    [
-                        'id' => 14,
-                        'title' => 'Cara Menghadapi Perubahan Iklim dalam Pertanian',
-                        'excerpt' => 'Perubahan iklim menjadi tantangan utama bagi petani, tetapi ada beberapa langkah adaptasi yang bisa diambil...',
-                        'image' => 'https://picsum.photos/id/1024/400/300',
-                        'date' => '2024-09-07',
-                    ],
-                    [
-                        'id' => 15,
-                        'title' => 'Inovasi Benih Unggul untuk Meningkatkan Hasil Panen',
-                        'excerpt' => 'Pengembangan benih unggul sangat penting untuk meningkatkan kualitas dan kuantitas hasil panen petani...',
-                        'image' => 'https://picsum.photos/id/1025/400/300',
-                        'date' => '2024-09-06',
-                    ],
-                    [
-                        'id' => 16,
-                        'title' => 'Pentingnya Pemberdayaan Petani Lokal',
-                        'excerpt' => 'Pemberdayaan petani lokal adalah kunci untuk mencapai kemandirian pangan dan meningkatkan kesejahteraan petani...',
-                        'image' => 'https://picsum.photos/id/1026/400/300',
-                        'date' => '2024-09-05',
-                    ],
-                    [
-                        'id' => 17,
-                        'title' => 'Perkembangan Teknologi Pertanian di Indonesia',
-                        'excerpt' => 'Indonesia terus berinovasi dalam sektor pertanian dengan teknologi yang memudahkan proses penanaman hingga panen...',
-                        'image' => 'https://picsum.photos/id/1027/400/300',
-                        'date' => '2024-09-04',
-                    ],
-                    [
-                        'id' => 18,
-                        'title' => 'Mengoptimalkan Lahan Sempit untuk Pertanian Perkotaan',
-                        'excerpt' => 'Dengan pertanian vertikal dan hidroponik, lahan sempit di perkotaan dapat dimanfaatkan untuk produksi pangan...',
-                        'image' => 'https://picsum.photos/id/1028/400/300',
-                        'date' => '2024-09-03',
-                    ],
-                    [
-                        'id' => 19,
-                        'title' => 'Peluang Bisnis Pertanian Organik',
-                        'excerpt' => 'Pertanian organik menawarkan peluang bisnis yang besar seiring meningkatnya permintaan pasar akan produk yang sehat...',
-                        'image' => 'https://picsum.photos/id/1029/400/300',
-                        'date' => '2024-09-02',
-                    ],
-                    [
-                        'id' => 20,
-                        'title' => 'Kiat Sukses Menjalankan Usaha Pertanian Kecil',
-                        'excerpt' => 'Usaha pertanian skala kecil bisa sukses dengan manajemen yang baik, inovasi, dan penerapan teknologi modern...',
-                        'image' => 'https://picsum.photos/id/1030/400/300',
-                        'date' => '2024-09-01',
+                        'image' => 'https://picsum.photos/id/1/200/300',
+                        'title' => 'Pertanian di Indonesia: Ini Faktanya',
+                        'excerpt' => 'Pertanian di Indonesia: Ini Faktanya',
+                        'date' => '2022-03-01'
                     ],
                 ];
-
             @endphp
             @foreach($news as $item)
-                <article class="rounded-xl border border-gray-200 dark:border-zinc-800 dark:bg-card shadow-sm overflow-hidden transition-all duration-300 hover:shadow-lg transform">
-                    <img src="{{ $item['image'] }}" alt="{{ $item['title'] }}" class="w-full h-40 object-cover" />
+                <article class="bg-white/10 backdrop-blur-md rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                    <img src="{{ $item['image'] }}" alt="{{ $item['title'] }}" class="w-full h-48 object-cover" />
                     <div class="p-5">
-                        <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-2 line-clamp-2">{{ $item['title'] }}</h2>
-                        <p class="text-sm text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">{{ Str::limit($item['excerpt'], 80) }}</p>
+                        <h2 class="text-lg font-semibold text-white mb-2 line-clamp-2">{{ $item['title'] }}</h2>
+                        <p class="text-sm text-gray-300 mb-4 line-clamp-3">{{ Str::limit($item['excerpt'], 100) }}</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-xs text-gray-500 dark:text-gray-400">{{ $item['date'] }}</span>
-                            <a href="#" class="inline-flex items-center justify-center px-3 py-1.5 text-xs font-medium rounded-full text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-300">
-                                Read More
+                            <span class="text-xs text-gray-400">{{ $item['date'] }}</span>
+                            <a href="#" class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-full text-white bg-accent hover:bg-accent-dark transition-colors duration-300">
+                                Baca Selengkapnya
                             </a>
                         </div>
                     </div>
@@ -172,37 +87,37 @@
             @endforeach
         </section>
 
-        <div class="mt-16 text-center">
-            <x-magic-button
-                borderRadius="1.75rem"
-                containerClassName="bg-black"
-                borderClassName="border-blue-500"
-                duration="2000"
-                className="text-white"
-                href="{{ route('blog') }}">
-                Lihat Selengkapnya
-            </x-magic-button>
+        <!-- Pagination -->
+        <div class="mt-16 flex justify-center">
+            <nav class="inline-flex rounded-md shadow">
+                <a href="#" class="px-4 py-2 rounded-l-md border border-gray-700 bg-gray-800 text-gray-300 hover:bg-gray-700 transition-colors duration-300">Previous</a>
+                <a href="#" class="px-4 py-2 border-t border-b border-gray-700 bg-gray-800 text-gray-300 hover:bg-gray-700 transition-colors duration-300">1</a>
+                <a href="#" class="px-4 py-2 border-t border-b border-gray-700 bg-gray-800 text-gray-300 hover:bg-gray-700 transition-colors duration-300">2</a>
+                <a href="#" class="px-4 py-2 border-t border-b border-gray-700 bg-gray-800 text-gray-300 hover:bg-gray-700 transition-colors duration-300">3</a>
+                <a href="#" class="px-4 py-2 rounded-r-md border border-gray-700 bg-gray-800 text-gray-300 hover:bg-gray-700 transition-colors duration-300">Next</a>
+            </nav>
         </div>
     </main>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-container container mx-auto px-8 md:px-16 py-16">
+        <div class="newsletter-wrapper w-full bg-white/10 backdrop-blur-md rounded-lg shadow-lg p-8">
+            <div class="newsletter text-center">
+                <h2 class="text-2xl font-bold text-white mb-4">Berlangganan Newsletter</h2>
+                <p class="text-gray-300 mb-6">Dapatkan berita terbaru langsung di inbox Anda</p>
+                <form class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <input type="email" placeholder="Masukkan email Anda" class="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:ring-accent focus:border-accent text-white">
+                    <button type="submit" class="px-6 py-2 bg-accent text-white rounded-lg hover:bg-accent-dark transition-colors duration-300">Berlangganan</button>
+                </form>
+            </div>
+        </div>
+    </section>
 </div>
 
 @push('styles')
 <style>
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-    .animate-fade-in-up {
-        animation: fadeInUp 0.6s ease-out forwards;
-    }
-    .animation-delay-200 {
-        animation-delay: 0.2s;
+    .clip-aurora {
+        clip-path: circle(50% at 50% 50%);
     }
     .line-clamp-2 {
         display: -webkit-box;
@@ -221,30 +136,19 @@
 
 @push('scripts')
 <script>
-    // Dark mode toggle
-    function toggleDarkMode() {
-        document.documentElement.classList.toggle('dark');
-        localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
-    }
+    document.addEventListener('DOMContentLoaded', function() {
+        // Intersection Observer for fade-in effect
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in-up');
+                }
+            });
+        }, { threshold: 0.1 });
 
-    // Check for saved theme preference or use system preference
-    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.classList.add('dark');
-    } else {
-        document.documentElement.classList.remove('dark');
-    }
-
-    // Intersection Observer for fade-in effect
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate-fade-in-up');
-            }
+        document.querySelectorAll('article').forEach(article => {
+            observer.observe(article);
         });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('article').forEach(article => {
-        observer.observe(article);
     });
 </script>
 @endpush

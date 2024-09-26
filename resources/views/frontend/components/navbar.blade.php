@@ -9,7 +9,7 @@
                 </a>
             </li>
             <li>
-                <a class="hidden lg:block text-sm {{ $active == 'shop' ? 'text-accent' : '' }}" href="/agrishop">Toko</a>
+                <a class="hidden lg:block text-sm {{ $active == 'agrishop' ? 'text-accent' : '' }}" href="/agrishop">Toko</a>
                 <a class="block lg:hidden" href="/agrishop">
                     <i class="fa-solid fa-cart-shopping"></i>
                 </a>
