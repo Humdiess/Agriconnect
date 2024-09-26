@@ -1,6 +1,6 @@
 <nav class="fixed top-0 left-1/2 transform -translate-x-1/2 py-4 z-30">
     <div
-        class="menu items-center flex gap-6 py-4 dark:text-white px-6 rounded-xl dark:bg-card/80 backdrop-blur-lg border dark:border-zinc-600 border-gray-300">
+        class="menu items-center flex gap-6 py-4 dark:text-white px-6 rounded-xl dark:bg-ireng/80 backdrop-blur-lg border dark:border-zinc-600 border-gray-300">
         <ul class="flex gap-6 items-center">
             <li>
                 <a class="hidden lg:block text-sm {{ $active == 'home' ? 'text-accent' : '' }}" href="/">Beranda</a>

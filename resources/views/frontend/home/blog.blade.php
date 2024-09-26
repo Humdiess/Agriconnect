@@ -1,6 +1,6 @@
 @include('frontend.layouts.header')
 
-<div class="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+<div class="min-h-screen bg-ireng text-white">
     <x-navbar />
 
     <!-- Hero Section -->
@@ -9,21 +9,13 @@
         <div class="aurora-green absolute w-[20rem] h-[20rem] bg-gradient-to-r from-accent to-[#27a002] opacity-10 blur-3xl rounded-full top-[-10rem] left-[10rem] clip-aurora"></div>
         <div class="aurora-green absolute w-[20rem] h-[20rem] bg-gradient-to-r from-accent to-[#27a002] opacity-10 blur-3xl rounded-full bottom-[20rem] right-[15rem] clip-aurora"></div>
 
-        <!-- Triangle Patterns -->
-        <div class="triangle-patterns top-[13rem] right-[22rem] -rotate-45 absolute">
-            <img src="{{ asset('img/triangle.svg') }}" alt="Triangle Pattern">
-        </div>
-        <div class="triangle-patterns top-[1rem] right-[38rem] rotate-45 absolute">
-            <img src="{{ asset('img/triangle.svg') }}" alt="Triangle Pattern">
-        </div>
-
         <!-- Hero Content -->
         <div class="hero-wrapper w-full relative z-10">
             <div class="hero w-100 flex flex-col items-center justify-center mx-8">
                 <div class="hero-title text-center">
-                    <h1 class="text-3xl text-center leading-9 font-bold text-white sm:text-5xl md:text-6xl">
+                    <h1 class="text-3xl text-center font-bold text-white sm:text-4xl md:text-5xl"  style="line-height: 1.2">
                         <span class="block">AgriNews</span>
-                        <span class="block text-accent max-w-[46rem] text-center">Berita Terkini Seputar Pertanian</span>
+                        <span class="block text-accent max-w-[62rem] text-center">Berita Terkini Seputar Pertanian</span>
                     </h1>
                     <p class="mt-3 max-w-md mx-auto text-base text-gray-300 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
                         Dapatkan informasi terbaru tentang perkembangan pertanian di Indonesia
@@ -71,7 +63,7 @@
                 ];
             @endphp
             @foreach($news as $item)
-                <article class="bg-white/10 backdrop-blur-md rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                <article class="dark:bg-ireng backdrop-blur-md rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border dark:border-zinc-600">
                     <img src="{{ $item['image'] }}" alt="{{ $item['title'] }}" class="w-full h-48 object-cover" />
                     <div class="p-5">
                         <h2 class="text-lg font-semibold text-white mb-2 line-clamp-2">{{ $item['title'] }}</h2>

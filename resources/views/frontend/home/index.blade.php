@@ -4,29 +4,18 @@
 <x-navbar />
 
 <!-- Hero Section -->
-<section class="hero-container container mx-auto relative" id="home">
+<section class="hero-container relative" id="home">
     <!-- Aurora Effects -->
-    <div class="aurora-green absolute w-[20rem] h-[20rem] bg-gradient-to-r from-accent to-[#27a002] opacity-10 blur-3xl rounded-full top-[-10rem] left-[10rem] clip-aurora"></div>
-    <div class="aurora-green absolute w-[20rem] h-[20rem] bg-gradient-to-r from-accent to-[#27a002] opacity-10 blur-3xl rounded-full bottom-[20rem] right-[15rem] clip-aurora"></div>
-
-    <!-- Triangle Patterns -->
-    <div class="triangle-patterns top-[13rem] right-[22rem] -rotate-45 absolute">
-        <img src="{{ asset('img/triangle.svg') }}" alt="Triangle Pattern">
-    </div>
-    <div class="triangle-patterns top-[1rem] right-[38rem] rotate-45 absolute">
-        <img src="{{ asset('img/triangle.svg') }}" alt="Triangle Pattern">
-    </div>
-    <div class="triangle-patterns top-[10rem] left-[18rem] -rotate-45 absolute">
-        <img src="{{ asset('img/triangle.svg') }}" alt="Triangle Pattern">
-    </div>
+    <div class="aurora-green absolute w-[20rem] h-[20rem] bg-gradient-to-r from-accent to-accent opacity-10 blur-3xl rounded-full top-[-10rem] left-[10rem] clip-aurora"></div>
+    <div class="aurora-green absolute w-[20rem] h-[20rem] bg-gradient-to-r from-accent to-accent opacity-10 blur-3xl rounded-full bottom-[20rem] right-[15rem] clip-aurora"></div>
 
     <!-- Hero Content -->
     <div class="hero-wrapper w-full relative z-10">
         <div class="hero w-100 flex flex-col items-center justify-center mx-8">
             <div class="hero-title mt-[8rem] md:mt-[3rem] text-center">
-                <h1 class="text-3xl text-center leading-9 font-bold text-gray-900 dark:text-white sm:text-5xl md:text-6xl">
+                <h1 class="text-3xl text-center leading-9 font-bold text-gray-900 dark:text-white sm:text-4xl md:text-5xl" style="line-height: 1.2">
                     <span class="block">AgriConnect:</span>
-                    <span class="block text-accent max-w-[52rem] text-center">Mendukung Pertanian Tebu di Sidoarjo</span>
+                    <span class="block text-accent max-w-[64rem] text-center">Mendukung Pertanian Tebu di Sidoarjo</span>
                 </h1>
                 <p class="mt-3 max-w-md mx-auto text-base text-gray-500 dark:text-gray-300 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
                     Meningkatkan Produktivitas dan Kualitas melalui Teknologi
@@ -39,7 +28,7 @@
 
         <!-- Hero Image -->
         <div class="hero-image-wrapper w-full flex justify-center mt-12 aspect-video">
-            <div class="hero-image aspect-video rounded-xl border border-zinc-200 p-2 w-[960px] h-[540px]">
+            <div class="hero-image aspect-video rounded-xl border dark:border-zinc-600 dark:shadow-accent/35 shadow-accent/25 shadow-[0_0_16px_0_rgba(0,0,0,0.1)] overflow-hidden w-[960px] h-[540px]">
                 <img class="w-full h-full object-cover rounded-lg hidden dark:block aspect-video"
                     src="{{ asset('img/tani/tani-dark.png') }}" alt="Hero Image">
                 <img class="w-full h-full object-cover rounded-lg block dark:hidden aspect-video"
@@ -66,7 +55,7 @@
                 <div class="flex items-center justify-center h-full w-full">
                     <div class="grid grid-cols-5 grid-rows-6 gap-4 p-2 rounded-lg h-full w-full">
 
-                      <div class="col-span-5 row-span-4 lg:row-span-2 rounded-lg border dark:border-zinc-800 bg-white/70 dark:bg-zinc-900/30 h-full lg:h-[20rem] flex flex-col sm:flex-col md:flex-col lg:flex-row items-center justify-between">
+                      <div class="col-span-5 row-span-4 lg:row-span-2 rounded-lg border dark:border-zinc-600 bg-white/70 dark:bg-zinc-900/30 h-full lg:h-[20rem] flex flex-col sm:flex-col md:flex-col lg:flex-row items-center justify-between">
                         <div class="explore-services flex flex-col gap-2 px-[5.5rem]">
                             <h1 class="text-3xl font-bold dark:text-white">Eksplor Layanan Kami</h1>
                             <p class="text-neutral-400 dark:text-neutral-300 max-w-80">kami menyediakan berbagai macam layanan yang dapat meningkatkan dan membantu mempermudah apalah petani tebu dan parbik gula di sidoarjo</p>
@@ -86,7 +75,7 @@
                         </div>
                       </div>
 
-                      <div class="col-span-5 lg:col-span-3 row-span-2 rounded-lg overflow-hidden border relative dark:border-zinc-800 bg-white/30 dark:bg-card/30 h-[20rem] flex items-center">
+                      <div class="col-span-5 lg:col-span-3 row-span-2 rounded-lg overflow-hidden border relative dark:border-zinc-600 bg-white/30 dark:bg-card/30 h-[20rem] flex items-center">
                         <div class="explore-services flex flex-col gap-2 px-[2.5rem]">
                             <h1 class="text-3xl font-bold dark:text-white">Eksplor Layanan Kami</h1>
                             <p class="text-neutral-400 dark:text-neutral-300 max-w-80">kami menyediakan berbagai macam layanan yang dapat meningkatkan dan membantu mempermudah apalah petani tebu dan parbik gula di sidoarjo</p>
@@ -94,7 +83,7 @@
                         <img class="absolute -right-16 -bottom-2" src="{{ asset('img/svg/dashboard-service.svg') }}" alt="">
                       </div>
 
-                      <div class="col-span-5 lg:col-span-2 row-span-2 flex-col rounded-lg border dark:border-zinc-800 bg-white/70 dark:bg-zinc-900/30 h-[20rem] flex justify-center">
+                      <div class="col-span-5 lg:col-span-2 row-span-2 flex-col rounded-lg border dark:border-zinc-600 bg-white/70 dark:bg-zinc-900/30 h-[20rem] flex justify-center">
                         <div class="ai-services ms-8">
                             <h1 class="text-2xl font-bold dark:text-white">Tingkatkan automasi</h1>
                             <p class="text-neutral-400 dark:text-neutral-300 max-w-80 mt-2">Dapatkan rekomendasi aktivitas untuk menjaga lahan anda dengan bantuan Agriconnect Dashboard</p>
@@ -104,7 +93,7 @@
                         </div>
                       </div>
 
-                      <div class="col-span-5 row-span-2 rounded-lg border dark:border-zinc-800 bg-white/70 dark:bg-zinc-900/30 h-[20rem] flex items-center justify-center">
+                      <div class="col-span-5 row-span-2 rounded-lg border dark:border-zinc-600 bg-white/70 dark:bg-zinc-900/30 h-[20rem] flex items-center justify-center">
                         <p class="font-mplus2variable">Pork</p>
                       </div>
 
@@ -180,7 +169,7 @@
 
                     @foreach ($faqs as $index => $faq)
                         <div
-                            class="faq-item bg-white dark:bg-zinc-900 rounded-lg border border-gray-200 dark:border-zinc-700 overflow-hidden">
+                            class="faq-item bg-white dark:bg-ireng rounded-lg border border-gray-200 dark:border-zinc-600 overflow-hidden">
                             <button class="faq-question w-full text-left px-6 py-4 focus:outline-none"
                                 onclick="toggleFaq({{ $index }})">
                                 <div class="flex justify-between items-center">
