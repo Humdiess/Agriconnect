@@ -9,8 +9,7 @@
                 </a>
             </li>
             <li>
-                <a class="hidden lg:block text-sm {{ $active == 'agrishop' ? 'text-accent' : '' }}" href="/agrishop">Agri
-                    Shop</a>
+                <a class="hidden lg:block text-sm {{ $active == 'shop' ? 'text-accent' : '' }}" href="/agrishop">Toko</a>
                 <a class="block lg:hidden" href="/agrishop">
                     <i class="fa-solid fa-cart-shopping"></i>
                 </a>
@@ -24,14 +23,14 @@
             </li>
             <li>
                 <a class="hidden lg:block text-sm {{ $active == 'blog' ? 'text-accent' : '' }}"
-                    href="{{ route('blog') }}">Agri News</a>
+                    href="{{ route('blog') }}">Berita</a>
                 <a class="block lg:hidden" href="/blog">
                     <i class="fa-solid fa-newspaper"></i>
                 </a>
             </li>
             <li>
                 <a class="hidden lg:block text-sm {{ $active == 'contact' ? 'text-accent' : '' }}"
-                    href="/contact">Hubungi Kami</a>
+                    href="/contact">Kontak</a>
                 <a class="block md:hidden" href="/contact">
                     <i class="fa-solid fa-phone"></i>
                 </a>
