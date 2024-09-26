@@ -26,7 +26,7 @@
             <div class="hero-title mt-[8rem] md:mt-[3rem] text-center">
                 <h1 class="text-3xl text-center leading-9 font-bold text-gray-900 dark:text-white sm:text-5xl md:text-6xl">
                     <span class="block">AgriConnect:</span>
-                    <span class="block text-accent max-w-[46rem] text-center">Mendukung Pertanian Tebu di Sidoarjo</span>
+                    <span class="block text-accent max-w-[52rem] text-center">Mendukung Pertanian Tebu di Sidoarjo</span>
                 </h1>
                 <p class="mt-3 max-w-md mx-auto text-base text-gray-500 dark:text-gray-300 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
                     Meningkatkan Produktivitas dan Kualitas melalui Teknologi
@@ -39,7 +39,7 @@
 
         <!-- Hero Image -->
         <div class="hero-image-wrapper w-full flex justify-center mt-12 aspect-video">
-            <div class="hero-image w-[60rem] h-[33.75rem] aspect-video rounded-xl border border-zinc-200 p-2">
+            <div class="hero-image aspect-video rounded-xl border border-zinc-200 p-2 w-[960px] h-[540px]">
                 <img class="w-full h-full object-cover rounded-lg hidden dark:block aspect-video"
                     src="{{ asset('img/tani/tani-dark.png') }}" alt="Hero Image">
                 <img class="w-full h-full object-cover rounded-lg block dark:hidden aspect-video"

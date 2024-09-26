@@ -1,4 +1,4 @@
-<section class="navbar justify-between py-6 px-16 items-center z-50 hidden md:flex">
+<section class="navbar justify-between py-6 px-2 sm:px-8 md:px-16 items-center z-50 flex">
     <div class="logo">
         <a class="text-2xl font-bold w-6" href="#">
             <img class="w-28 block dark:hidden" src="{{ asset('img/logo/logo-light.png') }}" alt="Logo">
@@ -41,13 +41,16 @@
     @else
         <!-- Sign In and Sign Up Buttons -->
         <div class="flex items-center space-x-4">
-            <a class="px-6 py-2 border border-accent text-accent text-sm rounded-md transition-colors duration-300 hover:bg-accent hover:text-white"
+            <a class="px-6 py-2 border hidden sm:hidden md:block border-accent text-accent text-sm rounded-md transition-colors duration-300 hover:bg-accent hover:text-white"
                 href="/login">
                 Sign In
             </a>
-            <a class="bg-accent px-6 py-2 text-white text-sm rounded-md transition-colors duration-300 hover:bg-accent-dark"
+            <a class="bg-accent px-6 hidden sm:hidden md:block py-2 text-white text-sm rounded-md transition-colors duration-300 hover:bg-accent-dark"
                 href="/sign-up">
                 Sign Up
+            </a>
+            <a href="/sign-up" class="md:hidden">
+                <i class="fa-solid fa-user"></i>
             </a>
         </div>
     @endauth
