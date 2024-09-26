@@ -4,11 +4,11 @@
     <!-- Konten Utama -->
     <div class="flex flex-col ms-64 w-full">
         <!-- Isi Halaman -->
-        <main class="w-full bg-white dark:bg-zinc-900">
+        <main class="w-full bg-white dark:bg-ireng">
             <div class="mx-auto py-6 sm:px-6 lg:px-8">
                 <!-- Gambaran Umum AI -->
                 <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Gambaran Umum AI</h2>
-                <div class="bg-white dark:bg-zinc-800 shadow-sm rounded-lg overflow-hidden mb-6 border dark:border-zinc-800">
+                <div class="shadow-sm rounded-lg overflow-hidden mb-6 border dark:border-zinc-600">
                     <div class="px-4 py-5 sm:p-6">
                         <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white mb-4">Tindakan yang Direkomendasikan</h3>
                         <ul class="space-y-3">
@@ -47,7 +47,7 @@
                 <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Fitur Pemantau</h2>
                 <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
                     @for ($i = 0; $i < 4; $i++)
-                        <div class="bg-white dark:bg-zinc-800 overflow-hidden shadow-sm rounded-lg border dark:border-zinc-800">
+                        <div class=" overflow-hidden shadow-sm rounded-lg border dark:border-zinc-600">
                             <div class="p-5">
                                 <div class="flex items-center">
                                     <div class="flex-shrink-0 bg-accent rounded-md p-3">
@@ -77,7 +77,7 @@
 
                 <!-- Hasil Analisis -->
                 <h2 class="text-lg font-semibold text-gray-900 dark:text-white mt-8 mb-4">Hasil Analisis</h2>
-                <div class="bg-white dark:bg-zinc-800 shadow-sm rounded-lg overflow-hidden border dark:border-zinc-800">
+                <div class=" shadow-sm rounded-lg overflow-hidden border dark:border-zinc-600">
                     <div class="px-4 py-5 sm:p-6">
                         <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white">Gambaran Umum Analisis</h3>
                         <div class="mt-5">

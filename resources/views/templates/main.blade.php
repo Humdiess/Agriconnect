@@ -1,9 +1,8 @@
 @include('templates.header')
 
-<div class="flex w-full bg-gray-100 h-screen dark:bg-zinc-900">
+<div class="flex w-full bg-gray-100 h-screen dark:bg-ireng">
     <aside
-        class="w-64 fixed left-0 top-0 bottom-0 hidden lg:block bg-white dark:bg-zinc-900 overflow-y-auto flex-col justify-between border-r dark:border-zinc-800">
-        <!-- Sidebar content (logo, nav links, etc.) -->
+        class="w-64 fixed left-0 top-0 bottom-0 hidden lg:block bg-white dark:bg-ireng overflow-y-auto flex-col justify-between border-r dark:border-zinc-800 scrollbar-hide">
         <div>
             <div class="p-4 border-b dark:border-zinc-800">
                 <div class="flex items-center space-x-2">
@@ -34,42 +33,33 @@
                     Dashboard Tani
                 </a>
 
-                <!-- Pantau Dropdown Start -->
-                <div class="relative">
-                    <button id="pantau-dropdown-toggle"
-                        class="flex items-center w-full px-4 py-2 mt-2 {{ $active == 'pantau-ai' ? 'text-white bg-accent dark:bg-zinc-800 dark:text-white' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800' }} rounded-lg transition-colors duration-200">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                        </svg>
-                        Pantau
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-auto" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </button>
-                    <!-- Dropdown menu for Pantau -->
-                    <div id="pantau-dropdown"
-                        class="hidden absolute left-0 right-0 z-10 bg-white dark:bg-zinc-800 shadow-lg rounded-lg">
-                        <a href="{{ url('/pantau/tanah') }}"
-                            class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors duration-200">
-                            Pantau Tanah
-                        </a>
-                        <a href="{{ url('/pantau/cuaca') }}"
-                            class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors duration-200">
-                            Pantau Cuaca
-                        </a>
-                        <a href="{{ url('/pantau/kesehatan-tebu') }}"
-                            class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors duration-200">
-                            Pantau Kesehatan Tebu
-                        </a>
-                    </div>
-                </div>
-                <!-- Pantau Dropdown End -->
+                <a href="#" id="pantau-dropdown-toggle"
+                class="flex items-center px-4 py-2 mt-2 {{ $active == 'pantau' ? 'text-white bg-accent dark:bg-zinc-800 dark:text-white' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800' }} rounded-lg transition-colors duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6l-2 2m0 0l-2-2m4 4l2 2m-2-2l-2 2m-4 4h8m0-4H8" />
+                </svg>
+                Pantau
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+            </a>
+
+            <div id="pantau-dropdown" class="hidden pl-8">
+                @foreach ([
+                    ['url' => '/pantau-air', 'label' => 'Pantau Kualitas Air', 'active' => $active == 'pantau-air'],
+                    ['url' => '/pantau-suhu', 'label' => 'Pantau Suhu Udara & Tanah', 'active' => $active == 'pantau-suhu'],
+                    ['url' => '/pantau-kelembaban', 'label' => 'Pantau Kelembaban Tanah', 'active' => $active == 'pantau-kelembaban'],
+                    ['url' => '/pantau-nutrisi', 'label' => 'Pantau Nutrisi Tanah', 'active' => $active == 'pantau-nutrisi'],
+                    ['url' => '/pantau-curah-hujan', 'label' => 'Pantau Curah Hujan', 'active' => $active == 'pantau-curah-hujan'],
+                ] as $item)
+                    <a href="{{ url($item['url']) }}"
+                        class="flex items-center px-4 py-2 mt-2 {{ $item['active'] ? 'text-white bg-accent dark:bg-zinc-800 dark:text-white' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-700' }} rounded-lg transition-colors duration-200">
+                        {{ $item['label'] }}
+                    </a>
+                @endforeach
+            </div>
+
+
 
                 <a href="{{ url('/product') }}"
                     class="flex items-center px-4 py-2 mt-2 {{ $active == 'product' ? 'text-white bg-accent dark:bg-zinc-800 dark:text-white' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800' }} rounded-lg transition-colors duration-200">
@@ -95,9 +85,10 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                     </svg>
                 </button>
+
                 <!-- Dropdown menu -->
                 <div id="profile-dropdown"
-                    class="hidden absolute  left-0 right-0 z-10 bg-white dark:bg-zinc-800 shadow-lg rounded-lg">
+                    class="hidden absolute overflow-hidd left-0 right-0 mt-2 z-10 bg-white dark:bg-zinc-800 shadow-lg rounded-lg">
                     <a href="{{ url('/profile') }}"
                         class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors duration-200">
                         View Profile
@@ -106,23 +97,138 @@
                         class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors duration-200">
                         Logout
                     </a>
+
+                    <!-- Theme Toggle -->
+                    <div class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors duration-200">
+                        <div class="flex justify-between items-center">
+                            <span>Dark Mode</span>
+                            <label class="switch">
+                                <input type="checkbox" id="theme-toggle" class="theme-toggle">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
+
     </aside>
     @yield('content')
 </div>
 
-@include('templates.footer')
+<style>
+    /* no scrollbar */
+    .scrollbar-hide {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* The switch - the outer container */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+/* The slider - the round button */
+.switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.switch .slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 2px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+/* Checked - dark mode */
+input:checked + .slider {
+    background-color: #4a5568; /* Darker color */
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+/* Rounded switch */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+</style>
+
 
 <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const themeToggle = document.getElementById('theme-toggle');
+
+        // Load previously saved theme state
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+            themeToggle.checked = true;
+        }
+
+        // Toggle theme on switch change
+        themeToggle.addEventListener('change', function () {
+            if (themeToggle.checked) {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // Dropdown toggle
+        const profileDropdownToggle = document.getElementById('profile-dropdown-toggle');
+        const profileDropdown = document.getElementById('profile-dropdown');
+
+        profileDropdownToggle.addEventListener('click', function () {
+            profileDropdown.classList.toggle('hidden');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function (event) {
+            if (!profileDropdownToggle.contains(event.target) && !profileDropdown.contains(event.target)) {
+                profileDropdown.classList.add('hidden');
+            }
+        });
+    });
+    // Event listener untuk toggle submenu Pantau
     document.getElementById('pantau-dropdown-toggle').addEventListener('click', function() {
         const dropdown = document.getElementById('pantau-dropdown');
-        dropdown.classList.toggle('hidden');
+        dropdown.classList.toggle('hidden'); // Toggle class 'hidden' untuk menampilkan/menyembunyikan submenu
     });
 
+    // Event listener untuk toggle submenu Profile
     document.getElementById('profile-dropdown-toggle').addEventListener('click', function() {
         const dropdown = document.getElementById('profile-dropdown');
-        dropdown.classList.toggle('hidden');
+        dropdown.classList.toggle('hidden'); // Toggle class 'hidden' untuk menampilkan/menyembunyikan dropdown profile
     });
 </script>
+
+@include('templates.footer')

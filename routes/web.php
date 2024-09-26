@@ -46,8 +46,12 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('auth.logout');
 // Petani Fiturs (is_farmer=true)
 Route::middleware([IsFarmer::class])->group(function () {
     Route::get('/dashboard-tani', [PetaniController::class, 'index'])->name('petani.index');
-    // Fitur Pantau Pertanian
-    // ...
+    Route::prefix('pantau')->group(function () {
+        Route::get('/air', function () {
+            $active = 'pantau-air';
+            return view('frontend.pantau.air', compact('active'));
+        })->name('pantau.air');
+    });
 });
 
 // Products

@@ -1,7 +1,7 @@
 @extends('templates.main')
 
 @section('content')
-    <div class="flex-1 space-y-4 p-8 pt-6 ms-64 bg-white dark:bg-[#09090b] transition-colors mb-20">
+    <div class="flex-1 space-y-4 p-8 pt-6 ms-64 transition-colors mb-20">
         <div class="flex items-center justify-between space-y-2">
             <h2 class="text-3xl font-bold dark:text-white tracking-tight">Products</h2>
             <div class="flex items-center space-x-2">
@@ -26,7 +26,7 @@
 
         <div class="flex flex-col space-y-4 md:flex-row md:space-x-4 md:space-y-0">
             <div class="flex-1 space-y-4">
-                <div class="rounded-lg border dark:bg-card dark:text-white text-card-foreground shadow-sm">
+                <div class="rounded-lg border dark:border-zinc-600 dark:bg-zinc-800 dark:text-white text-card-foreground shadow-sm">
                     <div class="flex flex-col space-y-1.5 p-6">
                         <h3 class="text-2xl font-semibold leading-none tracking-tight dark:text-white">Product Management
                         </h3>
@@ -70,7 +70,7 @@
 
                 <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
                     @foreach ($products as $product)
-                        <div class="rounded-lg border dark:bg-card dark:text-white text-card-foreground shadow-sm">
+                        <div class="rounded-lg border dark:border-zinc-600 dark:bg-zinc-800 dark:text-white text-card-foreground shadow-sm">
                             <div class="p-0">
                                 <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}"
                                     class="aspect-video object-cover w-full rounded-t-lg">
@@ -85,7 +85,7 @@
                             </div>
                             <div class="p-4 pt-0">
                                 <a href="{{ route('product.show', $product->id) }}"
-                                    class="inline-flex dark:text-white items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 w-full">
+                                    class="inline-flex dark:border-zinc-600 dark:text-white items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 w-full">
                                     View Details
                                 </a>
                             </div>
