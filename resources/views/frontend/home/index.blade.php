@@ -66,12 +66,12 @@
                 <div class="flex items-center justify-center h-full w-full">
                     <div class="grid grid-cols-5 grid-rows-6 gap-4 p-2 rounded-lg h-full w-full">
 
-                      <div class="col-span-5 row-span-2 rounded-lg border dark:border-zinc-800 bg-white/70 dark:bg-zinc-900/30 h-[20rem] flex items-center justify-between">
+                      <div class="col-span-5 row-span-4 lg:row-span-2 rounded-lg border dark:border-zinc-800 bg-white/70 dark:bg-zinc-900/30 h-full lg:h-[20rem] flex flex-col sm:flex-col md:flex-col lg:flex-row items-center justify-between">
                         <div class="explore-services flex flex-col gap-2 px-[5.5rem]">
                             <h1 class="text-3xl font-bold dark:text-white">Eksplor Layanan Kami</h1>
                             <p class="text-neutral-400 dark:text-neutral-300 max-w-80">kami menyediakan berbagai macam layanan yang dapat meningkatkan dan membantu mempermudah apalah petani tebu dan parbik gula di sidoarjo</p>
                         </div>
-                        <div class="service-illustration relative flex-1 h-full">
+                        <div class="service-illustration relative flex-1 h-full w-full">
                             <img class="absolute bottom-12 right-8 dark:block hidden" src="{{ asset('img/svg/service-1.svg') }}" alt="tebu">
                             <img class="absolute bottom-12 right-8 block dark:hidden" src="{{ asset('img/svg/service-4-dark.svg') }}" alt="tebu">
 
@@ -86,7 +86,7 @@
                         </div>
                       </div>
 
-                      <div class="col-span-3 row-span-2 rounded-lg overflow-hidden border relative dark:border-zinc-800 bg-white/30 dark:bg-card/30 h-[20rem] flex items-center">
+                      <div class="col-span-5 lg:col-span-3 row-span-2 rounded-lg overflow-hidden border relative dark:border-zinc-800 bg-white/30 dark:bg-card/30 h-[20rem] flex items-center">
                         <div class="explore-services flex flex-col gap-2 px-[2.5rem]">
                             <h1 class="text-3xl font-bold dark:text-white">Eksplor Layanan Kami</h1>
                             <p class="text-neutral-400 dark:text-neutral-300 max-w-80">kami menyediakan berbagai macam layanan yang dapat meningkatkan dan membantu mempermudah apalah petani tebu dan parbik gula di sidoarjo</p>
@@ -94,12 +94,12 @@
                         <img class="absolute -right-16 -bottom-2" src="{{ asset('img/svg/dashboard-service.svg') }}" alt="">
                       </div>
 
-                      <div class="col-span-2 row-span-2 flex-col rounded-lg border dark:border-zinc-800 bg-white/70 dark:bg-zinc-900/30 h-[20rem] flex justify-center">
+                      <div class="col-span-5 lg:col-span-2 row-span-2 flex-col rounded-lg border dark:border-zinc-800 bg-white/70 dark:bg-zinc-900/30 h-[20rem] flex justify-center">
                         <div class="ai-services ms-8">
                             <h1 class="text-2xl font-bold dark:text-white">Tingkatkan automasi</h1>
-                            <p class="dark:text-neutral-300 max-w-80 mt-2">Dapatkan rekomendasi aktivitas untuk menjaga lahan anda dengan bantuan Agriconnect Dashboard</p>
+                            <p class="text-neutral-400 dark:text-neutral-300 max-w-80 mt-2">Dapatkan rekomendasi aktivitas untuk menjaga lahan anda dengan bantuan Agriconnect Dashboard</p>
                         </div>
-                        <div class="ai-services-image ms-16">
+                        <div class="ai-services-image ms-36 mb-4 md:ms-6 lg:ms-16">
                             <img src="{{ asset('img/svg/service-ai-small.svg') }}" alt="">
                         </div>
                       </div>
@@ -200,19 +200,6 @@
                             </div>
                         </div>
                     @endforeach
-                </div>
-                <div class="flex items-center justify-center w-full py-20">
-                    <div class="flex flex-col items-center w-full">
-                        <div style="opacity: 1; transform: none; will-change: auto;">
-                            <div class="grid w-full place-items-center grid-cols-1 p-6 md:p-8 md:grid-cols-[.55fr_1fr] rounded-2xl bg-[#121212]/50 border border-border">
-                                <div class="flex flex-col items-start justify-center lg:pl-6">
-                                    <h4 class="text-xl font-semibold lg:text-2xl">Explore our services</h4>
-                                    <p class="mt-4 text-neutral-500 lg:text-lg">We provide the best services for our customers with the best quality and the best price.</p>
-                                </div>
-                                <div class="flex items-center justify-center w-full mt-8 sm:mt-0 lg:py-4 lg:px-10"></div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
