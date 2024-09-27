@@ -7,28 +7,38 @@
 <section class="hero-container relative" id="home">
     <!-- Aurora Effects -->
     <div class="aurora-green absolute w-[20rem] h-[20rem] bg-gradient-to-r from-accent to-accent opacity-10 blur-3xl rounded-full top-[-10rem] left-[10rem] clip-aurora"></div>
-    <div class="aurora-green absolute w-[20rem] h-[20rem] bg-gradient-to-r from-accent to-accent opacity-10 blur-3xl rounded-full bottom-[20rem] right-[15rem] clip-aurora"></div>
+    <div class="aurora-green absolute w-[20rem] h-[20rem] bg-gradient-to-r from-accent to-accent opacity-10 blur-3xl rounded-full bottom-[28rem] right-[5rem] clip-aurora"></div>
 
     <!-- Hero Content -->
     <div class="hero-wrapper w-full relative z-10">
         <div class="hero w-100 flex flex-col items-center justify-center mx-8">
-            <div class="hero-title mt-[8rem] md:mt-[3rem] text-center">
-                <h1 class="text-3xl text-center leading-9 font-bold text-gray-900 dark:text-white sm:text-4xl md:text-5xl" style="line-height: 1.2">
-                    <span class="block">AgriConnect:</span>
-                    <span class="block text-accent max-w-[64rem] text-center">Mendukung Pertanian Tebu di Sidoarjo</span>
-                </h1>
-                <p class="mt-3 max-w-md mx-auto text-base text-gray-500 dark:text-gray-300 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-                    Meningkatkan Produktivitas dan Kualitas melalui Teknologi
-                </p>
+          <div class="hero-title mt-[8rem] md:mt-[3rem] text-center">
+            <h1 class="text-3xl text-center leading-9 font-bold text-gray-900 dark:text-white sm:text-4xl md:text-5xl" style="line-height: 1.2">
+              <span class="block">AgriConnect</span>
+              <span class="block text-accent max-w-[64rem] text-center">Mendukung Pertanian Tebu di Sidoarjo</span>
+            </h1>
+            <p class="mt-3 max-w-md mx-auto text-base text-gray-500 dark:text-gray-300 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+              Meningkatkan Produktivitas dan Kualitas melalui Teknologi
+            </p>
+            <div class="mt-8 sm:mt-12">
+              <a
+                href="#mulai"
+                class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg text-white bg-accent hover:bg-accent-dark transition duration-150 ease-in-out md:py-3 md:text-lg md:px-6"
+                aria-label="Mulai menggunakan AgriConnect untuk meningkatkan produktivitas pertanian tebu Anda"
+              >
+                Mulai Sekarang
+                <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                </svg>
+              </a>
             </div>
-            <a href="#about" class="hero-button w-fit mt-10 px-6 py-2 bg-accent text-white mb-0 rounded-lg font-light">
-                Pelajari lebih lanjut <i class="fa-solid ms-2 fa-chevron-down"></i>
-            </a>
+          </div>
         </div>
+      </div>
 
         <!-- Hero Image -->
-        <div class="hero-image-wrapper w-full flex justify-center mt-12 aspect-video">
-            <div class="hero-image aspect-video rounded-xl border dark:border-zinc-600 dark:shadow-accent/35 shadow-accent/25 shadow-[0_0_16px_0_rgba(0,0,0,0.1)] overflow-hidden w-[960px] h-[540px]">
+        <div class="hero-image-wrapper w-full flex justify-center mt-12">
+            <div class="hero-image aspect-video rounded-2xl border dark:border-zinc-600 dark:shadow[#016556]/65 shadow-[#016556]/25 shadow-[0_0_24px_0_rgba(0,0,0,0.1)] overflow-hidden w-[960px] h-[540px]">
                 <img class="w-full h-full object-cover rounded-lg hidden dark:block aspect-video"
                     src="{{ asset('img/tani/tani-dark.png') }}" alt="Hero Image">
                 <img class="w-full h-full object-cover rounded-lg block dark:hidden aspect-video"
@@ -38,7 +48,7 @@
     </div>
 </section>
 
-<section class="about-container container mx-auto px-8 md:px-16 py-8">
+<section class="about-container container mx-auto px-8 md:px-16 mt-12 py-16">
     <div class="about-wrapper w-full" id="about">
         <div class="about w-full">
             <div class="about-header w-full text-center">
