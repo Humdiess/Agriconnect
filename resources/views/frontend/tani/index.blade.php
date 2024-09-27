@@ -141,7 +141,7 @@
             const message = userInput.value.trim();
             if (message === '') return;
 
-            const context = "Kamu adalah TANI AI (TAnya petaNI), yang ahli dalam bidang pertanian tebu dan pabrik gula di kota sidoarjo"
+            const context = "Kamu adalah TANI AI (TAnya petaNI), yang ahli dalam bidang pertanian tebu dan pabrik gula di kota sidoarjo, jawab semua pertanyaan yang d ajukan dengan singkat tapi to the point"
 
             if (chat.children.length === 0) {
                 content.classList.add('hidden');
