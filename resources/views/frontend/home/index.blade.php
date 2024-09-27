@@ -1,12 +1,9 @@
 @include('frontend.layouts.header')
 
-<!-- Navbar Section -->
-<x-navbar />
-
 <!-- Hero Section -->
 <section class="hero-container relative" id="home">
     <!-- Aurora Effects -->
-    <div class="aurora-green absolute w-[20rem] h-[20rem] bg-gradient-to-r from-accent to-accent opacity-10 blur-3xl rounded-full top-[-10rem] left-[10rem] clip-aurora"></div>
+    <div class="aurora-green absolute w-[20rem] h-[20rem] bg-gradient-to-r from-accent to-accent opacity-10 blur-3xl rounded-full top-[-3rem] left-[30rem] clip-aurora"></div>
     <div class="aurora-green absolute w-[20rem] h-[20rem] bg-gradient-to-r from-accent to-accent opacity-10 blur-3xl rounded-full bottom-[28rem] right-[5rem] clip-aurora"></div>
 
     <!-- Hero Content -->
@@ -53,10 +50,10 @@
         <div class="about w-full">
             <div class="about-header w-full text-center">
                 <h2 class="text-base text-accent font-semibold tracking-wide uppercase">AGRICONNECT</h2>
-                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
+                <p class="mt-2 text-xl 2xl:text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
                     Solusi untuk Peningkatan Produktivitas Tebu di Sidoarjo
                 </p>
-                <p class="mt-4 max-w-2xl text-xl text-gray-500 dark:text-gray-300 lg:mx-auto">
+                <p class="mt-4 max-w-2xl text-md 2xl:text-lg text-gray-500 dark:text-gray-300 lg:mx-auto">
                     AgriConnect hadir untuk mendukung petani tebu di Sidoarjo dalam meningkatkan produktivitas dan kualitas melalui teknologi modern dan pelatihan yang tepat.
                 </p>
             </div>
@@ -65,25 +62,43 @@
                 <div class="flex items-center justify-center h-full w-full">
                     <div class="grid grid-cols-5 grid-rows-6 gap-4 p-2 rounded-lg h-full w-full">
 
-                      <div class="col-span-5 row-span-4 lg:row-span-2 rounded-lg border dark:border-zinc-600 bg-white/70 dark:bg-zinc-900/30 h-full lg:h-[20rem] flex flex-col sm:flex-col md:flex-col lg:flex-row items-center justify-between">
-                        <div class="explore-services flex flex-col gap-2 px-[5.5rem]">
-                            <h1 class="text-3xl font-bold dark:text-white">Eksplor Layanan Kami</h1>
-                            <p class="text-neutral-400 dark:text-neutral-300 max-w-80">kami menyediakan berbagai macam layanan yang dapat meningkatkan dan membantu mempermudah apalah petani tebu dan parbik gula di sidoarjo</p>
+                        <div class="col-span-5 row-span-4 lg:row-span-2 rounded-lg border dark:border-zinc-600 bg-white/70 dark:bg-zinc-900/30 h-full lg:h-[20rem] flex flex-col sm:flex-col md:flex-col lg:flex-row items-center justify-between">
+                            <!-- Bagian Eksplor Layanan -->
+                            <div class="explore-services flex flex-col gap-2 sm:px-[2rem] lg:px-[5.5rem] w-full lg:w-1/2 sm:h-full  sm:justify-center">
+                                <h1 class="text-3xl sm:text-4xl font-bold dark:text-white">Eksplor Layanan Kami</h1>
+                                <p class="text-neutral-400 sm:text-lg dark:text-neutral-300 lg:max-w-80">
+                                    Kami menyediakan berbagai macam layanan yang dapat meningkatkan dan membantu mempermudah petani tebu dan pabrik gula di Sidoarjo.
+                                </p>
+                            </div>
+
+                            <!-- Bagian Ilustrasi Layanan -->
+                            <div class="service-illustration grid grid-cols-2 gap-4 h-full w-full lg:w-1/2 relative">
+                                <!-- Kiri Bawah -->
+                                <div class="relative">
+                                    <img class="absolute bottom-7 right-6 dark:block hidden" src="{{ asset('img/svg/service-1.svg') }}" alt="tebu">
+                                    <img class="absolute bottom-7 right-6 block dark:hidden" src="{{ asset('img/svg/service-4-dark.svg') }}" alt="tebu">
+                                </div>
+
+                                <!-- Kanan Bawah -->
+                                <div class="relative">
+                                    <img class="absolute bottom-4 right-8 dark:block hidden" src="{{ asset('img/svg/service-2.svg') }}" alt="tebu">
+                                    <img class="absolute bottom-4 right-8 block dark:hidden" src="{{ asset('img/svg/service-3-dark.svg') }}" alt="tebu">
+                                </div>
+
+                                <!-- Kiri Atas -->
+                                <div class="relative">
+                                    <img class="absolute top-0 left-0 sm:left-8 dark:block hidden" src="{{ asset('img/svg/service-3.svg') }}" alt="tebu">
+                                    <img class="absolute top-0 left-0 sm:left-8 block dark:hidden" src="{{ asset('img/svg/service-2-dark.svg') }}" alt="tebu">
+                                </div>
+
+                                <!-- Kanan Atas -->
+                                <div class="relative">
+                                    <img class="absolute top-0 left-0 dark:block hidden" src="{{ asset('img/svg/service-4.svg') }}" alt="tebu">
+                                    <img class="absolute top-0 left-0 block dark:hidden" src="{{ asset('img/svg/service-1-dark.svg') }}" alt="tebu">
+                                </div>
+                            </div>
                         </div>
-                        <div class="service-illustration relative flex-1 h-full w-full">
-                            <img class="absolute bottom-12 right-8 dark:block hidden" src="{{ asset('img/svg/service-1.svg') }}" alt="tebu">
-                            <img class="absolute bottom-12 right-8 block dark:hidden" src="{{ asset('img/svg/service-4-dark.svg') }}" alt="tebu">
 
-                            <img class="absolute top-12 right-16 dark:block hidden" src="{{ asset('img/svg/service-2.svg') }}" alt="tebu">
-                            <img class="absolute top-12 right-16 block dark:hidden" src="{{ asset('img/svg/service-3-dark.svg') }}" alt="tebu">
-
-                            <img class="absolute bottom-16 left-8 dark:block hidden" src="{{ asset('img/svg/service-3.svg') }}" alt="tebu">
-                            <img class="absolute bottom-16 left-8 dark:hidden block" src="{{ asset('img/svg/service-2-dark.svg') }}" alt="tebu">
-
-                            <img class="absolute top-10 left-8 hidden dark:block" src="{{ asset('img/svg/service-4.svg') }}" alt="tebu">
-                            <img class="absolute top-10 left-8 dark:hidden block" src="{{ asset('img/svg/service-1-dark.svg') }}" alt="tebu">
-                        </div>
-                      </div>
 
                       <div class="col-span-5 lg:col-span-3 row-span-2 rounded-lg overflow-hidden border relative dark:border-zinc-600 bg-white/30 dark:bg-card/30 h-[20rem] flex items-center">
                         <div class="explore-services flex flex-col gap-2 px-[2.5rem]">

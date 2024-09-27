@@ -27,8 +27,8 @@ Route::get('/create-storage-link', function () {
 
 // For Umum
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/contact', [HomeController::class, 'contact'])->name('home.contact');
-Route::get('/agrishop', [HomeController::class, 'agrishop'])->name('home.agrishop');
+Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+Route::get('/agrishop', [HomeController::class, 'agrishop'])->name('agrishop');
 Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
 
 // Tani Ai

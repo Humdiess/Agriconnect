@@ -1,4 +1,4 @@
-<nav class="w-full fixed bg-white/80 dark:bg-ireng/80 backdrop-blur-md transition-colors border-b border-gray-200 dark:border-gray-700" style="z-index: 10000">
+<nav class="w-full fixed bg-white/80 dark:bg-ireng/30 backdrop-blur-md transition-colors border-b border-gray-200 dark:border-gray-700" style="z-index: 10000">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
             <!-- Logo -->
@@ -15,13 +15,13 @@
                     <div class="ml-10 flex items-center">
                         <a href="/" class="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium {{ $active == 'home' ? 'text-accent' : '' }}">Beranda</a>
 
-                        <a href="/" class="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium {{ $active == 'home' ? 'text-accent' : '' }}">TANI AI</a>
+                        <a href="{{ route('tani') }}" class="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium {{ $active == 'home' ? 'text-accent' : '' }}">TANI AI</a>
 
-                        <a href="/" class="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium {{ $active == 'home' ? 'text-accent' : '' }}">Toko</a>
+                        <a href="{{ route('agrishop') }}" class="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium {{ $active == 'home' ? 'text-accent' : '' }}">Toko</a>
 
-                        <a href="/" class="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium {{ $active == 'home' ? 'text-accent' : '' }}">Berita</a>
+                        <a href="{{ route('blog') }}" class="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium {{ $active == 'home' ? 'text-accent' : '' }}">Berita</a>
 
-                        <a href="/contact" class="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium {{ $active == 'contact' ? 'text-accent' : '' }}">Kontak</a>
+                        <a href="{{ route('contact') }}" class="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium {{ $active == 'contact' ? 'text-accent' : '' }}">Kontak</a>
 
                         <div class="featured-btn flex items-center gap-3">
                             <!-- Theme Toggle Button -->
@@ -41,7 +41,7 @@
                                     <div id="profile-menu" class="dropdown-menu mt-6 bg-white/30 dark:bg-ireng/80 border dark:border-zinc-600 backdrop-blur-2xl absolute hidden right-3 py-2 rounded-lg">
                                         {{-- ketika user is_farmer= true maka ada tombol ke halaman dashboard --}}
                                         @if (Auth::user()->is_farmer)
-                                            <a href="/dashboard" class="text-gray-300 hover:text-white text-left w-full px-4 py-2 text-sm font-medium hover:bg-ireng/50">Dashboard</a>
+                                            <a href="{{ route('petani.index') }}" class="text-gray-300 hover:text-white text-left w-full px-4 py-2 text-sm font-medium hover:bg-ireng/50">Dashboard</a>
                                         @endif
                                         {{-- log out button --}}
                                         <form method="POST" action="{{ route('auth.logout') }}">
