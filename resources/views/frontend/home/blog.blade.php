@@ -71,7 +71,7 @@
                         <div class="flex justify-between items-center">
                             <span class="text-xs text-gray-400">{{ $item['date'] }}</span>
                             <a href="#" class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-full text-white bg-accent hover:bg-accent-dark transition-colors duration-300">
-                                Baca Selengkapnya
+                                Baca
                             </a>
                         </div>
                     </div>
