@@ -1,7 +1,4 @@
 @include('frontend.layouts.header')
-
-<x-navbar />
-
     <!-- Shop Hero Section -->
     <section class="shop-hero-container container mx-auto relative py-16">
         <!-- Aurora Effects -->
@@ -12,7 +9,7 @@
         <div class="shop-hero-wrapper w-full relative z-10">
             <div class="shop-hero w-100 flex flex-col items-center justify-center mx-8">
                 <div class="shop-hero-title text-center">
-                    <h1 class="text-3xl text-center leading-9 font-bold text-gray-900 dark:text-white sm:text-4xl md:text-5xl">
+                    <h1 class="text-3xl text-center leading-9 mt-12 font-bold text-gray-900 dark:text-white sm:text-4xl md:text-5xl">
                         <span class="block">AgriConnect Shop</span>
                         <span class="block text-accent max-w-[62rem] text-center">Produk Berkualitas untuk Pertanian Tebu</span>
                     </h1>

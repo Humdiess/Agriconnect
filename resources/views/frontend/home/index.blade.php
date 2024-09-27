@@ -12,7 +12,7 @@
     <!-- Hero Content -->
     <div class="hero-wrapper w-full relative z-10">
         <div class="hero w-100 flex flex-col items-center justify-center mx-8">
-          <div class="hero-title mt-[8rem] md:mt-[3rem] text-center">
+          <div class="hero-title mt-[8rem] md:mt-[8rem] text-center">
             <h1 class="text-3xl text-center leading-9 font-bold text-gray-900 dark:text-white sm:text-4xl md:text-5xl" style="line-height: 1.2">
               <span class="block">AgriConnect</span>
               <span class="block text-accent max-w-[64rem] text-center">Mendukung Pertanian Tebu di Sidoarjo</span>

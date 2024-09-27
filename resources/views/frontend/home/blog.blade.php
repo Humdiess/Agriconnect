@@ -1,7 +1,6 @@
 @include('frontend.layouts.header')
 
 <div class="min-h-screen bg-ireng text-white">
-    <x-navbar />
 
     <!-- Hero Section -->
     <section class="hero-container container mx-auto relative py-16">
@@ -13,7 +12,7 @@
         <div class="hero-wrapper w-full relative z-10">
             <div class="hero w-100 flex flex-col items-center justify-center mx-8">
                 <div class="hero-title text-center">
-                    <h1 class="text-3xl text-center font-bold text-white sm:text-4xl md:text-5xl"  style="line-height: 1.2">
+                    <h1 class="text-3xl text-center font-bold text-white sm:text-4xl md:text-5xl mt-12" style="line-height: 1.2">
                         <span class="block">AgriNews</span>
                         <span class="block text-accent max-w-[62rem] text-center">Berita Terkini Seputar Pertanian</span>
                     </h1>

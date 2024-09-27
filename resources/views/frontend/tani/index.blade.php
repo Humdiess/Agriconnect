@@ -1,9 +1,7 @@
 @include('frontend.layouts.header')
 
-<x-navbar />
-
 <div class="min-h-screen flex justify-center p-4 mt-14 md:mt-0 md:pt-0">
-    <div id="container" class="w-full max-w-2xl rounded-3xl overflow-hidden flex flex-col">
+    <div id="container" class="w-full max-w-2xl rounded-3xl overflow-hidden flex flex-col mt-20">
         <div class="p-8 md:pt-0 flex-grow overflow-hidden flex flex-col">
             <div id="content" class="text-center mb-8">
                 <div
