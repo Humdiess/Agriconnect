@@ -15,7 +15,7 @@
           <div class="hero-title mt-[8rem] md:mt-[8rem] text-center">
             <h1 class="text-3xl text-center leading-9 font-bold text-gray-900 dark:text-white sm:text-4xl md:text-5xl" style="line-height: 1.2">
               <span class="block">AgriConnect</span>
-              <span class="block text-accent max-w-[64rem] text-center">Mendukung Pertanian Tebu di Sidoarjo</span>
+              <span class="block text-[#1eb78b] dark:text-accent max-w-[64rem] text-center">Mendukung Pertanian Tebu di Sidoarjo</span>
             </h1>
             <p class="mt-3 max-w-md mx-auto text-base text-gray-500 dark:text-gray-300 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
               Meningkatkan Produktivitas dan Kualitas melalui Teknologi
@@ -23,7 +23,7 @@
             <div class="mt-8 sm:mt-12">
               <a
                 href="#mulai"
-                class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg text-white bg-accent hover:bg-accent-dark transition duration-150 ease-in-out md:py-3 md:text-lg md:px-6"
+                class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg dark:text-white bg-accent hover:bg-accent-dark transition duration-150 ease-in-out md:py-3 md:text-lg md:px-6"
                 aria-label="Mulai menggunakan AgriConnect untuk meningkatkan produktivitas pertanian tebu Anda"
               >
                 Mulai Sekarang

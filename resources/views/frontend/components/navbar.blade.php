@@ -12,41 +12,54 @@
             <!-- Right side buttons -->
             <div class="flex items-center">
                 <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-4">
+                    <div class="ml-10 flex items-center">
                         <a href="/" class="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium {{ $active == 'home' ? 'text-accent' : '' }}">Beranda</a>
 
-                        <!-- Dropdown Layanan Menu -->
-                        <div class="relative">
-                            <button id="service-toggle" class="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium focus:outline-none">
-                                Layanan
-                                <svg class="ml-1 -mr-0.5 h-4 w-4 inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                </svg>
-                            </button>
+                        <a href="/" class="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium {{ $active == 'home' ? 'text-accent' : '' }}">TANI AI</a>
 
-                            <!-- Dropdown content -->
-                            <div id="service-menu" class="hidden absolute left-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white dark:bg-ireng/90 border dark:border-zinc-600 backdrop-blur-xl ring-1 ring-black ring-opacity-5" style="z-index: 999999">
-                                <a href="/agrishop" class="block hover:bg-accent px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:text-white  {{ $active == 'agrishop' ? 'text-accent' : '' }}" role="menuitem">Toko</a>
-                                <a href="{{ route('tani') }}" class="block hover:bg-accent px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:text-white  {{ $active == 'tani-ai' ? 'text-accent' : '' }}" role="menuitem">Tani AI</a>
-                                <a href="{{ route('blog') }}" class="block hover:bg-accent px-4 py-2 text-sm text-gray-700 dark:text-gray-300  hover:text-white {{ $active == 'blog' ? 'text-accent' : '' }}" role="menuitem">Berita</a>
-                            </div>
-                        </div>
+                        <a href="/" class="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium {{ $active == 'home' ? 'text-accent' : '' }}">Toko</a>
+
+                        <a href="/" class="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium {{ $active == 'home' ? 'text-accent' : '' }}">Berita</a>
 
                         <a href="/contact" class="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium {{ $active == 'contact' ? 'text-accent' : '' }}">Kontak</a>
+
+                        <div class="featured-btn flex items-center gap-3">
+                            <!-- Theme Toggle Button -->
+                            <button id="theme-toggle" aria-label="Toggle theme" class="p-2 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                                <svg id="theme-icon" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                                </svg>
+                            </button>
+                            {{-- ketika user sudah login --}}
+                            @if (Auth::check())
+                            {{-- profile picture + dropdown --}}
+                                <div class="profile relative">
+                                    <div id="profile-toggler" class="profile-pciture w-8 h-8 cursor-pointer">
+                                        <img class="inline-block h-full object-cover w-full rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                                    </div>
+
+                                    <div id="profile-menu" class="dropdown-menu mt-6 bg-white/30 dark:bg-ireng/80 border dark:border-zinc-600 backdrop-blur-2xl absolute hidden right-3 py-2 rounded-lg">
+                                        {{-- ketika user is_farmer= true maka ada tombol ke halaman dashboard --}}
+                                        @if (Auth::user()->is_farmer)
+                                            <a href="/dashboard" class="text-gray-300 hover:text-white text-left w-full px-4 py-2 text-sm font-medium hover:bg-ireng/50">Dashboard</a>
+                                        @endif
+                                        {{-- log out button --}}
+                                        <form method="POST" action="{{ route('auth.logout') }}">
+                                            @csrf
+                                            <button type="submit" class="text-gray-300 hover:text-white text-left w-full px-4 py-2 text-sm font-medium hover:bg-red-700">Logout</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            @else
+                            <!-- Auth Button -->
+                            <a href="{{ route('auth.login') }}" class="ml-4 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-black dark:text-white bg-accent hover:bg-accent-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent">
+                                Login
+                            </a>
+                            @endif
+                        </div>
                     </div>
                 </div>
 
-                <!-- Theme Toggle Button -->
-                <button id="theme-toggle" aria-label="Toggle theme" class="p-2 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
-                    <svg id="theme-icon" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                    </svg>
-                </button>
-
-                <!-- Auth Button -->
-                <a href="{{ route('auth.login') }}" class="ml-4 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-accent hover:bg-accent-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent">
-                    Login
-                </a>
             </div>
 
             <!-- Mobile menu button -->
@@ -110,17 +123,9 @@
         mobileMenu.classList.toggle('hidden');
     });
 
-    // service menu toggle
-    const serviceToggle = document.getElementById('service-toggle');
-    const serviceMenu = document.getElementById('service-menu');
+    const profileToggler = document.getElementById('profile-toggler');
 
-    serviceToggle.addEventListener('click', () => {
-
-        // hilangkan class hidden dari service-menu
-        if (serviceMenu.classList.contains('hidden')) {
-            serviceMenu.classList.remove('hidden');
-        } else {
-            serviceMenu.classList.add('hidden');
-        }
-    });
+    profileToggler.addEventListener('click', () => {
+        document.getElementById('profile-menu').classList.toggle('hidden');
+    })
 </script>
