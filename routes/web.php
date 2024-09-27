@@ -36,11 +36,14 @@ Route::get('/tani-ai', [TaniController::class, 'index'])->name('tani')->middlewa
 Route::post('/tani-ai', [TaniController::class, 'chat'])->name('tani.chat')->middleware('req_auth');
 
 // Auth
-Route::get('/req-auth', [AuthController::class, 'reqAuth'])->name('auth.reqAuth');
-Route::get('/login', [AuthController::class, 'login'])->name('auth.login');
-Route::post('/login', [AuthController::class, 'authenticate'])->name('auth.authenticate');
-Route::get('/sign-up', [AuthController::class, 'signup'])->name('auth.signup');
-Route::post('/sign-up', [AuthController::class, 'addUser'])->name('auth.addUser');
+Route::middleware('guest')->group(function () {
+    Route::get('/req-auth', [AuthController::class, 'reqAuth'])->name('auth.reqAuth');
+    Route::get('/login', [AuthController::class, 'login'])->name('auth.login');
+    Route::post('/login', [AuthController::class, 'authenticate'])->name('auth.authenticate');
+    Route::get('/sign-up', [AuthController::class, 'signup'])->name('auth.signup');
+    Route::post('/sign-up', [AuthController::class, 'addUser'])->name('auth.addUser');
+});
+
 Route::post('/logout', [AuthController::class, 'logout'])->name('auth.logout');
 
 // Petani Fiturs (is_farmer=true)

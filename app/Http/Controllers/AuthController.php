@@ -36,33 +36,42 @@ class AuthController extends Controller
 
     public function authenticate(Request $request)
     {
+        // Validasi input
         $request->validate([
             'username_or_email' => 'required|string',
             'password' => 'required|string',
         ]);
-
-        $credentials = [
-            'password' => $request->input('password'),
-        ];
-
-        // Check if the input is an email or username
+    
+        // Tentukan apakah input adalah email atau username
+        $user = null;
         if (filter_var($request->input('username_or_email'), FILTER_VALIDATE_EMAIL)) {
-            $credentials['email'] = $request->input('username_or_email');
+            $user = User::where('email', $request->input('username_or_email'))->first();
         } else {
-            $credentials['username'] = $request->input('username_or_email');
+            $user = User::where('username', $request->input('username_or_email'))->first();
         }
-
-        if (Auth::attempt($credentials)) {
-            // Authentication passed
-            Alert::alert('Berhasil', 'Login berhasil.', 'success');
-            return redirect()->intended('/')->with('success', 'Login berhasil!');
+    
+        // Jika user ditemukan, cek password
+        if ($user) {
+            if (Hash::check($request->input('password'), $user->password)) {
+                // Jika password cocok, lakukan login
+                Auth::login($user);
+                Alert::alert('Berhasil', 'Login berhasil.', 'success');
+                return redirect()->intended('/')->with('success', 'Login berhasil!');
+            } else {
+                // Jika password salah, kirimkan error khusus untuk password
+                return back()->withErrors([
+                    'password' => 'Password tidak valid.',
+                ])->withInput();
+            }
+        } else {
+            // Jika user tidak ditemukan, kirimkan error khusus untuk username/email
+            return back()->withErrors([
+                'username_or_email' => 'Username atau Email tidak ditemukan.',
+            ])->withInput();
         }
-
-        // Authentication failed
-        return back()->withErrors([
-            'username_or_email' => 'Username atau Email dan password tidak cocok.',
-        ])->withInput();
     }
+    
+    
 
     public function logout(Request $request)
     {

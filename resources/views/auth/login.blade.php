@@ -17,31 +17,30 @@
 
             <form action="/login" method="POST" class="space-y-6">
                 @csrf
-
+            
                 <!-- Email/Username Input -->
                 <div class="relative">
                     <label for="email"
                         class="block text-sm lg:text-base font-medium text-gray-700 dark:text-gray-300 mb-2">Email/Username</label>
-                    <input type="text" name="username_or_email" value="{{ old('email') }}" required
+                    <input type="text" name="username_or_email" value="{{ old('username_or_email') }}" required
                         placeholder="Masukkan email atau username"
-                        class="w-full px-4 py-3 rounded-lg dark:bg-ireng border dark:border-zinc-600 text-black dark:text-white @error('email') bg-red-100  border-red-500 @enderror focus:border-black focus:outline-none focus:ring-2 focus:ring-accent transition-all duration-200 ease-in-out">
-                    @error('email')
-                        <p class="text-red-500 dark:text-red-400 text-sm mt-2">Email atau username tidak valid.</p>
+                        class="w-full px-4 py-3 rounded-lg dark:bg-ireng border dark:border-zinc-600 text-black dark:text-white @error('username_or_email') bg-red-100 border-red-500 @enderror focus:border-black focus:outline-none focus:ring-2 focus:ring-accent transition-all duration-200 ease-in-out">
+                    @error('username_or_email')
+                        <p class="text-red-500 dark:text-red-400 text-sm mt-2">{{ $message }}</p>
                     @enderror
                 </div>
-
+            
                 <!-- Password Input -->
                 <div class="relative">
                     <label for="password"
-                        class="block text-sm lg:text-base font-medium text-gray-700 dark:text-gray-300 mb-2">Kata
-                        Sandi</label>
+                        class="block text-sm lg:text-base font-medium text-gray-700 dark:text-gray-300 mb-2">Kata Sandi</label>
                     <input type="password" name="password" required placeholder="Masukkan kata sandi"
-                        class="w-full px-4 py-3 rounded-lg bg-white border dark:border-zinc-600 dark:bg-ireng text-black dark:text-white @error('password') bg-red-100 dark:bg-red-200 border-red-500 @enderror focus:border-black focus:outline-none focus:ring-2 focus:ring-accent transition-all duration-200 ease-in-out">
+                        class="w-full px-4 py-3 rounded-lg bg-white border dark:border-zinc-600 dark:bg-ireng text-black dark:text-white @error('password') border-red-500 @enderror focus:border-black focus:outline-none focus:ring-2 focus:ring-accent transition-all duration-200 ease-in-out">
                     @error('password')
-                        <p class="text-red-500 dark:text-red-400 text-sm mt-2">Kata sandi tidak valid.</p>
+                        <p class="text-red-500 dark:text-red-400 text-sm mt-2">{{ $message }}</p>
                     @enderror
                 </div>
-
+            
                 <!-- Show/Hide Password Checkbox -->
                 <div class="flex items-center">
                     <input type="checkbox" id="togglePasswordVisibility" onclick="togglePassword()" class="mr-2">
@@ -49,12 +48,11 @@
                         class="text-sm lg:text-base text-gray-700 dark:text-gray-300">Tampilkan kata sandi</label>
                 </div>
 
-                <!-- Register Link -->
-                <div class="text-center mt-6 text-black dark:text-white">
-                    <span>Belum punya akun?</span>
-                    <a href="/sign-up" class="ml-2 text-black dark:text-accent font-bold hover:underline">Daftar</a>
+                {{-- sudah punya akun --}}
+                <div class="text-sm text-center lg:text-base text-gray-700 dark:text-gray-300">
+                    <a class="hover:text-accent transition-colors" href="{{ route('auth.addUser') }}">Belum punya akun?</a>
                 </div>
-
+            
                 <!-- Login Button -->
                 <div>
                     <button type="submit"
@@ -63,6 +61,7 @@
                     </button>
                 </div>
             </form>
+            
         </div>
     </div>
 
