@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- Konten Utama -->
-    <div class="flex flex-col lg:ms-64 w-full mx-6 lg:mx-0">
+    <div class="flex flex-col w-full mx-6 lg:mx-0">
         <!-- Isi Halaman -->
         <main class="w-full bg-white dark:bg-ireng">
             <div class="mx-auto py-6 sm:px-6 lg:px-8">

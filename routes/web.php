@@ -57,6 +57,26 @@ Route::middleware([IsFarmer::class])->group(function () {
             $active = 'pantau-air';
             return view('frontend.pantau.air', compact('active'));
         })->name('pantau.air');
+
+        Route::get('/suhu', function () {
+            $active = 'pantau-suhu';
+            return view('frontend.pantau.suhu', compact('active'));
+        })->name('pantau.suhu');
+
+        Route::get('/kelembaban', function () {
+            $active = 'pantau-kelembaban';
+            return view('frontend.pantau.kelembaban', compact('active'));
+        })->name('pantau.kelembaban');
+
+        Route::get('/nutrisi', function () {
+            $active = 'pantau-nutrisi';
+            return view('frontend.pantau.nutrisi', compact('active'));
+        })->name('pantau.nutrisi');
+
+        Route::get('/curah-hujan', function () {
+            $active = 'pantau-curah-hujan';
+            return view('frontend.pantau.curah-hujan', compact('active'));
+        })->name('pantau.curah-hujan');
     });
 });
 

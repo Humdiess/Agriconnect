@@ -83,20 +83,18 @@
 
             <div id="pantau-dropdown" class="hidden pl-8">
                 @foreach ([
-                    ['url' => '/pantau-air', 'label' => 'Pantau Kualitas Air', 'active' => $active == 'pantau-air'],
-                    ['url' => '/pantau-suhu', 'label' => 'Pantau Suhu Udara & Tanah', 'active' => $active == 'pantau-suhu'],
-                    ['url' => '/pantau-kelembaban', 'label' => 'Pantau Kelembaban Tanah', 'active' => $active == 'pantau-kelembaban'],
-                    ['url' => '/pantau-nutrisi', 'label' => 'Pantau Nutrisi Tanah', 'active' => $active == 'pantau-nutrisi'],
-                    ['url' => '/pantau-curah-hujan', 'label' => 'Pantau Curah Hujan', 'active' => $active == 'pantau-curah-hujan'],
+                    ['route' => 'pantau.air', 'label' => 'Pantau Kualitas Air', 'active' => $active == 'pantau-air'],
+                    ['route' => 'pantau.suhu', 'label' => 'Pantau Suhu Udara & Tanah', 'active' => $active == 'pantau-suhu'],
+                    ['route' => 'pantau.kelembaban', 'label' => 'Pantau Kelembaban Tanah', 'active' => $active == 'pantau-kelembaban'],
+                    ['route' => 'pantau.nutrisi', 'label' => 'Pantau Nutrisi Tanah', 'active' => $active == 'pantau-nutrisi'],
+                    ['route' => 'pantau.curah-hujan', 'label' => 'Pantau Curah Hujan', 'active' => $active == 'pantau-curah-hujan'],
                 ] as $item)
-                    <a href="{{ url($item['url']) }}"
+                    <a href="{{ route($item['route']) }}"
                         class="flex items-center px-4 py-2 mt-2 {{ $item['active'] ? 'text-white bg-accent dark:bg-zinc-800 dark:text-white' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-700' }} rounded-lg transition-colors duration-200">
                         {{ $item['label'] }}
                     </a>
                 @endforeach
             </div>
-
-
 
                 <a href="{{ url('/product') }}"
                     class="flex items-center px-4 py-2 mt-2 {{ $active == 'product' ? 'text-white bg-accent dark:bg-zinc-800 dark:text-white' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800' }} rounded-lg transition-colors duration-200">
@@ -148,10 +146,11 @@
                 </div>
             </div>
         </div>
-
-
     </aside>
-    @yield('content')
+
+    <div class="content-wrapper lg:ml-64 w-full bg-white dark:bg-ireng">
+        @yield('content')
+    </div>
 </div>
 
 <style>
