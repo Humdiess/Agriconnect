@@ -35,10 +35,10 @@
 
     <!-- Hero Image -->
     <div class="hero-image-wrapper w-full flex justify-center mt-12">
-        <div class="hero-image aspect-video rounded-2xl border dark:border-zinc-600 dark:shadow[#016556]/65 shadow-[#016556]/25 shadow-[0_0_24px_0_rgba(0,0,0,0.1)] overflow-hidden w-[960px] h-[540px]">
-            <img class="w-full h-full object-cover rounded-lg hidden dark:block aspect-video"
+        <div class="hero-image aspect-video rounded-2xl border dark:border-zinc-600 dark:shadow[#016556]/65 shadow-[#016556]/25 shadow-[0_0_24px_0_rgba(0,0,0,0.1)] overflow-hidden">
+            <img class="w-full h-full object-cover rounded-lg hidden dark:block aspect-video max-w-4xl"
                 src="{{ asset('img/tani/tani-dark.png') }}" alt="Gambar Pertanian Tebu">
-            <img class="w-full h-full object-cover rounded-lg block dark:hidden aspect-video"
+            <img class="w-full h-full object-cover rounded-lg block dark:hidden aspect-video max-w-4xl"
                 src="{{ asset('img/tani/tani-light.png') }}" alt="Gambar Pertanian Tebu">
         </div>
     </div>

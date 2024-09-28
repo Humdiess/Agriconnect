@@ -29,16 +29,16 @@
             <div class="footer-social">
                 <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
                 <div class="flex space-x-4">
-                    <a href="https://web.facebook.com/" target="_blank" class="hover:text-accent transition">
+                    <a href="https://web.facebook.com/" aria-label="Facebook" target="_blank" class="hover:text-accent transition">
                         <i class="fab fa-facebook-f fa-2x"></i>
                     </a>
-                    <a href="https://x.com/" target="_blank" class="hover:text-accent transition">
+                    <a href="https://x.com/" target="_blank" aria-label="Twitter" class="hover:text-accent transition">
                         <i class="fab fa-twitter fa-2x"></i>
                     </a>
-                    <a href="https://www.instagram.com/" target="_blank" class="hover:text-accent transition">
+                    <a href="https://www.instagram.com/" aria-label="Instagram" target="_blank" class="hover:text-accent transition">
                         <i class="fab fa-instagram fa-2x"></i>
                     </a>
-                    <a href="https://www.linkedin.com/" target="_blank" class="hover:text-accent transition">
+                    <a href="https://www.linkedin.com/" aria-label="LinkedIn" target="_blank" class="hover:text-accent transition">
                         <i class="fab fa-linkedin-in fa-2x"></i>
                     </a>
                 </div>
@@ -47,12 +47,7 @@
     </div>
 </footer>
 
-<button id="backToTop"
-    class="fixed bottom-8 right-8 p-4 bg-green-500 text-white rounded-full shadow-lg opacity-0 pointer-events-none">
-    ⬆ Back to Top
-</button>
-
-    <script>
+<script>
     document.querySelectorAll('.accordion-toggle').forEach((button) => {
         button.addEventListener('click', function() {
             const accordion = this.parentElement;
@@ -77,28 +72,28 @@
 <script src="{{ asset('js/preload.js') }}"></script>
 @include('sweetalert::alert')
 
-    <script>
-        gsap.to(".cursor-example", {
-  duration: 0.018,
-  repeat: -1,
-  onRepeat: () => {
-    posX += (mouseX - posX) / 8;
-    posY += (mouseY - posY) / 8;
+<script>
+    gsap.to(".cursor-example", {
+      duration: 0.018,
+      repeat: -1,
+      onRepeat: () => {
+        posX += (mouseX - posX) / 8;
+        posY += (mouseY - posY) / 8;
 
-    gsap.set(".cursor-example", {
-      css: {
-        left: posX - 1,
-        top: posY - 2
+        gsap.set(".cursor-example", {
+          css: {
+            left: posX - 1,
+            top: posY - 2
+          }
+        });
       }
     });
-  }
-});
 
-document.addEventListener("mousemove", (e) => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-});
-    </script>
+    document.addEventListener("mousemove", (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+</script>
 </body>
 
 </html>

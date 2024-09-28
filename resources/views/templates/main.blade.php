@@ -218,62 +218,74 @@ input:checked + .slider:before {
 </style>
 
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-    // Theme Toggle
-    const themeToggle = document.getElementById('theme-toggle');
-    if (localStorage.getItem('theme') === 'dark') {
-        document.documentElement.classList.add('dark');
-        themeToggle.checked = true;
-    }
-    themeToggle.addEventListener('change', () => {
-        document.documentElement.classList.toggle('dark', themeToggle.checked);
-        localStorage.setItem('theme', themeToggle.checked ? 'dark' : 'light');
-    });
-
-    // Dropdown Toggle Helper Function
-    const toggleDropdown = (buttonId, dropdownId) => {
-        const button = document.getElementById(buttonId);
-        const dropdown = document.getElementById(dropdownId);
-        button.addEventListener('click', () => dropdown.classList.toggle('hidden'));
-
-        // Close dropdown when clicking outside
-        document.addEventListener('click', (event) => {
-            if (!button.contains(event.target) && !dropdown.contains(event.target)) {
-                dropdown.classList.add('hidden');
-            }
-        });
-    };
-
-    // Profile Dropdown
-    toggleDropdown('profile-dropdown-toggle', 'profile-dropdown');
-
-    // Pantau Dropdown
-    toggleDropdown('pantau-dropdown-toggle', 'pantau-dropdown');
-
-    // Mobile Menu
-    const mobileMenu = {
-        button: document.getElementById('mobile-menu-toggler'),
-        menu: document.getElementById('menu-mobile'),
-        closeButton: document.getElementById('close-menu'),
-        backdrop: document.getElementById('backdrop'),
-
-        open() {
-            this.menu.classList.replace('-left-64', 'left-0');
-            this.backdrop.classList.remove('hidden');
-        },
-        close() {
-            this.menu.classList.replace('left-0', '-left-64');
-            this.backdrop.classList.add('hidden');
-        },
-        init() {
-            this.button.addEventListener('click', () => this.open());
-            this.closeButton.addEventListener('click', () => this.close());
-            this.backdrop.addEventListener('click', () => this.close());
+    document.addEventListener('DOMContentLoaded', function () {
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+            themeToggle.checked = true;
         }
-    };
+        themeToggle.addEventListener('change', () => {
+            document.documentElement.classList.toggle('dark', themeToggle.checked);
+            localStorage.setItem('theme', themeToggle.checked ? 'dark' : 'light');
+        });
 
-    mobileMenu.init();
-});
-</script>
+        // Dropdown Toggle Helper Function
+        const toggleDropdown = (buttonId, dropdownId, stateKey) => {
+            const button = document.getElementById(buttonId);
+            const dropdown = document.getElementById(dropdownId);
+            const isOpen = localStorage.getItem(stateKey) === 'true';
+
+            // Set the initial state based on localStorage
+            if (isOpen) {
+                dropdown.classList.remove('hidden');
+            }
+
+            button.addEventListener('click', () => {
+                const shouldBeOpen = dropdown.classList.toggle('hidden');
+                localStorage.setItem(stateKey, !shouldBeOpen);
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', (event) => {
+                if (!button.contains(event.target) && !dropdown.contains(event.target)) {
+                    dropdown.classList.add('hidden');
+                    localStorage.setItem(stateKey, false);
+                }
+            });
+        };
+
+        // Profile Dropdown
+        toggleDropdown('profile-dropdown-toggle', 'profile-dropdown', 'profileDropdownOpen');
+
+        // Pantau Dropdown - Keep its state persistent across pages
+        toggleDropdown('pantau-dropdown-toggle', 'pantau-dropdown', 'pantauDropdownOpen');
+
+        // Mobile Menu
+        const mobileMenu = {
+            button: document.getElementById('mobile-menu-toggler'),
+            menu: document.getElementById('menu-mobile'),
+            closeButton: document.getElementById('close-menu'),
+            backdrop: document.getElementById('backdrop'),
+
+            open() {
+                this.menu.classList.replace('-left-64', 'left-0');
+                this.backdrop.classList.remove('hidden');
+            },
+            close() {
+                this.menu.classList.replace('left-0', '-left-64');
+                this.backdrop.classList.add('hidden');
+            },
+            init() {
+                this.button.addEventListener('click', () => this.open());
+                this.closeButton.addEventListener('click', () => this.close());
+                this.backdrop.addEventListener('click', () => this.close());
+            }
+        };
+
+        mobileMenu.init();
+    });
+    </script>
+
 
 @include('templates.footer')
