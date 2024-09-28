@@ -14,6 +14,11 @@ class TaniController extends Controller
         $active = 'tani-ai';
         return view('frontend.tani.index', compact('active'));
     }
+    public function pendaftaran()
+    {
+        $active = 'pendaftaran';
+        return view('petani.pendaftaran', compact('active'));
+    }
 
     public function chat(Request $request)
     {

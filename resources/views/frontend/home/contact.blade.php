@@ -43,7 +43,7 @@
                             <h3 class="text-lg font-medium leading-6 text-gray-900 dark:text-gray-100">Send us a message
                             </h3>
                             <div class="mt-5">
-                                <form action="{{ route('home.contact') }}" method="POST" id="contact-form">
+                                <form action="{{ route('contact') }}" method="POST" id="contact-form">
                                     @csrf
                                     <div>
                                         <label for="name"

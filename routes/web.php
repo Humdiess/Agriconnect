@@ -27,13 +27,16 @@ Route::get('/create-storage-link', function () {
 
 // For Umum
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/agrishop', [HomeController::class, 'agrishop'])->name('agrishop');
+Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
 
 // Tani Ai
 Route::get('/tani-ai', [TaniController::class, 'index'])->name('tani')->middleware('req_auth');
 Route::post('/tani-ai', [TaniController::class, 'chat'])->name('tani.chat')->middleware('req_auth');
+
+// Daftar Petani
+Route::get('/daftar-tani', [TaniController::class, 'pendaftaran'])->name('tani.pendaftaran')->middleware('req_auth');
 
 // Auth
 Route::middleware('guest')->group(function () {
@@ -43,8 +46,8 @@ Route::middleware('guest')->group(function () {
     Route::get('/sign-up', [AuthController::class, 'signup'])->name('auth.signup');
     Route::post('/sign-up', [AuthController::class, 'addUser'])->name('auth.addUser');
 });
+Route::post('/logout', [AuthController::class, 'logout'])->name('auth.logout')->middleware('auth');
 
-Route::post('/logout', [AuthController::class, 'logout'])->name('auth.logout');
 
 // Petani Fiturs (is_farmer=true)
 Route::middleware([IsFarmer::class])->group(function () {
