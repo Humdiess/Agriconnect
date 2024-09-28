@@ -4,15 +4,13 @@
     <div class="p-4 border-b dark:border-zinc-800 fixed left-0 right-0 dark:bg-ireng/40 backdrop-blur-3xl bg-white/40 flex justify-between lg:hidden">
         {{-- navbar toggler --}}
         <div class="lg:hidden">
-            <button type="button"
-                id="mobile-menu-toggler"
+            <button type="button" id="mobile-menu-toggler"
                 class="dark:bg-gray-800 bg-gray-100 inline-flex items-center justify-center p-2 rounded-md dark:text-gray-400 text-whit hover:text-white hover:bg-gray-300 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white"
                 aria-controls="mobile-menu" aria-expanded="false">
                 <span class="sr-only">Open main menu</span>
                 <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M4 6h16M4 12h16M4 18h16" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
                 <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor" aria-hidden="true">
@@ -143,8 +141,10 @@
 <style>
     /* no scrollbar */
     .scrollbar-hide {
-        -ms-overflow-style: none;  /* IE and Edge */
-        scrollbar-width: none;  /* Firefox */
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
     }
 
     .scrollbar-hide::-webkit-scrollbar {
@@ -152,60 +152,60 @@
     }
 
     /* The switch - the outer container */
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 40px;
-    height: 20px;
-}
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 40px;
+        height: 20px;
+    }
 
-/* The slider - the round button */
-.switch .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: .4s;
-    border-radius: 34px;
-}
+    /* The slider - the round button */
+    .switch .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: .4s;
+        border-radius: 34px;
+    }
 
-.switch .slider:before {
-    position: absolute;
-    content: "";
-    height: 16px;
-    width: 16px;
-    left: 4px;
-    bottom: 2px;
-    background-color: white;
-    transition: .4s;
-    border-radius: 50%;
-}
+    .switch .slider:before {
+        position: absolute;
+        content: "";
+        height: 16px;
+        width: 16px;
+        left: 4px;
+        bottom: 2px;
+        background-color: white;
+        transition: .4s;
+        border-radius: 50%;
+    }
 
-/* Checked - dark mode */
-input:checked + .slider {
-    background-color: #4a5568; /* Darker color */
-}
+    /* Checked - dark mode */
+    input:checked+.slider {
+        background-color: #4a5568;
+        /* Darker color */
+    }
 
-input:checked + .slider:before {
-    transform: translateX(20px);
-}
+    input:checked+.slider:before {
+        transform: translateX(20px);
+    }
 
-/* Rounded switch */
-.slider.round {
-    border-radius: 34px;
-}
+    /* Rounded switch */
+    .slider.round {
+        border-radius: 34px;
+    }
 
-.slider.round:before {
-    border-radius: 50%;
-}
-
+    .slider.round:before {
+        border-radius: 50%;
+    }
 </style>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function() {
         // Theme Toggle
         const themeToggle = document.getElementById('theme-toggle');
         if (localStorage.getItem('theme') === 'dark') {
@@ -272,7 +272,7 @@ input:checked + .slider:before {
 
         mobileMenu.init();
     });
-    </script>
+</script>
 
 
 @include('templates.footer')
