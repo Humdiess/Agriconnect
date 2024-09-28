@@ -20,44 +20,7 @@
          const isDark = document.documentElement.classList.contains('dark');
          localStorage.setItem('theme', isDark ? 'dark' : 'light');
      });
-     // Sidebar toggle functionality
-     sidebarToggle.addEventListener('click', () => {
-         sidebar.classList.toggle('hidden');
-     });
 
-     // User menu toggle functionality
-     userMenuButton.addEventListener('click', () => {
-         userMenu.style.display = userMenu.style.display === 'none' ? 'block' : 'none';
-     });
-
-     // Settings menu toggle functionality
-     settingsMenuButton.addEventListener('click', () => {
-         settingsMenu.style.display = settingsMenu.style.display === 'none' ? 'block' : 'none';
-     });
-
-
-
-     // Close menus when clicking outside
-     document.addEventListener('click', (event) => {
-         if (!userMenuButton.contains(event.target) && !userMenu.contains(event.target)) {
-             userMenu.style.display = 'none';
-         }
-         if (!settingsMenuButton.contains(event.target) && !settingsMenu.contains(event.target)) {
-             settingsMenu.style.display = 'none';
-         }
-     });
-
-     // Responsive sidebar
-     window.addEventListener('resize', () => {
-         if (window.innerWidth >= 1024) {
-             sidebar.classList.remove('hidden');
-         } else {
-             sidebar.classList.add('hidden');
-         }
-     });
- </script>
-
- <script>
      document.querySelectorAll('.accordion-toggle').forEach((button) => {
          button.addEventListener('click', function() {
              const accordion = this.parentElement;
@@ -66,21 +29,22 @@
      });
  </script>
 
- {{-- <script src="{{ asset('js/navbar.js') }}"></script> --}}
 
  <script src="https://kit.fontawesome.com/cff8b87f33.js" crossorigin="anonymous"></script>
 
- {{-- gsap --}}
 
- {{-- @include('frontend.components.gsap') --}}'
-
- {{-- @include('frontend.components.gsap')
- <script src="{{ asset('js/script.js') }}"></script>
- <script src="{{ asset('js/gsap.js') }}"></script>
+ @include('frontend.components.gsap')
  <script src="{{ asset('js/preload.js') }}"></script>
- @include('sweetalert::alert') --}}
+ @include('sweetalert::alert')
 
  <script>
+
+let posX = 0;
+let posY = 0;
+
+let mouseX = 0;
+let mouseY = 0;
+
      gsap.to(".cursor-example", {
          duration: 0.018,
          repeat: -1,
