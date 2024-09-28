@@ -36,9 +36,19 @@ export default {
           "50%": { transform: "translateX(4px)" },
           "75%": { transform: "translateX(-4px)" },
         },
+        slideIn: {
+            '0%': { transform: 'translateX(-100%)' },
+            '100%': { transform: 'translateX(0)' },
+          },
+          slideOut: {
+            '0%': { transform: 'translateX(0)' },
+            '100%': { transform: 'translateX(-100%)' },
+          },
       },
       animations: {
         shake: "shake 0.4s ease-in-out infinite",
+        slideIn: 'slideIn 0.5s ease-out forwards',
+        slideOut: 'slideOut 0.5s ease-in forwards',
       },
       keyframes: {
         floating: {

@@ -1,10 +1,47 @@
 @include('templates.header')
 
-<div class="flex w-full bg-gray-100 h-screen dark:bg-ireng">
+<header>
+    <div class="p-4 border-b dark:border-zinc-800 flex justify-between lg:hidden">
+        {{-- navbar toggler --}}
+        <div class="lg:hidden">
+            <button type="button"
+                id="mobile-menu-toggler"
+                class="dark:bg-gray-800 bg-gray-100 inline-flex items-center justify-center p-2 rounded-md dark:text-gray-400 text-whit hover:text-white hover:bg-gray-300 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white"
+                aria-controls="mobile-menu" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <div class="flex items-center space-x-2">
+            <img src="{{ asset('img/logo/header-logo.png') }}" alt="Logo" class="w-8 h-8">
+            <div>
+                <img src="{{ asset('img/logo/logo-light.png') }}" alt="Logo text" class="h-6 block dark:hidden">
+                <img src="{{ asset('img/logo/logo-dark.png') }}" alt="Logo text" class="h-6 hidden dark:block">
+            </div>
+        </div>
+    </div>
+</header>
+<div class="flex w-full bg-white h-screen dark:bg-ireng">
+    <div id="backdrop" class="hidden fixed inset-0 bg-black opacity-50 z-30"></div>
     <aside
-        class="w-64 fixed left-0 top-0 bottom-0 hidden lg:block bg-white dark:bg-ireng overflow-y-auto flex-col justify-between border-r dark:border-zinc-800 scrollbar-hide">
+        id="menu-mobile"
+        class="w-64 fixed z-[35] -left-64 lg:left-0 top-0 bottom-0 bg-white dark:bg-ireng overflow-y-auto flex-col justify-between border-r dark:border-zinc-800 scrollbar-hide">
+        <!-- Close Button -->
+        <button type="button" id="close-menu" class="lg:hidden p-4 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
         <div>
-            <div class="p-4 border-b dark:border-zinc-800">
+            <div class="p-4 border-b dark:border-zinc-800 hidden lg:block">
                 <div class="flex items-center space-x-2">
                     <img src="{{ asset('img/logo/header-logo.png') }}" alt="Logo" class="w-8 h-8">
                     <div>
@@ -229,6 +266,35 @@ input:checked + .slider:before {
         const dropdown = document.getElementById('profile-dropdown');
         dropdown.classList.toggle('hidden'); // Toggle class 'hidden' untuk menampilkan/menyembunyikan dropdown profile
     });
+
+    document.addEventListener('DOMContentLoaded', function () {
+    const mobileMenuButton = document.getElementById('mobile-menu-toggler');
+    const mobileMenu = document.getElementById('menu-mobile');
+    const closeMenuButton = document.getElementById('close-menu');
+    const backdrop = document.getElementById('backdrop');
+
+    // Toggle mobile menu visibility
+    mobileMenuButton.addEventListener('click', function () {
+        mobileMenu.classList.remove('-left-64');
+        mobileMenu.classList.add('left-0');
+        backdrop.classList.remove('hidden');
+    });
+
+    // Close menu when the close button is clicked
+    closeMenuButton.addEventListener('click', function () {
+        mobileMenu.classList.remove('left-0');
+        mobileMenu.classList.add('-left-64');
+        backdrop.classList.add('hidden');
+    });
+
+    // Close menu when clicking on the backdrop
+    backdrop.addEventListener('click', function () {
+        mobileMenu.classList.remove('left-0');
+        mobileMenu.classList.add('-left-64');
+        backdrop.classList.add('hidden');
+    });
+});
+
 </script>
 
 @include('templates.footer')
