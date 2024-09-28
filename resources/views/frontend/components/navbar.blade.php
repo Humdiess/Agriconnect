@@ -45,10 +45,25 @@
             <!-- Right side: TANI AI, Theme Toggle, Profile/Login -->
             <div class="flex items-center space-x-4">
                 <!-- TANI AI Button -->
-                <a href="{{ route('tani.pendaftaran') }}"
-                    class="hidden lg:block text-accent border border-accent hover:bg-accent-dark px-4 py-2 rounded-md text-sm font-medium {{ $active == 'tani-ai' ? 'ring-2 ring-green-400 dark:ring-green-300' : '' }}">
-                    <i class="fa-solid fa-seedling me-3"></i> Jadi petani
-                </a>
+                @auth
+                    @if (Auth::user()->is_farmer)
+                        <a href="{{ route('petani.index') }}"
+                            class="hidden lg:block text-accent border border-accent hover:bg-accent-dark px-4 py-2 rounded-md text-sm font-medium {{ $active == 'tani-ai' ? 'ring-2 ring-green-400 dark:ring-green-300' : '' }}">
+                            <i class="fa-solid fa-seedling me-3"></i> Dashboard Tani
+                        </a>
+                    @else
+                        <a href="{{ route('tani.pendaftaran') }}"
+                            class="hidden lg:block text-accent border border-accent hover:bg-accent-dark px-4 py-2 rounded-md text-sm font-medium {{ $active == 'tani-ai' ? 'ring-2 ring-green-400 dark:ring-green-300' : '' }}">
+                            <i class="fa-solid fa-seedling me-3"></i> Jadi petani
+                        </a>
+                    @endif
+                @endauth
+                @guest
+                    <a href="{{ route('tani.pendaftaran') }}"
+                        class="hidden lg:block text-accent border border-accent hover:bg-accent-dark px-4 py-2 rounded-md text-sm font-medium {{ $active == 'tani-ai' ? 'ring-2 ring-green-400 dark:ring-green-300' : '' }}">
+                        <i class="fa-solid fa-seedling me-3"></i> Jadi petani
+                    </a>
+                @endguest
 
                 <!-- Profile or Login -->
                 @if (Auth::check())
@@ -61,14 +76,10 @@
                         </button>
                         <div id="profile-menu"
                             class="dropdown-menu absolute hidden mt-4 right-0 w-48 bg-white dark:bg-gray-800 rounded-md shadow-lg overflow-hidden z-20">
-                            @if (Auth::user()->is_farmer)
-                                <a href="{{ route('petani.index') }}"
-                                    class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Dashboard</a>
-                            @endif
                             <form method="POST" action="{{ route('auth.logout') }}">
                                 @csrf
                                 <button type="submit"
-                                    class="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-red-700">Logout</button>
+                                    class="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-red-600 hover:text-white">Logout</button>
                             </form>
                         </div>
                     </div>
