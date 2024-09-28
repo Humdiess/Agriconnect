@@ -50,7 +50,6 @@ class AuthController extends Controller
         if ($user) {
             if (Hash::check($request->input('password'), $user->password)) {
                 Auth::login($user);
-                Alert::alert('Berhasil', 'Login berhasil.', 'success');
                 return redirect()->intended('/')->with('success', 'Login berhasil!');
             } else {
                 return back()->withErrors([
@@ -97,7 +96,6 @@ class AuthController extends Controller
         $user->password = Hash::make($request->input('password'));
         $user->save();
 
-        Alert::alert('Berhasil', 'Registrasi berhasil, silakan login.', 'success');
         return redirect('/login')->with('success', 'Registrasi berhasil, silakan login.');
     }
 }

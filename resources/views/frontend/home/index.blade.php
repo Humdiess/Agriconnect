@@ -9,126 +9,189 @@
     <!-- Hero Content -->
     <div class="hero-wrapper w-full relative z-10">
         <div class="hero w-100 flex flex-col items-center justify-center mx-8">
-          <div class="hero-title mt-[8rem] md:mt-[8rem] text-center">
-            <h1 class="text-3xl text-center leading-9 font-bold text-gray-900 dark:text-white sm:text-4xl md:text-5xl" style="line-height: 1.2">
-              <span class="block">AgriConnect</span>
-              <span class="block text-[#1eb78b] dark:text-accent max-w-[64rem] text-center">Mendukung Pertanian Tebu di Sidoarjo</span>
-            </h1>
-            <p class="mt-3 max-w-md mx-auto text-base text-gray-500 dark:text-gray-300 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-              Meningkatkan Produktivitas dan Kualitas melalui Teknologi
+            <div class="hero-title mt-[8rem] md:mt-[8rem] text-center">
+                <h1 class="text-3xl text-center leading-9 font-bold text-gray-900 dark:text-white sm:text-4xl md:text-5xl" style="line-height: 1.2">
+                    <span class="block">AgriConnect</span>
+                    <span class="block text-[#1eb78b] dark:text-accent max-w-[64rem] text-center">Revolusi Pertanian Tebu Dimulai di Sini!</span>
+                </h1>
+                <p class="mt-3 max-w-md mx-auto text-base text-gray-500 dark:text-gray-300 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+                    Teknologi cerdas untuk panen lebih besar dan hidup lebih baik.
+                </p>
+                <div class="mt-8 sm:mt-12">
+                    <a
+                        href="#mulai"
+                        class="inline-flex items-center shadow-lg dark:shadow-accent px-4 py-2 border border-transparent text-sm font-medium rounded-lg text-white bg-accent hover:bg-accent-dark transition duration-150 ease-in-out md:py-3 md:text-lg md:px-6"
+                        aria-label="Mulai menggunakan AgriConnect untuk meningkatkan produktivitas pertanian tebu Anda"
+                    >
+                        Bergabung Sekarang
+                        <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Image -->
+    <div class="hero-image-wrapper w-full flex justify-center mt-12">
+        <div class="hero-image aspect-video rounded-2xl border dark:border-zinc-600 dark:shadow[#016556]/65 shadow-[#016556]/25 shadow-[0_0_24px_0_rgba(0,0,0,0.1)] overflow-hidden w-[960px] h-[540px]">
+            <img class="w-full h-full object-cover rounded-lg hidden dark:block aspect-video"
+                src="{{ asset('img/tani/tani-dark.png') }}" alt="Gambar Pertanian Tebu">
+            <img class="w-full h-full object-cover rounded-lg block dark:hidden aspect-video"
+                src="{{ asset('img/tani/tani-light.png') }}" alt="Gambar Pertanian Tebu">
+        </div>
+    </div>
+</section>
+
+<section class="about-container bg-white dark:bg-ireng py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+        <!-- Header Section -->
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl">
+                <span class="block">Solusi Inovatif untuk</span>
+                <span class="block text-accent">Pertanian Tebu Modern</span>
+            </h2>
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-500 dark:text-gray-300">
+                Kami menggabungkan kekuatan IoT dan AI untuk membantu petani tebu di Sidoarjo meningkatkan hasil panen, mengoptimalkan perawatan lahan, dan memperluas akses pasar.
             </p>
-            <div class="mt-8 sm:mt-12">
-              <a
-                href="#mulai"
-                class="inline-flex items-center shadow-lg dark:shadow-accent px-4 py-2 border border-transparent text-sm font-medium rounded-lg dark:text-white bg-accent hover:bg-accent-dark transition duration-150 ease-in-out md:py-3 md:text-lg md:px-6"
-                aria-label="Mulai menggunakan AgriConnect untuk meningkatkan produktivitas pertanian tebu Anda"
-              >
-                Jadi petani sekarang
-                <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                </svg>
-              </a>
-            </div>
-          </div>
         </div>
-      </div>
 
-        <!-- Hero Image -->
-        <div class="hero-image-wrapper w-full flex justify-center mt-12">
-            <div class="hero-image aspect-video rounded-2xl border dark:border-zinc-600 dark:shadow[#016556]/65 shadow-[#016556]/25 shadow-[0_0_24px_0_rgba(0,0,0,0.1)] overflow-hidden w-[960px] h-[540px]">
-                <img class="w-full h-full object-cover rounded-lg hidden dark:block aspect-video"
-                    src="{{ asset('img/tani/tani-dark.png') }}" alt="Hero Image">
-                <img class="w-full h-full object-cover rounded-lg block dark:hidden aspect-video"
-                    src="{{ asset('img/tani/tani-light.png') }}" alt="Hero Image">
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="about-container container mx-auto px-8 md:px-16 mt-12 py-16">
-    <div class="about-wrapper w-full" id="about">
-        <div class="about w-full">
-            <div class="about-header w-full text-center">
-                <h2 class="text-base text-accent font-semibold tracking-wide uppercase">AGRICONNECT</h2>
-                <p class="mt-2 text-xl 2xl:text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
-                    Solusi untuk Peningkatan Produktivitas Tebu di Sidoarjo
-                </p>
-                <p class="mt-4 max-w-2xl text-md 2xl:text-lg text-gray-500 dark:text-gray-300 lg:mx-auto">
-                    AgriConnect hadir untuk mendukung petani tebu di Sidoarjo dalam meningkatkan produktivitas dan kualitas melalui teknologi modern dan pelatihan yang tepat.
-                </p>
-            </div>
-            <div class="absolute w-[25rem] h-[25rem] bg-gradient-to-r from-[#5DBB63] to-[#27a002] opacity-20 blur-3xl rounded-full top-[112rem] left-[32rem] z-0"></div>
-            <div class="about-content mt-8">
-                <div class="flex items-center justify-center h-full w-full">
-                    <div class="grid grid-cols-5 grid-rows-6 gap-4 p-2 rounded-lg h-full w-full">
-
-                        <div class="col-span-5 row-span-4 lg:row-span-2 rounded-lg border dark:border-zinc-600 bg-white/70 dark:bg-zinc-900/30 h-full lg:h-[20rem] flex flex-col sm:flex-col md:flex-col lg:flex-row items-center justify-between">
-                            <!-- Bagian Eksplor Layanan -->
-                            <div class="explore-services flex flex-col gap-2 sm:px-[2rem] lg:px-[5.5rem] w-full lg:w-1/2 sm:h-full  sm:justify-center">
-                                <h1 class="text-3xl sm:text-4xl font-bold dark:text-white">Eksplor Layanan Kami</h1>
-                                <p class="text-neutral-400 sm:text-lg dark:text-neutral-300 lg:max-w-80">
-                                    Kami menyediakan berbagai macam layanan yang dapat meningkatkan dan membantu mempermudah petani tebu dan pabrik gula di Sidoarjo.
-                                </p>
-                            </div>
-
-                            <!-- Bagian Ilustrasi Layanan -->
-                            <div class="service-illustration grid grid-cols-2 gap-4 h-full w-full lg:w-1/2 relative">
-                                <!-- Kiri Bawah -->
-                                <div class="relative">
-                                    <img class="absolute bottom-7 right-6 dark:block hidden" src="{{ asset('img/svg/service-1.svg') }}" alt="tebu">
-                                    <img class="absolute bottom-7 right-6 block dark:hidden" src="{{ asset('img/svg/service-4-dark.svg') }}" alt="tebu">
-                                </div>
-
-                                <!-- Kanan Bawah -->
-                                <div class="relative">
-                                    <img class="absolute bottom-4 right-8 dark:block hidden" src="{{ asset('img/svg/service-2.svg') }}" alt="tebu">
-                                    <img class="absolute bottom-4 right-8 block dark:hidden" src="{{ asset('img/svg/service-3-dark.svg') }}" alt="tebu">
-                                </div>
-
-                                <!-- Kiri Atas -->
-                                <div class="relative">
-                                    <img class="absolute top-0 left-0 sm:left-8 dark:block hidden" src="{{ asset('img/svg/service-3.svg') }}" alt="tebu">
-                                    <img class="absolute top-0 left-0 sm:left-8 block dark:hidden" src="{{ asset('img/svg/service-2-dark.svg') }}" alt="tebu">
-                                </div>
-
-                                <!-- Kanan Atas -->
-                                <div class="relative">
-                                    <img class="absolute top-0 left-0 dark:block hidden" src="{{ asset('img/svg/service-4.svg') }}" alt="tebu">
-                                    <img class="absolute top-0 left-0 block dark:hidden" src="{{ asset('img/svg/service-1-dark.svg') }}" alt="tebu">
-                                </div>
-                            </div>
-                        </div>
-
-
-                      <div class="col-span-5 lg:col-span-3 row-span-2 rounded-lg overflow-hidden border relative dark:border-zinc-600 bg-white/30 dark:bg-card/30 h-[20rem] flex items-center">
-                        <div class="explore-services flex flex-col gap-2 px-[2.5rem]">
-                            <h1 class="text-3xl font-bold dark:text-white">Eksplor Layanan Kami</h1>
-                            <p class="text-neutral-400 dark:text-neutral-300 max-w-80">kami menyediakan berbagai macam layanan yang dapat meningkatkan dan membantu mempermudah apalah petani tebu dan parbik gula di sidoarjo</p>
-                        </div>
-                        <img class="absolute -right-16 -bottom-2" src="{{ asset('img/svg/dashboard-service.svg') }}" alt="">
-                      </div>
-
-                      <div class="col-span-5 lg:col-span-2 row-span-2 flex-col rounded-lg border dark:border-zinc-600 bg-white/70 dark:bg-zinc-900/30 h-[20rem] flex justify-center">
-                        <div class="ai-services ms-8">
-                            <h1 class="text-2xl font-bold dark:text-white">Tingkatkan automasi</h1>
-                            <p class="text-neutral-400 dark:text-neutral-300 max-w-80 mt-2">Dapatkan rekomendasi aktivitas untuk menjaga lahan anda dengan bantuan Agriconnect Dashboard</p>
-                        </div>
-                        <div class="ai-services-image ms-36 mb-4 md:ms-6 lg:ms-16">
-                            <img src="{{ asset('img/svg/service-ai-small.svg') }}" alt="">
-                        </div>
-                      </div>
-
-                      <div class="col-span-5 row-span-2 rounded-lg border dark:border-zinc-600 bg-white/70 dark:bg-zinc-900/30 h-[20rem] flex items-center justify-center">
-                        <p class="font-mplus2variable">Pork</p>
-                      </div>
-
+        <!-- Content Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:px-8 md:px-12 lg:px-16">
+            <!-- Pertanian Tebu -->
+            <div class="bg-white dark:bg-ireng/90 rounded-lg overflow-hidden border dark:border-zinc-600">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-seedling text-4xl text-green-500 mr-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Pertanian Tebu di Sidoarjo</h3>
                     </div>
-                  </div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        Mendukung petani tebu lokal dengan:
+                    </p>
+                    <ul class="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-2">
+                        <li>Akses informasi terkini tentang praktik terbaik</li>
+                        <li>Pengenalan teknologi modern untuk efisiensi</li>
+                        <li>Layanan konsultasi dari ahli pertanian</li>
+                        <li>Program pelatihan dan workshop reguler</li>
+                    </ul>
+                </div>
+            </div>
 
+            <!-- Teknologi IoT -->
+            <div class="bg-white dark:bg-ireng/90 rounded-lg overflow-hidden border dark:border-zinc-600">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-microchip text-4xl text-blue-500 mr-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Teknologi IoT untuk Lahan</h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        Sensor IoT canggih memungkinkan:
+                    </p>
+                    <ul class="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-2">
+                        <li>Pemantauan kelembapan tanah real-time</li>
+                        <li>Pengukuran suhu udara dan tanah</li>
+                        <li>Deteksi hama dan penyakit lebih awal</li>
+                        <li>Optimalisasi penggunaan air dan pupuk</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- AI untuk Rekomendasi -->
+            <div class="bg-white dark:bg-ireng/90 rounded-lg overflow-hidden border dark:border-zinc-600">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-brain text-4xl text-purple-500 mr-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white">AI untuk Rekomendasi Perawatan</h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        Kecerdasan buatan kami menawarkan:
+                    </p>
+                    <ul class="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-2">
+                        <li>Analisis data sensor yang komprehensif</li>
+                        <li>Rekomendasi perawatan lahan yang personal</li>
+                        <li>Prediksi hasil panen yang akurat</li>
+                        <li>Saran penanganan hama yang efektif</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Shop -->
+            <div class="bg-white dark:bg-ireng/90 rounded-lg overflow-hidden border dark:border-zinc-600">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-store text-4xl text-yellow-500 mr-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Belanja Pertanian Online</h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        Toko online kami menyediakan:
+                    </p>
+                    <ul class="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-2">
+                        <li>Benih tebu berkualitas tinggi</li>
+                        <li>Pupuk organik dan anorganik terbaik</li>
+                        <li>Alat pertanian modern dan efisien</li>
+                        <li>Produk perawatan tanaman yang aman</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Chatbot -->
+            <div class="bg-white dark:bg-ireng/90 rounded-lg overflow-hidden border dark:border-zinc-600">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-comments text-4xl text-pink-500 mr-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Chatbot Konsultasi 24/7</h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        Asisten virtual kami siap membantu dengan:
+                    </p>
+                    <ul class="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-2">
+                        <li>Jawaban cepat untuk pertanyaan umum</li>
+                        <li>Tips perawatan lahan yang praktis</li>
+                        <li>Solusi untuk masalah pertanian sehari-hari</li>
+                        <li>Panduan langkah demi langkah untuk pemula</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Pasar Digital -->
+            <div class="bg-white dark:bg-ireng/90 rounded-lg overflow-hidden border dark:border-zinc-600">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-handshake text-4xl text-indigo-500 mr-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Pasar Digital Tebu</h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        Platform kami menghubungkan:
+                    </p>
+                    <ul class="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-2">
+                        <li>Petani langsung dengan pembeli besar</li>
+                        <li>Harga yang lebih adil tanpa perantara</li>
+                        <li>Sistem lelang untuk hasil panen premium</li>
+                        <li>Jaminan pembayaran yang aman</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="mt-16 bg-green-600 rounded-lg shadow-xl overflow-hidden">
+            <div class="px-6 py-12 max-w-xl mx-auto sm:px-10 sm:py-16 lg:max-w-full lg:px-12 lg:py-20">
+                <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
+                    <span class="block">Siap untuk revolusi pertanian?</span>
+                    <span class="block mt-2">Bergabunglah dengan AgriConnect hari ini!</span>
+                </h2>
+                <p class="mt-4 text-lg leading-6 text-green-100">
+                    Daftar sekarang dan dapatkan akses ke semua fitur inovatif kami. Tingkatkan hasil panen Anda dan jadilah bagian dari komunitas pertanian modern!
+                </p>
+                <a href="#" class="mt-8 bg-white text-green-600 hover:text-green-500 py-3 px-6ull inline-block border px-6 rounded-lg">
+                    Mulai Sekarang
+                </a>
             </div>
         </div>
     </div>
 </section>
+
 
 {{-- start-faq --}}
 <section class="faq-container container mx-auto px-8 md:px-16 py-16">

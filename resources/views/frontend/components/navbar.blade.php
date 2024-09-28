@@ -25,7 +25,7 @@
                     <a href="/" class="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium {{ $active == 'home' ? 'text-accent' : '' }}">Beranda</a>
                     <a href="{{ route('agrishop') }}" class="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium {{ $active == 'agrishop' ? 'text-accent' : '' }}">Toko</a>
                     <a href="{{ route('contact') }}" class="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium {{ $active == 'contact' ? 'text-accent' : '' }}">Kontak</a>
-                    <a href="{{ route('tani') }}" class="text-accent decoration-clone font-bold dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 px-3 py-2 rounded-md text-sm {{ $active == 'tani-ai' ? 'text-accent' : '' }}">Tani AI</a>
+                    <a href="{{ route('tani') }}" class="text-accent decoration-clone font-bold hover:bg-gray-100 dark:hover:bg-gray-700 px-3 py-2 rounded-md text-sm {{ $active == 'tani-ai' ? 'text-accent' : '' }}">Tani AI</a>
                 </div>
             </div>
 
@@ -42,7 +42,7 @@
                     <button id="profile-toggler" class="w-8 h-8 rounded-full overflow-hidden border-2 border-gray-500 dark:border-gray-400 focus:outline-none focus:border-accent transition-all duration-200">
                         <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="Profile picture">
                     </button>
-                    <div id="profile-menu" class="dropdown-menu hidden mt-2 right-0 w-48 bg-white dark:bg-gray-800 rounded-md shadow-lg overflow-hidden z-20">
+                    <div id="profile-menu" class="dropdown-menu absolute hidden mt-4 right-0 w-48 bg-white dark:bg-gray-800 rounded-md shadow-lg overflow-hidden z-20">
                         @if (Auth::user()->is_farmer)
                         <a href="{{ route('petani.index') }}" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Dashboard</a>
                         @endif
@@ -119,6 +119,5 @@
 
     profileToggler.addEventListener('click', () => {
         document.getElementById('profile-menu').classList.toggle('hidden');
-        document.getElementById('profile-menu').classList.toggle('opacity-0');
     })
 </script>
