@@ -1,11 +1,8 @@
-@extends('frontend.layouts.main')
-
-@section('content')
-    <x-navbar />
+@extends('auth.layouts.header')
     <div
         class="min-h-screen bg-white/80 dark:bg-ireng/30 backdrop-blur-md flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8">
         <div
-            class="max-w-md mt-24 w-full space-y-8 bg-white dark:bg-zinc-900 p-12 rounded-xl shadow-md border border-gray-200 dark:border-gray-700">
+            class="max-w-md w-full space-y-8 bg-white dark:bg-zinc-900 p-12 rounded-xl shadow-md border border-gray-200 dark:border-gray-700">
             <h1 class="text-2xl font-semibold mb-6 text-center dark:text-white">Daftarkan Diri Anda Menjadi Seorang Petani
             </h1>
             <form action="" method="POST">
@@ -54,4 +51,5 @@
             </form>
         </div>
     </div>
-@endsection
+@extends('auth.layouts.footer')
+
