@@ -218,83 +218,63 @@ input:checked + .slider:before {
 
 </style>
 
-
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const themeToggle = document.getElementById('theme-toggle');
+document.addEventListener('DOMContentLoaded', function () {
+    // Theme Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    if (localStorage.getItem('theme') === 'dark') {
+        document.documentElement.classList.add('dark');
+        themeToggle.checked = true;
+    }
+    themeToggle.addEventListener('change', () => {
+        document.documentElement.classList.toggle('dark', themeToggle.checked);
+        localStorage.setItem('theme', themeToggle.checked ? 'dark' : 'light');
+    });
 
-        // Load previously saved theme state
-        if (localStorage.getItem('theme') === 'dark') {
-            document.documentElement.classList.add('dark');
-            themeToggle.checked = true;
-        }
-
-        // Toggle theme on switch change
-        themeToggle.addEventListener('change', function () {
-            if (themeToggle.checked) {
-                document.documentElement.classList.add('dark');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                document.documentElement.classList.remove('dark');
-                localStorage.setItem('theme', 'light');
-            }
-        });
-
-        // Dropdown toggle
-        const profileDropdownToggle = document.getElementById('profile-dropdown-toggle');
-        const profileDropdown = document.getElementById('profile-dropdown');
-
-        profileDropdownToggle.addEventListener('click', function () {
-            profileDropdown.classList.toggle('hidden');
-        });
+    // Dropdown Toggle Helper Function
+    const toggleDropdown = (buttonId, dropdownId) => {
+        const button = document.getElementById(buttonId);
+        const dropdown = document.getElementById(dropdownId);
+        button.addEventListener('click', () => dropdown.classList.toggle('hidden'));
 
         // Close dropdown when clicking outside
-        document.addEventListener('click', function (event) {
-            if (!profileDropdownToggle.contains(event.target) && !profileDropdown.contains(event.target)) {
-                profileDropdown.classList.add('hidden');
+        document.addEventListener('click', (event) => {
+            if (!button.contains(event.target) && !dropdown.contains(event.target)) {
+                dropdown.classList.add('hidden');
             }
         });
-    });
-    // Event listener untuk toggle submenu Pantau
-    document.getElementById('pantau-dropdown-toggle').addEventListener('click', function() {
-        const dropdown = document.getElementById('pantau-dropdown');
-        dropdown.classList.toggle('hidden'); // Toggle class 'hidden' untuk menampilkan/menyembunyikan submenu
-    });
+    };
 
-    // Event listener untuk toggle submenu Profile
-    document.getElementById('profile-dropdown-toggle').addEventListener('click', function() {
-        const dropdown = document.getElementById('profile-dropdown');
-        dropdown.classList.toggle('hidden'); // Toggle class 'hidden' untuk menampilkan/menyembunyikan dropdown profile
-    });
+    // Profile Dropdown
+    toggleDropdown('profile-dropdown-toggle', 'profile-dropdown');
 
-    document.addEventListener('DOMContentLoaded', function () {
-    const mobileMenuButton = document.getElementById('mobile-menu-toggler');
-    const mobileMenu = document.getElementById('menu-mobile');
-    const closeMenuButton = document.getElementById('close-menu');
-    const backdrop = document.getElementById('backdrop');
+    // Pantau Dropdown
+    toggleDropdown('pantau-dropdown-toggle', 'pantau-dropdown');
 
-    // Toggle mobile menu visibility
-    mobileMenuButton.addEventListener('click', function () {
-        mobileMenu.classList.remove('-left-64');
-        mobileMenu.classList.add('left-0');
-        backdrop.classList.remove('hidden');
-    });
+    // Mobile Menu
+    const mobileMenu = {
+        button: document.getElementById('mobile-menu-toggler'),
+        menu: document.getElementById('menu-mobile'),
+        closeButton: document.getElementById('close-menu'),
+        backdrop: document.getElementById('backdrop'),
 
-    // Close menu when the close button is clicked
-    closeMenuButton.addEventListener('click', function () {
-        mobileMenu.classList.remove('left-0');
-        mobileMenu.classList.add('-left-64');
-        backdrop.classList.add('hidden');
-    });
+        open() {
+            this.menu.classList.replace('-left-64', 'left-0');
+            this.backdrop.classList.remove('hidden');
+        },
+        close() {
+            this.menu.classList.replace('left-0', '-left-64');
+            this.backdrop.classList.add('hidden');
+        },
+        init() {
+            this.button.addEventListener('click', () => this.open());
+            this.closeButton.addEventListener('click', () => this.close());
+            this.backdrop.addEventListener('click', () => this.close());
+        }
+    };
 
-    // Close menu when clicking on the backdrop
-    backdrop.addEventListener('click', function () {
-        mobileMenu.classList.remove('left-0');
-        mobileMenu.classList.add('-left-64');
-        backdrop.classList.add('hidden');
-    });
+    mobileMenu.init();
 });
-
 </script>
 
 @include('templates.footer')
