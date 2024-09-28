@@ -4,15 +4,13 @@
     <div class="p-4 border-b dark:border-zinc-800 flex justify-between lg:hidden">
         {{-- navbar toggler --}}
         <div class="lg:hidden">
-            <button type="button"
-                id="mobile-menu-toggler"
+            <button type="button" id="mobile-menu-toggler"
                 class="dark:bg-gray-800 bg-gray-100 inline-flex items-center justify-center p-2 rounded-md dark:text-gray-400 text-whit hover:text-white hover:bg-gray-300 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white"
                 aria-controls="mobile-menu" aria-expanded="false">
                 <span class="sr-only">Open main menu</span>
                 <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M4 6h16M4 12h16M4 18h16" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
                 <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor" aria-hidden="true">
@@ -31,12 +29,13 @@
 </header>
 <div class="flex w-full bg-white h-screen dark:bg-ireng">
     <div id="backdrop" class="hidden fixed inset-0 bg-black opacity-50 z-30"></div>
-    <aside
-        id="menu-mobile"
+    <aside id="menu-mobile"
         class="w-64 fixed z-[35] -left-64 lg:left-0 top-0 bottom-0 bg-white dark:bg-ireng overflow-y-auto flex-col justify-between border-r dark:border-zinc-800 scrollbar-hide">
         <!-- Close Button -->
-        <button type="button" id="close-menu" class="lg:hidden p-4 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <button type="button" id="close-menu"
+            class="lg:hidden p-4 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
         </button>
@@ -71,30 +70,27 @@
                 </a>
 
                 <a href="#" id="pantau-dropdown-toggle"
-                class="flex items-center px-4 py-2 mt-2 {{ $active == 'pantau' ? 'text-white bg-accent dark:bg-zinc-800 dark:text-white' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800' }} rounded-lg transition-colors duration-200">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6l-2 2m0 0l-2-2m4 4l2 2m-2-2l-2 2m-4 4h8m0-4H8" />
-                </svg>
-                Pantau
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-            </a>
+                    class="flex items-center px-4 py-2 mt-2 {{ $active == 'pantau' ? 'text-white bg-accent dark:bg-zinc-800 dark:text-white' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800' }} rounded-lg transition-colors duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 6l-2 2m0 0l-2-2m4 4l2 2m-2-2l-2 2m-4 4h8m0-4H8" />
+                    </svg>
+                    Pantau
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-auto" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </a>
 
-            <div id="pantau-dropdown" class="hidden pl-8">
-                @foreach ([
-                    ['route' => 'pantau.air', 'label' => 'Pantau Kualitas Air', 'active' => $active == 'pantau-air'],
-                    ['route' => 'pantau.suhu', 'label' => 'Pantau Suhu Udara & Tanah', 'active' => $active == 'pantau-suhu'],
-                    ['route' => 'pantau.kelembaban', 'label' => 'Pantau Kelembaban Tanah', 'active' => $active == 'pantau-kelembaban'],
-                    ['route' => 'pantau.nutrisi', 'label' => 'Pantau Nutrisi Tanah', 'active' => $active == 'pantau-nutrisi'],
-                    ['route' => 'pantau.curah-hujan', 'label' => 'Pantau Curah Hujan', 'active' => $active == 'pantau-curah-hujan'],
-                ] as $item)
-                    <a href="{{ route($item['route']) }}"
-                        class="flex items-center px-4 py-2 mt-2 {{ $item['active'] ? 'text-white bg-accent dark:bg-zinc-800 dark:text-white' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-700' }} rounded-lg transition-colors duration-200">
-                        {{ $item['label'] }}
-                    </a>
-                @endforeach
-            </div>
+                <div id="pantau-dropdown" class="hidden pl-8">
+                    @foreach ([['route' => 'pantau.air', 'label' => 'Pantau Kualitas Air', 'active' => $active == 'pantau-air'], ['route' => 'pantau.suhu', 'label' => 'Pantau Suhu Udara & Tanah', 'active' => $active == 'pantau-suhu'], ['route' => 'pantau.kelembaban', 'label' => 'Pantau Kelembaban Tanah', 'active' => $active == 'pantau-kelembaban'], ['route' => 'pantau.nutrisi', 'label' => 'Pantau Nutrisi Tanah', 'active' => $active == 'pantau-nutrisi'], ['route' => 'pantau.curah-hujan', 'label' => 'Pantau Curah Hujan', 'active' => $active == 'pantau-curah-hujan']] as $item)
+                        <a href="{{ route($item['route']) }}"
+                            class="flex items-center px-4 py-2 mt-2 {{ $item['active'] ? 'text-white bg-accent dark:bg-zinc-800 dark:text-white' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-700' }} rounded-lg transition-colors duration-200">
+                            {{ $item['label'] }}
+                        </a>
+                    @endforeach
+                </div>
 
                 <a href="{{ url('/product') }}"
                     class="flex items-center px-4 py-2 mt-2 {{ $active == 'product' ? 'text-white bg-accent dark:bg-zinc-800 dark:text-white' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800' }} rounded-lg transition-colors duration-200">
@@ -114,9 +110,9 @@
                 <button id="profile-dropdown-toggle"
                     class="flex items-center w-full p-2 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors duration-200 focus:outline-none">
                     <img class="h-8 w-8 rounded-full mr-2" src="/img/farmer.svg" alt="User Avatar">
-                    <span class="font-medium">Masyhudi Affandi</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-auto" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
+                    <span class="font-medium">{{ auth()->user()->name }}</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-auto" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                     </svg>
                 </button>
@@ -134,7 +130,8 @@
                     </a>
 
                     <!-- Theme Toggle -->
-                    <div class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors duration-200">
+                    <div
+                        class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors duration-200">
                         <div class="flex justify-between items-center">
                             <span>Dark Mode</span>
                             <label class="switch">
@@ -156,8 +153,10 @@
 <style>
     /* no scrollbar */
     .scrollbar-hide {
-        -ms-overflow-style: none;  /* IE and Edge */
-        scrollbar-width: none;  /* Firefox */
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
     }
 
     .scrollbar-hide::-webkit-scrollbar {
@@ -165,60 +164,60 @@
     }
 
     /* The switch - the outer container */
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 40px;
-    height: 20px;
-}
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 40px;
+        height: 20px;
+    }
 
-/* The slider - the round button */
-.switch .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: .4s;
-    border-radius: 34px;
-}
+    /* The slider - the round button */
+    .switch .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: .4s;
+        border-radius: 34px;
+    }
 
-.switch .slider:before {
-    position: absolute;
-    content: "";
-    height: 16px;
-    width: 16px;
-    left: 4px;
-    bottom: 2px;
-    background-color: white;
-    transition: .4s;
-    border-radius: 50%;
-}
+    .switch .slider:before {
+        position: absolute;
+        content: "";
+        height: 16px;
+        width: 16px;
+        left: 4px;
+        bottom: 2px;
+        background-color: white;
+        transition: .4s;
+        border-radius: 50%;
+    }
 
-/* Checked - dark mode */
-input:checked + .slider {
-    background-color: #4a5568; /* Darker color */
-}
+    /* Checked - dark mode */
+    input:checked+.slider {
+        background-color: #4a5568;
+        /* Darker color */
+    }
 
-input:checked + .slider:before {
-    transform: translateX(20px);
-}
+    input:checked+.slider:before {
+        transform: translateX(20px);
+    }
 
-/* Rounded switch */
-.slider.round {
-    border-radius: 34px;
-}
+    /* Rounded switch */
+    .slider.round {
+        border-radius: 34px;
+    }
 
-.slider.round:before {
-    border-radius: 50%;
-}
-
+    .slider.round:before {
+        border-radius: 50%;
+    }
 </style>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function() {
         // Theme Toggle
         const themeToggle = document.getElementById('theme-toggle');
         if (localStorage.getItem('theme') === 'dark') {
@@ -285,7 +284,7 @@ input:checked + .slider:before {
 
         mobileMenu.init();
     });
-    </script>
+</script>
 
 
 @include('templates.footer')
