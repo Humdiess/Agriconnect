@@ -45,9 +45,9 @@
     </style>
 </head>
 
-<body class="antialiased bg-white dark:bg-zinc-950 transition-all" data-lenis-prevent data-speed="0.5">
+<body class="antialiased bg-white dark:bg-ireng transition-all" data-lenis-prevent data-speed="0.5">
 
 
     <div class="cursor-example"></div>
     {{-- @include('frontend.components.navbar') --}}
-    @include('frontend.components.preload')
+    {{-- @include('frontend.components.preload') --}}

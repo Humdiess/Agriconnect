@@ -7,7 +7,7 @@
                 <!-- Mobile menu button -->
                 <div class="-mr-2 flex lg:hidden">
                     <button type="button"
-                        class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white"
+                        class="dark:bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 dark:hover:text-white dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white"
                         aria-controls="mobile-menu" aria-expanded="false">
                         <span class="sr-only">Open main menu</span>
                         <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -20,7 +20,7 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0">
                     <a href="/" class="flex items-center">
-                        <img class="h-8 w-auto" src="{{ asset('img/logo/app-logo.png') }}" alt="AgriConnect Logo">
+                        <img class="h-8 w-auto hidden md:block" src="{{ asset('img/logo/app-logo.png') }}" alt="AgriConnect Logo">
                         <span
                             class="ml-2 text-xl hidden md:block font-bold text-gray-900 dark:text-white">AgriConnect</span>
                     </a>
