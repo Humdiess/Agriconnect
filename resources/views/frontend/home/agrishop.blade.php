@@ -103,27 +103,33 @@
                     </div>
                 @endfor --}}
                 @foreach ($products as $product)
-                    <div class="product-card border dark:border-zinc-600 rounded-lg overflow-hidden transition-all duration-300"
-                        data-category="{{ $product->category }}" data-name="{{ $product->name }}"
-                        data-price="{{ $product->price }}">
-                        <div class="product-image relative pb-[100%]">
-                            <img src="{{ asset('img/placeholder-product.jpg') }}" alt="{{ $product->name }}"
-                                class="absolute inset-0 w-full h-full object-cover">
-                        </div>
-                        <div class="product-info p-4">
-                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">{{ $product->name }}
-                            </h3>
-                            <p class="text-gray-600 dark:text-gray-300 mb-2 line-clamp-2">{{ $product->description }}.
-                            </p>
-                            <div class="flex justify-between items-center">
-                                <span class="text-xl font-bold text-accent">Rp.
-                                    {{ CurrencyHelper::getFormat($product->price) }}</span>
-                                {{-- Link ke API WhatsApp --}}
-                                <button
-                                    class="px-4 py-2 bg-accent text-white rounded-lg hover:bg-accent-dark transition-colors duration-300">Beli</button>
+                    <a href="/product/{{ $product->id }}">
+                        <div class="product-card border dark:border-zinc-600 rounded-lg overflow-hidden transition-all duration-300"
+                            data-category="{{ $product->category }}" data-name="{{ $product->name }}"
+                            data-price="{{ $product->price }}">
+                            <div class="product-image relative pb-[100%]">
+                                {{-- <img src="{{ asset('img/placeholder-product.jpg') }}" alt="{{ $product->name }}"
+                                    class="absolute inset-0 w-full h-full object-cover"> --}}
+                                <img src="http://4.bp.blogspot.com/-bkN-5MP2o9w/VD3b00nxVuI/AAAAAAAADFc/cFBTta4FBxY/s1600/tebu.jpg"
+                                    alt="{{ $product->name }}" class="absolute inset-0 w-full h-full object-cover">
+                            </div>
+                            <div class="product-info p-4">
+                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                                    {{ $product->name }}
+                                </h3>
+                                <p class="text-gray-600 dark:text-gray-300 mb-2 line-clamp-2">
+                                    {{ $product->description }}.
+                                </p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-xl font-bold text-accent">Rp.
+                                        {{ CurrencyHelper::getFormat($product->price) }}</span>
+                                    {{-- Link ke API WhatsApp --}}
+                                    <button
+                                        class="px-4 py-2 bg-accent text-white rounded-lg hover:bg-accent-dark transition-colors duration-300">Beli</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 @endforeach
             </div>
         </div>

@@ -70,7 +70,17 @@ class ProductController extends Controller
     public function show(Product $product)
     {
         $active = 'product';
-        return view('product.show', compact('product', 'active'));
+
+        // Buat pesan WhatsApp
+        $nomorHp = "6281220594202"; // Misal field nomor penjual ada di dalam tabel product
+        $nama = $product->name;
+        $harga = $product->price;
+
+        // Buat link WhatsApp
+        $whatsappMessage = "Halo, saya ingin memesan produk anda \"$nama\" dengan harga \"$harga\"";
+        $whatsappLink = "https://api.whatsapp.com/send?phone={$nomorHp}&text=" . urlencode($whatsappMessage);
+
+        return view('product.show', compact('product', 'active', 'whatsappLink'));
     }
 
     /**

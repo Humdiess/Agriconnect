@@ -19,10 +19,13 @@ class DatabaseSeeder extends Seeder
             'name' => 'Super Admin',
             'email' => 'admin@gmail.com',
             'username' => 'superadmin',
+            'is_farmer' => true,
+            'address' => 'Sidoarja, Indonesia',
+            'phone_number' => '081220594202',
             'password' => bcrypt('bismillah'), // Enkripsi password
         ]);
         $this->call([
-            ProductSeeder::class,
+            ProductSeeder::class
         ]);
     }
 }

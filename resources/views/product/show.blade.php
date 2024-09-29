@@ -25,8 +25,10 @@
                                 aria-controls="tabs-1-panel-1" role="tab" type="button">
                                 <span class="sr-only">Angled view</span>
                                 <span class="absolute inset-0 rounded-md overflow-hidden">
-                                    <img src="{{ asset('storage/' . $product->image) }}" alt=""
-                                        class="w-full h-full object-center object-cover">
+                                    {{-- <img src="{{ asset('storage/' . $product->image) }}" alt=""
+                                        class="w-full h-full object-center object-cover"> --}}
+                                    <img src="http://4.bp.blogspot.com/-bkN-5MP2o9w/VD3b00nxVuI/AAAAAAAADFc/cFBTta4FBxY/s1600/tebu.jpg"
+                                        alt="" class="w-full h-full object-center object-cover">
                                 </span>
                             </button>
 
@@ -36,9 +38,12 @@
 
                     <div class="w-full aspect-w-1 aspect-h-1">
                         <div id="tabs-1-panel-1" aria-labelledby="tabs-1-tab-1" role="tabpanel" tabindex="0">
-                            <img src="{{ asset('storage/' . $product->image) }}"
+                            <img src="http://4.bp.blogspot.com/-bkN-5MP2o9w/VD3b00nxVuI/AAAAAAAADFc/cFBTta4FBxY/s1600/tebu.jpg"
                                 alt="Angled front view with bag zipped and handles upright."
                                 class="w-full h-full object-center object-cover sm:rounded-lg">
+                            {{-- <img src="{{ asset('storage/' . $product->image) }}"
+                                alt="Angled front view with bag zipped and handles upright."
+                                class="w-full h-full object-center object-cover sm:rounded-lg"> --}}
                         </div>
                     </div>
                 </div>
@@ -74,9 +79,9 @@
                     </div>
                     <form class="mt-4">
                         <div class="mt-10 flex sm:flex-col1">
-                            <button type="button"
-                                class="max-w-xs flex-1 bg-green-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-green-500 sm:w-full">Add
-                                to cart</button>
+                            <a href="{{ $whatsappLink }}" target="_blank"
+                                class="max-w-xs flex-1 bg-green-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-green-500 sm:w-full">Pesan
+                                Sekarang</a>
                             <button type="button"
                                 class="ml-4 py-3 px-3 rounded-md flex items-center justify-center text-gray-400 hover:bg-gray-100 dark:hover:bg-zinc-900 hover:text-gray-500">
                                 <svg class="h-6 w-6 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -105,9 +110,27 @@
 
                         <div class="border-t divide-y divide-gray-200">
                             <div>
-                                <h3 class="text-gray-900 text-2xl font-medium my-2 dark:text-gray-100">Description :</h3>
+                                <h3 class="text-gray-900 text-2xl font-medium my-2 dark:text-gray-100">Deskripsi :</h3>
                                 <div class="pb-6 prose prose-sm" id="disclosure-1">
                                     <p class="text-base dark:text-gray-100">{{ $product->description }}</p>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-gray-900 text-2xl font-medium my-2 dark:text-gray-100">Sertifikasi :</h3>
+                                <div class="pb-6 prose prose-sm" id="disclosure-1">
+                                    <p class="text-base dark:text-gray-100">{{ $product->sertifikasi }}</p>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-gray-900 text-2xl font-medium my-2 dark:text-gray-100">Lokasi :</h3>
+                                <div class="pb-6 prose prose-sm" id="disclosure-1">
+                                    <p class="text-base dark:text-gray-100">{{ $product->lokasi }}</p>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-gray-900 text-2xl font-medium my-2 dark:text-gray-100">Pengiriman :</h3>
+                                <div class="pb-6 prose prose-sm" id="disclosure-1">
+                                    <p class="text-base dark:text-gray-100">{{ $product->pengiriman }}</p>
                                 </div>
                             </div>
 

@@ -84,6 +84,8 @@ Route::middleware([IsFarmer::class])->group(function () {
 
 // Products
 Route::get('/product/{product}', [ProductController::class, 'show'])->name('product.show');
+Route::get('/product/{id}/whatsapp', [ProductController::class, 'generateWhatsAppLink']);
+
 Route::middleware([IsFarmer::class])->group(function () {
     Route::get('/product', [ProductController::class, 'index'])->name('product.index');
     Route::get('/product-create', [ProductController::class, 'create'])->name('product.create');
