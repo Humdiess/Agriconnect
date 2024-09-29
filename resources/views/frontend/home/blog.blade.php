@@ -1,6 +1,6 @@
 @include('frontend.layouts.header')
 
-<div class="min-h-screen dark:bg-ireng dark:text-white bg-white text-ireng">
+<div class="min-h-screen dark:bg-ireng dark:text-white bg-white text-ireng overflow-hidden">
 
     <!-- Hero Section -->
     <section class="hero-container container mx-auto relative py-16">

@@ -3,7 +3,7 @@
     use App\Helpers\CurrencyHelper;
 @endphp
 <!-- Shop Hero Section -->
-<section class="shop-hero-container container mx-auto relative py-16">
+<section class="shop-hero-container flex flex-col justify-center items-center relative py-16 overflow-hidden">
     <!-- Aurora Effects -->
     <div
         class="aurora-green absolute w-[20rem] h-[20rem] bg-gradient-to-r from-accent to-[#27a002] opacity-10 blur-3xl rounded-full top-[-10rem] left-[10rem] clip-aurora">
@@ -31,7 +31,7 @@
 </section>
 
 <!-- Shop Content -->
-<section class="shop-content-container container mx-auto px-8 md:px-16 py-8">
+<section class="shop-content-container px-8 flex flex-col justify-center items-center md:px-16 py-8">
     <div class="shop-content-wrapper w-full">
         <div class="shop-content w-full">
             <!-- Filter, Search, and Sort -->
