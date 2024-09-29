@@ -52,7 +52,7 @@
         </div>
     </div>
 
-    <div class="hero-image-wrapper w-full flex justify-center -mt-20 mb-20">
+    <div class="hero-image-wrapper w-full flex justify-center -mt-15 md:-mt-20 mb-20">
         <div class="hero-image aspect-video rounded-lg border dark:border-zinc-600 overflow-hidden max-w-5xl mx-auto">
             <img class="w-full h-full object-cover rounded-lg hidden dark:block"
                 src="{{ asset('img/tani/dashboard-agri-dark.webp') }}" alt="Dashboard Pertanian Tebu">
