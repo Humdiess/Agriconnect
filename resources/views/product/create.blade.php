@@ -1,7 +1,7 @@
 @extends('templates.main')
 
 @section('content')
-<div class="flex flex-col ml-64 w-full">
+<div class="flex flex-col w-full">
     <main class="flex-grow p-4 sm:p-6 lg:p-8">
         <div class="max-w-4xl mx-auto">
             <div class="mb-8">
@@ -51,12 +51,41 @@
                                 <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
                             @enderror
                         </div>
+
+                        <div class="form-input">
+                            <label for="certification" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Sertifikasi</label>
+                            <input type="text" name="certification" id="certification" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-accent focus:border-accent dark:bg-zinc-700 dark:border-zinc-600 dark:text-white @error('certification') border-red-500 @enderror" value="{{ old('certification') }}" placeholder="e.g. SNI">
+                            @error('certification')
+                                <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
+                            @enderror
+                        </div>
+
+                        <div class="form-input">
+                            <label for="location" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Lokasi</label>
+                            <input type="text" name="location" id="location" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-accent focus:border-accent dark:bg-zinc-700 dark:border-zinc-600 dark:text-white @error('location') border-red-500 @enderror" value="{{ old('location') }}" placeholder="e.g. Sidoarjo, Jawa Timur">
+                            @error('location')
+                                <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
+                            @enderror
+                        </div>
                     </div>
 
                     <div class="form-input">
                         <label for="description" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Deskripsi</label>
                         <textarea name="description" id="description" rows="4" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-accent focus:border-accent dark:bg-zinc-700 dark:border-zinc-600 dark:text-white @error('description') border-red-500 @enderror">{{ old('description') }}</textarea>
                         @error('description')
+                            <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
+                        @enderror
+                    </div>
+
+                    <div class="form-input">
+                        <label for="shipping" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Pengiriman</label>
+                        <select name="shipping" id="shipping" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-accent focus:border-accent dark:bg-zinc-700 dark:border-zinc-600 dark:text-white @error('shipping') border-red-500 @enderror">
+                            <option value="">Pilih opsi pengiriman</option>
+                            <option value="jerigen" {{ old('shipping') == 'jerigen' ? 'selected' : '' }}>Dikirim dalam kemasan jerigen</option>
+                            <option value="bulk" {{ old('shipping') == 'bulk' ? 'selected' : '' }}>Tersedia opsi pengiriman bulk</option>
+                            <option value="both" {{ old('shipping') == 'both' ? 'selected' : '' }}>Kemasan jerigen dan opsi bulk</option>
+                        </select>
+                        @error('shipping')
                             <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
                         @enderror
                     </div>
@@ -69,7 +98,7 @@
                         @enderror
                     </div>
 
-                    <div class="flex justify-end">
+                    <div class="flex">
                         <button type="submit" class="px-4 py-2 bg-accent text-white rounded-md hover:bg-accent-dark transition-colors">
                             Add Product
                         </button>

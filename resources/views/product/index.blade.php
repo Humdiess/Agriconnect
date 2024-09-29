@@ -26,7 +26,7 @@
 
         <div class="flex flex-col space-y-4 md:flex-row md:space-x-4 md:space-y-0">
             <div class="flex-1 space-y-4">
-                <div class="rounded-lg border dark:border-zinc-600 dark:bg-zinc-800 dark:text-white text-card-foreground shadow-sm">
+                <div class="rounded-lg border dark:border-zinc-600 dark:bg-ireng dark:text-white text-card-foreground shadow-sm">
                     <div class="flex flex-col space-y-1.5 p-6">
                         <h3 class="text-2xl font-semibold leading-none tracking-tight dark:text-white">Product Management
                         </h3>
