@@ -33,7 +33,7 @@ class TaniController extends Controller
         $request->validate([
             'phone_number' => 'required|string|min:7|max:15',
             'address' => 'required|string|min:10|max:255',
-            'city' => 'required|string|min:3|max:100',
+            // 'city' => 'required|string|min:3|max:100',
             'valid' => 'accepted', // Ensure the checkbox is checked
         ]);
 
@@ -41,7 +41,7 @@ class TaniController extends Controller
         $data = [
             'phone_number' => $request->name,
             'address' => $request->description,
-            'city' => $request->price,
+            // 'city' => $request->price,
             'is_farmer' => true,
             'updated_at' => now(),
         ];

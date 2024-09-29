@@ -18,9 +18,9 @@
             <div class="footer-links">
                 <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
                 <ul class="space-y-2">
-                    <li><a href="#" class="hover:text-accent transition">Home</a></li>
-                    <li><a href="#about" class="hover:text-accent transition">About Us</a></li>
-                    <li><a href="#about" class="hover:text-accent transition">Services</a></li>
+                    <li><a href="/" class="hover:text-accent transition">Home</a></li>
+                    <li><a href="/#about" class="hover:text-accent transition">About Us</a></li>
+                    <li><a href="/#services" class="hover:text-accent transition">Services</a></li>
                     <li><a href="/contact" class="hover:text-accent transition">Contact</a></li>
                 </ul>
             </div>
@@ -29,16 +29,19 @@
             <div class="footer-social">
                 <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
                 <div class="flex space-x-4">
-                    <a href="https://web.facebook.com/" aria-label="Facebook" target="_blank" class="hover:text-accent transition">
+                    <a href="https://web.facebook.com/" aria-label="Facebook" target="_blank"
+                        class="hover:text-accent transition">
                         <i class="fab fa-facebook-f fa-2x"></i>
                     </a>
                     <a href="https://x.com/" target="_blank" aria-label="Twitter" class="hover:text-accent transition">
                         <i class="fab fa-twitter fa-2x"></i>
                     </a>
-                    <a href="https://www.instagram.com/" aria-label="Instagram" target="_blank" class="hover:text-accent transition">
+                    <a href="https://www.instagram.com/" aria-label="Instagram" target="_blank"
+                        class="hover:text-accent transition">
                         <i class="fab fa-instagram fa-2x"></i>
                     </a>
-                    <a href="https://www.linkedin.com/" aria-label="LinkedIn" target="_blank" class="hover:text-accent transition">
+                    <a href="https://www.linkedin.com/" aria-label="LinkedIn" target="_blank"
+                        class="hover:text-accent transition">
                         <i class="fab fa-linkedin-in fa-2x"></i>
                     </a>
                 </div>
@@ -74,24 +77,24 @@
 
 <script>
     gsap.to(".cursor-example", {
-      duration: 0.018,
-      repeat: -1,
-      onRepeat: () => {
-        posX += (mouseX - posX) / 8;
-        posY += (mouseY - posY) / 8;
+        duration: 0.018,
+        repeat: -1,
+        onRepeat: () => {
+            posX += (mouseX - posX) / 8;
+            posY += (mouseY - posY) / 8;
 
-        gsap.set(".cursor-example", {
-          css: {
-            left: posX - 1,
-            top: posY - 2
-          }
-        });
-      }
+            gsap.set(".cursor-example", {
+                css: {
+                    left: posX - 1,
+                    top: posY - 2
+                }
+            });
+        }
     });
 
     document.addEventListener("mousemove", (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
+        mouseX = e.clientX;
+        mouseY = e.clientY;
     });
 </script>
 </body>
