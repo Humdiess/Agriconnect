@@ -13,18 +13,14 @@
     <div class="hero-wrapper w-full relative z-10">
         <div class="hero w-100 flex flex-col items-center justify-center mx-8">
             <div class="hero-title mt-[8rem] md:mt-[8rem] text-center">
-                <h1 class="text-3xl text-center leading-9 font-bold text-gray-900 dark:text-white sm:text-4xl md:text-5xl"
-                    style="line-height: 1.2">
+                <h1 class="text-3xl text-center leading-9 font-bold text-gray-900 dark:text-white sm:text-4xl md:text-5xl" style="line-height: 1.2">
                     <span class="block">AgriConnect</span>
-                    <span class="block text-[#1eb78b] dark:text-accent max-w-[64rem] text-center">Revolusi Pertanian
-                        Tebu Dimulai di Sini!</span>
+                    <span class="block text-[#1eb78b] dark:text-accent max-w-[64rem] text-center">Revolusi Pertanian Tebu Anda Dimulai!</span>
                 </h1>
-                <p
-                    class="mt-3 max-w-md mx-auto text-base text-gray-500 dark:text-gray-300 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-                    Bersama, kita wujudkan masa depan pertanian yang lebih cerah dan sejahtera untuk semua. Dengan
-                    inovasi dan teknologi terkini, kami siap membantu Anda mencapai hasil yang maksimal dalam
-                    pertanian tebu.
+                <p class="mt-3 max-w-md mx-auto text-base text-gray-500 dark:text-gray-300 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+                    Kami percaya setiap petani memiliki potensi besar. Dengan teknologi IoT dan AI, kami membantu Anda meningkatkan hasil panen dan membangun masa depan yang lebih baik.
                 </p>
+
                 <div class="mt-8 sm:mt-12">
                     <a href="/daftar-tani"
                         class="inline-flex items-center shadow-lg dark:shadow-accent px-4 py-2 border border-transparent text-sm font-medium rounded-lg text-white bg-accent hover:bg-accent-dark transition duration-150 ease-in-out md:py-3 md:text-lg md:px-6"
@@ -54,7 +50,7 @@
     </div>
 </section>
 
-<section class="about-container =0 py-16 px-4 sm:px-6 lg:px-8" id="about">
+<section class="about-container py-16 px-4 sm:px-6 lg:px-16" id="about">
     <div class="max-w-7xl mx-auto">
         <!-- Header Section -->
         <div class="text-center mb-16">
@@ -230,6 +226,132 @@
     </div>
 </section>
 
+<section class="how-it-works-container py-16 px-4 sm:px-6 lg:px-16" id="how-it-works">
+    <div class="max-w-7xl mx-auto">
+        <!-- Header Section -->
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-extrabold text-gray-900 dark:text-white sm:text-5xl">
+                <span class="block">Bagaimana</span>
+                <span class="block text-accent">AgriConnect Bekerja</span>
+            </h2>
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-600 dark:text-gray-300">
+                Pelajari langkah-langkah sederhana untuk memulai perjalanan Anda menuju pertanian tebu yang lebih efisien dan produktif dengan AgriConnect.
+            </p>
+        </div>
+
+        <!-- Steps Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Step 1 -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-accent rounded-full p-3 mr-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Daftar dan Pasang Sensor</h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        Mulai perjalanan Anda dengan mendaftar di AgriConnect. Kami akan membantu Anda memasang sensor IoT canggih di lahan Anda, memulai era baru dalam pemantauan pertanian yang akurat dan efisien.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-accent rounded-full p-3 mr-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Terima Data Real-time</h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        Akses dashboard intuitif kami untuk memantau kondisi lahan Anda secara real-time. Dapatkan wawasan instan tentang kelembaban tanah, suhu, dan kesehatan tanaman Anda, semua dalam satu tempat.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-accent rounded-full p-3 mr-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Analisis AI</h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        Teknologi AI kami menganalisis data yang dikumpulkan untuk memberikan rekomendasi yang dipersonalisasi. Ini membantu Anda membuat keputusan yang tepat untuk perawatan tanaman dan optimalisasi hasil panen.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-accent rounded-full p-3 mr-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Tindakan Tepat Waktu</h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        Terima panduan langkah demi langkah untuk mengambil tindakan yang tepat dan efisien. Tingkatkan produktivitas Anda dan kurangi pemborosan sumber daya dengan informasi yang akurat dan tepat waktu.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-accent rounded-full p-3 mr-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Komunitas dan Dukungan</h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        Bergabunglah dengan komunitas petani yang berkembang. Bagikan pengetahuan, tukar pengalaman, dan dapatkan dukungan dari sesama petani serta tim ahli AgriConnect yang selalu siap membantu Anda.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Step 6 -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-accent rounded-full p-3 mr-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Hasil Panen Optimal</h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        Nikmati peningkatan hasil panen dan kualitas tebu Anda. Dengan AgriConnect, Anda dapat mencapai potensi penuh dari lahan Anda, meningkatkan profitabilitas, dan berkontribusi pada pertanian yang lebih berkelanjutan.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Button -->
+        <div class="mt-16 text-center">
+            <a href="{{ route('tani.pendaftaran') }}" class="bg-accent text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-accent-dark transition-colors duration-300 inline-block shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-transform">
+                Mulai Perjalanan Anda
+            </a>
+        </div>
+    </div>
+</section>
 
 {{-- start-faq --}}
 <section class="faq-container container mx-auto px-8 md:px-16 py-16">
