@@ -55,3 +55,6 @@
 
     @include('frontend.components.navbar')
     @include('frontend.components.preload')
+
+    <div class="content flex flex-col justify-center">
+
