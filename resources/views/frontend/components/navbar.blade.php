@@ -110,13 +110,17 @@
                 class="block px-3 py-2 rounded-md text-base font-medium {{ $active == 'home' ? 'text-accent' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700' }}">Beranda</a>
             <a href="{{ route('agrishop') }}"
                 class="block px-3 py-2 rounded-md text-base font-medium {{ $active == 'agrishop' ? 'text-accent' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700' }}">Toko</a>
-            <a href="{{ route('tani') }}"
-                class="{{ $active == 'tani-ai' ? 'text-accent' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700' }} font-bold block px-3 py-2 rounded-md text-base">TANI
-                AI</a>
-            <a href="{{ route('blog') }}"
+                <a href="{{ route('blog') }}"
                 class="block px-3 py-2 rounded-md text-base font-medium {{ $active == 'blog' ? 'text-accent' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700' }}">Berita</a>
-            <a href="{{ route('contact') }}"
+                <a href="{{ route('contact') }}"
                 class="block px-3 py-2 rounded-md text-base font-medium {{ $active == 'contact' ? 'text-accent' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700' }}">Kontak</a>
+                <a href="{{ route('tani') }}"
+                    class="{{ $active == 'tani-ai' ? 'text-accent' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700' }} font-bold block px-3 py-2 rounded-md text-base">TANI
+                    AI</a>
+                <a href="{{ route('tani.pendaftaran') }}"
+                class=" text-accent hover:bg-accent-dark px-3 py-2 rounded-md font-medium {{ $active == 'tani-ai' ? 'text-accent' : '' }}">
+                Jadi petani
+            </a>
         </div>
     </div>
 </nav>
