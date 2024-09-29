@@ -1,7 +1,7 @@
 @extends('templates.main')
 
 @section('content')
-    <div class="flex-1 space-y-4 p-8 pt-6 ms-64 transition-colors mb-20">
+    <div class="flex-1 space-y-4 p-8 pt-6 transition-colors mb-20">
         <div class="flex items-center justify-between space-y-2">
             <h2 class="text-3xl font-bold dark:text-white tracking-tight">Products</h2>
             <div class="flex items-center space-x-2">
