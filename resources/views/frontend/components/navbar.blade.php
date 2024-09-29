@@ -20,7 +20,8 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0">
                     <a href="/" class="flex items-center">
-                        <img class="h-8 w-auto hidden md:block" src="{{ asset('img/logo/app-logo.png') }}" alt="AgriConnect Logo">
+                        <img class="h-8 w-auto hidden md:block" src="{{ asset('img/logo/app-logo.png') }}"
+                            alt="AgriConnect Logo">
                         <span
                             class="ml-2 text-xl hidden md:block font-bold text-gray-900 dark:text-white">AgriConnect</span>
                     </a>
@@ -106,15 +107,16 @@
     <div class="lg:hidden hidden" id="mobile-menu">
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <a href="/"
-                class="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium {{ $active == 'home' ? 'text-accent' : '' }}">Beranda</a>
+                class="block px-3 py-2 rounded-md text-base font-medium {{ $active == 'home' ? 'text-accent' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700' }}">Beranda</a>
             <a href="{{ route('agrishop') }}"
-                class="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium {{ $active == 'agrishop' ? 'text-accent' : '' }}">Toko</a>
-            <a href="{{ route('tani') }}" class="text-accent font-bold block px-3 py-2 rounded-md text-base">TANI
+                class="block px-3 py-2 rounded-md text-base font-medium {{ $active == 'agrishop' ? 'text-accent' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700' }}">Toko</a>
+            <a href="{{ route('tani') }}"
+                class="{{ $active == 'tani-ai' ? 'text-accent' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700' }} font-bold block px-3 py-2 rounded-md text-base">TANI
                 AI</a>
             <a href="{{ route('blog') }}"
-                class="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium {{ $active == 'blog' ? 'text-accent' : '' }}">Berita</a>
+                class="block px-3 py-2 rounded-md text-base font-medium {{ $active == 'blog' ? 'text-accent' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700' }}">Berita</a>
             <a href="{{ route('contact') }}"
-                class="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium {{ $active == 'contact' ? 'text-accent' : '' }}">Kontak</a>
+                class="block px-3 py-2 rounded-md text-base font-medium {{ $active == 'contact' ? 'text-accent' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700' }}">Kontak</a>
         </div>
     </div>
 </nav>

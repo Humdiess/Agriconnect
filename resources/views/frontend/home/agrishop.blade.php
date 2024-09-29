@@ -108,10 +108,8 @@
                             data-category="{{ $product->category }}" data-name="{{ $product->name }}"
                             data-price="{{ $product->price }}">
                             <div class="product-image relative pb-[100%]">
-                                {{-- <img src="{{ asset('img/placeholder-product.jpg') }}" alt="{{ $product->name }}"
-                                    class="absolute inset-0 w-full h-full object-cover"> --}}
-                                <img src="http://4.bp.blogspot.com/-bkN-5MP2o9w/VD3b00nxVuI/AAAAAAAADFc/cFBTta4FBxY/s1600/tebu.jpg"
-                                    alt="{{ $product->name }}" class="absolute inset-0 w-full h-full object-cover">
+                                <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}"
+                                    class="absolute inset-0 w-full h-full object-cover">
                             </div>
                             <div class="product-info p-4">
                                 <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
