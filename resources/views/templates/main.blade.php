@@ -103,7 +103,7 @@
         <div class="relative">
             <button id="profile-dropdown-toggle" class="flex items-center w-full p-2 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors duration-200 focus:outline-none" aria-haspopup="true" aria-expanded="false">
                 <img class="h-8 w-8 rounded-full mr-2 flex-shrink-0" src="/img/farmer.svg" alt="User Avatar">
-                <span class="font-medium flex-grow text-left">Masyhudi Affandi</span>
+                <span class="font-medium flex-grow text-left">{{ auth()->user()->name }}</span>
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-auto transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
                 </svg>
