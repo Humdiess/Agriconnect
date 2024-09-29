@@ -1,7 +1,7 @@
 @extends('templates.main')
 
 @section('content')
-<div class="container mx-auto px-6 py-8">
+<div class="container mx-auto px-8 py-8">
     <div class="mb-8 flex flex-col sm:flex-row justify-between items-start sm:items-center">
         <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-0">Products</h2>
         <a href="{{ route('product.create') }}" class="inline-flex items-center px-4 py-2 bg-accent text-white rounded-md hover:bg-accent-dark transition-colors">
@@ -52,7 +52,7 @@
 
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         @foreach ($products as $product)
-            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
+            <div class="bg-white dark:bg-ireng border dark:border-zinc-600 rounded-lg shadow-md overflow-hidden">
                 <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" class="w-full h-48 object-cover">
                 <div class="p-4">
                     <h3 class="font-semibold text-lg text-gray-900 dark:text-white mb-2">{{ $product->name }}</h3>

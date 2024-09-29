@@ -1,8 +1,8 @@
 @extends('templates.main')
 
 @section('content')
-    <div class="flex flex-col ms-64 w-full">
-        <main class="w-full bg-gray-100 dark:bg-black">
+    <div class="flex flex-col w-full">
+        <main class="w-full bg-gray-100">
             <!-- product Section -->
             <section class="product-wrapper px-16 py-8 dark:bg-zinc-950">
                 <div class="product-header mb-2">
