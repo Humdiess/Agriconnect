@@ -1,7 +1,7 @@
 @include('frontend.layouts.header')
 
 <style>
-    .aurora-bg hidden lg:block {
+    .aurora-bg {
         position: absolute;
         width: 100%;
         height: 100%;
@@ -20,7 +20,7 @@
 </style>
 
 <section class="hero-container relative" id="home">
-    <div class="aurora-bg hidden lg:block">
+    <div class="aurora-bg ">
         <div class="aurora from-accent/65 to-accent/35 top-[-10rem] left-[20%]"></div>
         <div class="aurora from-accent/65 to-accent/35 bottom-[20rem] right-[10%]"></div>
     </div>
