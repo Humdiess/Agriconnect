@@ -71,16 +71,7 @@ class ProductController extends Controller
     {
         $active = 'product';
 
-        // Buat pesan WhatsApp
-        $nomorHp = "6281220594202"; // Misal field nomor penjual ada di dalam tabel product
-        $nama = $product->name;
-        $harga = $product->price;
-
-        // Buat link WhatsApp
-        $whatsappMessage = "Halo, saya ingin memesan produk anda \"$nama\" dengan harga \"$harga\"";
-        $whatsappLink = "https://api.whatsapp.com/send?phone={$nomorHp}&text=" . urlencode($whatsappMessage);
-
-        return view('product.show', compact('product', 'active', 'whatsappLink'));
+        return view('product.show', compact('product', 'active'));
     }
 
     /**
@@ -162,5 +153,20 @@ class ProductController extends Controller
 
         // Redirect kembali dengan pesan sukses
         return redirect()->route('product.index')->with('success', 'Product deleted successfully!');
+    }
+    public function agrishop_show(Product $product)
+    {
+        $active = 'product';
+
+        // Buat pesan WhatsApp
+        $nomorHp = $product->user->phone_number; // Misal field nomor penjual ada di dalam tabel product
+        $nama = $product->name;
+        $harga = $product->price;
+
+        // Buat link WhatsApp
+        $whatsappMessage = "Halo, saya ingin memesan produk anda \"$nama\" dengan harga \"$harga\"";
+        $whatsappLink = "https://api.whatsapp.com/send?phone={$nomorHp}&text=" . urlencode($whatsappMessage);
+
+        return view('frontend.home.agrishop_show', compact('product', 'active', 'whatsappLink'));
     }
 }

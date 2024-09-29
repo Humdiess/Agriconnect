@@ -27,9 +27,12 @@ Route::get('/create-storage-link', function () {
 
 // For Umum
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/agrishop', [HomeController::class, 'agrishop'])->name('agrishop');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
+
+// Agrishop
+Route::get('/agrishop', [HomeController::class, 'agrishop'])->name('agrishop');
+Route::get('/agrishop/{product}', [ProductController::class, 'agrishop_show'])->name('product.agrishop_show');
 
 // Tani Ai
 Route::get('/tani-ai', [TaniController::class, 'index'])->name('tani')->middleware('req_auth');
@@ -82,11 +85,10 @@ Route::middleware([IsFarmer::class])->group(function () {
     });
 });
 
-// Products
-Route::get('/product/{product}', [ProductController::class, 'show'])->name('product.show');
-Route::get('/product/{id}/whatsapp', [ProductController::class, 'generateWhatsAppLink']);
 
+// Products
 Route::middleware([IsFarmer::class])->group(function () {
+    Route::get('/product/{product}', [ProductController::class, 'show'])->name('product.show');
     Route::get('/product', [ProductController::class, 'index'])->name('product.index');
     Route::get('/product-create', [ProductController::class, 'create'])->name('product.create');
     Route::post('/product-create', [ProductController::class, 'store'])->name('product.store');
