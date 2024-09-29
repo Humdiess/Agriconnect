@@ -25,7 +25,7 @@ class ProductSeeder extends Seeder
             'price' => '2500', // Harga per kilo
             'stock' => '500',
             'category' => 'Olahan Tebu',
-            'image' => '/img/tebusegar.webp', // Sesuaikan dan rapihkan file gambar
+            'image' => 'tebu/tebusegar.webp', // Sesuaikan dan rapihkan file gambar
             'lokasi' => 'Kediri, Jawa Timur', // Lokasi penjual
             'sertifikasi' => 'Bebas pestisida, diproduksi secara ramah lingkungan', // Sertifikasi
             'pengiriman' => 'Dapat dikirim dalam bentuk utuh atau dipotong, tersedia pengiriman dengan truk atau motor box.', // Info pengiriman
@@ -40,7 +40,7 @@ class ProductSeeder extends Seeder
             'price' => '18000',
             'stock' => '300',
             'category' => 'Olahan Tebu',
-            'image' => '/img/gulamerahorganik.webp',
+            'image' => 'tebu/gulamerahorganik.webp',
             'lokasi' => 'Solo, Jawa Tengah',
             'sertifikasi' => 'Sertifikasi organik oleh Sucofindo',
             'pengiriman' => 'JNE, SiCepat, dan GoSend',
@@ -55,7 +55,7 @@ class ProductSeeder extends Seeder
             'price' => '10000',
             'stock' => '1000',
             'category' => 'Olahan Tebu',
-            'image' => '/img/molase.webp',
+            'image' => 'tebu/molase.webp',
             'lokasi' => 'Pabrik Tebu, Jember, Jawa Timur',
             'sertifikasi' => 'Standar Industri Indonesia (SNI)',
             'pengiriman' => 'Tersedia untuk pembelian dalam jumlah besar dengan pengiriman truk tangki.',
@@ -70,7 +70,7 @@ class ProductSeeder extends Seeder
             'price' => '15000',
             'stock' => '2000',
             'category' => 'Olahan Tebu',
-            'image' => '/img/bioetanol.webp',
+            'image' => 'tebu/bioetanol.webp',
             'lokasi' => 'Pabrik Bioetanol, Mojokerto, Jawa Timur',
             'sertifikasi' => 'ISO 9001 dan ISO 14001',
             'pengiriman' => 'Disediakan pengiriman khusus untuk pembelian bulk dengan truk kontainer.',
@@ -85,7 +85,7 @@ class ProductSeeder extends Seeder
             'price' => '35000',
             'stock' => '200',
             'category' => 'Olahan Tebu',
-            'image' => '/img/pupukampas.webp',
+            'image' => 'tebu/pupukampas.webp',
             'lokasi' => 'Surabaya, Jawa Timur',
             'sertifikasi' => 'Produk organik terverifikasi oleh Organik Indonesia',
             'pengiriman' => 'Pengiriman nasional dengan biaya tambahan untuk luar Jawa.',
@@ -100,7 +100,7 @@ class ProductSeeder extends Seeder
             'price' => '20000',
             'stock' => '800',
             'category' => 'Olahan Tebu',
-            'image' => '/img/gulacair.webp',
+            'image' => 'tebu/gulacair.webp',
             'lokasi' => 'Sidoarjo, Jawa Timur',
             'pengiriman' => 'Dikirim dalam kemasan jerigen, tersedia opsi pengiriman bulk.',
         ]);
@@ -114,7 +114,7 @@ class ProductSeeder extends Seeder
             'price' => '2300',
             'stock' => '0', // Pre-order
             'category' => 'Olahan Tebu',
-            'image' => '/img/preorderttebu.webp',
+            'image' => 'tebu/preorderttebu.webp',
             'lokasi' => 'Lamongan, Jawa Timur',
             'sertifikasi' => 'Good Agricultural Practices (GAP)',
             'pengiriman' => 'Pengiriman dijadwalkan berdasarkan kesepakatan pre-order.',
@@ -129,7 +129,7 @@ class ProductSeeder extends Seeder
             'price' => '25000',
             'stock' => '600',
             'category' => 'Olahan Tebu',
-            'image' => '/img/gulasemut.webp',
+            'image' => 'tebu/gulasemut.webp',
             'lokasi' => 'Bantul, Yogyakarta',
             'sertifikasi' => '', // Sertifikasi tidak disebutkan
             'pengiriman' => 'Tersedia pengiriman cepat melalui GoSend dan GrabExpress.',
