@@ -92,7 +92,7 @@
                         </div>
                         <div class="bg-gray-50 dark:bg-zinc-700 px-5 py-3">
                             <div class="text-sm">
-                                <a href="{{ route('pantau.kelembaban') }}" class="font-medium text-green-600 hover:text-accent">Lihat semua</a>
+                                <a href="{{ route('pantau.kelembapan') }}" class="font-medium text-green-600 hover:text-accent">Lihat semua</a>
                             </div>
                         </div>
                     </div>
