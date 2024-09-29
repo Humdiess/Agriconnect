@@ -1,8 +1,4 @@
  <script>
-     document.getElementById('profile-dropdown-toggle').addEventListener('click', function() {
-         var dropdown = document.getElementById('profile-dropdown');
-         dropdown.classList.toggle('hidden');
-     });
      const sidebar = document.getElementById('sidebar');
      const sidebarToggle = document.getElementById('sidebar-toggle');
      const userMenuButton = document.getElementById('user-menu-button');
@@ -38,12 +34,11 @@
  @include('sweetalert::alert')
 
  <script>
+     let posX = 0;
+     let posY = 0;
 
-let posX = 0;
-let posY = 0;
-
-let mouseX = 0;
-let mouseY = 0;
+     let mouseX = 0;
+     let mouseY = 0;
 
      gsap.to(".cursor-example", {
          duration: 0.018,
