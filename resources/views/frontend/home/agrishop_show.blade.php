@@ -44,20 +44,10 @@
                     </div>
 
                     <div class="mt-8 flex flex-col space-y-4">
-                        <div class="flex space-x-4">
-                            <a href="/product-edit/{{ $product->id }}"
-                                class="flex-1 bg-orange-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500">
-                                Edit
-                            </a>
-                            <form action="/product-delete/{{ $product->id }}" method="post" class="flex-1">
-                                @method('delete')
-                                @csrf
-                                <button type="submit"
-                                    class="w-full bg-red-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
-                                    Delete
-                                </button>
-                            </form>
-                        </div>
+                        <a href="{{ $whatsappLink }}" target="_blank"
+                            class="w-full bg-green-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
+                            Pesan Sekarang
+                        </a>
                     </div>
 
                     <section aria-labelledby="details-heading" class="mt-12">

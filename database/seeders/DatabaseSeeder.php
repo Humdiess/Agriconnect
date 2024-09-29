@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
             'username' => 'superadmin',
             'is_farmer' => true,
             'address' => 'Sidoarja, Indonesia',
-            'phone_number' => '081220594202',
+            'phone_number' => '6281220594202',
             'password' => bcrypt('bismillah'), // Enkripsi password
         ]);
         $this->call([
