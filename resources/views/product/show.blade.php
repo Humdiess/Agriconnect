@@ -7,9 +7,8 @@
                 <!-- Image gallery -->
                 <div class="lg:w-1/2">
                     <div class="aspect-w-1 aspect-h-1 rounded-lg overflow-hidden">
-                        <img id="mainImage"
-                            src="http://4.bp.blogspot.com/-bkN-5MP2o9w/VD3b00nxVuI/AAAAAAAADFc/cFBTta4FBxY/s1600/tebu.jpg"
-                            alt="{{ $product->name }}" class="w-full h-full object-cover">
+                        <img id="mainImage" src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}"
+                            class="w-full h-full object-cover">
                     </div>
                 </div>
 
