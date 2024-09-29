@@ -1,7 +1,7 @@
 @include('frontend.layouts.header')
 
 <style>
-    .aurora-bg {
+    .aurora-bg hidden lg:block {
         position: absolute;
         width: 100%;
         height: 100%;
@@ -20,7 +20,7 @@
 </style>
 
 <section class="hero-container relative" id="home">
-    <div class="aurora-bg">
+    <div class="aurora-bg hidden lg:block">
         <div class="aurora from-accent/65 to-accent/35 top-[-10rem] left-[20%]"></div>
         <div class="aurora from-accent/65 to-accent/35 bottom-[20rem] right-[10%]"></div>
     </div>
@@ -52,7 +52,7 @@
         </div>
     </div>
 
-    <div class="hero-image-wrapper w-full flex justify-center -mt-15 md:-mt-20 mb-20">
+    <div class="hero-image-wrapper w-full flex justify-center  md:-mt-20 mb-20">
         <div class="hero-image aspect-video rounded-lg border dark:border-zinc-600 overflow-hidden max-w-5xl mx-auto">
             <img class="w-full h-full object-cover rounded-lg hidden dark:block"
                 src="{{ asset('img/tani/dashboard-agri-dark.webp') }}" alt="Dashboard Pertanian Tebu">
@@ -63,7 +63,7 @@
 </section>
 
 <section class="about-container relative py-20 px-4 sm:px-6 lg:px-16 bg-white dark:bg-ireng" id="about">
-    <div class="aurora-bg">
+    <div class="aurora-bg hidden lg:block">
         <div class="aurora from-accent/65 to-accent/35 top-[10%] left-[10%]"></div>
     </div>
 
@@ -134,7 +134,7 @@
 </section>
 
 <section class="how-it-works-container relative py-20 px-4 sm:px-6 lg:px-16 bg-white dark:bg-ireng" id="how-it-works">
-    <div class="aurora-bg">
+    <div class="aurora-bg hidden lg:block">
         <div class="aurora from-accent/25 to-accent/15 top-[20%] left-[30%]"></div>
         <div class="aurora from-accent/25 to-accent/15 bottom-[30%] right-[20%]"></div>
     </div>
@@ -219,7 +219,7 @@
 </section>
 
 <section class="faq-container relative bg-white dark:bg-ireng py-20 px-4 sm:px-6 lg:px-16">
-    <div class="aurora-bg">
+    <div class="aurora-bg hidden lg:block">
         <div class="aurora from-accent/35 to-accent/15 top-[40%] left-[15%]"></div>
         <div class="aurora from-accent/35 to-accent/15 bottom-[20%] right-[25%]"></div>
     </div>
