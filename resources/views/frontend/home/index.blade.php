@@ -21,7 +21,9 @@
                 </h1>
                 <p
                     class="mt-3 max-w-md mx-auto text-base text-gray-500 dark:text-gray-300 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-                    Bersama, kita wujudkan masa depan pertanian yang lebih cerah dan sejahtera untuk semua.
+                    Bersama, kita wujudkan masa depan pertanian yang lebih cerah dan sejahtera untuk semua. Dengan
+                    inovasi dan teknologi terkini, kami siap membantu Anda mencapai hasil yang maksimal dalam
+                    pertanian tebu.
                 </p>
                 <div class="mt-8 sm:mt-12">
                     <a href="/daftar-tani"

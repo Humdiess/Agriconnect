@@ -71,7 +71,7 @@
                         <button id="profile-toggler"
                             class="w-8 h-8 rounded-full overflow-hidden border-2 border-gray-500 dark:border-gray-400 focus:outline-none focus:border-accent transition-all duration-200">
                             <img class="w-full h-full object-cover"
-                                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                src="https://hips.hearstapps.com/hmg-prod/images/apple-ceo-steve-jobs-speaks-during-an-apple-special-event-news-photo-1683661736.jpg?crop=0.800xw:0.563xh;0.0657xw,0.0147xh&resize=1200:*"
                                 alt="Profile picture">
                         </button>
                         <div id="profile-menu"
