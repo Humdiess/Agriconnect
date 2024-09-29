@@ -89,7 +89,7 @@
                 </div>
             </div>
 
-            <a href="{{ url('/product') }}" class="flex items-center px-4 py-3 rounded-lg {{ $active == 'product' ? 'text-white bg-accent dark:bg-zinc-800 dark:text-white' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800' }} transition-colors duration-200">
+            <a href="{{ url('/product') }}" class="flex items-center px-4 py-3 rounded-lg {{ $active == 'product' ? 'text-white bg-accent dark:text-white' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800' }} transition-colors duration-200">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                 </svg>
