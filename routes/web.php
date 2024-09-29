@@ -35,15 +35,9 @@ Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
 Route::get('/tani-ai', [TaniController::class, 'index'])->name('tani')->middleware('req_auth');
 Route::post('/tani-ai', [TaniController::class, 'chat'])->name('tani.chat')->middleware('req_auth');
 
-Route::get('/daftar-tani', function () {
-    if (auth()->check() && auth()->user()->is_farmer) {
-        return redirect()->route('petani.index');
-    }
-
-    return redirect()->route('tani.pendaftaran');
-});
 
 // Daftar Petani
+Route::get('/daftar-tani', [TaniController::class, 'pendaftaran'])->name('tani.pendaftaran')->middleware('req_auth');
 Route::post('/daftar-tani', [TaniController::class, 'submit'])->name('tani.submit')->middleware('req_auth');
 
 // Auth

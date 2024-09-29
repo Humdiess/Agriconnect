@@ -18,6 +18,10 @@ class TaniController extends Controller
     }
     public function pendaftaran()
     {
+        if (auth()->check() && auth()->user()->is_farmer) {
+            return redirect()->route('petani.index');
+        }
+
         $active = 'pendaftaran';
         return view('petani.pendaftaran', compact('active'));
     }

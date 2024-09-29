@@ -1,8 +1,4 @@
  <script>
-     document.getElementById('profile-dropdown-toggle').addEventListener('click', function() {
-         var dropdown = document.getElementById('profile-dropdown');
-         dropdown.classList.toggle('hidden');
-     });
      const sidebar = document.getElementById('sidebar');
      const sidebarToggle = document.getElementById('sidebar-toggle');
      const userMenuButton = document.getElementById('user-menu-button');
