@@ -110,7 +110,7 @@
             </button>
 
             <!-- Dropdown menu -->
-            <div id="profile-dropdown" class=" absolute bottom-full left-0 right-0 mb-2 bg-white dark:bg-zinc-800 shadow-lg rounded-lg overflow-hidden">
+            <div id="profile-dropdown" class="hidden absolute bottom-full left-0 right-0 mb-2 bg-white dark:bg-zinc-800 shadow-lg rounded-lg overflow-hidden">
                 <a href="{{ url('/profile') }}" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors duration-200">
                     View Profile
                 </a>
