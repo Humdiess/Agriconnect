@@ -42,6 +42,9 @@ class ProductController extends Controller
             'stock' => 'required|integer',
             'category' => 'nullable|string|max:255',
             'image' => 'nullable|image|max:5000',
+            'lokasi' => 'nullable|string|max:255',
+            'sertifikasi' => 'nullable|string|max:255',
+            'pengiriman' => 'nullable|string|max:255',
         ]);
 
         $data = [
@@ -52,6 +55,9 @@ class ProductController extends Controller
             'price' => $request->price,
             'stock' => $request->stock,
             'category' => $request->category,
+            'lokasi' => $request->lokasi,
+            'pengiriman' => $request->pengiriman,
+            'sertifikasi' => $request->sertifikasi,
             'created_at' => now(),
         ];
 
@@ -95,6 +101,9 @@ class ProductController extends Controller
             'stock' => 'required|integer',
             'category' => 'nullable|string|max:255',
             'image' => 'nullable|image|max:5000',
+            'lokasi' => 'nullable|string|max:255',
+            'sertifikasi' => 'nullable|string|max:255',
+            'pengiriman' => 'nullable|string|max:255',
         ]);
 
         // Ambil data yang ada di tabel products berdasarkan id
@@ -111,6 +120,9 @@ class ProductController extends Controller
             'price' => $request->price,
             'stock' => $request->stock,
             'category' => $request->category,
+            'lokasi' => $request->lokasi,
+            'pengiriman' => $request->pengiriman,
+            'sertifikasi' => $request->sertifikasi,
             'updated_at' => now(),
         ];
 

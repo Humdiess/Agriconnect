@@ -53,9 +53,9 @@
                         </div>
 
                         <div class="form-input">
-                            <label for="sertifikat" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Sertifikasi</label>
-                            <input type="text" name="sertifikat" id="sertifikat" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-accent focus:border-accent dark:bg-zinc-700 dark:border-zinc-600 dark:text-white @error('sertifikat') border-red-500 @enderror" value="{{ old('sertifikat') }}" placeholder="e.g. SNI">
-                            @error('sertifikat')
+                            <label for="sertifikasi" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Sertifikasi</label>
+                            <input type="text" name="sertifikasi" id="sertifikasi" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-accent focus:border-accent dark:bg-zinc-700 dark:border-zinc-600 dark:text-white @error('sertifikasi') border-red-500 @enderror" value="{{ old('sertifikasi') }}" placeholder="e.g. SNI">
+                            @error('sertifikasi')
                                 <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
                             @enderror
                         </div>
