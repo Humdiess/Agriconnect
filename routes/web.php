@@ -68,7 +68,7 @@ Route::middleware([IsFarmer::class])->group(function () {
         Route::get('/kelembaban', function () {
             $active = 'pantau-kelembaban';
             return view('frontend.pantau.kelembaban', compact('active'));
-        })->name('pantau.kelembaban');
+        })->name('pantau.kelembapan');
 
         Route::get('/nutrisi', function () {
             $active = 'pantau-nutrisi';
