@@ -53,17 +53,17 @@
                         </div>
 
                         <div class="form-input">
-                            <label for="certification" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Sertifikasi</label>
-                            <input type="text" name="sepengiriman" id="certification" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-accent focus:border-accent dark:bg-zinc-700 dark:border-zinc-600 dark:text-white @error('certification') border-red-500 @enderror" value="{{ old('certification') }}" placeholder="e.g. SNI">
-                            @error('certification')
+                            <label for="sertifikat" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Sertifikasi</label>
+                            <input type="text" name="sertifikat" id="sertifikat" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-accent focus:border-accent dark:bg-zinc-700 dark:border-zinc-600 dark:text-white @error('sertifikat') border-red-500 @enderror" value="{{ old('sertifikat') }}" placeholder="e.g. SNI">
+                            @error('sertifikat')
                                 <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
                             @enderror
                         </div>
 
                         <div class="form-input">
-                            <label for="location" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Lokasi</label>
-                            <input type="text" name="lokasi" id="location" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-accent focus:border-accent dark:bg-zinc-700 dark:border-zinc-600 dark:text-white @error('location') border-red-500 @enderror" value="{{ old('location') }}" placeholder="e.g. Sidoarjo, Jawa Timur">
-                            @error('location')
+                            <label for="lokasi" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Lokasi</label>
+                            <input type="text" name="lokasi" id="lokasi" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-accent focus:border-accent dark:bg-zinc-700 dark:border-zinc-600 dark:text-white @error('lokasi') border-red-500 @enderror" value="{{ old('lokasi') }}" placeholder="e.g. Sidoarjo, Jawa Timur">
+                            @error('lokasi')
                                 <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
                             @enderror
                         </div>
@@ -79,13 +79,13 @@
 
                     <div class="form-input">
                         <label for="pengiriman" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Pengiriman</label>
-                        <select name="pengiriman" id="shipping" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-accent focus:border-accent dark:bg-zinc-700 dark:border-zinc-600 dark:text-white @error('shipping') border-red-500 @enderror">
+                        <select name="pengiriman" id="pengiriman" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-accent focus:border-accent dark:bg-zinc-700 dark:border-zinc-600 dark:text-white @error('pengiriman') border-red-500 @enderror">
                             <option value="">Pilih opsi pengiriman</option>
-                            <option value="jerigen" {{ old('shipping') == 'jerigen' ? 'selected' : '' }}>Dikirim dalam kemasan jerigen</option>
-                            <option value="bulk" {{ old('shipping') == 'bulk' ? 'selected' : '' }}>Tersedia opsi pengiriman bulk</option>
-                            <option value="both" {{ old('shipping') == 'both' ? 'selected' : '' }}>Kemasan jerigen dan opsi bulk</option>
+                            <option value="jerigen" {{ old('pengiriman') == 'jerigen' ? 'selected' : '' }}>Dikirim dalam kemasan jerigen</option>
+                            <option value="bulk" {{ old('pengiriman') == 'bulk' ? 'selected' : '' }}>Tersedia opsi pengiriman bulk</option>
+                            <option value="both" {{ old('pengiriman') == 'both' ? 'selected' : '' }}>Kemasan jerigen dan opsi bulk</option>
                         </select>
-                        @error('shipping')
+                        @error('pengiriman')
                             <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
                         @enderror
                     </div>
