@@ -34,11 +34,12 @@
  @include('sweetalert::alert')
 
  <script>
-     let posX = 0;
-     let posY = 0;
 
-     let mouseX = 0;
-     let mouseY = 0;
+let posX = 0;
+let posY = 0;
+
+let mouseX = 0;
+let mouseY = 0;
 
      gsap.to(".cursor-example", {
          duration: 0.018,
