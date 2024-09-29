@@ -20,6 +20,9 @@ return new class extends Migration
             $table->integer('stock');
             $table->string('category')->nullable();
             $table->string('image')->nullable(); // Optional: Menyimpan gambar produk
+            $table->string('lokasi')->nullable(); // 
+            $table->string('sertifikasi')->nullable(); // 
+            $table->string('pengiriman')->nullable(); // 
             $table->timestamps();
         });
     }
