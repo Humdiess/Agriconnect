@@ -7,10 +7,12 @@
         <main class="w-full bg-white dark:bg-ireng">
             <div class="mx-auto py-6 sm:px-6 lg:px-8">
                 <!-- Gambaran Umum AI -->
-                <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Gambaran Umum AI</h2>
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-lg font-semibold text-gray-900 dark:text-white">Tindakan yang direkomendasikan</h2>
+                    <span class="bg-accent text-white text-xs font-semibold py-1 px-3 rounded-full">Supported by Tani AI</span>
+                </div>
                 <div class="shadow-sm rounded-lg overflow-hidden mb-6 border dark:border-zinc-600">
                     <div class="px-4 py-5 sm:p-6">
-                        <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white mb-4">Tindakan yang Direkomendasikan</h3>
                         <ul class="space-y-3" id="recommended-actions">
                             <li class="flex items-start">
                                 <svg class="flex-shrink-0 h-5 w-5 text-accent" xmlns="http://www.w3.org/2000/svg"

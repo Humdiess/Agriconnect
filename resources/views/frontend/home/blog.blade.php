@@ -70,7 +70,7 @@
             @endphp
             @foreach ($news as $item)
                 <article
-                    class="dark:bg-ireng backdrop-blur-md rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border dark:border-zinc-600">
+                    class=" backdrop-blur-md rounded-lg overflow-hidden transition-all duration-300 border dark:border-zinc-600">
                     <img src="{{ $item['image'] }}" alt="{{ $item['title'] }}" class="w-full h-48 object-cover" />
                     <div class="p-5">
                         <h2 class="text-lg font-semibold text-ireng dark:text-white mb-2 line-clamp-2">

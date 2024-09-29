@@ -44,7 +44,6 @@ Route::get('/daftar-tani', function () {
 });
 
 // Daftar Petani
-// Route::get('/daftar-tani', [TaniController::class, 'pendaftaran'])->name('tani.pendaftaran')->middleware('req_auth');
 Route::post('/daftar-tani', [TaniController::class, 'submit'])->name('tani.submit')->middleware('req_auth');
 
 // Auth

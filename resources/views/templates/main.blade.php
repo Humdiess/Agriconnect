@@ -69,7 +69,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6l-2 2m0 0l-2-2m4 4l2 2m-2-2l-2 2m-4 4h8m0-4H8" />
                     </svg>
                     <span class="flex-grow">Pantau Kualitas</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-auto transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-auto transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                     </svg>
                 </button>
@@ -104,13 +104,13 @@
             <button id="profile-dropdown-toggle" class="flex items-center w-full p-2 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors duration-200 focus:outline-none" aria-haspopup="true" aria-expanded="false">
                 <img class="h-8 w-8 rounded-full mr-2 flex-shrink-0" src="/img/farmer.svg" alt="User Avatar">
                 <span class="font-medium flex-grow text-left">Masyhudi Affandi</span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-auto transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-auto transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
                 </svg>
             </button>
 
             <!-- Dropdown menu -->
-            <div id="profile-dropdown" class="hidden absolute bottom-full left-0 right-0 mb-2 bg-white dark:bg-zinc-800 shadow-lg rounded-lg overflow-hidden">
+            <div id="profile-dropdown" class=" absolute bottom-full left-0 right-0 mb-2 bg-white dark:bg-zinc-800 shadow-lg rounded-lg overflow-hidden">
                 <a href="{{ url('/profile') }}" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors duration-200">
                     View Profile
                 </a>
@@ -133,7 +133,7 @@
     </div>
     </aside>
 
-    <div class="content-wrapper lg:ml-64 w-full mt-16 bg-white dark:bg-ireng">
+    <div class="content-wrapper lg:ml-64 w-full mt-16 lg:mt-0    bg-white dark:bg-ireng">
         @yield('content')
     </div>
 </div>
@@ -205,73 +205,89 @@
 </style>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Theme Toggle
-        const themeToggle = document.getElementById('theme-toggle');
-        if (localStorage.getItem('theme') === 'dark') {
-            document.documentElement.classList.add('dark');
-            themeToggle.checked = true;
+document.addEventListener('DOMContentLoaded', function () {
+    // Theme Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    if (localStorage.getItem('theme') === 'dark') {
+        document.documentElement.classList.add('dark');
+        themeToggle.checked = true;
+    }
+    themeToggle.addEventListener('change', () => {
+        document.documentElement.classList.toggle('dark', themeToggle.checked);
+        localStorage.setItem('theme', themeToggle.checked ? 'dark' : 'light');
+    });
+
+    // Profile Dropdown Toggle
+    const profileDropdownToggle = document.getElementById('profile-dropdown-toggle');
+    const profileDropdown = document.getElementById('profile-dropdown');
+
+    // Toggle dropdown visibility
+    profileDropdownToggle.addEventListener('click', (e) => {
+        e.stopPropagation();  // Prevent the click from closing the dropdown immediately
+        profileDropdown.classList.toggle('hidden');
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (event) => {
+        if (!profileDropdown.contains(event.target) && !profileDropdownToggle.contains(event.target)) {
+            profileDropdown.classList.add('hidden');
         }
-        themeToggle.addEventListener('change', () => {
-            document.documentElement.classList.toggle('dark', themeToggle.checked);
-            localStorage.setItem('theme', themeToggle.checked ? 'dark' : 'light');
+    });
+
+    // Dropdown Toggle Helper Function
+    const toggleDropdown = (buttonId, dropdownId, stateKey) => {
+        const button = document.getElementById(buttonId);
+        const dropdown = document.getElementById(dropdownId);
+        const isOpen = localStorage.getItem(stateKey) === 'true';
+
+        // Set the initial state based on localStorage
+        if (isOpen) {
+            dropdown.classList.remove('hidden');
+        }
+
+        button.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent the click from closing the dropdown immediately
+            const shouldBeOpen = dropdown.classList.toggle('hidden');
+            localStorage.setItem(stateKey, !shouldBeOpen);
         });
 
-        // Dropdown Toggle Helper Function
-        const toggleDropdown = (buttonId, dropdownId, stateKey) => {
-            const button = document.getElementById(buttonId);
-            const dropdown = document.getElementById(dropdownId);
-            const isOpen = localStorage.getItem(stateKey) === 'true';
-
-            // Set the initial state based on localStorage
-            if (isOpen) {
-                dropdown.classList.remove('hidden');
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!button.contains(event.target) && !dropdown.contains(event.target)) {
+                dropdown.classList.add('hidden');
+                localStorage.setItem(stateKey, false);
             }
+        });
+    };
 
-            button.addEventListener('click', () => {
-                const shouldBeOpen = dropdown.classList.toggle('hidden');
-                localStorage.setItem(stateKey, !shouldBeOpen);
-            });
+    // Pantau Dropdown - Keep its state persistent across pages
+    toggleDropdown('pantau-dropdown-toggle', 'pantau-dropdown', 'pantauDropdownOpen');
 
-            // Close dropdown when clicking outside
-            document.addEventListener('click', (event) => {
-                if (!button.contains(event.target) && !dropdown.contains(event.target)) {
-                    dropdown.classList.add('hidden');
-                    localStorage.setItem(stateKey, false);
-                }
-            });
-        };
+    // Mobile Menu
+    const mobileMenu = {
+        button: document.getElementById('mobile-menu-toggler'),
+        menu: document.getElementById('menu-mobile'),
+        closeButton: document.getElementById('close-menu'),
+        backdrop: document.getElementById('backdrop'),
 
-        // Profile Dropdown
-        toggleDropdown('profile-dropdown-toggle', 'profile-dropdown', 'profileDropdownOpen');
+        open() {
+            this.menu.classList.replace('-left-64', 'left-0');
+            this.backdrop.classList.remove('hidden');
+        },
+        close() {
+            this.menu.classList.replace('left-0', '-left-64');
+            this.backdrop.classList.add('hidden');
+        },
+        init() {
+            this.button.addEventListener('click', () => this.open());
+            this.closeButton.addEventListener('click', () => this.close());
+            this.backdrop.addEventListener('click', () => this.close());
+        }
+    };
 
-        // Pantau Dropdown - Keep its state persistent across pages
-        toggleDropdown('pantau-dropdown-toggle', 'pantau-dropdown', 'pantauDropdownOpen');
+    mobileMenu.init();
+});
 
-        // Mobile Menu
-        const mobileMenu = {
-            button: document.getElementById('mobile-menu-toggler'),
-            menu: document.getElementById('menu-mobile'),
-            closeButton: document.getElementById('close-menu'),
-            backdrop: document.getElementById('backdrop'),
-
-            open() {
-                this.menu.classList.replace('-left-64', 'left-0');
-                this.backdrop.classList.remove('hidden');
-            },
-            close() {
-                this.menu.classList.replace('left-0', '-left-64');
-                this.backdrop.classList.add('hidden');
-            },
-            init() {
-                this.button.addEventListener('click', () => this.open());
-                this.closeButton.addEventListener('click', () => this.close());
-                this.backdrop.addEventListener('click', () => this.close());
-            }
-        };
-
-        mobileMenu.init();
-    });
 </script>
 
 
