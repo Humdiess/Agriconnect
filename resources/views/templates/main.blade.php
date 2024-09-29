@@ -50,13 +50,13 @@
             </div>
         </div>
         <nav class="my-6 px-2">
-            <a href="{{ url('/') }}" class="flex items-center px-4 py-3 rounded-lg mb-2 {{ $active == 'home' ? 'text-white bg-accent dark:bg-zinc-800 dark:text-white' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800' }} transition-colors duration-200">
+            <a href="{{ url('/') }}" class="flex items-center px-4 py-3 rounded-lg mb-2 {{ $active == 'home' ? 'text-white bg-accent dark:text-white' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800' }} transition-colors duration-200">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                 </svg>
                 <span class="flex-grow">Kembali Ke Beranda</span>
             </a>
-            <a href="{{ url('/dashboard-tani') }}" class="flex items-center px-4 py-3 rounded-lg mb-2 {{ $active == 'dashboard' ? 'text-white bg-accent dark:bg-zinc-800 dark:text-white' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800' }} transition-colors duration-200">
+            <a href="{{ url('/dashboard-tani') }}" class="flex items-center px-4 py-3 rounded-lg mb-2 {{ $active == 'dashboard' ? 'text-white bg-accent  dark:text-white' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800' }} transition-colors duration-200">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                 </svg>
@@ -64,7 +64,7 @@
             </a>
 
             <div class="mb-2">
-                <button id="pantau-dropdown-toggle" class="flex items-center w-full px-4 py-3 rounded-lg {{ $active == 'pantau' ? 'text-white bg-accent dark:bg-zinc-800 dark:text-white' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800' }} transition-colors duration-200" aria-expanded="false" aria-controls="pantau-dropdown">
+                <button id="pantau-dropdown-toggle" class="flex items-center w-full px-4 py-3 rounded-lg {{ $active == 'pantau' ? 'text-white bg-accent dark:text-white' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800' }} transition-colors duration-200" aria-expanded="false" aria-controls="pantau-dropdown">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6l-2 2m0 0l-2-2m4 4l2 2m-2-2l-2 2m-4 4h8m0-4H8" />
                     </svg>
@@ -82,7 +82,7 @@
                         ['route' => 'pantau.nutrisi', 'label' => 'Nutrisi Tanah', 'active' => $active == 'pantau-nutrisi'],
                         ['route' => 'pantau.curah-hujan', 'label' => 'Curah Hujan', 'active' => $active == 'pantau-curah-hujan'],
                     ] as $item)
-                        <a href="{{ route($item['route']) }}" class="block px-4 py-2 rounded-lg {{ $item['active'] ? 'text-white bg-accent dark:bg-zinc-700 dark:text-white' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-700' }} transition-colors duration-200">
+                        <a href="{{ route($item['route']) }}" class="block px-4 py-2 rounded-lg {{ $item['active'] ? 'text-white bg-accent  dark:text-white' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-700' }} transition-colors duration-200">
                             {{ $item['label'] }}
                         </a>
                     @endforeach
@@ -101,7 +101,7 @@
     <!-- Profile section at the bottom -->
     <div class="p-4 border-t dark:border-zinc-800">
         <div class="relative">
-            <button id="profile-dropdown-toggle" class="flex items-center w-full p-2 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors duration-200 focus:outline-none" aria-haspopup="true" aria-expanded="false">
+            <button id="profile-dropdown-toggle" aria-label="Open user profile" class="flex items-center w-full p-2 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors duration-200 focus:outline-none" aria-haspopup="true" aria-expanded="false">
                 <img class="h-8 w-8 rounded-full mr-2 flex-shrink-0" src="/img/farmer.svg" alt="User Avatar">
                 <span class="font-medium flex-grow text-left">Masyhudi Affandi</span>
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-auto transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -110,7 +110,7 @@
             </button>
 
             <!-- Dropdown menu -->
-            <div id="profile-dropdown" class="hidden absolute bottom-full left-0 right-0 mb-2 bg-white dark:bg-zinc-800 shadow-lg rounded-lg overflow-hidden">
+            <div id="profile-dropdown" class="hidden absolute bottom-full left-0 right-0 mb-2 bg-white dark:bg-zinc-800 border dark:border-zinc-600 rounded-lg overflow-hidden">
                 <a href="{{ url('/profile') }}" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors duration-200">
                     View Profile
                 </a>
@@ -123,7 +123,7 @@
                     <div class="flex justify-between items-center">
                         <span>Dark Mode</span>
                         <label class="switch relative inline-block w-10 h-6">
-                            <input type="checkbox" id="theme-toggle" class="theme-toggle sr-only">
+                            <input aria-label="Toggle dark mode" type="checkbox" id="theme-toggle" class="theme-toggle sr-only">
                             <span class="slider absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-gray-300 dark:bg-gray-600 rounded-full transition-colors duration-200 before:absolute before:h-4 before:w-4 before:left-1 before:bottom-1 before:bg-white before:rounded-full before:transition-transform before:duration-200 before:ease-in-out"></span>
                         </label>
                     </div>
@@ -223,7 +223,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Toggle dropdown visibility
     profileDropdownToggle.addEventListener('click', (e) => {
-        e.stopPropagation();  // Prevent the click from closing the dropdown immediately
         profileDropdown.classList.toggle('hidden');
     });
 
