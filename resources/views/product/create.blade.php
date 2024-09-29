@@ -54,7 +54,7 @@
 
                         <div class="form-input">
                             <label for="certification" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Sertifikasi</label>
-                            <input type="text" name="certification" id="certification" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-accent focus:border-accent dark:bg-zinc-700 dark:border-zinc-600 dark:text-white @error('certification') border-red-500 @enderror" value="{{ old('certification') }}" placeholder="e.g. SNI">
+                            <input type="text" name="sepengiriman" id="certification" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-accent focus:border-accent dark:bg-zinc-700 dark:border-zinc-600 dark:text-white @error('certification') border-red-500 @enderror" value="{{ old('certification') }}" placeholder="e.g. SNI">
                             @error('certification')
                                 <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
                             @enderror
@@ -62,7 +62,7 @@
 
                         <div class="form-input">
                             <label for="location" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Lokasi</label>
-                            <input type="text" name="location" id="location" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-accent focus:border-accent dark:bg-zinc-700 dark:border-zinc-600 dark:text-white @error('location') border-red-500 @enderror" value="{{ old('location') }}" placeholder="e.g. Sidoarjo, Jawa Timur">
+                            <input type="text" name="lokasi" id="location" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-accent focus:border-accent dark:bg-zinc-700 dark:border-zinc-600 dark:text-white @error('location') border-red-500 @enderror" value="{{ old('location') }}" placeholder="e.g. Sidoarjo, Jawa Timur">
                             @error('location')
                                 <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
                             @enderror
@@ -78,8 +78,8 @@
                     </div>
 
                     <div class="form-input">
-                        <label for="shipping" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Pengiriman</label>
-                        <select name="shipping" id="shipping" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-accent focus:border-accent dark:bg-zinc-700 dark:border-zinc-600 dark:text-white @error('shipping') border-red-500 @enderror">
+                        <label for="pengiriman" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Pengiriman</label>
+                        <select name="pengiriman" id="shipping" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-accent focus:border-accent dark:bg-zinc-700 dark:border-zinc-600 dark:text-white @error('shipping') border-red-500 @enderror">
                             <option value="">Pilih opsi pengiriman</option>
                             <option value="jerigen" {{ old('shipping') == 'jerigen' ? 'selected' : '' }}>Dikirim dalam kemasan jerigen</option>
                             <option value="bulk" {{ old('shipping') == 'bulk' ? 'selected' : '' }}>Tersedia opsi pengiriman bulk</option>
