@@ -3,7 +3,7 @@
 @section('content')
 <div class="flex flex-col w-full">
     <main class="flex-grow p-4 sm:p-6 lg:p-8">
-        <div class="max-w-4xl mx-auto">
+        <div>
             <div class="mb-8">
                 <div class="mt-4 flex items-center justify-between">
                     <a href="/product" class="inline-flex items-center px-4 py-2 bg-accent text-white rounded-md hover:bg-accent-dark transition-colors">

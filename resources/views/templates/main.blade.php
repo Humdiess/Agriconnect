@@ -1,7 +1,7 @@
 @include('templates.header')
 
 <header>
-    <div class="p-4 border-b dark:border-zinc-800 fixed left-0 right-0 dark:bg-ireng/40 backdrop-blur-3xl bg-white/40 flex justify-between lg:hidden">
+    <div class="p-4 border-b dark:border-zinc-600 fixed left-0 right-0 dark:bg-ireng/40 backdrop-blur-3xl bg-white/40 flex justify-between lg:hidden">
         {{-- navbar toggler --}}
         <div class="lg:hidden">
             <button type="button" id="mobile-menu-toggler"
@@ -30,7 +30,7 @@
 <div class="flex w-full bg-white h-screen dark:bg-ireng">
     <div id="backdrop" class="hidden fixed inset-0 bg-black opacity-50 z-30"></div>
 
-    <aside id="menu-mobile" class="w-64 fixed z-[35] -left-64 lg:left-0 top-0 bottom-0 bg-white dark:bg-ireng overflow-y-auto flex flex-col justify-between border-r dark:border-zinc-800 transition-all duration-300 scrollbar-hide">
+    <aside id="menu-mobile" class="w-64 fixed z-[35] -left-64 lg:left-0 top-0 bottom-0 bg-white dark:bg-ireng overflow-y-auto flex flex-col justify-between border-r dark:border-zinc-600 transition-all duration-300 scrollbar-hide">
     <!-- Close Button -->
     <button type="button" id="close-menu" class="lg:hidden absolute top-4 right-4 p-2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 rounded-full hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors duration-200">
         <span class="sr-only">Close menu</span>
@@ -40,7 +40,7 @@
     </button>
 
     <div class="flex-grow mt-8 lg:mt-0">
-        <div class="p-4 border-b dark:border-zinc-800 hidden lg:block">
+        <div class="p-4 border-b dark:border-zinc-600 hidden lg:block">
             <div class="flex items-center space-x-2">
                 <img src="{{ asset('img/logo/header-logo.png') }}" alt="Logo" class="w-8 h-8">
                 <div>
@@ -49,14 +49,14 @@
                 </div>
             </div>
         </div>
-        <nav class="my-6 px-2">
-            <a href="{{ url('/') }}" class="flex items-center px-4 py-3 rounded-lg mb-2 {{ $active == 'home' ? 'text-white bg-accent dark:text-white' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800' }} transition-colors duration-200">
+        <nav class="my-6 px-4">
+            <a href="{{ url('/') }}" class="flex items-center px-2 py-3 rounded-lg mb-2 {{ $active == 'home' ? 'text-white bg-accent dark:text-white' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800' }} transition-colors duration-200">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                 </svg>
                 <span class="flex-grow">Kembali Ke Beranda</span>
             </a>
-            <a href="{{ url('/dashboard-tani') }}" class="flex items-center px-4 py-3 rounded-lg mb-2 {{ $active == 'dashboard' ? 'text-white bg-accent  dark:text-white' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800' }} transition-colors duration-200">
+            <a href="{{ url('/dashboard-tani') }}" class="flex items-center px-2 py-3 rounded-lg mb-2 {{ $active == 'dashboard' ? 'text-white bg-accent  dark:text-white' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800' }} transition-colors duration-200">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                 </svg>
@@ -64,7 +64,7 @@
             </a>
 
             <div class="mb-2">
-                <button id="pantau-dropdown-toggle" class="flex items-center w-full px-4 py-3 rounded-lg {{ $active == 'pantau' ? 'text-white bg-accent dark:text-white' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800' }} transition-colors duration-200" aria-expanded="false" aria-controls="pantau-dropdown">
+                <button id="pantau-dropdown-toggle" class="flex items-center w-full px-2 py-3 rounded-lg {{ $active == 'pantau' ? 'text-white bg-accent dark:text-white' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800' }} transition-colors duration-200" aria-expanded="false" aria-controls="pantau-dropdown">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6l-2 2m0 0l-2-2m4 4l2 2m-2-2l-2 2m-4 4h8m0-4H8" />
                     </svg>
@@ -82,14 +82,14 @@
                         ['route' => 'pantau.nutrisi', 'label' => 'Nutrisi Tanah', 'active' => $active == 'pantau-nutrisi'],
                         ['route' => 'pantau.curah-hujan', 'label' => 'Curah Hujan', 'active' => $active == 'pantau-curah-hujan'],
                     ] as $item)
-                        <a href="{{ route($item['route']) }}" class="block px-4 py-2 rounded-lg {{ $item['active'] ? 'text-white bg-accent  dark:text-white' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-700' }} transition-colors duration-200">
+                        <a href="{{ route($item['route']) }}" class="block px-2 py-2 rounded-lg {{ $item['active'] ? 'text-white bg-accent  dark:text-white' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-700' }} transition-colors duration-200">
                             {{ $item['label'] }}
                         </a>
                     @endforeach
                 </div>
             </div>
 
-            <a href="{{ url('/product') }}" class="flex items-center px-4 py-3 rounded-lg {{ $active == 'product' ? 'text-white bg-accent dark:text-white' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800' }} transition-colors duration-200">
+            <a href="{{ url('/product') }}" class="flex items-center px-2 py-3 rounded-lg {{ $active == 'product' ? 'text-white bg-accent dark:text-white' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800' }} transition-colors duration-200">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                 </svg>
@@ -99,7 +99,7 @@
     </div>
 
     <!-- Profile section at the bottom -->
-    <div class="p-4 border-t dark:border-zinc-800">
+    <div class="p-4 border-t dark:border-zinc-600">
         <div class="relative">
             <button id="profile-dropdown-toggle" class="flex items-center w-full p-2 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors duration-200 focus:outline-none" aria-haspopup="true" aria-expanded="false">
                 <img class="h-8 w-8 rounded-full mr-2 flex-shrink-0" src="/img/farmer.svg" alt="User Avatar">
@@ -111,15 +111,15 @@
 
             <!-- Dropdown menu -->
             <div id="profile-dropdown" class="hidden absolute bottom-full left-0 right-0 mb-2 bg-white dark:bg-zinc-800 shadow-lg rounded-lg overflow-hidden">
-                <a href="{{ url('/profile') }}" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors duration-200">
+                <a href="{{ url('/profile') }}" class="block px-2 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors duration-200">
                     View Profile
                 </a>
-                <a href="{{ url('/logout') }}" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors duration-200">
+                <a href="{{ url('/logout') }}" class="block px-2 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors duration-200">
                     Logout
                 </a>
 
                 <!-- Theme Toggle -->
-                <div class="px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors duration-200">
+                <div class="px-2 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors duration-200">
                     <div class="flex justify-between items-center">
                         <span>Dark Mode</span>
                         <label class="switch relative inline-block w-10 h-6">
