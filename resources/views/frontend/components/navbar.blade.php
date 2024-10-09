@@ -37,7 +37,7 @@
                         class=" px-3 py-2 rounded-md text-sm font-medium {{ $active == 'blog' ? 'text-accent' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700' }}">Berita</a>
                         <a href="{{ route('tani') }}"
                         class="decoration-clone font-bold px-3 py-2 rounded-md text-sm {{ $active == 'tani-ai' ? 'text-accent' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700' }}">Tani
-                        AI</a>
+                        AI ✨</a>
                         <a href="{{ route('contact') }}"
                             class=" px-3 py-2 rounded-md text-sm font-medium {{ $active == 'contact' ? 'text-accent' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700' }}">Kontak</a>
                 </div>

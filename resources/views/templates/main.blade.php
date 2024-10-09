@@ -1,7 +1,7 @@
 @include('templates.header')
 
 <header>
-    <div class="p-4 border-b dark:border-zinc-600 fixed left-0 right-0 dark:bg-ireng/40 backdrop-blur-3xl bg-white/40 flex justify-between lg:hidden">
+    <div class="p-4 border-b dark:border-zinc-600 fixed left-0 right-0 bg-white dark:bg-ireng/40 backdrop-blur-3xl bg-white/40 flex justify-between lg:hidden transition-all">
         {{-- navbar toggler --}}
         <div class="lg:hidden">
             <button type="button" id="mobile-menu-toggler"
@@ -30,7 +30,7 @@
 <div class="flex w-full bg-white h-screen dark:bg-ireng">
     <div id="backdrop" class="hidden fixed inset-0 bg-black opacity-50 z-30"></div>
 
-    <aside id="menu-mobile" class="w-64 fixed z-[35] -left-64 lg:left-0 top-0 bottom-0 bg-white dark:bg-ireng/25 backdrop-blur-xl overflow-y-auto flex flex-col justify-between border-r dark:border-zinc-600 transition-all duration-300 scrollbar-hide">
+    <aside id="menu-mobile" class="w-64 fixed z-[35] -left-64 lg:left-0 top-0 bottom-0 bg-white dark:bg-ireng/25 backdrop-blur-xl overflow-y-auto flex flex-col justify-between border-r dark:border-zinc-600 transition-all scrollbar-hide">
     <!-- Close Button -->
     <button type="button" id="close-menu" class="lg:hidden absolute top-4 right-4 p-2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 rounded-full hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors duration-200">
         <span class="sr-only">Close menu</span>
@@ -51,9 +51,7 @@
         </div>
         <nav class="my-6 px-4">
             <a href="{{ url('/') }}" class="flex items-center px-2 py-3 rounded-lg mb-2 {{ $active == 'home' ? 'text-white bg-accent dark:text-white' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800' }} transition-colors duration-200">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                </svg>
+                <i class="fas fa-home w-5 h-5 mr-3 flex-shrink-0"></i>
                 <span class="flex-grow">Kembali Ke Beranda</span>
             </a>
             <a href="{{ url('/dashboard-tani') }}" class="flex items-center px-2 py-3 rounded-lg mb-2 {{ $active == 'dashboard' ? 'text-white bg-accent  dark:text-white' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800' }} transition-colors duration-200">
@@ -86,9 +84,7 @@
             </div>
 
             <a href="{{ url('/product') }}" class="flex items-center px-2 py-3 rounded-lg {{ $active == 'product' ? 'text-white bg-accent dark:text-white' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800' }} transition-colors duration-200">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                </svg>
+                <i class="fas fa-shopping-basket w-5 h-5 mr-3 flex-shrink-0"></i>
                 <span class="flex-grow">Kelola Produk Anda</span>
             </a>
         </nav>
@@ -100,24 +96,24 @@
             <button id="profile-dropdown-toggle" class="flex items-center w-full p-2 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors duration-200 focus:outline-none" aria-haspopup="true" aria-expanded="false">
                 <img class="h-8 w-8 rounded-full mr-2 flex-shrink-0" src="/img/farmer.svg" alt="User Avatar">
                 <span class="font-medium flex-grow text-left">{{ auth()->user()->name }}</span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-auto transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
-                </svg>
+                <i class="fas fa-chevron-up ml-auto transition-transform duration-200"></i>
             </button>
 
             <!-- Dropdown menu -->
             <div id="profile-dropdown" class="hidden absolute bottom-full left-0 right-0 mb-2 bg-white dark:bg-zinc-800 shadow-lg rounded-lg overflow-hidden">
-                <a href="{{ url('/profile') }}" class="block px-2 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors duration-200">
-                    View Profile
+                <a href="{{ url('/profile') }}" class="flex items-center px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors duration-200">
+                    <i class="fas fa-user-circle w-5 h-5 mr-3"></i>
+                    <span>Lihat Profil</span>
                 </a>
-                <a href="{{ url('/logout') }}" class="block px-2 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors duration-200">
-                    Logout
+                <a href="{{ url('/logout') }}" class="flex items-center px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors duration-200">
+                    <i class="fas fa-sign-out-alt w-5 h-5 mr-3"></i>
+                    <span>Keluar</span>
                 </a>
 
                 <!-- Theme Toggle -->
-                <div class="px-2 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors duration-200">
+                <div class="px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors duration-200">
                     <div class="flex justify-between items-center">
-                        <span>Dark Mode</span>
+                        <span>Mode Gelap</span>
                         <label class="switch relative inline-block w-10 h-6">
                             <input type="checkbox" id="theme-toggle" class="theme-toggle sr-only">
                             <span class="slider absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-gray-300 dark:bg-gray-600 rounded-full transition-colors duration-200 before:absolute before:h-4 before:w-4 before:left-1 before:bottom-1 before:bg-white before:rounded-full before:transition-transform before:duration-200 before:ease-in-out"></span>

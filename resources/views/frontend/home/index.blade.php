@@ -25,10 +25,10 @@
         <div class="aurora from-accent/65 to-accent/35 bottom-[20rem] right-[10%]"></div>
     </div>
 
-    <div class="hero-wrapper w-full relative z-10 py-20 md:py-32">
+    <div class="hero-wrapper w-full relative z-10 py-32 md:py-32">
         <div class="hero w-100 flex flex-col items-center justify-center mx-8">
             <div class="hero-title text-center max-w-4xl mx-auto">
-                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white leading-tight mb-6">
+                <h1 class="text-4xl mt-6 sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white leading-tight mb-6">
                     <span class="block">AgriConnect</span>
                     <span class="block text-accent">Revolusi Pertanian Tebu</span>
                 </h1>

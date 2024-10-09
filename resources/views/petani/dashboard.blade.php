@@ -9,7 +9,7 @@
                 <!-- Gambaran Umum AI -->
                 <div class="flex items-center justify-between mb-4">
                     <h2 class="text-lg font-semibold text-gray-900 dark:text-white">Tindakan yang direkomendasikan</h2>
-                    <span class="bg-accent text-white text-xs font-semibold py-1 px-3 rounded-full">Supported by Tani AI</span>
+                    <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-lg text-xs font-medium bg-accent/20 text-accent dark:bg-accent/30 dark:text-accent">Didukung oleh AI ✨</span>
                 </div>
                 <div class="shadow-sm rounded-lg overflow-hidden mb-6 border dark:border-zinc-600">
                     <div class="px-4 py-5 sm:p-6">
