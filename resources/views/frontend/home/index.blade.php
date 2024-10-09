@@ -17,26 +17,6 @@
         filter: blur(100px);
         border-radius: 9999px;
     }
-
-    /* Animasi untuk elemen yang muncul saat di-scroll */
-    .fade-in-up {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-    .fade-in-up.is-visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    /* Animasi hover untuk kartu */
-    .hover-lift {
-        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    }
-    .hover-lift:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    }
 </style>
 
 <section class="hero-container relative" id="home">
@@ -88,7 +68,7 @@
     </div>
 
     <div class="max-w-7xl mx-auto relative z-10">
-        <div class="text-center mb-20 fade-in-up">
+        <div class="text-center mb-20">
             <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6">
                 <span class="block">Solusi Inovatif untuk</span>
                 <span class="block text-accent">Pertanian Tebu Modern</span>
@@ -131,7 +111,7 @@
                     'description' => 'Tim ahli kami siap membantu Anda dengan konsultasi gratis, pembinaan teknologi, dan strategi pemasaran hasil panen.'
                 ]
             ] as $index => $card)
-                <div class="bg-white/75 dark:bg-gray-900/65 backdrop-blur-xl border dark:border-zinc-600 rounded-lg overflow-hidden hover-lift fade-in-up" style="transition-delay: {{ $index * 100 }}ms">
+                <div class="bg-white/75 dark:bg-gray-900/65 backdrop-blur-xl border dark:border-zinc-600 rounded-lg overflow-hidden">
                     <div class="p-8">
                         <div class="flex items-center mb-6">
                             <div class="bg-accent rounded-full p-3 mr-4">
@@ -160,7 +140,7 @@
     </div>
 
     <div class="max-w-7xl mx-auto relative z-10">
-        <div class="text-center mb-16 fade-in-up">
+        <div class="text-center mb-16">
             <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6">
                 <span class="block">Bagaimana</span>
                 <span class="block text-accent">AgriConnect Bekerja</span>
@@ -203,7 +183,7 @@
                     'description' => 'Nikmati peningkatan hasil panen dan kualitas tebu Anda. Dengan AgriConnect, Anda dapat mencapai potensi penuh dari lahan Anda.'
                 ]
             ] as $index => $step)
-                <div class="bg-white/75 dark:bg-ireng/65 backdrop-blur-xl border dark:border-zinc-600 rounded-lg overflow-hidden hover-lift fade-in-up" style="transition-delay: {{ $index * 100 }}ms">
+                <div class="bg-white/75 dark:bg-ireng/65 backdrop-blur-xl border dark:border-zinc-600 rounded-lg overflow-hidden">
                     <div class="p-8">
                         <div class="flex items-center mb-6">
                             <div class="bg-accent rounded-full p-3 mr-4">
@@ -245,7 +225,7 @@
     </div>
 
     <div class="max-w-4xl mx-auto relative z-10">
-        <div class="text-center mb-16 fade-in-up">
+        <div class="text-center mb-16">
             <h2 class="text-base text-accent font-semibold tracking-wide uppercase">FAQ</h2>
             <p class="mt-2 text-3xl sm:text-4xl leading-8 font-bold tracking-tight text-gray-900 dark:text-white">
                 Pertanyaan yang Sering Diajukan
@@ -316,10 +296,10 @@
             @endphp
             <div class="space-y-6">
                 @foreach ($faqs as $index => $faq)
-                    <div class="bg-white/45 dark:bg-gray-900/65 rounded-lg border dark:border-zinc-600 backdrop-blur-xl overflow-hidden transition-all duration-300 ease-in-out hover-lift fade-in-up" style="transition-delay: {{ $index * 50 }}ms">
+                    <div class="bg-white/45 dark:bg-gray-900/65 rounded-lg border dark:border-zinc-600 backdrop-blur-xl overflow-hidden">
                         <button @click="activeIndex = activeIndex === {{ $index }} ? null : {{ $index }}" class="flex justify-between items-center w-full px-6 py-4 text-left focus:outline-none">
                             <span class="text-lg font-semibold text-gray-900 dark:text-white">{{ $faq['question'] }}</span>
-                            <svg :class="{'rotate-180': activeIndex === {{ $index }}}" class="w-6 h-6 text-accent transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <svg :class="{'rotate-180': activeIndex === {{ $index }}}" class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                             </svg>
                         </button>
@@ -344,32 +324,4 @@
 
 @include('frontend.layouts.footer')
 
-<!-- Tambahkan script GSAP dan Lenis -->
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-
-<script>
-    // Fungsi untuk mendeteksi elemen yang terlihat saat di-scroll
-    function handleScrollAnimation() {
-        const elements = document.querySelectorAll('.fade-in-up');
-        elements.forEach(el => {
-            if (isElementInViewport(el)) {
-                el.classList.add('is-visible');
-            }
-        });
-    }
-
-    // Fungsi untuk memeriksa apakah elemen terlihat di viewport
-    function isElementInViewport(el) {
-        const rect = el.getBoundingClientRect();
-        return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-        );
-    }
-
-    // Jalankan animasi saat halaman dimuat dan di-scroll
-    window.addEventListener('load', handleScrollAnimation);
-    window.addEventListener('scroll', handleScrollAnimation);
-</script>
