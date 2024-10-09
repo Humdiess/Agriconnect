@@ -30,7 +30,7 @@
 <div class="flex w-full bg-white h-screen dark:bg-ireng">
     <div id="backdrop" class="hidden fixed inset-0 bg-black opacity-50 z-30"></div>
 
-    <aside id="menu-mobile" class="w-64 fixed z-[35] -left-64 lg:left-0 top-0 bottom-0 bg-white dark:bg-ireng overflow-y-auto flex flex-col justify-between border-r dark:border-zinc-600 transition-all duration-300 scrollbar-hide">
+    <aside id="menu-mobile" class="w-64 fixed z-[35] -left-64 lg:left-0 top-0 bottom-0 bg-white dark:bg-ireng/25 backdrop-blur-xl overflow-y-auto flex flex-col justify-between border-r dark:border-zinc-600 transition-all duration-300 scrollbar-hide">
     <!-- Close Button -->
     <button type="button" id="close-menu" class="lg:hidden absolute top-4 right-4 p-2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 rounded-full hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors duration-200">
         <span class="sr-only">Close menu</span>
@@ -39,7 +39,7 @@
         </svg>
     </button>
 
-    <div class="flex-grow mt-8 lg:mt-0">
+    <div class="flex-grow mt-12 lg:mt-0">
         <div class="p-4 border-b dark:border-zinc-600 hidden lg:block">
             <div class="flex items-center space-x-2">
                 <img src="{{ asset('img/logo/header-logo.png') }}" alt="Logo" class="w-8 h-8">
@@ -57,18 +57,14 @@
                 <span class="flex-grow">Kembali Ke Beranda</span>
             </a>
             <a href="{{ url('/dashboard-tani') }}" class="flex items-center px-2 py-3 rounded-lg mb-2 {{ $active == 'dashboard' ? 'text-white bg-accent  dark:text-white' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800' }} transition-colors duration-200">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                </svg>
-                <span class="flex-grow">Dashboard Tani</span>
+                <i class="fa-solid fa-table-columns"></i>
+                <span class="flex-grow ml-4">Dashboard Tani</span>
             </a>
 
             <div class="mb-2">
                 <button id="pantau-dropdown-toggle" class="flex items-center w-full px-2 py-3 rounded-lg {{ $active == 'pantau' ? 'text-white bg-accent dark:text-white' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800' }} transition-colors duration-200" aria-expanded="false" aria-controls="pantau-dropdown">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6l-2 2m0 0l-2-2m4 4l2 2m-2-2l-2 2m-4 4h8m0-4H8" />
-                    </svg>
-                    <span class="flex-grow">Pantau Kualitas</span>
+                    <i class="fa-solid fa-gauge"></i>
+                    <span class="flex-grow -ml-7">Pantau Kualitas</span>
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-auto transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                     </svg>
