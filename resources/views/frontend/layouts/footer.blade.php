@@ -1,54 +1,4 @@
-<!-- Footer Section -->
-<footer class=" text-zinc-900 dark:text-white py-10 mt-[8rem]">
-    <div class="container mx-auto px-6 md:px-12 lg:px-16">
-        <!-- Footer Top -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
-            <!-- Footer Logo and Description -->
-            <div class="footer-logo mb-6 md:mb-0 flex flex-col items-center md:items-start">
-                <a href="#" class="flex items-center">
-                    <img class="w-28 block dark:hidden" src="{{ asset('img/logo/logo-light.png') }}" alt="Logo">
-                    <img class="w-28 hidden dark:block" src="{{ asset('img/logo/logo-dark.png') }}" alt="Logo">
-                    <span class="text-2xl font-bold ml-3">AgriConnect</span>
-                </a>
-                <p class="mt-3 text-center md:text-left">Connecting farmers with modern technology and digital markets
-                    to enhance agricultural productivity and sustainability.</p>
-            </div>
-
-            <!-- Footer Links -->
-            <div class="footer-links">
-                <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
-                <ul class="space-y-2">
-                    <li><a href="/" class="hover:text-accent transition">Home</a></li>
-                    <li><a href="/#about" class="hover:text-accent transition">About Us</a></li>
-                    <li><a href="/#services" class="hover:text-accent transition">Services</a></li>
-                    <li><a href="/contact" class="hover:text-accent transition">Contact</a></li>
-                </ul>
-            </div>
-
-            <!-- Footer Social Media -->
-            <div class="footer-social">
-                <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
-                <div class="flex space-x-4">
-                    <a href="https://web.facebook.com/" aria-label="Facebook" target="_blank"
-                        class="hover:text-accent transition">
-                        <i class="fab fa-facebook-f fa-2x"></i>
-                    </a>
-                    <a href="https://x.com/" target="_blank" aria-label="Twitter" class="hover:text-accent transition">
-                        <i class="fab fa-twitter fa-2x"></i>
-                    </a>
-                    <a href="https://www.instagram.com/" aria-label="Instagram" target="_blank"
-                        class="hover:text-accent transition">
-                        <i class="fab fa-instagram fa-2x"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/" aria-label="LinkedIn" target="_blank"
-                        class="hover:text-accent transition">
-                        <i class="fab fa-linkedin-in fa-2x"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
+<x-user-footer />
 
 <script>
     document.querySelectorAll('.accordion-toggle').forEach((button) => {
@@ -59,23 +9,31 @@
     });
 </script>
 
+{{-- Navbar functionality --}}
 <script src="{{ asset('js/navbar.js') }}"></script>
 
+{{-- AOS (Animate On Scroll) library --}}
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+{{-- FontAwesome for icons --}}
 <script src="https://kit.fontawesome.com/cff8b87f33.js" crossorigin="anonymous"></script>
+
+{{-- Lenis smooth scroll --}}
 <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
 
-{{-- gsap --}}
-
-{{-- @include('frontend.components.gsap') --}}'
-
+{{-- GSAP (GreenSock Animation Platform) --}}
 @include('frontend.components.gsap')
+
 <script src="{{ asset('js/script.js') }}"></script>
 <script src="{{ asset('js/gsap.js') }}"></script>
 <script src="{{ asset('js/preload.js') }}"></script>
+
+{{-- SweetAlert --}}
 @include('sweetalert::alert')
 
 <script>
+    let mouseX = 0, mouseY = 0, posX = 0, posY = 0;
+
     gsap.to(".cursor-example", {
         duration: 0.018,
         repeat: -1,
