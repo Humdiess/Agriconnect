@@ -17,6 +17,26 @@
         filter: blur(100px);
         border-radius: 9999px;
     }
+
+    /* Animasi untuk elemen yang muncul saat di-scroll */
+    .fade-in-up {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-in-up.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Animasi hover untuk kartu */
+    .hover-lift {
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+    .hover-lift:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
 </style>
 
 <section class="hero-container relative" id="home">
@@ -30,7 +50,7 @@
             <div class="hero-title text-center max-w-4xl mx-auto">
                 <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white leading-tight mb-6">
                     <span class="block">AgriConnect</span>
-                    <span class="block text-accent">Revolusi Pertanian Tebu Anda</span>
+                    <span class="block text-accent">Revolusi Pertanian Tebu</span>
                 </h1>
                 <p class="mt-6 text-xl sm:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
                     Tingkatkan hasil panen dan bangun masa depan yang lebih baik dengan teknologi IoT dan AI kami.
@@ -62,13 +82,13 @@
     </div>
 </section>
 
-<section class="about-container relative py-20 px-4 sm:px-6 lg:px-16 bg-white dark:bg-ireng" id="about">
+<section x-data="{ activeTab: 'daftar' }" class="about-container relative py-20 px-4 sm:px-6 lg:px-16 bg-white dark:bg-ireng" id="about">
     <div class="aurora-bg hidden lg:block">
         <div class="aurora from-accent/65 to-accent/35 top-[10%] left-[10%]"></div>
     </div>
 
     <div class="max-w-7xl mx-auto relative z-10">
-        <div class="text-center mb-20">
+        <div class="text-center mb-20 fade-in-up">
             <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6">
                 <span class="block">Solusi Inovatif untuk</span>
                 <span class="block text-accent">Pertanian Tebu Modern</span>
@@ -92,7 +112,7 @@
                 ],
                 [
                     'title' => 'AI untuk Rekomendasi Perawatan',
-                    'icon' => 'M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z',
+                    'icon' => 'M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z',
                     'description' => 'AI kami menganalisis data untuk memberikan rekomendasi perawatan yang personal dan tepat waktu, membantu Anda mengoptimalkan hasil panen.'
                 ],
                 [
@@ -110,8 +130,8 @@
                     'icon' => 'M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z',
                     'description' => 'Tim ahli kami siap membantu Anda dengan konsultasi gratis, pembinaan teknologi, dan strategi pemasaran hasil panen.'
                 ]
-            ] as $card)
-                <div class="bg-white/75 dark:bg-gray-900/65 backdrop-blur-xl border dark:border-zinc-600 rounded-lg overflow-hidden">
+            ] as $index => $card)
+                <div class="bg-white/75 dark:bg-gray-900/65 backdrop-blur-xl border dark:border-zinc-600 rounded-lg overflow-hidden hover-lift fade-in-up" style="transition-delay: {{ $index * 100 }}ms">
                     <div class="p-8">
                         <div class="flex items-center mb-6">
                             <div class="bg-accent rounded-full p-3 mr-4">
@@ -140,7 +160,7 @@
     </div>
 
     <div class="max-w-7xl mx-auto relative z-10">
-        <div class="text-center mb-16">
+        <div class="text-center mb-16 fade-in-up">
             <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6">
                 <span class="block">Bagaimana</span>
                 <span class="block text-accent">AgriConnect Bekerja</span>
@@ -183,7 +203,7 @@
                     'description' => 'Nikmati peningkatan hasil panen dan kualitas tebu Anda. Dengan AgriConnect, Anda dapat mencapai potensi penuh dari lahan Anda.'
                 ]
             ] as $index => $step)
-                <div class="bg-white/75 dark:bg-ireng/65 backdrop-blur-xl border dark:border-zinc-600 rounded-lg overflow-hidden">
+                <div class="bg-white/75 dark:bg-ireng/65 backdrop-blur-xl border dark:border-zinc-600 rounded-lg overflow-hidden hover-lift fade-in-up" style="transition-delay: {{ $index * 100 }}ms">
                     <div class="p-8">
                         <div class="flex items-center mb-6">
                             <div class="bg-accent rounded-full p-3 mr-4">
@@ -218,14 +238,14 @@
     </div>
 </section>
 
-<section class="faq-container relative bg-white dark:bg-ireng py-20 px-4 sm:px-6 lg:px-16">
+<section x-data="{ activeIndex: null }" class="faq-container relative bg-white dark:bg-ireng py-20 px-4 sm:px-6 lg:px-16">
     <div class="aurora-bg hidden lg:block">
         <div class="aurora from-accent/35 to-accent/15 top-[40%] left-[15%]"></div>
         <div class="aurora from-accent/35 to-accent/15 bottom-[20%] right-[25%]"></div>
     </div>
 
     <div class="max-w-4xl mx-auto relative z-10">
-        <div class="text-center mb-16">
+        <div class="text-center mb-16 fade-in-up">
             <h2 class="text-base text-accent font-semibold tracking-wide uppercase">FAQ</h2>
             <p class="mt-2 text-3xl sm:text-4xl leading-8 font-bold tracking-tight text-gray-900 dark:text-white">
                 Pertanyaan yang Sering Diajukan
@@ -236,82 +256,120 @@
         </div>
 
         <div class="space-y-6">
-                    @php
-                        $faqs = [
-                            [
-                                'question' =>
-                                    'Apa itu AgriConnect dan bagaimana ini bisa membantu saya sebagai petani?',
-                                'answer' =>
-                                    'AgriConnect adalah platform yang menghubungkan petani dengan teknologi seperti kecerdasan buatan (AI) dan Internet of Things (IoT), serta membuka akses ke pasar digital. Platform ini dirancang untuk membantu petani mengelola lahan dengan lebih efisien, memprediksi cuaca, serta menemukan harga pasar yang lebih baik.',
-                            ],
-                            [
-                                'question' =>
-                                    'Saya petani kecil di pedesaan, apakah saya bisa menggunakan teknologi AgriConnect?',
-                                'answer' =>
-                                    'Ya, AgriConnect dirancang agar mudah diakses oleh petani dari berbagai skala usaha, termasuk petani kecil. Kami menyediakan teknologi yang mudah digunakan dan bisa disesuaikan dengan kebutuhan Anda, baik untuk memantau lahan, memprediksi cuaca, atau menjual hasil panen langsung ke pasar digital.',
-                            ],
-                            [
-                                'question' => 'Bagaimana Tani AI bisa membantu saya di ladang?',
-                                'answer' =>
-                                    'Tani AI menggunakan data seperti cuaca, kondisi tanah, dan pola tanaman untuk memberikan saran terbaik kepada Anda. Dengan Tani AI, Anda bisa mengetahui kapan waktu terbaik untuk menanam, berapa banyak air yang dibutuhkan tanaman, serta peringatan dini jika ada ancaman hama atau penyakit.',
-                            ],
-                            [
-                                'question' => 'Apa manfaat menggunakan sensor IoT di lahan saya?',
-                                'answer' =>
-                                    'Sensor IoT memungkinkan Anda untuk memantau kondisi lahan secara real-time tanpa harus selalu berada di lapangan. Misalnya, sensor ini bisa memantau kelembapan tanah, suhu, dan kualitas udara. Data tersebut dikirim langsung ke ponsel Anda melalui aplikasi AgriConnect, sehingga Anda bisa membuat keputusan yang lebih cepat dan tepat, seperti kapan harus menyiram atau menambah pupuk. Ini akan membantu Anda menghemat waktu dan mengelola sumber daya dengan lebih efisien.',
-                            ],
-                            [
-                                'question' =>
-                                    'Bagaimana saya bisa menjual produk langsung ke pasar melalui AgriConnect?',
-                                'answer' =>
-                                    'AgriConnect memiliki fitur pasar digital yang memungkinkan Anda menjual hasil panen secara langsung ke pembeli tanpa perlu melalui perantara. Platform ini memberi Anda akses ke pasar yang lebih luas dan memungkinkan Anda menetapkan harga yang lebih adil untuk produk Anda. Hal ini diharapkan dapat meningkatkan pendapatan petani dan mengurangi ketergantungan pada tengkulak.',
-                            ],
-                            [
-                                'question' => 'Bagaimana cara memulai menggunakan AgriConnect?',
-                                'answer' =>
-                                    'Untuk memulai, Anda hanya perlu mendaftar melalui situs web atau aplikasi AgriConnect. Setelah itu, Anda dapat mengatur profil lahan Anda, mulai memantau data cuaca dan kondisi tanah, serta terhubung dengan pasar digital. Jika Anda memerlukan bantuan, kami memiliki tim dukungan yang siap membantu Anda memahami cara menggunakan setiap fitur.',
-                            ],
-                            [
-                                'question' => 'Apakah AgriConnect dapat membantu saya meningkatkan hasil panen?',
-                                'answer' =>
-                                    'Tentu! Dengan memanfaatkan teknologi seperti Tani AI dan IoT, AgriConnect membantu Anda membuat keputusan yang lebih baik terkait waktu tanam, penggunaan air, dan pemantauan kondisi tanaman. Ini diharapkan dapat meningkatkan hasil panen Anda, mengurangi risiko kerugian, dan memastikan tanaman tumbuh dalam kondisi optimal.',
-                            ],
-                            [
-                                'question' =>
-                                    'Saya tinggal di daerah terpencil. Apakah AgriConnect masih bisa digunakan di sana?',
-                                'answer' =>
-                                    'AgriConnect bisa digunakan di berbagai wilayah di Indonesia, termasuk daerah terpencil, selama ada akses internet. Kami juga sedang mengembangkan solusi untuk membantu petani di daerah dengan koneksi terbatas agar tetap bisa memanfaatkan teknologi IoT dan AI.',
-                            ],
-                            [
-                                'question' => 'Bagaimana cara saya mendapatkan dukungan jika mengalami masalah teknis?',
-                                'answer' =>
-                                    'Jika Anda mengalami kesulitan atau masalah teknis saat menggunakan AgriConnect, tim dukungan kami selalu siap membantu. Anda dapat menghubungi kami melalui email, layanan chat di aplikasi, atau melalui nomor telepon hotline kami. Kami juga menyediakan tutorial dan panduan pengguna untuk membantu Anda mengatasi kendala umum.',
-                            ],
-                            [
-                                'question' => 'Apakah saya perlu keahlian teknologi untuk menggunakan AgriConnect?',
-                                'answer' =>
-                                    'Tidak perlu! AgriConnect dirancang agar mudah digunakan oleh petani dari berbagai latar belakang. Kami menyadari bahwa tidak semua petani terbiasa dengan teknologi, sehingga platform kami intuitif dan disertai panduan yang jelas. Selain itu, kami menyediakan dukungan teknis untuk membantu Anda jika ada kesulitan.',
-                            ],
-                        ];
-                    @endphp
-
-            @foreach ($faqs as $index => $faq)
-                <div x-data="{ open: false }" class="bg-white/45 dark:bg-gray-900/65 rounded-lg border dark:border-zinc-600 backdrop-blur-xl overflow-hidden">
-                    <button @click="open = !open" class="flex justify-between items-center w-full px-6 py-4 text-left focus:outline-none">
-                        <span class="text-lg font-semibold text-gray-900 dark:text-white">{{ $faq['question'] }}</span>
-                        <svg :class="{'rotate-180': open}" class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </button>
-                    <div x-show="open" class="px-6 pb-4">
-                        <p class="text-gray-600 dark:text-gray-300">{{ $faq['answer'] }}</p>
+            @php
+                $faqs = [
+                    [
+                        'question' =>
+                            'Apa itu AgriConnect dan bagaimana ini bisa membantu saya sebagai petani?',
+                        'answer' =>
+                            'AgriConnect adalah platform yang menghubungkan petani dengan teknologi seperti kecerdasan buatan (AI) dan Internet of Things (IoT), serta membuka akses ke pasar digital. Platform ini dirancang untuk membantu petani mengelola lahan dengan lebih efisien, memprediksi cuaca, serta menemukan harga pasar yang lebih baik.',
+                    ],
+                    [
+                        'question' =>
+                            'Saya petani kecil di pedesaan, apakah saya bisa menggunakan teknologi AgriConnect?',
+                        'answer' =>
+                            'Ya, AgriConnect dirancang agar mudah diakses oleh petani dari berbagai skala usaha, termasuk petani kecil. Kami menyediakan teknologi yang mudah digunakan dan bisa disesuaikan dengan kebutuhan Anda, baik untuk memantau lahan, memprediksi cuaca, atau menjual hasil panen langsung ke pasar digital.',
+                    ],
+                    [
+                        'question' => 'Bagaimana Tani AI bisa membantu saya di ladang?',
+                        'answer' =>
+                            'Tani AI menggunakan data seperti cuaca, kondisi tanah, dan pola tanaman untuk memberikan saran terbaik kepada Anda. Dengan Tani AI, Anda bisa mengetahui kapan waktu terbaik untuk menanam, berapa banyak air yang dibutuhkan tanaman, serta peringatan dini jika ada ancaman hama atau penyakit.',
+                    ],
+                    [
+                        'question' => 'Apa manfaat menggunakan sensor IoT di lahan saya?',
+                        'answer' =>
+                            'Sensor IoT memungkinkan Anda untuk memantau kondisi lahan secara real-time tanpa harus selalu berada di lapangan. Misalnya, sensor ini bisa memantau kelembapan tanah, suhu, dan kualitas udara. Data tersebut dikirim langsung ke ponsel Anda melalui aplikasi AgriConnect, sehingga Anda bisa membuat keputusan yang lebih cepat dan tepat, seperti kapan harus menyiram atau menambah pupuk. Ini akan membantu Anda menghemat waktu dan mengelola sumber daya dengan lebih efisien.',
+                    ],
+                    [
+                        'question' =>
+                            'Bagaimana saya bisa menjual produk langsung ke pasar melalui AgriConnect?',
+                        'answer' =>
+                            'AgriConnect memiliki fitur pasar digital yang memungkinkan Anda menjual hasil panen secara langsung ke pembeli tanpa perlu melalui perantara. Platform ini memberi Anda akses ke pasar yang lebih luas dan memungkinkan Anda menetapkan harga yang lebih adil untuk produk Anda. Hal ini diharapkan dapat meningkatkan pendapatan petani dan mengurangi ketergantungan pada tengkulak.',
+                    ],
+                    [
+                        'question' => 'Bagaimana cara memulai menggunakan AgriConnect?',
+                        'answer' =>
+                            'Untuk memulai, Anda hanya perlu mendaftar melalui situs web atau aplikasi AgriConnect. Setelah itu, Anda dapat mengatur profil lahan Anda, mulai memantau data cuaca dan kondisi tanah, serta terhubung dengan pasar digital. Jika Anda memerlukan bantuan, kami memiliki tim dukungan yang siap membantu Anda memahami cara menggunakan setiap fitur.',
+                    ],
+                    [
+                        'question' => 'Apakah AgriConnect dapat membantu saya meningkatkan hasil panen?',
+                        'answer' =>
+                            'Tentu! Dengan memanfaatkan teknologi seperti Tani AI dan IoT, AgriConnect membantu Anda membuat keputusan yang lebih baik terkait waktu tanam, penggunaan air, dan pemantauan kondisi tanaman. Ini diharapkan dapat meningkatkan hasil panen Anda, mengurangi risiko kerugian, dan memastikan tanaman tumbuh dalam kondisi optimal.',
+                    ],
+                    [
+                        'question' =>
+                            'Saya tinggal di daerah terpencil. Apakah AgriConnect masih bisa digunakan di sana?',
+                        'answer' =>
+                            'AgriConnect bisa digunakan di berbagai wilayah di Indonesia, termasuk daerah terpencil, selama ada akses internet. Kami juga sedang mengembangkan solusi untuk membantu petani di daerah dengan koneksi terbatas agar tetap bisa memanfaatkan teknologi IoT dan AI.',
+                    ],
+                    [
+                        'question' => 'Bagaimana cara saya mendapatkan dukungan jika mengalami masalah teknis?',
+                        'answer' =>
+                            'Jika Anda mengalami kesulitan atau masalah teknis saat menggunakan AgriConnect, tim dukungan kami selalu siap membantu. Anda dapat menghubungi kami melalui email, layanan chat di aplikasi, atau melalui nomor telepon hotline kami. Kami juga menyediakan tutorial dan panduan pengguna untuk membantu Anda mengatasi kendala umum.',
+                    ],
+                    [
+                        'question' => 'Apakah saya perlu keahlian teknologi untuk menggunakan AgriConnect?',
+                        'answer' =>
+                            'Tidak perlu! AgriConnect dirancang agar mudah digunakan oleh petani dari berbagai latar belakang. Kami menyadari bahwa tidak semua petani terbiasa dengan teknologi, sehingga platform kami intuitif dan disertai panduan yang jelas. Selain itu, kami menyediakan dukungan teknis untuk membantu Anda jika ada kesulitan.',
+                    ],
+                ];
+            @endphp
+            <div class="space-y-6">
+                @foreach ($faqs as $index => $faq)
+                    <div class="bg-white/45 dark:bg-gray-900/65 rounded-lg border dark:border-zinc-600 backdrop-blur-xl overflow-hidden transition-all duration-300 ease-in-out hover-lift fade-in-up" style="transition-delay: {{ $index * 50 }}ms">
+                        <button @click="activeIndex = activeIndex === {{ $index }} ? null : {{ $index }}" class="flex justify-between items-center w-full px-6 py-4 text-left focus:outline-none">
+                            <span class="text-lg font-semibold text-gray-900 dark:text-white">{{ $faq['question'] }}</span>
+                            <svg :class="{'rotate-180': activeIndex === {{ $index }}}" class="w-6 h-6 text-accent transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div
+                            x-show="activeIndex === {{ $index }}"
+                            x-transition:enter="transition ease-out duration-300"
+                            x-transition:enter-start="opacity-0 transform scale-95"
+                            x-transition:enter-end="opacity-100 transform scale-100"
+                            x-transition:leave="transition ease-in duration-300"
+                            x-transition:leave-start="opacity-100 transform scale-100"
+                            x-transition:leave-end="opacity-0 transform scale-95"
+                            class="px-6 pb-4"
+                        >
+                            <p class="text-gray-600 dark:text-gray-300">{{ $faq['answer'] }}</p>
+                        </div>
                     </div>
-                </div>
-            @endforeach
+                @endforeach
+            </div>
         </div>
     </div>
 </section>
 
 @include('frontend.layouts.footer')
 
+<!-- Tambahkan script GSAP dan Lenis -->
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+
+<script>
+    // Fungsi untuk mendeteksi elemen yang terlihat saat di-scroll
+    function handleScrollAnimation() {
+        const elements = document.querySelectorAll('.fade-in-up');
+        elements.forEach(el => {
+            if (isElementInViewport(el)) {
+                el.classList.add('is-visible');
+            }
+        });
+    }
+
+    // Fungsi untuk memeriksa apakah elemen terlihat di viewport
+    function isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+
+    // Jalankan animasi saat halaman dimuat dan di-scroll
+    window.addEventListener('load', handleScrollAnimation);
+    window.addEventListener('scroll', handleScrollAnimation);
+</script>

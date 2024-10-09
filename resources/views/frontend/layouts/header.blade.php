@@ -51,7 +51,7 @@
 <body class="antialiased bg-white dark:bg-ireng transition-all" data-lenis-prevent data-speed="0.5">
 
 
-    <div class="cursor-example z-[99999999999]"></div>
+    <div class="cursor-example z-[99999999999] hidden lg:block"></div>
 
     @include('frontend.components.navbar')
     @include('frontend.components.preload')

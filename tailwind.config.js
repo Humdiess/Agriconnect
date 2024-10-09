@@ -16,12 +16,6 @@ export default {
         card: "#13161D",
         ireng: "#191C25",
         accent: "#06C790",
-        hijau2: "#A7D49B",
-        abu1: "#333333",
-        abu2: "#666666",
-        bordercolor: "#F0F0F0",
-        sixth: "#74512D",
-        hero: "#594c20f5",
       },
       fontFamily: {
         lato: ["Lato"],
