@@ -45,7 +45,7 @@
     </style>
 </head>
 
-<body class="antialiased bg-white dark:bg-ireng transition-all" data-lenis-prevent data-speed="0.5">
+<body class="antialiased dark:bg-ireng transition-all" data-lenis-prevent data-speed="0.5">
 
 
     <div class="cursor-example"></div>

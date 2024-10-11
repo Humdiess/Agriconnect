@@ -28,7 +28,7 @@
     <div class="hero-wrapper w-full relative z-10 py-32 md:py-32">
         <div class="hero w-100 flex flex-col items-center justify-center mx-8">
             <div class="hero-title text-center max-w-4xl mx-auto">
-                <h1 class="text-4xl mt-6 sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white leading-tight mb-6">
+                <h1 class="text-4xl mt-12 sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white leading-tight mb-6">
                     <span class="block">AgriConnect</span>
                     <span class="block text-accent">Revolusi Pertanian Tebu</span>
                 </h1>
@@ -52,11 +52,12 @@
         </div>
     </div>
 
-    <div class="hero-image-wrapper w-full flex justify-center  md:-mt-20 mb-20">
-        <div class="hero-image aspect-video rounded-lg border dark:border-zinc-600 overflow-hidden max-w-5xl mx-auto">
-            <img class="w-full h-full object-cover rounded-lg hidden dark:block"
+    <div class="hero-image-wrapper w-full flex justify-center md:-mt-18 mb-20">
+        <div class="hero-image aspect-video rounded-lg overflow-hidden max-w-5xl mx-auto relative p-4 bg-gradient-to-r from-accent via-green-400 to-accent">
+            <div class="absolute inset-0 bg-white dark:bg-ireng m-[1px] rounded-lg"></div>
+            <img class="w-full h-full object-cover rounded-lg hidden dark:block relative z-10"
                 src="{{ asset('img/tani/dashboard-agri-dark.webp') }}" alt="Dashboard Pertanian Tebu">
-            <img class="w-full h-full object-cover rounded-lg block dark:hidden"
+            <img class="w-full h-full object-cover rounded-lg block dark:hidden relative z-10"
                 src="{{ asset('img/tani/dashboard-agri-light.webp') }}" alt="Dashboard Pertanian Tebu">
         </div>
     </div>

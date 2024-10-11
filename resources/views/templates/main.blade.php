@@ -1,133 +1,102 @@
 @include('templates.header')
 
-<header>
-    <div class="p-4 border-b dark:border-zinc-600 fixed left-0 right-0 bg-white dark:bg-ireng/40 backdrop-blur-3xl bg-white/40 flex justify-between lg:hidden transition-all">
-        {{-- navbar toggler --}}
-        <div class="lg:hidden">
-            <button type="button" id="mobile-menu-toggler"
-                class="dark:bg-gray-800 bg-gray-100 inline-flex items-center justify-center p-2 rounded-md dark:text-gray-400 text-whit hover:text-white hover:bg-gray-300 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white"
-                aria-controls="mobile-menu" aria-expanded="false">
-                <span class="sr-only">Open main menu</span>
-                <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-                <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-            </button>
-        </div>
-        <div class="flex items-center space-x-2">
-            <img src="{{ asset('img/logo/header-logo.png') }}" alt="Logo" class="w-8 h-8">
-            <div>
-                <img src="{{ asset('img/logo/logo-light.png') }}" alt="Logo text" class="h-6 block dark:hidden">
-                <img src="{{ asset('img/logo/logo-dark.png') }}" alt="Logo text" class="h-6 hidden dark:block">
-            </div>
-        </div>
-    </div>
-</header>
-<div class="flex w-full bg-white h-screen dark:bg-ireng">
-    <div id="backdrop" class="hidden fixed inset-0 bg-black opacity-50 z-30"></div>
+<div class="flex flex-row sm:gap-3">
+	<div class="sm:w-full sm:max-w-[18rem]">
+		<input type="checkbox" id="sidebar-mobile-fixed" class="sidebar-state" />
+		<label for="sidebar-mobile-fixed" class="sidebar-overlay"></label>
+		<aside class="sidebar sidebar-fixed-left sidebar-mobile h-full justify-start max-sm:fixed max-sm:-translate-x-full bg-ireng border-r border-zinc-700">
+			<section class="sidebar-title items-center p-4">
+                <img src="{{ asset('img/logo/app-logo.png') }}" alt="logo" class="h-10 w-10 rounded-full">
+				<div class="flex flex-col ml-4">
+					<span>Agriconnect</span>
+					<span class="text-xs font-normal text-content2">Petani tebu</span>
+				</div>
+			</section>
+			<section class="sidebar-content">
+				<nav class="menu rounded-md">
+					<section class="menu-section px-4">
+						<ul class="menu-items">
+							<li class="menu-item hover:bg-gray-800">
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 opacity-75" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+									<path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+									<path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+								</svg>
+								<span>Dashboard</span>
+							</li>
+							<li>
+								<input type="checkbox" id="menu-1" class="menu-toggle" />
+								<label class="menu-item justify-between hover:bg-gray-800" for="menu-1">
+									<div class="flex gap-2 ">
+										<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 opacity-75" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+											<path stroke-linecap="round" stroke-linejoin="round" d="M3 3v18h18M3 12h18M8 6v6m4-6v6m4-6v6" />
+										</svg>
+										<span>Pantau Lahan</span>
+									</div>
 
-    <aside id="menu-mobile" class="w-64 fixed z-[35] -left-64 lg:left-0 top-0 bottom-0 bg-white dark:bg-ireng/25 backdrop-blur-xl overflow-y-auto flex flex-col justify-between border-r dark:border-zinc-600 transition-all scrollbar-hide">
-    <!-- Close Button -->
-    <button type="button" id="close-menu" class="lg:hidden absolute top-4 right-4 p-2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 rounded-full hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors duration-200">
-        <span class="sr-only">Close menu</span>
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-        </svg>
-    </button>
+									<span class="menu-icon">
+										<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+											<path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+										</svg>
+									</span>
+								</label>
 
-    <div class="flex-grow mt-12 lg:mt-0">
-        <div class="p-4 border-b dark:border-zinc-600 hidden lg:block">
-            <div class="flex items-center space-x-2">
-                <img src="{{ asset('img/logo/header-logo.png') }}" alt="Logo" class="w-8 h-8">
-                <div>
-                    <img src="{{ asset('img/logo/logo-light.png') }}" alt="Logo text" class="h-6 block dark:hidden">
-                    <img src="{{ asset('img/logo/logo-dark.png') }}" alt="Logo text" class="h-6 hidden dark:block">
-                </div>
-            </div>
-        </div>
-        <nav class="my-6 px-4">
-            <a href="{{ url('/') }}" class="flex items-center px-2 py-3 rounded-lg mb-2 {{ $active == 'home' ? 'text-white bg-accent dark:text-white' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800' }} transition-colors duration-200">
-                <i class="fas fa-home w-5 h-5 mr-3 flex-shrink-0"></i>
-                <span class="flex-grow">Kembali Ke Beranda</span>
-            </a>
-            <a href="{{ url('/dashboard-tani') }}" class="flex items-center px-2 py-3 rounded-lg mb-2 {{ $active == 'dashboard' ? 'text-white bg-accent  dark:text-white' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800' }} transition-colors duration-200">
-                <i class="fa-solid fa-table-columns"></i>
-                <span class="flex-grow ml-4">Dashboard Tani</span>
-            </a>
+								<div class="menu-item-collapse">
+									<div class="min-h-0">
+										<label class="menu-item menu-item-disabled ml-6">Pantau lahan</label>
+										<label class="menu-item ml-6 hover:bg-gray-800">Profile</label>
+										<label class="menu-item ml-6 hover:bg-gray-800">Change Password</label>
+									</div>
+								</div>
+							</li>
+                            <li class="menu-item hover:bg-gray-800">
+								<svg xmlns="http://www.w3.org/2000/svg" class="opacity-75" width="22" height="22" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+									<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+									<path d="M7 10l5 -6l5 6"></path>
+									<path d="M21 10l-2 8a2 2.5 0 0 1 -2 2h-10a2 2.5 0 0 1 -2 -2l-2 -8z"></path>
+									<path d="M12 15m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
+								</svg>
+								Products
+							</li>
+						</ul>
+					</section>
+				</nav>
+			</section>
+			<section class="sidebar-footer justify-end pt-2 bg-ireng">
+				<div class="divider my-0"></div>
+				<div class="dropdown z-50 flex h-fit w-full cursor-pointer hover:bg-gray-800">
+					<label class="whites mx-2 flex h-fit w-full cursor-pointer p-0 hover:bg-gray-800" tabindex="0">
+						<div class="flex flex-row gap-4 p-4">
+							<div class="avatar-square avatar avatar-md">
+								<img src="https://i.pravatar.cc/150?img=30" alt="avatar" />
+							</div>
 
-            <div class="mb-2">
-                <button id="pantau-dropdown-toggle" class="flex items-center w-full px-2 py-3 rounded-lg {{ $active == 'pantau' ? 'text-white bg-accent dark:text-white' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800' }} transition-colors duration-200" aria-expanded="false" aria-controls="pantau-dropdown">
-                    <i class="fa-solid fa-gauge"></i>
-                    <span class="flex-grow -ml-7">Pantau Kualitas</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-auto transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                </button>
+							<div class="flex flex-col">
+								<span>{{ Auth::user()->name }}</span>
+							</div>
+						</div>
+					</label>
+					<div class="dropdown-menu-right-top dropdown-menu ml-2 bg-ireng border border-zinc-800">
+						<a class="dropdown-item text-sm hover:bg-gray-800">Profile</a>
+						<a tabindex="-1" class="dropdown-item text-sm hover:bg-gray-800">Account settings</a>
+						<a tabindex="-1" class="dropdown-item text-sm hover:bg-gray-800">Change email</a>
+						<a tabindex="-1" class="dropdown-item text-sm hover:bg-gray-800">Subscriptions</a>
+						<a tabindex="-1" class="dropdown-item text-sm hover:bg-gray-800">Change password</a>
+						<a tabindex="-1" class="dropdown-item text-sm hover:bg-gray-800">Refer a friend</a>
+						<a tabindex="-1" class="dropdown-item text-sm hover:bg-gray-800">Settings</a>
+					</div>
+				</div>
+			</section>
+		</aside>
+	</div>
+	<div class="flex w-full flex-col p-4">
+		<div class="w-fit">
+			<label for="sidebar-mobile-fixed" class="btn-primary btn sm:hidden">Open Sidebar</label>
+		</div>
 
-                <div id="pantau-dropdown" class="hidden pl-8 mt-2 space-y-1">
-                    @foreach ([
-                        ['route' => 'pantau.air', 'label' => 'Kualitas Air', 'active' => $active == 'pantau-air'],
-                        ['route' => 'pantau.suhu', 'label' => 'Suhu Udara & Tanah', 'active' => $active == 'pantau-suhu'],
-                        ['route' => 'pantau.kelembapan', 'label' => 'Kelembaban Tanah', 'active' => $active == 'pantau-kelembaban'],
-                        ['route' => 'pantau.nutrisi', 'label' => 'Nutrisi Tanah', 'active' => $active == 'pantau-nutrisi'],
-                        ['route' => 'pantau.curah-hujan', 'label' => 'Curah Hujan', 'active' => $active == 'pantau-curah-hujan'],
-                    ] as $item)
-                        <a href="{{ route($item['route']) }}" class="block px-2 py-2 rounded-lg {{ $item['active'] ? 'text-white bg-accent  dark:text-white' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-700' }} transition-colors duration-200">
-                            {{ $item['label'] }}
-                        </a>
-                    @endforeach
-                </div>
-            </div>
-
-            <a href="{{ url('/product') }}" class="flex items-center px-2 py-3 rounded-lg {{ $active == 'product' ? 'text-white bg-accent dark:text-white' : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800' }} transition-colors duration-200">
-                <i class="fas fa-shopping-basket w-5 h-5 mr-3 flex-shrink-0"></i>
-                <span class="flex-grow">Kelola Produk Anda</span>
-            </a>
-        </nav>
-    </div>
-
-    <!-- Profile section at the bottom -->
-    <div class="p-4 border-t dark:border-zinc-600">
-        <div class="relative">
-            <button id="profile-dropdown-toggle" class="flex items-center w-full p-2 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors duration-200 focus:outline-none" aria-haspopup="true" aria-expanded="false">
-                <img class="h-8 w-8 rounded-full mr-2 flex-shrink-0" src="/img/farmer.svg" alt="User Avatar">
-                <span class="font-medium flex-grow text-left">{{ auth()->user()->name }}</span>
-                <i class="fas fa-chevron-up ml-auto transition-transform duration-200"></i>
-            </button>
-
-            <!-- Dropdown menu -->
-            <div id="profile-dropdown" class="hidden absolute bottom-full left-0 right-0 mb-2 bg-white dark:bg-zinc-800 shadow-lg rounded-lg overflow-hidden">
-                <a href="{{ url('/profile') }}" class="flex items-center px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors duration-200">
-                    <i class="fas fa-user-circle w-5 h-5 mr-3"></i>
-                    <span>Lihat Profil</span>
-                </a>
-                <a href="{{ url('/logout') }}" class="flex items-center px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors duration-200">
-                    <i class="fas fa-sign-out-alt w-5 h-5 mr-3"></i>
-                    <span>Keluar</span>
-                </a>
-
-                <!-- Theme Toggle -->
-                <div class="px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-700 transition-colors duration-200">
-                    <div class="flex justify-between items-center">
-                        <span>Mode Gelap</span>
-                        <label class="switch relative inline-block w-10 h-6">
-                            <input type="checkbox" id="theme-toggle" class="theme-toggle sr-only">
-                            <span class="slider absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-gray-300 dark:bg-gray-600 rounded-full transition-colors duration-200 before:absolute before:h-4 before:w-4 before:left-1 before:bottom-1 before:bg-white before:rounded-full before:transition-transform before:duration-200 before:ease-in-out"></span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </aside>
-
-    <div class="content-wrapper lg:ml-64 w-full mt-16 lg:mt-0    bg-white dark:bg-ireng">
-        @yield('content')
-    </div>
+		<div class="my-4">
+            @yield('content')
+		</div>
+	</div>
 </div>
 
 <style>

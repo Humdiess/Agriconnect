@@ -22,18 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
             end: "bottom 40%",
             scrub: true
         }
-    });
-
-    gsap.from(".hero-image", {
-        scale: 0.9,
-        duration: 1.2,
-        scrollTrigger: {
-            trigger: ".hero-image",
-            start: "top 80%",
-            end: "bottom 40%",
-            scrub: true,
-        },
-    });
+    }); 
 
     // // About Section Animations
     // gsap.from(".about-header", {
