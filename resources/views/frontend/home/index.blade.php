@@ -52,13 +52,13 @@
         </div>
     </div>
 
-    <div class="hero-image-wrapper w-full flex justify-center md:-mt-18 mb-20">
+    <div class="hero-image-wrapper w-full flex justify-center md:-mt-18 mb-20 ">
         <div class="hero-image aspect-video rounded-lg overflow-hidden max-w-5xl mx-auto relative p-4 bg-gradient-to-r from-accent via-green-400 to-accent">
             <div class="absolute inset-0 bg-white dark:bg-ireng m-[1px] rounded-lg"></div>
             <img class="w-full h-full object-cover rounded-lg hidden dark:block relative z-10"
-                src="{{ asset('img/tani/dashboard-agri-dark.webp') }}" alt="Dashboard Pertanian Tebu">
+                src="{{ asset('img/tani/dashboard-agri-dark.webp') }}" draggable="false" alt="Dashboard Pertanian Tebu">
             <img class="w-full h-full object-cover rounded-lg block dark:hidden relative z-10"
-                src="{{ asset('img/tani/dashboard-agri-light.webp') }}" alt="Dashboard Pertanian Tebu">
+                src="{{ asset('img/tani/dashboard-agri-light.webp') }}" draggable="false" alt="Dashboard Pertanian Tebu">
         </div>
     </div>
 </section>
@@ -78,6 +78,8 @@
                 Kami membantu Anda memaksimalkan potensi lahan dengan dukungan teknologi terdepan dan komunitas yang kuat.
             </p>
         </div>
+
+
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             @foreach([
@@ -236,89 +238,44 @@
             </p>
         </div>
 
-        <div class="space-y-6">
+        <div class="accordion-group accordion-group-bordered">
             @php
-                $faqs = [
-                    [
-                        'question' =>
-                            'Apa itu AgriConnect dan bagaimana ini bisa membantu saya sebagai petani?',
-                        'answer' =>
-                            'AgriConnect adalah platform yang menghubungkan petani dengan teknologi seperti kecerdasan buatan (AI) dan Internet of Things (IoT), serta membuka akses ke pasar digital. Platform ini dirancang untuk membantu petani mengelola lahan dengan lebih efisien, memprediksi cuaca, serta menemukan harga pasar yang lebih baik.',
-                    ],
-                    [
-                        'question' =>
-                            'Saya petani kecil di pedesaan, apakah saya bisa menggunakan teknologi AgriConnect?',
-                        'answer' =>
-                            'Ya, AgriConnect dirancang agar mudah diakses oleh petani dari berbagai skala usaha, termasuk petani kecil. Kami menyediakan teknologi yang mudah digunakan dan bisa disesuaikan dengan kebutuhan Anda, baik untuk memantau lahan, memprediksi cuaca, atau menjual hasil panen langsung ke pasar digital.',
-                    ],
-                    [
-                        'question' => 'Bagaimana Tani AI bisa membantu saya di ladang?',
-                        'answer' =>
-                            'Tani AI menggunakan data seperti cuaca, kondisi tanah, dan pola tanaman untuk memberikan saran terbaik kepada Anda. Dengan Tani AI, Anda bisa mengetahui kapan waktu terbaik untuk menanam, berapa banyak air yang dibutuhkan tanaman, serta peringatan dini jika ada ancaman hama atau penyakit.',
-                    ],
-                    [
-                        'question' => 'Apa manfaat menggunakan sensor IoT di lahan saya?',
-                        'answer' =>
-                            'Sensor IoT memungkinkan Anda untuk memantau kondisi lahan secara real-time tanpa harus selalu berada di lapangan. Misalnya, sensor ini bisa memantau kelembapan tanah, suhu, dan kualitas udara. Data tersebut dikirim langsung ke ponsel Anda melalui aplikasi AgriConnect, sehingga Anda bisa membuat keputusan yang lebih cepat dan tepat, seperti kapan harus menyiram atau menambah pupuk. Ini akan membantu Anda menghemat waktu dan mengelola sumber daya dengan lebih efisien.',
-                    ],
-                    [
-                        'question' =>
-                            'Bagaimana saya bisa menjual produk langsung ke pasar melalui AgriConnect?',
-                        'answer' =>
-                            'AgriConnect memiliki fitur pasar digital yang memungkinkan Anda menjual hasil panen secara langsung ke pembeli tanpa perlu melalui perantara. Platform ini memberi Anda akses ke pasar yang lebih luas dan memungkinkan Anda menetapkan harga yang lebih adil untuk produk Anda. Hal ini diharapkan dapat meningkatkan pendapatan petani dan mengurangi ketergantungan pada tengkulak.',
-                    ],
-                    [
-                        'question' => 'Bagaimana cara memulai menggunakan AgriConnect?',
-                        'answer' =>
-                            'Untuk memulai, Anda hanya perlu mendaftar melalui situs web atau aplikasi AgriConnect. Setelah itu, Anda dapat mengatur profil lahan Anda, mulai memantau data cuaca dan kondisi tanah, serta terhubung dengan pasar digital. Jika Anda memerlukan bantuan, kami memiliki tim dukungan yang siap membantu Anda memahami cara menggunakan setiap fitur.',
-                    ],
-                    [
-                        'question' => 'Apakah AgriConnect dapat membantu saya meningkatkan hasil panen?',
-                        'answer' =>
-                            'Tentu! Dengan memanfaatkan teknologi seperti Tani AI dan IoT, AgriConnect membantu Anda membuat keputusan yang lebih baik terkait waktu tanam, penggunaan air, dan pemantauan kondisi tanaman. Ini diharapkan dapat meningkatkan hasil panen Anda, mengurangi risiko kerugian, dan memastikan tanaman tumbuh dalam kondisi optimal.',
-                    ],
-                    [
-                        'question' =>
-                            'Saya tinggal di daerah terpencil. Apakah AgriConnect masih bisa digunakan di sana?',
-                        'answer' =>
-                            'AgriConnect bisa digunakan di berbagai wilayah di Indonesia, termasuk daerah terpencil, selama ada akses internet. Kami juga sedang mengembangkan solusi untuk membantu petani di daerah dengan koneksi terbatas agar tetap bisa memanfaatkan teknologi IoT dan AI.',
-                    ],
-                    [
-                        'question' => 'Bagaimana cara saya mendapatkan dukungan jika mengalami masalah teknis?',
-                        'answer' =>
-                            'Jika Anda mengalami kesulitan atau masalah teknis saat menggunakan AgriConnect, tim dukungan kami selalu siap membantu. Anda dapat menghubungi kami melalui email, layanan chat di aplikasi, atau melalui nomor telepon hotline kami. Kami juga menyediakan tutorial dan panduan pengguna untuk membantu Anda mengatasi kendala umum.',
-                    ],
-                    [
-                        'question' => 'Apakah saya perlu keahlian teknologi untuk menggunakan AgriConnect?',
-                        'answer' =>
-                            'Tidak perlu! AgriConnect dirancang agar mudah digunakan oleh petani dari berbagai latar belakang. Kami menyadari bahwa tidak semua petani terbiasa dengan teknologi, sehingga platform kami intuitif dan disertai panduan yang jelas. Selain itu, kami menyediakan dukungan teknis untuk membantu Anda jika ada kesulitan.',
-                    ],
-                ];
-            @endphp
-            <div class="space-y-6">
-                @foreach ($faqs as $index => $faq)
-                    <div class="bg-white/45 dark:bg-gray-900/65 rounded-lg border dark:border-zinc-600 backdrop-blur-xl overflow-hidden">
-                        <button @click="activeIndex = activeIndex === {{ $index }} ? null : {{ $index }}" class="flex justify-between items-center w-full px-6 py-4 text-left focus:outline-none">
-                            <span class="text-lg font-semibold text-gray-900 dark:text-white">{{ $faq['question'] }}</span>
-                            <svg :class="{'rotate-180': activeIndex === {{ $index }}}" class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </button>
-                        <div
-                            x-show="activeIndex === {{ $index }}"
-                            x-transition:enter="transition ease-out duration-300"
-                            x-transition:enter-start="opacity-0 transform scale-95"
-                            x-transition:enter-end="opacity-100 transform scale-100"
-                            x-transition:leave="transition ease-in duration-300"
-                            x-transition:leave-start="opacity-100 transform scale-100"
-                            x-transition:leave-end="opacity-0 transform scale-95"
-                            class="px-6 pb-4"
-                        >
-                            <p class="text-gray-600 dark:text-gray-300">{{ $faq['answer'] }}</p>
-                        </div>
-                    </div>
-                @endforeach
+            $faqs = [
+                [
+                    'id-toggle' => 'toggle-1',
+                    'question' =>
+                        'Apa itu AgriConnect dan bagaimana ini bisa membantu saya sebagai petani?',
+                    'answer' =>
+                        'AgriConnect adalah platform yang menghubungkan petani dengan teknologi seperti kecerdasan buatan (AI) dan Internet of Things (IoT), serta membuka akses ke pasar digital. Platform ini dirancang untuk membantu petani mengelola lahan dengan lebih efisien, memprediksi cuaca, serta menemukan harga pasar yang lebih baik.',
+                ],
+                [
+                    'id-toggle' => 'toggle-2',
+                    'question' =>
+                        'Saya petani kecil di pedesaan, apakah saya bisa menggunakan teknologi AgriConnect?',
+                    'answer' =>
+                        'Ya, AgriConnect dirancang agar mudah diakses oleh petani dari berbagai skala usaha, termasuk petani kecil. Kami menyediakan teknologi yang mudah digunakan dan bisa disesuaikan dengan kebutuhan Anda, baik untuk memantau lahan, memprediksi cuaca, atau menjual hasil panen langsung ke pasar digital.',
+                ],
+                [
+                    'id-toggle' => 'toggle-3',
+                    'question' => 'Bagaimana Tani AI bisa membantu saya di ladang?',
+                    'answer' =>
+                        'Tani AI menggunakan data seperti cuaca, kondisi tanah, dan pola tanaman untuk memberikan saran terbaik kepada Anda. Dengan Tani AI, Anda bisa mengetahui kapan waktu terbaik untuk menanam, berapa banyak air yang dibutuhkan tanaman, serta peringatan dini jika ada ancaman hama atau penyakit.',
+                ],
+
+            ];
+        @endphp
+        @foreach ($faqs as $faq)
+            <div class="accordion bg-ireng text-white">
+                <input type="checkbox" id="{{ $faq['id-toggle'] }}" class="accordion-toggle bg-ireng" />
+                <label for="{{ $faq['id-toggle'] }}" class="accordion-title bg-ireng/30 backdrop-blur-md">{{ $faq['question'] }}</label>
+                <span class="accordion-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path></svg>
+                </span>
+                <div class="accordion-content text-content2">
+                    <div class="min-h-0">{{ $faq['answer'] }}</div>
+                </div>
             </div>
+        @endforeach
         </div>
     </div>
 </section>
