@@ -176,7 +176,162 @@
                         </div>
                     </div>
                 </div>
+                <h2 class="text-lg font-semibold text-gray-900 dark:text-white mt-8 mb-4">Pemantauan Rendemen dan Data Pertanian Tebu</h2>
+                <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                    <div class="overflow-hidden shadow-sm rounded-lg border dark:border-zinc-600">
+                        <div class="p-5">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0 bg-accent rounded-md p-3">
+                                    <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+                                    </svg>
+                                </div>
+                                <div class="ml-5 w-0 flex-1">
+                                    <dl>
+                                        <dt class="text-sm font-medium text-accent dark:text-gray-400 truncate">Rendemen Saat Ini</dt>
+                                        <dd class="text-lg font-semibold text-gray-900 dark:text-white">8.5%</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-zinc-700 px-5 py-3">
+                            <div class="text-sm">
+                                <span class="font-medium text-accent">Target: 10% | Progress: 85%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="overflow-hidden shadow-sm rounded-lg border dark:border-zinc-600">
+                        <div class="p-5">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0 bg-accent rounded-md p-3">
+                                    <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <div class="ml-5 w-0 flex-1">
+                                    <dl>
+                                        <dt class="text-sm font-medium text-accent dark:text-gray-400 truncate">Tanggal Panen Efektif (Rekomendasi AI)</dt>
+                                        <dd class="text-lg font-semibold text-gray-900 dark:text-white">15 Agustus 2024</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-zinc-700 px-5 py-3">
+                            <div class="text-sm">
+                                <span class="font-medium text-accent">Estimasi umur tanaman: 12 bulan</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="overflow-hidden shadow-sm rounded-lg border dark:border-zinc-600">
+                        <div class="p-5">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0 bg-accent rounded-md p-3">
+                                    <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                                    </svg>
+                                </div>
+                                <div class="ml-5 w-0 flex-1">
+                                    <dl>
+                                        <dt class="text-sm font-medium text-accent dark:text-gray-400 truncate">Produktivitas Lahan</dt>
+                                        <dd class="text-lg font-semibold text-gray-900 dark:text-white">90 ton/ha</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-zinc-700 px-5 py-3">
+                            <div class="text-sm">
+                                <span class="font-medium text-accent">Rata-rata Sidoarjo: 85 ton/ha</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="overflow-hidden shadow-sm rounded-lg border dark:border-zinc-600">
+                        <div class="p-5">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0 bg-accent rounded-md p-3">
+                                    <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                                    </svg>
+                                </div>
+                                <div class="ml-5 w-0 flex-1">
+                                    <dl>
+                                        <dt class="text-sm font-medium text-accent dark:text-gray-400 truncate">Kebutuhan Air</dt>
+                                        <dd class="text-lg font-semibold text-gray-900 dark:text-white">1,500 mm/tahun</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-zinc-700 px-5 py-3">
+                            <div class="text-sm">
+                                <span class="font-medium text-accent">Curah hujan Sidoarjo: 1,600 mm/tahun</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="overflow-hidden shadow-sm rounded-lg border dark:border-zinc-600">
+                        <div class="p-5">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0 bg-accent rounded-md p-3">
+                                    <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                                    </svg>
+                                </div>
+                                <div class="ml-5 w-0 flex-1">
+                                    <dl>
+                                        <dt class="text-sm font-medium text-accent dark:text-gray-400 truncate">Luas Lahan Tebu Sidoarjo</dt>
+                                        <dd class="text-lg font-semibold text-gray-900 dark:text-white">5,200 ha</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-zinc-700 px-5 py-3">
+                            <div class="text-sm">
+                                <span class="font-medium text-accent">3.5% dari total luas Kabupaten Sidoarjo</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="overflow-hidden shadow-sm rounded-lg border dark:border-zinc-600">
+                        <div class="p-5">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0 bg-accent rounded-md p-3">
+                                    <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                                    </svg>
+                                </div>
+                                <div class="ml-5 w-0 flex-1">
+                                    <dl>
+                                        <dt class="text-sm font-medium text-accent dark:text-gray-400 truncate">Varietas Tebu Dominan</dt>
+                                        <dd class="text-lg font-semibold text-gray-900 dark:text-white">PS 881</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-zinc-700 px-5 py-3">
+                            <div class="text-sm">
+                                <span class="font-medium text-accent">Cocok untuk lahan sawah dan tahan kekeringan</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grafik Tren Rendemen -->
+                <h2 class="text-lg font-semibold text-gray-900 dark:text-white mt-8 mb-4">Tren Rendemen Tebu</h2>
+                <div class="shadow-sm rounded-lg overflow-hidden border dark:border-zinc-600">
+                    <div class="px-4 py-5 sm:p-6">
+                        <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white">Grafik Rendemen Tebu 5 Tahun Terakhir</h3>
+                        <div class="mt-5">
+                            <!-- Placeholder untuk grafik -->
+                            <div class="bg-gray-100 dark:bg-gray-800 h-64 flex items-center justify-center text-gray-500 dark:text-gray-400">
+                                Grafik Rendemen Tebu
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
+        <x-mitra />
     </div>
 @endsection

@@ -1,10 +1,17 @@
 @include('templates.header')
 
-<div class="flex flex-row sm:gap-3">
+<div class="bg-ireng/25 backdrop-blur-lg p-4 fixed left-0 right-0 w-full border-b border-zinc-700 z-50 md:hidden">
+    <div class="w-fit">
+        <label for="sidebar-mobile-fixed" class="btn bg-ireng/35 backdrop-blur-lg border border-zinc-700 sm:hidden">
+            <i class="fas fa-bars"></i>
+        </label>
+    </div>
+</div>
+<div class="flex flex-row sm:gap-3 pt-8 md:pt-0">
 	<div class="sm:w-full sm:max-w-[18rem]">
 		<input type="checkbox" id="sidebar-mobile-fixed" class="sidebar-state" />
 		<label for="sidebar-mobile-fixed" class="sidebar-overlay"></label>
-		<aside class="sidebar sidebar-fixed-left sidebar-mobile h-full justify-start max-sm:fixed max-sm:-translate-x-full bg-ireng border-r border-zinc-700">
+		<aside class="sidebar sidebar-fixed-left sidebar-mobile h-full justify-start max-sm:fixed max-sm:-translate-x-full bg-white dark:bg-ireng border-r border-zinc-700">
 			<section class="sidebar-title items-center p-4">
                 <img src="{{ asset('img/logo/app-logo.png') }}" alt="logo" class="h-10 w-10 rounded-full">
 				<div class="flex flex-col ml-4">
@@ -21,7 +28,7 @@
 									<path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
 									<path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
 								</svg>
-								<span>Dashboard</span>
+								<a href="{{ route('petani.index') }}">Dashboard</a>
 							</li>
 							<li>
 								<input type="checkbox" id="menu-1" class="menu-toggle" />
@@ -43,8 +50,12 @@
 								<div class="menu-item-collapse">
 									<div class="min-h-0">
 										<label class="menu-item menu-item-disabled ml-6">Pantau lahan</label>
-										<label class="menu-item ml-6 hover:bg-gray-800">Profile</label>
-										<label class="menu-item ml-6 hover:bg-gray-800">Change Password</label>
+										<a href="{{ route('pantau.air') }}" class="menu-item ml-6 hover:bg-gray-800">Irigasi</a>
+										<a href="{{ route('pantau.suhu') }}" class="menu-item ml-6 hover:bg-gray-800">Suhu Lahan</a>
+										<a href="{{ route('pantau.kelembapan') }}" class="menu-item ml-6 hover:bg-gray-800">Kelembapan </a>
+										<a href="{{ route('pantau.nutrisi') }}" class="menu-item ml-6 hover:bg-gray-800">Nutrisi Tanaman</a>
+										<a href="{{ route('pantau.curah-hujan') }}" class="menu-item ml-6 hover:bg-gray-800">Curah hujan</a>
+										<a href="{{ route('pantau.tanggal') }}" class="menu-item ml-6 hover:bg-gray-800">Tanggal tanam <span class="badge badge-flat-success">AI Powered</span></a>
 									</div>
 								</div>
 							</li>
@@ -61,7 +72,7 @@
 					</section>
 				</nav>
 			</section>
-			<section class="sidebar-footer justify-end pt-2 bg-ireng">
+			<section class="sidebar-footer justify-end pt-2 dark:bg-ireng bg-white dark:text-white">
 				<div class="divider my-0"></div>
 				<div class="dropdown z-50 flex h-fit w-full cursor-pointer hover:bg-gray-800">
 					<label class="whites mx-2 flex h-fit w-full cursor-pointer p-0 hover:bg-gray-800" tabindex="0">
@@ -76,22 +87,19 @@
 						</div>
 					</label>
 					<div class="dropdown-menu-right-top dropdown-menu ml-2 bg-ireng border border-zinc-800">
-						<a class="dropdown-item text-sm hover:bg-gray-800">Profile</a>
+						<a href="{{ route('home') }}" class="dropdown-item text-sm hover:bg-gray-800">Kembali ke beranda</a>
 						<a tabindex="-1" class="dropdown-item text-sm hover:bg-gray-800">Account settings</a>
-						<a tabindex="-1" class="dropdown-item text-sm hover:bg-gray-800">Change email</a>
-						<a tabindex="-1" class="dropdown-item text-sm hover:bg-gray-800">Subscriptions</a>
-						<a tabindex="-1" class="dropdown-item text-sm hover:bg-gray-800">Change password</a>
-						<a tabindex="-1" class="dropdown-item text-sm hover:bg-gray-800">Refer a friend</a>
-						<a tabindex="-1" class="dropdown-item text-sm hover:bg-gray-800">Settings</a>
+                        <form action="{{ route('auth.logout') }}" method="POST">
+                            @csrf
+                            <button type="submit" class="dropdown-item text-sm hover:bg-gray-800 text-red-600">Logout</button>
+                        </form>
 					</div>
 				</div>
 			</section>
 		</aside>
 	</div>
 	<div class="flex w-full flex-col p-4">
-		<div class="w-fit">
-			<label for="sidebar-mobile-fixed" class="btn-primary btn sm:hidden">Open Sidebar</label>
-		</div>
+
 
 		<div class="my-4">
             @yield('content')

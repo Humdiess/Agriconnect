@@ -1,51 +1,86 @@
-<div class="flex flex-col w-full h-fit dark:text-[#e5e7eb] px-8 py-10 md:px-14 md:py-14">
-    <div class="flex flex-col md:flex-row justify-between">
-        <div class="flex flex-col gap-4 justify-center w-full md:w-[30%]">
-            <div class="flex items-center w-full gap-4">
-                <img src="{{ asset('img/logo/app-logo.png') }}" width="52" alt="Logo">
-                <div class="text-2xl">AGRICONNECT</div>
-            </div>
-            <div class="grid grid-cols-4 gap-4 w-full p-4">
-                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg></a>
-                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path></svg></a>
-                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path></svg></a>
-                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"></path></svg></a>
-            </div>
+<footer class=" text-gray-600 h-fit dark:text-gray-400 py-8 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto ">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 ">
+        <!-- Logo and Social Icons -->
+        <div class="space-y-4">
+          <div class="flex items-center space-x-2">
+            <img src="{{ asset('img/logo/app-logo.png') }}" width="40" height="40" alt="AgriConnect Logo" class="w-10 h-10">
+            <span class="text-xl font-bold">AGRICONNECT</span>
+          </div>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-gray-500">
+              <span class="sr-only">Twitter</span>
+              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+              </svg>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-gray-500">
+              <span class="sr-only">YouTube</span>
+              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill-rule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z" clip-rule="evenodd"></path>
+              </svg>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-gray-500">
+              <span class="sr-only">Facebook</span>
+              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
+              </svg>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-gray-500">
+              <span class="sr-only">LinkedIn</span>
+              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"></path>
+              </svg>
+            </a>
+          </div>
         </div>
-        <div class="flex flex-col md:flex-row w-full md:w-[70%] justify-between mt-8 md:mt-0 gap-8 md:gap-16">
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-12 w-full">
-                <div class="flex flex-col gap-2">
-                    <div class="font-bold uppercase text-[#9ca3af] pb-3">Company</div>
-                    <a href="#xxx" class="hover:underline">About Us</a>
-                    <a href="#xxx" class="hover:underline">Contact</a>
-                    <a href="#xxx" class="hover:underline">Support</a>
-                    <a href="#xxx" class="hover:underline">News</a>
-                    <a href="#xxx" class="hover:underline">Careers</a>
-                </div>
-                <div class="flex flex-col gap-2">
-                    <div class="font-bold uppercase text-[#9ca3af] pb-3">Legal</div>
-                    <a href="#xxx" class="hover:underline">Imprint</a>
-                    <a href="#xxx" class="hover:underline">Privacy Policy</a>
-                    <a href="#xxx" class="hover:underline">Terms of Use</a>
-                    <a href="#xxx" class="hover:underline">Cookies Policy</a>
-                </div>
-                <div class="flex flex-col gap-2">
-                    <div class="font-bold uppercase text-[#9ca3af] pb-3">Services</div>
-                    <a href="#xxx" class="hover:underline">IoT Sensors</a>
-                    <a href="#xxx" class="hover:underline">AI Monitoring</a>
-                    <a href="#xxx" class="hover:underline">Marketplace</a>
-                    <a href="#xxx" class="hover:underline">Farmer Support</a>
-                    <a href="#xxx" class="hover:underline">Smart Irrigation</a>
-                </div>
-            </div>
+
+        <!-- Company Links -->
+        <div>
+          <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">Company</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-gray-900 dark:hover:text-white">About Us</a></li>
+            <li><a href="#" class="hover:text-gray-900 dark:hover:text-white">Contact</a></li>
+            <li><a href="#" class="hover:text-gray-900 dark:hover:text-white">Support</a></li>
+            <li><a href="#" class="hover:text-gray-900 dark:hover:text-white">News</a></li>
+            <li><a href="#" class="hover:text-gray-900 dark:hover:text-white">Careers</a></li>
+          </ul>
         </div>
+
+        <!-- Legal Links -->
+        <div>
+          <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">Legal</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-gray-900 dark:hover:text-white">Imprint</a></li>
+            <li><a href="#" class="hover:text-gray-900 dark:hover:text-white">Privacy Policy</a></li>
+            <li><a href="#" class="hover:text-gray-900 dark:hover:text-white">Terms of Use</a></li>
+            <li><a href="#" class="hover:text-gray-900 dark:hover:text-white">Cookies Policy</a></li>
+          </ul>
+        </div>
+
+        <!-- Services Links -->
+        <div>
+          <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">Services</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-gray-900 dark:hover:text-white">IoT Sensors</a></li>
+            <li><a href="#" class="hover:text-gray-900 dark:hover:text-white">AI Monitoring</a></li>
+            <li><a href="#" class="hover:text-gray-900 dark:hover:text-white">Marketplace</a></li>
+            <li><a href="#" class="hover:text-gray-900 dark:hover:text-white">Farmer Support</a></li>
+            <li><a href="#" class="hover:text-gray-900 dark:hover:text-white">Smart Irrigation</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Section -->
+      <div class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <p class="text-xs">&copy; 2024 AgriConnect. All rights reserved.</p>
+          <nav class="flex space-x-4 mt-4 md:mt-0">
+            <a href="#" class="text-xs hover:text-gray-900 dark:hover:text-white">Privacy Policy</a>
+            <a href="#" class="text-xs hover:text-gray-900 dark:hover:text-white">Terms of Service</a>
+            <a href="#" class="text-xs hover:text-gray-900 dark:hover:text-white">Cookie Settings</a>
+          </nav>
+        </div>
+      </div>
     </div>
-    <div class="flex flex-col md:flex-row justify-between items-center pt-10 text-xs text-[#9ca3af]">
-        <div>© 2024 AgriConnect. All rights reserved.</div>
-        <div class="flex gap-6 mt-4 md:mt-0">
-            <a href="#xxx" class="hover:underline">Privacy Policy</a>
-            <a href="#xxx" class="hover:underline">Terms of Service</a>
-            <a href="#xxx" class="hover:underline">Cookie Settings</a>
-        </div>
-    </div>
-</div>
+  </footer>

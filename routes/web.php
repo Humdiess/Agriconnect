@@ -27,12 +27,12 @@ Route::get('/create-storage-link', function () {
 
 // For Umum
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
-Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
+Route::get('/agri-kontak', [HomeController::class, 'contact'])->name('agri.contact');
+Route::get('/agri-berita', [HomeController::class, 'blog'])->name('agri.berita');
 
 // Agrishop
-Route::get('/agrishop', [HomeController::class, 'agrishop'])->name('agrishop');
-Route::get('/agrishop/{product}', [ProductController::class, 'agrishop_show'])->name('product.agrishop_show');
+Route::get('/agri-shop', [HomeController::class, 'agrishop'])->name('agri.shop');
+Route::get('/agri-shop/{product}', [ProductController::class, 'agrishop_show'])->name('product.agrishop_show');
 
 // Tani Ai
 Route::get('/tani-ai', [TaniController::class, 'index'])->name('tani')->middleware('req_auth');
@@ -82,6 +82,10 @@ Route::middleware([IsFarmer::class])->group(function () {
             $active = 'pantau-curah-hujan';
             return view('frontend.pantau.curah-hujan', compact('active'));
         })->name('pantau.curah-hujan');
+        Route::get('/tanggal-tanam', function () {
+            $active = 'pantau-curah-hujan';
+            return view('frontend.pantau.tanggal', compact('active'));
+        })->name('pantau.tanggal');
     });
 });
 

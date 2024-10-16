@@ -14,7 +14,7 @@
 
     <!-- Meta Description -->
     <meta name="description" content="Agriculture Connect is an online platform for farmers">
-
+    <script src="https://unpkg.com/alpinejs" defer></script>
     {{-- font --}}
     <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">

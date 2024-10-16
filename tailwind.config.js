@@ -25,6 +25,14 @@ export default {
         "rotate": 'rotate 10s linear infinite',
       },
       keyframes: {
+        marquee: {
+            '0%': {
+                transform: 'translateX(0)'
+            },
+            '100%': {
+                transform: 'translateX(-100%)'
+            },
+        },
         rotate: {
             '0%': { transform: 'rotate(0deg) scale(10)' },
             '100%': { transform: 'rotate(-360deg) scale(10)' },
@@ -48,6 +56,7 @@ export default {
         shake: "shake 0.4s ease-in-out infinite",
         slideIn: 'slideIn 0.5s ease-out forwards',
         slideOut: 'slideOut 0.5s ease-in forwards',
+        'marquee': 'marquee 20s linear infinite',
       },
       keyframes: {
         floating: {

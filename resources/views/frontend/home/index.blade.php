@@ -32,7 +32,7 @@
                     <span class="block">AgriConnect</span>
                     <span class="block text-accent">Revolusi Pertanian Tebu</span>
                 </h1>
-                <p class="mt-6 text-xl sm:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                <p class="mt-6 text-xl sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
                     Tingkatkan hasil panen dan bangun masa depan yang lebih baik dengan teknologi IoT dan AI kami.
                 </p>
 
@@ -61,6 +61,10 @@
                 src="{{ asset('img/tani/dashboard-agri-light.webp') }}" draggable="false" alt="Dashboard Pertanian Tebu">
         </div>
     </div>
+</section>
+
+<section id="mitra">
+    <x-mitra />
 </section>
 
 <section x-data="{ activeTab: 'daftar' }" class="about-container relative py-20 px-4 sm:px-6 lg:px-16 bg-white dark:bg-ireng" id="about">
@@ -221,7 +225,7 @@
     </div>
 </section>
 
-<section x-data="{ activeIndex: null }" class="faq-container relative bg-white dark:bg-ireng py-20 px-4 sm:px-6 lg:px-16">
+<section class="faq-container mb-[16rem] relative bg-white dark:bg-ireng py-24 px-4 sm:px-6 lg:px-16 overflow-visible">
     <div class="aurora-bg hidden lg:block">
         <div class="aurora from-accent/35 to-accent/15 top-[40%] left-[15%]"></div>
         <div class="aurora from-accent/35 to-accent/15 bottom-[20%] right-[25%]"></div>
@@ -238,45 +242,7 @@
             </p>
         </div>
 
-        <div class="accordion-group accordion-group-bordered">
-            @php
-            $faqs = [
-                [
-                    'id-toggle' => 'toggle-1',
-                    'question' =>
-                        'Apa itu AgriConnect dan bagaimana ini bisa membantu saya sebagai petani?',
-                    'answer' =>
-                        'AgriConnect adalah platform yang menghubungkan petani dengan teknologi seperti kecerdasan buatan (AI) dan Internet of Things (IoT), serta membuka akses ke pasar digital. Platform ini dirancang untuk membantu petani mengelola lahan dengan lebih efisien, memprediksi cuaca, serta menemukan harga pasar yang lebih baik.',
-                ],
-                [
-                    'id-toggle' => 'toggle-2',
-                    'question' =>
-                        'Saya petani kecil di pedesaan, apakah saya bisa menggunakan teknologi AgriConnect?',
-                    'answer' =>
-                        'Ya, AgriConnect dirancang agar mudah diakses oleh petani dari berbagai skala usaha, termasuk petani kecil. Kami menyediakan teknologi yang mudah digunakan dan bisa disesuaikan dengan kebutuhan Anda, baik untuk memantau lahan, memprediksi cuaca, atau menjual hasil panen langsung ke pasar digital.',
-                ],
-                [
-                    'id-toggle' => 'toggle-3',
-                    'question' => 'Bagaimana Tani AI bisa membantu saya di ladang?',
-                    'answer' =>
-                        'Tani AI menggunakan data seperti cuaca, kondisi tanah, dan pola tanaman untuk memberikan saran terbaik kepada Anda. Dengan Tani AI, Anda bisa mengetahui kapan waktu terbaik untuk menanam, berapa banyak air yang dibutuhkan tanaman, serta peringatan dini jika ada ancaman hama atau penyakit.',
-                ],
-
-            ];
-        @endphp
-        @foreach ($faqs as $faq)
-            <div class="accordion bg-ireng text-white">
-                <input type="checkbox" id="{{ $faq['id-toggle'] }}" class="accordion-toggle bg-ireng" />
-                <label for="{{ $faq['id-toggle'] }}" class="accordion-title bg-ireng/30 backdrop-blur-md">{{ $faq['question'] }}</label>
-                <span class="accordion-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path></svg>
-                </span>
-                <div class="accordion-content text-content2">
-                    <div class="min-h-0">{{ $faq['answer'] }}</div>
-                </div>
-            </div>
-        @endforeach
-        </div>
+        <x-faq />
     </div>
 </section>
 

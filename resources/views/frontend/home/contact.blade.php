@@ -1,7 +1,6 @@
 @extends('frontend.layouts.main')
 
 @section('content')
-    <x-navbar />
     <div class="min-h-screen">
         <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 py-12">
             <div class="lg:grid lg:grid-cols-2 lg:gap-8 mt-12">
@@ -43,7 +42,7 @@
                             <h3 class="text-lg font-medium leading-6 text-gray-900 dark:text-gray-100">Send us a message
                             </h3>
                             <div class="mt-5">
-                                <form action="{{ route('contact') }}" method="POST" id="contact-form">
+                                <form action="{{ route('agri.contact') }}" method="POST" id="contact-form">
                                     @csrf
                                     <div>
                                         <label for="name"
