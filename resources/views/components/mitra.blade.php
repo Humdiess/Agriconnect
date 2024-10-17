@@ -8,11 +8,11 @@
                 content.appendChild(clone);
             });
     "
-    class="relative w-full bg-ireng container-block"
+    class="relative w-full container-block"
     >
-    <div class="relative w-full py-3 mx-auto overflow-hidden text-lg italic tracking-wide text-white uppercase bg-ireng max-w-7xl sm:text-xs md:text-sm lg:text-base xl:text-xl 2xl:text-2xl">
-        <div class="absolute left-0 z-20 w-40 h-full bg-gradient-to-r from-ireng to-transparent"></div>
-        <div class="absolute right-0 z-20 w-40 h-full bg-gradient-to-l from-ireng to-transparent"></div>
+    <div class="relative w-full py-3 mx-auto overflow-hidden text-lg italic tracking-wide text-white uppercase max-w-7xl sm:text-xs md:text-sm lg:text-base xl:text-xl 2xl:text-2xl">
+        <div class="absolute left-0 z-20 w-64 h-full bg-gradient-to-r dark:from-ireng from-white to-transparent"></div>
+        <div class="absolute right-0 z-20 w-64 h-full bg-gradient-to-l dark:from-ireng from-white to-transparent"></div>
         <div x-ref="content" class="flex animate-marquee">
             <div x-ref="item" class="flex items-center justify-around flex-shrink-0 w-full py-2 space-x-2 text-white">
                 <img src="{{ asset('img/sponsor/kementrian-pertanian.svg') }}" alt="kementrian pertanian" class="w-auto translate-y-0.5 fill-current h-9" draggable="false">
