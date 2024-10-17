@@ -7,17 +7,34 @@
             <!-- Logo Section -->
             <div class="mb-6 items-center">
                 <div class="title flex  mb-2 items-center">
-                    <a class="flex items-center justify-center w-8 h-8 mr-4 bg-accent text-black dark:text-white rounded-full" href="/">
+                    <a class="flex items-center justify-center w-8 h-8 mr-4 bg-accent text-black dark:text-white rounded-full"
+                        href="/">
                         <i class="fas fa-chevron-left"></i>
                     </a>
-                    <h1 class="text-xl lg:text-3xl font-semibold pr-3 text-black dark:text-white">Masuk ke Agriconnect</h1>
+                    <h1 class="text-xl lg:text-3xl font-semibold pr-3 text-black dark:text-white">Masuk ke Agriconnect
+                    </h1>
                 </div>
                 <p class="text-gray-500">Masuk ke AGRICONNECT dan dapatkan fitur-fitur menarik di sini.</p>
             </div>
-
+            @if (session('success'))
+                <div id="alert-box"
+                    class="alert alert-success flex flex-row bg-[#06C790] text-[#ffffff] rounded-lg my-3">
+                    <div class="my-auto text-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" class="lucide lucide-check-circle">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <path d="m9 11 3 3L22 4"></path>
+                        </svg>
+                    </div>
+                    <div class="font-bold text-lg">
+                        {{ session('success') }} <!-- Pastikan menggunakan $message untuk menampilkan pesan -->
+                    </div>
+                </div>
+            @endif
             <form action="/login" method="POST" class="space-y-6">
                 @csrf
-            
+
                 <!-- Email/Username Input -->
                 <div class="relative">
                     <label for="email"
@@ -29,18 +46,19 @@
                         <p class="text-red-500 dark:text-red-400 text-sm mt-2">{{ $message }}</p>
                     @enderror
                 </div>
-            
+
                 <!-- Password Input -->
                 <div class="relative">
                     <label for="password"
-                        class="block text-sm lg:text-base font-medium text-gray-700 dark:text-gray-300 mb-2">Kata Sandi</label>
+                        class="block text-sm lg:text-base font-medium text-gray-700 dark:text-gray-300 mb-2">Kata
+                        Sandi</label>
                     <input type="password" name="password" required placeholder="Masukkan kata sandi"
                         class="w-full px-4 py-3 rounded-lg bg-white border dark:border-zinc-600 dark:bg-ireng text-black dark:text-white @error('password') border-red-500 @enderror focus:border-black focus:outline-none focus:ring-2 focus:ring-accent transition-all duration-200 ease-in-out">
                     @error('password')
                         <p class="text-red-500 dark:text-red-400 text-sm mt-2">{{ $message }}</p>
                     @enderror
                 </div>
-            
+
                 <!-- Show/Hide Password Checkbox -->
                 <div class="flex items-center">
                     <input type="checkbox" id="togglePasswordVisibility" onclick="togglePassword()" class="mr-2">
@@ -50,9 +68,10 @@
 
                 {{-- sudah punya akun --}}
                 <div class="text-sm text-center lg:text-base text-gray-700 dark:text-gray-300">
-                    <a class="hover:text-accent transition-colors" href="{{ route('auth.addUser') }}">Belum punya akun?</a>
+                    <a class="hover:text-accent transition-colors" href="{{ route('auth.addUser') }}">Belum punya
+                        akun?</a>
                 </div>
-            
+
                 <!-- Login Button -->
                 <div>
                     <button type="submit"
@@ -61,14 +80,13 @@
                     </button>
                 </div>
             </form>
-            
+
         </div>
     </div>
 
     <!-- Right Side: Image Section -->
     <div class="login-right w-full lg:w-1/2 h-full bg-cover bg-center lg:pe-4 lg:py-4">
-        <img src="{{ asset('img/auth/bg-auth.webp') }}"
-            class="w-full h-full object-cover rounded-xl" alt="Gambar">
+        <img src="{{ asset('img/auth/bg-auth.webp') }}" class="w-full h-full object-cover rounded-xl" alt="Gambar">
     </div>
 </section>
 
@@ -79,5 +97,13 @@
         passwordField.type = checkbox.checked ? 'text' : 'password';
     }
 </script>
-
+<script>
+    // Set timeout to hide the alert after 5 seconds (5000 milliseconds)
+    setTimeout(function() {
+        var alertBox = document.getElementById('alert-box');
+        if (alertBox) {
+            alertBox.style.display = 'none';
+        }
+    }, 15000); // 15000 ms = 15 detik
+</script>
 @include('auth.layouts.footer')
