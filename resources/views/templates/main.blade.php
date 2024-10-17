@@ -100,7 +100,8 @@
                     </section>
                 </nav>
             </section>
-            <section class="sidebar-footer justify-end pt-2 dark:bg-ireng bg-white dark:text-white border-t dark:border-t-zinc-700">
+            <section
+                class="sidebar-footer justify-end pt-2 dark:bg-ireng bg-white dark:text-white border-t dark:border-t-zinc-700">
                 <div class="dropdown z-50 flex h-fit w-full cursor-pointer">
                     <label class="whites mx-2 flex h-fit w-full cursor-pointer p-0" tabindex="0">
                         <div class="flex flex-row gap-4 p-4">
@@ -138,7 +139,7 @@
             </section>
         </aside>
     </div>
-    <div class="flex w-full flex-col p-4">
+    <div class="flex w-full min-h-svh flex-col p-4">
 
 
         <div class="my-4">
