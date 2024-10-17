@@ -21,8 +21,8 @@
 
 <section class="hero-container relative" id="home">
     <div class="aurora-bg ">
-        <div class="aurora from-accent/65 to-accent/35 top-[-10rem] left-[20%]"></div>
-        <div class="aurora from-accent/65 to-accent/35 bottom-[20rem] right-[10%]"></div>
+        <div class="aurora aurora-green from-accent/65 to-accent/35 top-[-10rem] left-[20%]"></div>
+        <div class="aurora aurora-green from-accent/65 to-accent/35 bottom-[20rem] right-[10%]"></div>
     </div>
 
     <div class="hero-wrapper w-full relative z-10 py-32 md:py-32">
