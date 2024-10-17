@@ -103,7 +103,7 @@
                     </div>
                 @endfor --}}
                 @foreach ($products as $product)
-                    <a href="/agrishop/{{ $product->id }}">
+                    <a href="/agri-shop/{{ $product->id }}">
                         <div class="product-card border dark:border-zinc-600 rounded-lg overflow-hidden transition-all duration-300"
                             data-category="{{ $product->category }}" data-name="{{ $product->name }}"
                             data-price="{{ $product->price }}">
