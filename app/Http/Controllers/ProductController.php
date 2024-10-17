@@ -181,14 +181,29 @@ class ProductController extends Controller
 
         return view('frontend.home.agrishop_show', compact('product', 'active', 'whatsappLink'));
     }
-    public function search(Request $request)
+    public function filterProducts(Request $request)
     {
-        $query = $request->input('query');
+        $searchTerm = $request->input('searchTerm');
+        $sortOrder = $request->input('sortOrder');
 
-        // Cari produk berdasarkan nama yang sesuai dengan query
-        $products = Product::where('name', 'LIKE', "%{$query}%")->get();
+        // Query dasar untuk produk
+        $products = Product::query();
 
-        // Return data dalam format JSON
+        // Filter berdasarkan nama produk (search)
+        if (!empty($searchTerm)) {
+            $products->where('name', 'like', '%' . $searchTerm . '%');
+        }
+
+        // Sorting berdasarkan harga
+        if ($sortOrder === 'asc') {
+            $products->orderBy('price', 'asc');
+        } elseif ($sortOrder === 'desc') {
+            $products->orderBy('price', 'desc');
+        }
+
+        // Ambil produk yang sesuai dengan filter
+        $products = $products->get();
+
         return response()->json([
             'products' => $products
         ]);

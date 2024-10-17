@@ -34,23 +34,23 @@
 <section class="shop-content-container px-8 flex flex-col justify-center items-center md:px-16 py-8">
     <div class="shop-content-wrapper w-full">
         <div class="shop-content w-full">
-            <!-- Filter, Search, and Sort -->
             <div
                 class="filter-sort flex flex-col md:flex-row md:justify-between items-start md:items-center mb-8 gap-4">
-                <div class="search w-full relative">
-                    <label for="searchInput" class="sr-only">Cari produk</label>
-                    <div class="relative">
-                        <input type="search" id="searchInput"
-                            class="block w-full p-2.5 pr-10 text-sm text-gray-900 border bg-white dark:bg-ireng border-gray-300 rounded-lg focus:ring-accent focus:border-accent  dark:border-zinc-600 dark:placeholder-gray-400 dark:text-white"
-                            placeholder="Cari produk..." required>
-                        <div class="absolute inset-y-0 mr-2.5 right-0 flex items-center pl-3 pointer-events-none">
-                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-                            </svg>
-                        </div>
+                <div class="filter flex items-center gap-4 w-full md:w-auto">
+                    <div class="sort w-full md:w-auto">
+                        <select id="sortPrice"
+                            class="bg-white dark:bg-ireng border border-gray-300 dark:border-zinc-600 text-gray-900 dark:text-white text-sm rounded-lg focus:ring-accent focus:border-accent block w-full p-2.5">
+                            <option value="default">Urutkan Harga</option>
+                            <option value="asc">Harga: Rendah ke Tinggi</option>
+                            <option value="desc">Harga: Tinggi ke Rendah</option>
+                        </select>
                     </div>
+                </div>
+                <div class="search w-full md:w-96 relative">
+                    <label for="searchInput" class="sr-only">Cari produk</label>
+                    <input type="search" id="searchInput"
+                        class="block w-full p-2.5 pr-10 text-sm text-gray-900 border bg-white dark:bg-ireng border-gray-300 rounded-lg focus:ring-accent focus:border-accent dark:border-zinc-600 dark:placeholder-gray-400 dark:text-white"
+                        placeholder="Cari produk..." required>
                 </div>
             </div>
 
@@ -88,45 +88,64 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const searchInput = document.getElementById('searchInput');
+        const sortPrice = document.getElementById('sortPrice');
         const productGrid = document.getElementById('productGrid');
 
-        // AJAX function for searching products
-        searchInput.addEventListener('keyup', function() {
-            const query = searchInput.value;
+        function filterProducts() {
+            const searchTerm = searchInput.value;
+            const sortOrder = sortPrice.value;
 
-            // AJAX request
-            fetch(`/search-products?query=${query}`)
-                .then(response => response.json())
-                .then(data => {
-                    // Clear the product grid
-                    productGrid.innerHTML = '';
+            // Mengirim request AJAX untuk filter
+            $.ajax({
+                url: '/filter/products',
+                method: 'GET',
+                data: {
+                    searchTerm: searchTerm,
+                    sortOrder: sortOrder
+                },
+                success: function(response) {
+                    productGrid.innerHTML = ''; // Kosongkan grid produk
 
-                    // Loop through the products and append them to the grid
-                    data.products.forEach(product => {
+                    // Loop produk dan tambahkan ke grid
+                    response.products.forEach(function(product) {
                         const productCard = `
-                                <a href="/agri-shop/${product.id}">
-                                    <div class="product-card border dark:border-zinc-600 rounded-lg overflow-hidden transition-all duration-300">
-                                        <div class="product-image relative pb-[100%]">
-                                            <img src="/storage/${product.image}" alt="${product.name}"
-                                                class="absolute inset-0 w-full h-full object-cover">
-                                        </div>
-                                        <div class="product-info p-4">
-                                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                                                ${product.name}
-                                            </h3>
-                                            <div class="flex justify-between items-center">
-                                                <span class="text-xl font-bold text-accent">Rp. ${product.price}</span>
-                                                <button class="px-4 py-2 bg-accent text-white rounded-lg hover:bg-accent-dark transition-colors duration-300">Beli</button>
-                                            </div>
+                            <a href="/agri-shop/${product.id}">
+                                <div class="product-card border dark:border-zinc-600 rounded-lg overflow-hidden transition-all duration-300"
+                                    data-category="${product.category}" data-name="${product.name}"
+                                    data-price="${product.price}">
+                                    <div class="product-image relative pb-[100%]">
+                                        <img src="/storage/${product.image}" alt="${product.name}"
+                                            class="absolute inset-0 w-full h-full object-cover">
+                                    </div>
+                                    <div class="product-info p-4">
+                                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                                            ${product.name}
+                                        </h3>
+                                        <p class="text-gray-600 dark:text-gray-300 mb-2 line-clamp-2">
+                                            ${product.description}.
+                                        </p>
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-xl font-bold text-accent">Rp.
+                                                ${new Intl.NumberFormat().format(product.price)}</span>
+                                            <button
+                                                class="px-4 py-2 bg-accent text-white rounded-lg hover:bg-accent-dark transition-colors duration-300">Beli</button>
                                         </div>
                                     </div>
-                                </a>
-                            `;
-                        productGrid.innerHTML += productCard;
+                                </div>
+                            </a>
+                        `;
+                        productGrid.innerHTML += productCard; // Tambahkan produk ke grid
                     });
-                });
-        });
+                }
+            });
+        }
+
+        // Event listeners untuk search dan filter
+        searchInput.addEventListener('input', filterProducts);
+        sortPrice.addEventListener('change', filterProducts);
+
+        // Inisialisasi filter pada awal load halaman
+        filterProducts();
     });
 </script>
-
 @include('frontend.layouts.footer')
