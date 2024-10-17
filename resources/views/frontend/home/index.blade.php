@@ -17,6 +17,50 @@
         filter: blur(100px);
         border-radius: 9999px;
     }
+
+    .hero-image {
+    --offset: 2px; /* Adjusted for larger border */
+    background: rgb(71, 71, 71);
+    border-radius: 16px; /* You can adjust the radius as per your design */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Conic gradient for rotating border */
+.hero-image::before {
+    content: '';
+    background: conic-gradient(transparent 270deg, #06C790, transparent);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    aspect-ratio: 1;
+    width: 200%; /* Increased size for larger element */
+    animation: rotate 3s linear infinite; /* Adjust animation speed */
+    z-index: 1; /* To keep it behind the image */
+}
+
+/* Overlay */
+.hero-image::after {
+    content: '';
+    background: inherit;
+    border-radius: inherit;
+    position: absolute;
+    inset: var(--offset);
+    z-index: 5;
+}
+
+/* Keyframe for rotating effect */
+@keyframes rotate {
+    from {
+        transform: translate(-50%, -50%) scale(1.4) rotate(0turn);
+    }
+
+    to {
+        transform: translate(-50%, -50%) scale(1.4) rotate(1turn);
+    }
+}
+
 </style>
 
 <section class="hero-container relative" id="home">
@@ -25,10 +69,10 @@
         <div class="aurora aurora-green from-accent/65 to-accent/35 bottom-[20rem] right-[10%]"></div>
     </div>
 
-    <div class="hero-wrapper w-full relative z-10 py-32 md:py-32">
+    <div class="hero-wrapper w-full relative z-10 py-32 md:py-24">
         <div class="hero w-100 flex flex-col items-center justify-center mx-8">
             <div class="hero-title text-center max-w-4xl mx-auto">
-                <h1 class="text-4xl mt-12 sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white leading-tight mb-6">
+                <h1 class="text-4xl mt-8 sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white leading-tight mb-6">
                     <span class="block">AgriConnect</span>
                     <span class="block text-accent">Revolusi Pertanian Tebu</span>
                 </h1>
@@ -53,11 +97,10 @@
     </div>
 
     <div class="hero-image-wrapper w-full flex justify-center md:-mt-18 mb-20 ">
-        <div class="hero-image aspect-video rounded-lg overflow-hidden max-w-5xl mx-auto relative p-4 bg-gradient-to-r from-accent via-green-400 to-accent">
-            <div class="absolute inset-0 bg-white dark:bg-ireng m-[1px] rounded-lg"></div>
-            <img class="w-full h-full object-cover rounded-lg hidden dark:block relative z-10"
+        <div class="hero-image fancy aspect-video rounded-md overflow-hidden max-w-5xl mx-auto relative p-[1px] bg-zinc-900">
+            <img class="w-full h-full object-cover rounded-2xl hidden dark:block relative z-10"
                 src="{{ asset('img/tani/dashboard-agri-dark.webp') }}" draggable="false" alt="Dashboard Pertanian Tebu">
-            <img class="w-full h-full object-cover rounded-lg block dark:hidden relative z-10"
+            <img class="w-full h-full object-cover rounded-2xl block dark:hidden relative z-10"
                 src="{{ asset('img/tani/dashboard-agri-light.webp') }}" draggable="false" alt="Dashboard Pertanian Tebu">
         </div>
     </div>
@@ -67,9 +110,9 @@
     <x-mitra />
 </section>
 
-<section x-data="{ activeTab: 'daftar' }" class="about-container relative py-20 px-4 sm:px-6 lg:px-16 bg-white dark:bg-ireng" id="about">
+<section x-data="{ activeTab: 'daftar' }" class="about-container overflow-visible relative py-20 px-4 sm:px-6 lg:px-16 bg-white dark:bg-ireng" id="about">
     <div class="aurora-bg hidden lg:block">
-        <div class="aurora from-accent/65 to-accent/35 top-[10%] left-[10%]"></div>
+        <div class="aurora from-accent/65 to-accent/35 top-[30%] left-[20%]"></div>
     </div>
 
     <div class="max-w-7xl mx-auto relative z-10">
@@ -225,13 +268,12 @@
     </div>
 </section>
 
-<section class="faq-container mb-[16rem] relative bg-white dark:bg-ireng py-24 px-4 sm:px-6 lg:px-16 overflow-visible">
-    <div class="aurora-bg hidden lg:block">
-        <div class="aurora from-accent/35 to-accent/15 top-[40%] left-[15%]"></div>
-        <div class="aurora from-accent/35 to-accent/15 bottom-[20%] right-[25%]"></div>
+<section class="faq-container relative bg-white dark:bg-ireng px-4 sm:px-6 lg:px-16 overflow-visible">
+    <div class="aurora-bg w-[20px] h-[20px] hidden lg:block">
+        <div class="aurora w-[10%] from-accent/35 to-accent/15 top-[20%] left-[20%]"></div>
     </div>
 
-    <div class="max-w-4xl mx-auto relative z-10">
+    <div class="max-w-4xl mx-auto relative z-10 py-32">
         <div class="text-center mb-16">
             <h2 class="text-base text-accent font-semibold tracking-wide uppercase">FAQ</h2>
             <p class="mt-2 text-3xl sm:text-4xl leading-8 font-bold tracking-tight text-gray-900 dark:text-white">
@@ -246,6 +288,21 @@
     </div>
 </section>
 
-@include('frontend.layouts.footer')
+<section class="cta-container relative py-20 px-4 sm:px-6 lg:px-16">
+    <div class="max-w-4xl mx-auto flex items-center justify-between">
+        <div class="flex-1 dark:text-white">
+            <h2 class="text-md md:text-4xl font-bold mb-4">Siap untuk Meningkatkan Pertanian Anda?</h2>
+            <p class="mb-6">Maksimalkan hasil panen, Ciptakan keberlanjutan.</p>
+        </div>
+        <div class="flex-1 text-right">
+            <a href="{{ route('tani.pendaftaran') }}" class="inline-flex items-center px-8 py-4 text-lg font-semibold rounded-lg bg-accent text-white">
+                Daftar Sekarang
+                <svg class="ml-2 -mr-1 w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
 
-<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+@include('frontend.layouts.footer')
