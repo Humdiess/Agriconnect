@@ -12,36 +12,6 @@
 
 
 <script>
-    const container = document.querySelector('.hero-image');
-    const circle = document.getElementById('glowCircle');
-
-    function animateCircle() {
-      const rect = container.getBoundingClientRect();
-      const width = rect.width - circle.offsetWidth;
-      const height = rect.height - circle.offsetHeight;
-
-      // Reset animation
-      gsap.set(circle, { x: 0, y: 0 });
-
-      // Create timeline
-      const tl = gsap.timeline({ repeat: -1 });
-
-      // Animate along the borders
-      tl.to(circle, { x: width, duration: 2, ease: "none" })
-        .to(circle, { y: height, duration: 2, ease: "none" })
-        .to(circle, { x: 0, duration: 2, ease: "none" })
-        .to(circle, { y: 0, duration: 2, ease: "none" });
-    }
-
-    // Initial animation
-    animateCircle();
-
-    // Handle window resize
-    let resizeTimeout;
-    window.addEventListener('resize', () => {
-      clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(animateCircle, 100);
-    });
     // Initialize Lenis
     const lenis = new Lenis();
 

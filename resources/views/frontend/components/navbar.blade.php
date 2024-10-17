@@ -75,13 +75,17 @@
                                 src="https://hips.hearstapps.com/hmg-prod/images/apple-ceo-steve-jobs-speaks-during-an-apple-special-event-news-photo-1683661736.jpg?crop=0.800xw:0.563xh;0.0657xw,0.0147xh&resize=1200:*"
                                 alt="Profile picture">
                         </button>
-                        <div id="profile-menu"
-                            class="dropdown-menu absolute hidden mt-4 right-0 w-48 bg-white dark:bg-gray-800 rounded-md shadow-lg overflow-hidden z-20">
-                            <form method="POST" action="{{ route('auth.logout') }}">
-                                @csrf
-                                <button type="submit"
-                                    class="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-red-600 hover:text-white">Logout</button>
-                            </form>
+                        <div id="profile-menu-user"
+                            class="hidden absolute mt-4 right-0 w-48 bg-white dark:bg-ireng/40 backdrop-blur-md border dark:border-zinc-700 rounded-md shadow-lg overflow-hidden z-[9999]">
+                            <div class="py-2">
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600">Profil</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600">Pengaturan</a>
+                                <form method="POST" action="{{ route('auth.logout') }}">
+                                    @csrf
+                                    <button type="submit"
+                                        class="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-red-600 hover:text-white">Logout</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 @else
@@ -165,6 +169,8 @@
     const profileToggler = document.getElementById('profile-toggler');
 
     profileToggler.addEventListener('click', () => {
-        document.getElementById('profile-menu').classList.toggle('hidden');
+        const profileMenu = document.getElementById('profile-menu-user');
+        profileMenu.classList.toggle('hidden'); // Pastikan ini mengubah visibilitas menu
     })
 </script>
+

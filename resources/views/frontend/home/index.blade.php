@@ -80,7 +80,7 @@
                 <p class="mt-6 text-xl sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
                     Tingkatkan hasil panen dan bangun masa depan yang lebih baik dengan teknologi IoT dan AI kami.
                 </p>
-                @if (session('success'))
+                {{-- @if (session('success'))
                     <div id="alert-box"
                         class="alert alert-success flex flex-row bg-[#06C790] text-[#ffffff] rounded-lg">
                         <div class="my-auto text-lg">
@@ -95,7 +95,7 @@
                             {{ session('success') }} <!-- Pastikan menggunakan $message untuk menampilkan pesan -->
                         </div>
                     </div>
-                @endif
+                @endif --}}
                 <div class="mt-10">
                     <a href="/daftar-tani"
                         class="inline-flex items-center px-8 py-4 text-lg font-semibold rounded-lg text-white bg-accent">
