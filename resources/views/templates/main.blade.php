@@ -126,13 +126,13 @@
                             </button>
                         </div>
                         <a href="{{ route('home') }}"
-                            class="dropdown-item text-sm text-white hover:bg-accent hover:text-white">Kembali ke
+                            class="dropdown-item text-sm my-3 text-white hover:bg-white hover:text-accent">Kembali ke
                             beranda</a>
                         <!-- Theme Toggle Button -->
                         <form action="{{ route('auth.logout') }}" method="POST">
                             @csrf
                             <button type="submit"
-                                class="dropdown-item text-sm hover:bg-accent hover:text-white text-red-600">Logout</button>
+                                class="dropdown-item text-sm hover:bg-white text-red-600">Logout</button>
                         </form>
                     </div>
                 </div>
