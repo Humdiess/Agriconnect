@@ -11,7 +11,7 @@
         <div
             class="aurora-green absolute w-[20rem] h-[20rem] bg-gradient-to-r from-accent to-[#27a002] opacity-10 blur-3xl rounded-full bottom-[20rem] right-[15rem] clip-aurora">
         </div>
-{{--
+        {{--
         <!-- Hero Content -->
         <div class="hero-wrapper w-full relative z-10">
             <div class="hero w-100 flex flex-col items-center justify-center mx-8">
@@ -95,16 +95,22 @@
                 <div class="flex flex-col items-center sm:px-5 md:flex-row">
                     <div class="w-full md:w-1/2">
                         <a href="#_" class="block">
-                            <img class="object-cover w-full h-full rounded-lg max-h-64 sm:max-h-96" src="https://img.antaranews.com/cache/1200x800/2022/01/15/WhatsApp-Image-2022-01-15-at-07.54.04-1_1.jpeg">
+                            <img class="object-cover w-full h-full rounded-lg max-h-64 sm:max-h-96"
+                                src="https://img.antaranews.com/cache/1200x800/2022/01/15/WhatsApp-Image-2022-01-15-at-07.54.04-1_1.jpeg">
                         </a>
                     </div>
                     <div class="flex flex-col items-start justify-center w-full h-full py-6 mb-6 md:mb-0 md:w-1/2">
-                        <div class="flex flex-col items-start justify-center h-full space-y-3 transform md:pl-10 lg:pl-16 md:space-y-5">
-                            <div class="bg-green-500 flex items-center pl-2 pr-3 py-1.5 leading-none rounded-full text-xs font-medium uppercase text-white inline-block">
+                        <div
+                            class="flex flex-col items-start justify-center h-full space-y-3 transform md:pl-10 lg:pl-16 md:space-y-5">
+                            <div
+                                class="bg-green-500 flex items-center pl-2 pr-3 py-1.5 leading-none rounded-full text-xs font-medium uppercase text-white inline-block">
                                 <span>Unggulan</span>
                             </div>
-                            <h1 class="text-4xl font-bold leading-none lg:text-5xl xl:text-6xl"><a href="#_">Panen Manis: Pertanian Tebu Terbaik di Indonesia</a></h1>
-                            <p class="pt-2 text-sm font-medium">oleh <a href="#_" class="mr-1 underline">Budi Santoso</a> · <span class="mx-1">23 April 2023</span> · <span class="mx-1 text-gray-600">5 menit baca</span></p>
+                            <h1 class="text-4xl font-bold leading-none lg:text-5xl xl:text-6xl"><a href="#_">Panen
+                                    Manis: Pertanian Tebu Terbaik di Indonesia</a></h1>
+                            <p class="pt-2 text-sm font-medium">oleh <a href="#_" class="mr-1 underline">Budi
+                                    Santoso</a> · <span class="mx-1">23 April 2023</span> · <span
+                                    class="mx-1 text-gray-600">5 menit baca</span></p>
                         </div>
                     </div>
                 </div>
@@ -112,74 +118,110 @@
                 <div class="flex grid grid-cols-12 pb-10 sm:px-5 gap-x-8 gap-y-16">
                     <div class="flex flex-col items-start col-span-12 space-y-3 sm:col-span-6 xl:col-span-4">
                         <a href="#_" class="block">
-                            <img class="object-cover w-full mb-2 overflow-hidden rounded-lg shadow-sm max-h-56" src="https://png.pngtree.com/thumb_back/fw800/background/20220927/pngtree-irrigation-of-an-australian-sugar-cane-crop-sugarcane-revival-sweet-photo-image_33964664.jpg">
+                            <img class="object-cover w-full mb-2 overflow-hidden rounded-lg shadow-sm max-h-56"
+                                src="https://png.pngtree.com/thumb_back/fw800/background/20220927/pngtree-irrigation-of-an-australian-sugar-cane-crop-sugarcane-revival-sweet-photo-image_33964664.jpg">
                         </a>
-                        <div class="bg-green-500 flex items-center px-3 py-1.5 leading-none rounded-full text-xs font-medium uppercase text-white inline-block">
+                        <div
+                            class="bg-green-500 flex items-center px-3 py-1.5 leading-none rounded-full text-xs font-medium uppercase text-white inline-block">
                             <span>Teknologi Pertanian</span>
                         </div>
-                        <h2 class="text-lg font-bold sm:text-xl md:text-2xl"><a href="#_">Inovasi Irigasi di Lahan Tebu</a></h2>
-                        <p class="text-sm text-gray-500">Pelajari inovasi irigasi terbaru yang membantu meningkatkan hasil tebu dan menghemat air di Indonesia.</p>
-                        <p class="pt-2 text-xs font-medium"><a href="#_" class="mr-1 underline">Siti Nuraini</a> · <span class="mx-1">17 April 2023</span> · <span class="mx-1 text-gray-600">3 menit baca</span></p>
+                        <h2 class="text-lg font-bold sm:text-xl md:text-2xl"><a href="#_">Inovasi Irigasi di Lahan
+                                Tebu</a></h2>
+                        <p class="text-sm text-gray-500">Pelajari inovasi irigasi terbaru yang membantu meningkatkan
+                            hasil tebu dan menghemat air di Indonesia.</p>
+                        <p class="pt-2 text-xs font-medium"><a href="#_" class="mr-1 underline">Siti Nuraini</a> ·
+                            <span class="mx-1">17 April 2023</span> · <span class="mx-1 text-gray-600">3 menit
+                                baca</span>
+                        </p>
                     </div>
 
                     <div class="flex flex-col items-start col-span-12 space-y-3 sm:col-span-6 xl:col-span-4">
                         <a href="#_" class="block">
-                            <img class="object-cover w-full mb-2 overflow-hidden rounded-lg shadow-sm max-h-56" src="https://d1vbn70lmn1nqe.cloudfront.net/prod/wp-content/uploads/2023/01/23024900/X-Manfaat-Minum-Air-Tebu-untuk-Kesehatan-yang-Jarang-Diketahui.jpg">
+                            <img class="object-cover w-full mb-2 overflow-hidden rounded-lg shadow-sm max-h-56"
+                                src="https://d1vbn70lmn1nqe.cloudfront.net/prod/wp-content/uploads/2023/01/23024900/X-Manfaat-Minum-Air-Tebu-untuk-Kesehatan-yang-Jarang-Diketahui.jpg">
                         </a>
-                        <div class="bg-pink-500 flex items-center px-3 py-1.5 leading-none rounded-full text-xs font-medium uppercase text-white inline-block">
+                        <div
+                            class="bg-pink-500 flex items-center px-3 py-1.5 leading-none rounded-full text-xs font-medium uppercase text-white inline-block">
                             <span>Kesehatan</span>
                         </div>
                         <h2 class="text-lg font-bold sm:text-xl md:text-2xl">Manfaat Kesehatan dari Air Tebu</h2>
-                        <p class="text-sm text-gray-500">Ketahui manfaat luar biasa dari air tebu untuk kesehatan, termasuk meningkatkan imunitas dan pencernaan.</p>
-                        <p class="pt-2 text-xs font-medium"><a href="#_" class="mr-1 underline">Andi Saputra</a> · <span class="mx-1">10 April 2023</span> · <span class="mx-1 text-gray-600">3 menit baca</span></p>
+                        <p class="text-sm text-gray-500">Ketahui manfaat luar biasa dari air tebu untuk kesehatan,
+                            termasuk meningkatkan imunitas dan pencernaan.</p>
+                        <p class="pt-2 text-xs font-medium"><a href="#_" class="mr-1 underline">Andi Saputra</a> ·
+                            <span class="mx-1">10 April 2023</span> · <span class="mx-1 text-gray-600">3 menit
+                                baca</span>
+                        </p>
                     </div>
 
                     <div class="flex flex-col items-start col-span-12 space-y-3 sm:col-span-6 xl:col-span-4">
                         <a href="#_" class="block">
-                            <img class="object-cover w-full mb-2 overflow-hidden rounded-lg shadow-sm max-h-56" src="https://res.cloudinary.com/dk0z4ums3/image/upload/v1608517328/attached_image/jangan-dilewatkan-ini-6-manfaat-air-tebu-untuk-kesehatan.jpg">
+                            <img class="object-cover w-full mb-2 overflow-hidden rounded-lg shadow-sm max-h-56"
+                                src="https://res.cloudinary.com/dk0z4ums3/image/upload/v1608517328/attached_image/jangan-dilewatkan-ini-6-manfaat-air-tebu-untuk-kesehatan.jpg">
                         </a>
-                        <div class="bg-red-500 flex items-center px-3 py-1.5 leading-none rounded-full text-xs font-medium uppercase text-white inline-block">
+                        <div
+                            class="bg-red-500 flex items-center px-3 py-1.5 leading-none rounded-full text-xs font-medium uppercase text-white inline-block">
                             <span>Makanan</span>
                         </div>
                         <h2 class="text-lg font-bold sm:text-xl md:text-2xl">Tebu: Dari Kebun Hingga Meja Makan</h2>
-                        <p class="text-sm text-gray-500">Ikuti perjalanan tebu dari panen hingga menjadi produk yang kita nikmati setiap hari, seperti gula dan molase.</p>
-                        <p class="pt-2 text-xs font-medium"><a href="#_" class="mr-1 underline">Rahmat Hidayat</a> · <span class="mx-1">6 April 2023</span> · <span class="mx-1 text-gray-600">3 menit baca</span></p>
+                        <p class="text-sm text-gray-500">Ikuti perjalanan tebu dari panen hingga menjadi produk yang
+                            kita nikmati setiap hari, seperti gula dan molase.</p>
+                        <p class="pt-2 text-xs font-medium"><a href="#_" class="mr-1 underline">Rahmat Hidayat</a>
+                            · <span class="mx-1">6 April 2023</span> · <span class="mx-1 text-gray-600">3 menit
+                                baca</span></p>
                     </div>
 
                     <div class="flex flex-col items-start col-span-12 space-y-3 sm:col-span-6 xl:col-span-4">
                         <a href="#_" class="block">
-                            <img class="object-cover w-full mb-2 overflow-hidden rounded-lg max-h-56" src="https://example.com/sustainable-tebu.jpg">
+                            <img class="object-cover w-full mb-2 overflow-hidden rounded-lg max-h-56"
+                                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjwuoI3mi0h_2tluR6KQcQ1pFPBbA6qL0ji7fymLMcuf7eHcPenmbPi5kFG2JSZBJ0CInnosSGV_23Fb-a_Ij9BJnyjaUoyWUdmR6gUttYdDSuaDB6oCxYlLaNU9PjwXHG-FgcmnbZzBAROBAy1tapHC1mCisQcOESaHUIiT2iBGEwo1g8EVJ9MdicB6Eo/w1200-h630-p-k-no-nu/Perkebunan%20Tebu%20UNtuk%20Sumber%20Energi%20Bersih.jpg">
                         </a>
-                        <div class="bg-blue-500 flex items-center px-3 py-1.5 leading-none rounded-full text-xs font-medium uppercase text-white inline-block">
+                        <div
+                            class="bg-blue-500 flex items-center px-3 py-1.5 leading-none rounded-full text-xs font-medium uppercase text-white inline-block">
                             <span>Motivasi</span>
                         </div>
-                        <h2 class="text-lg font-bold sm:text-xl md:text-2xl">Masa Depan Pertanian Tebu Berkelanjutan</h2>
-                        <p class="text-sm text-gray-500">Pelajari pentingnya praktik pertanian tebu berkelanjutan untuk melindungi lingkungan dan hasil di masa depan.</p>
-                        <p class="pt-2 text-xs font-medium"><a href="#_" class="mr-1 underline">Lia Marlina</a> · <span class="mx-1">25 Mei 2023</span> · <span class="mx-1 text-gray-600">3 menit baca</span></p>
+                        <h2 class="text-lg font-bold sm:text-xl md:text-2xl">Masa Depan Pertanian Tebu Berkelanjutan
+                        </h2>
+                        <p class="text-sm text-gray-500">Pelajari pentingnya praktik pertanian tebu berkelanjutan untuk
+                            melindungi lingkungan dan hasil di masa depan.</p>
+                        <p class="pt-2 text-xs font-medium"><a href="#_" class="mr-1 underline">Lia Marlina</a> ·
+                            <span class="mx-1">25 Mei 2023</span> · <span class="mx-1 text-gray-600">3 menit
+                                baca</span>
+                        </p>
                     </div>
 
                     <div class="flex flex-col items-start col-span-12 space-y-3 sm:col-span-6 xl:col-span-4">
                         <a href="#_" class="block">
-                            <img class="object-cover w-full mb-2 overflow-hidden rounded-lg max-h-56" src="https://example.com/time-management-farming.jpg">
+                            <img class="object-cover w-full mb-2 overflow-hidden rounded-lg max-h-56"
+                                src="https://banyuwangikab.go.id/public/media/berita/original/c1e0336a40cb6439ec4470183494a988.jpg">
                         </a>
-                        <div class="bg-gray-800 flex items-center px-3 py-1.5 leading-none rounded-full text-xs font-medium uppercase text-white inline-block">
+                        <div
+                            class="bg-gray-800 flex items-center px-3 py-1.5 leading-none rounded-full text-xs font-medium uppercase text-white inline-block">
                             <span>Bisnis</span>
                         </div>
                         <h2 class="text-lg font-bold sm:text-xl md:text-2xl">Manajemen Waktu untuk Petani</h2>
-                        <p class="text-sm text-gray-500">Strategi manajemen waktu yang efektif untuk membantu petani tebu memaksimalkan produktivitas dan keuntungan.</p>
-                        <p class="pt-2 text-xs font-medium"><a href="#_" class="mr-1 underline">Scott Reedman</a> · <span class="mx-1">18 Mei 2023</span> · <span class="mx-1 text-gray-600">3 menit baca</span></p>
+                        <p class="text-sm text-gray-500">Strategi manajemen waktu yang efektif untuk membantu petani
+                            tebu memaksimalkan produktivitas dan keuntungan.</p>
+                        <p class="pt-2 text-xs font-medium"><a href="#_" class="mr-1 underline">Scott Reedman</a> ·
+                            <span class="mx-1">18 Mei 2023</span> · <span class="mx-1 text-gray-600">3 menit
+                                baca</span>
+                        </p>
                     </div>
 
                     <div class="flex flex-col items-start col-span-12 space-y-3 sm:col-span-6 xl:col-span-4">
                         <a href="#_" class="block">
-                            <img class="object-cover w-full mb-2 overflow-hidden rounded-lg max-h-56" src="https://example.com/nutrition-tebu.jpg">
+                            <img class="object-cover w-full mb-2 overflow-hidden rounded-lg max-h-56"
+                                src="https://ik.trn.asia/uploads/2021/07/Manfaat-tebu.jpg">
                         </a>
-                        <div class="bg-yellow-400 flex items-center px-3 py-1.5 leading-none rounded-full text-xs font-medium uppercase text-white inline-block">
+                        <div
+                            class="bg-yellow-400 flex items-center px-3 py-1.5 leading-none rounded-full text-xs font-medium uppercase text-white inline-block">
                             <span>Gizi</span>
                         </div>
                         <h2 class="text-lg font-bold sm:text-xl md:text-2xl">Nilai Gizi dari Tebu</h2>
-                        <p class="text-sm text-gray-500">Tebu bukan hanya untuk gula! Ketahui profil gizi tanaman ini dan bagaimana ia dapat menjadi bagian dari diet sehat.</p>
-                        <p class="pt-2 text-xs font-medium"><a href="#_" class="mr-1 underline">Jake Caldwell</a> · <span class="mx-1">15 Mei 2023</span> · <span class="mx-1 text-gray-600">3 menit baca</span></p>
+                        <p class="text-sm text-gray-500">Tebu bukan hanya untuk gula! Ketahui profil gizi tanaman ini
+                            dan bagaimana ia dapat menjadi bagian dari diet sehat.</p>
+                        <p class="pt-2 text-xs font-medium"><a href="#_" class="mr-1 underline">Jake Caldwell</a>
+                            · <span class="mx-1">15 Mei 2023</span> · <span class="mx-1 text-gray-600">3 menit
+                                baca</span></p>
                     </div>
 
                 </div>
@@ -215,7 +257,7 @@
                 <form class="flex flex-col sm:flex-row gap-4 justify-center">
                     <input type="email" placeholder="Masukkan email Anda"
                         class="px-4 py-2 dark:bg-gray-800 border dark:border-gray-700 rounded-lg focus:ring-accent focus:border-accent dark:text-white">
-                    <button type="submit"
+                    <button type="button"
                         class="px-6 py-2 bg-accent text-white rounded-lg hover:bg-accent-dark transition-colors duration-300">Berlangganan</button>
                 </form>
             </div>

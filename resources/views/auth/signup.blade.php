@@ -7,10 +7,12 @@
             <!-- Logo Section -->
             <div class="mb-6 items-center">
                 <div class="title flex  mb-2 items-center">
-                    <a class="flex items-center justify-center w-8 h-8 mr-4 bg-accent text-dark rounded-full" href="/">
+                    <a class="flex items-center justify-center w-8 h-8 mr-4 bg-accent text-dark rounded-full"
+                        href="/">
                         <i class="fas fa-chevron-left"></i>
                     </a>
-                    <h1 class="text-xl lg:text-3xl font-semibold pr-3 text-black dark:text-white">Daftar ke Agriconnect</h1>
+                    <h1 class="text-xl lg:text-3xl font-semibold pr-3 text-black dark:text-white">Daftar ke Agriconnect
+                    </h1>
                 </div>
                 <p class="text-gray-500">Masuk ke AGRICONNECT dan dapatkan fitur-fitur menarik di sini.</p>
             </div>
@@ -116,8 +118,7 @@
 
     <!-- Right Side: Image Section -->
     <div class="signup-right w-full lg:w-1/2 h-full bg-cover bg-center lg:pe-4 lg:py-4">
-        <img src="{{ asset('img/auth/bg-auth.webp') }}"
-            class="w-full h-full object-cover rounded-xl" alt="Gambar">
+        <img src="{{ asset('img/auth/bg-auth.webp') }}" class="w-full h-full object-cover rounded-xl" alt="Gambar">
     </div>
 </section>
 
