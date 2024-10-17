@@ -29,7 +29,7 @@ $faqs = [
     setActiveAccordion(id) {
         this.activeAccordion = (this.activeAccordion == id) ? '' : id
     }
-}" class="relative w-full mx-auto overflow-hidden text-sm font-normal bg-ireng/40 backdrop-blur-lg text-white border border-zinc-700 divide-y divide-zinc-700 rounded-md">
+}" class="relative w-full mx-auto overflow-hidden text-sm font-normal bg-white/40 dark:bg-ireng/40 backdrop-blur-lg dark:text-white border dark:border-zinc-700 divide-y dark:divide-zinc-700 rounded-md">
 
 @foreach ($faqs as $faq)
 <div x-data="{ id: $id('accordion') }" class="cursor-pointer group">
