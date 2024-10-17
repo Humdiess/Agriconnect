@@ -33,6 +33,7 @@ Route::get('/agri-berita', [HomeController::class, 'blog'])->name('agri.berita')
 // Agrishop
 Route::get('/agri-shop', [HomeController::class, 'agrishop'])->name('agri.shop');
 Route::get('/agri-shop/{product}', [ProductController::class, 'agrishop_show'])->name('product.agrishop_show');
+Route::get('/filter/products', [ProductController::class, 'filterProducts']);
 
 // Tani Ai
 Route::get('/tani-ai', [TaniController::class, 'index'])->name('tani')->middleware('req_auth');

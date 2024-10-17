@@ -181,4 +181,31 @@ class ProductController extends Controller
 
         return view('frontend.home.agrishop_show', compact('product', 'active', 'whatsappLink'));
     }
+    public function filterProducts(Request $request)
+    {
+        $searchTerm = $request->input('searchTerm');
+        $sortOrder = $request->input('sortOrder');
+
+        // Query dasar untuk produk
+        $products = Product::query();
+
+        // Filter berdasarkan nama produk (search)
+        if (!empty($searchTerm)) {
+            $products->where('name', 'like', '%' . $searchTerm . '%');
+        }
+
+        // Sorting berdasarkan harga
+        if ($sortOrder === 'asc') {
+            $products->orderBy('price', 'asc');
+        } elseif ($sortOrder === 'desc') {
+            $products->orderBy('price', 'desc');
+        }
+
+        // Ambil produk yang sesuai dengan filter
+        $products = $products->get();
+
+        return response()->json([
+            'products' => $products
+        ]);
+    }
 }
