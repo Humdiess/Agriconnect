@@ -68,26 +68,7 @@
 
                 <!-- Profile or Login -->
                 @if (Auth::check())
-                    <div class="relative">
-                        <button id="profile-toggler"
-                            class="w-8 h-8 rounded-full overflow-hidden border-2 border-gray-500 dark:border-gray-400 focus:outline-none focus:border-accent transition-all duration-200">
-                            <img class="w-full h-full object-cover"
-                                src="https://hips.hearstapps.com/hmg-prod/images/apple-ceo-steve-jobs-speaks-during-an-apple-special-event-news-photo-1683661736.jpg?crop=0.800xw:0.563xh;0.0657xw,0.0147xh&resize=1200:*"
-                                alt="Profile picture">
-                        </button>
-                        <div id="profile-menu-user"
-                            class="hidden absolute mt-4 right-0 w-48 bg-white dark:bg-ireng/40 backdrop-blur-md border dark:border-zinc-700 rounded-md shadow-lg overflow-hidden z-[9999]">
-                            <div class="py-2">
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600">Profil</a>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600">Pengaturan</a>
-                                <form method="POST" action="{{ route('auth.logout') }}">
-                                    @csrf
-                                    <button type="submit"
-                                        class="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-red-600 hover:text-white">Logout</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+                    <x-user-dropdown />
                 @else
                     <a href="{{ route('auth.login') }}"
                         class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-accent hover:bg-accent-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent">
@@ -165,12 +146,5 @@
         mobileMenuButton.setAttribute('aria-expanded', !expanded);
         mobileMenu.classList.toggle('hidden');
     });
-
-    const profileToggler = document.getElementById('profile-toggler');
-
-    profileToggler.addEventListener('click', () => {
-        const profileMenu = document.getElementById('profile-menu-user');
-        profileMenu.classList.toggle('hidden'); // Pastikan ini mengubah visibilitas menu
-    })
 </script>
 

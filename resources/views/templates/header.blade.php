@@ -13,7 +13,18 @@
     <link rel="icon" type="image/x-icon" href="{{ asset('img/logo/header-logo.png') }}">
 
     <!-- Meta Description -->
-    <meta name="description" content="Agriculture Connect is an online platform for farmers">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png" />
+    <meta name="description" content="AgriConnect adalah platform online untuk petani yang menghubungkan mereka dengan teknologi pertanian terkini dan informasi pasar.">
+    <meta property="og:title" content="AgriConnect - Platform Pertanian Online">
+    <meta property="og:description" content="Bergabunglah dengan AgriConnect untuk mendapatkan akses ke teknologi pertanian dan informasi pasar yang bermanfaat.">
+    <meta property="og:image" content="{{ asset('img/logo/header-logo.png') }}">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AgriConnect - Platform Pertanian Online">
+    <meta name="twitter:description" content="Bergabunglah dengan AgriConnect untuk mendapatkan akses ke teknologi pertanian dan informasi pasar yang bermanfaat.">
+    <meta name="twitter:image" content="{{ asset('img/logo/header-logo.png') }}">
     <script src="https://unpkg.com/alpinejs" defer></script>
     {{-- font --}}
     <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet">
@@ -43,6 +54,11 @@
     scrollbar-width: none;  /* Firefox */
 }
     </style>
+    
+    <meta name="keywords" content="pertanian, petani, platform online, AgriConnect, teknologi pertanian">
+    <meta name="author" content="AgriConnect Team">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{{ url()->current() }}">
 </head>
 
 <body class="antialiased dark:bg-ireng transition-all" data-lenis-prevent data-speed="0.5">

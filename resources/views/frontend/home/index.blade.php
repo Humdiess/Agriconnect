@@ -80,22 +80,6 @@
                 <p class="mt-6 text-xl sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
                     Tingkatkan hasil panen dan bangun masa depan yang lebih baik dengan teknologi IoT dan AI kami.
                 </p>
-                {{-- @if (session('success'))
-                    <div id="alert-box"
-                        class="alert alert-success flex flex-row bg-[#06C790] text-[#ffffff] rounded-lg">
-                        <div class="my-auto text-lg">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="lucide lucide-check-circle">
-                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                                <path d="m9 11 3 3L22 4"></path>
-                            </svg>
-                        </div>
-                        <div class="font-bold text-lg">
-                            {{ session('success') }} <!-- Pastikan menggunakan $message untuk menampilkan pesan -->
-                        </div>
-                    </div>
-                @endif --}}
                 <div class="mt-10">
                     <a href="/daftar-tani"
                         class="inline-flex items-center px-8 py-4 text-lg font-semibold rounded-lg text-white bg-accent">
@@ -113,7 +97,7 @@
     </div>
 
     <div class="hero-image-wrapper w-full flex justify-center md:-mt-18 mb-20 ">
-        <div class="hero-image fancy aspect-video rounded-md overflow-hidden max-w-5xl mx-auto relative p-[1px] bg-zinc-900">
+        <div class="hero-image fancy aspect-video rounded-md overflow-hidden max-w-5xl mx-auto relative p-[1.2px] bg-zinc-900">
             <img class="w-full h-full object-cover rounded-2xl hidden dark:block relative z-10"
                 src="{{ asset('img/tani/dashboard-agri-dark.webp') }}" draggable="false" alt="Dashboard Pertanian Tebu">
             <img class="w-full h-full object-cover rounded-2xl block dark:hidden relative z-10"

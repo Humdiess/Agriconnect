@@ -12,11 +12,11 @@
         <input type="checkbox" id="sidebar-mobile-fixed" class="sidebar-state" />
         <label for="sidebar-mobile-fixed" class="sidebar-overlay"></label>
         <aside
-            class="sidebar sidebar-fixed-left sidebar-mobile h-full justify-start max-sm:fixed max-sm:-translate-x-full bg-white dark:bg-ireng border-r border-zinc-700">
+            class="sidebar sidebar-fixed-left sidebar-mobile h-full justify-start max-sm:fixed max-sm:-translate-x-full bg-white dark:bg-ireng border-r dark:border-zinc-700">
             <section class="sidebar-title items-center p-4">
                 <img src="{{ asset('img/logo/app-logo.png') }}" alt="logo" class="h-10 w-10 rounded-full">
                 <div class="flex flex-col ml-4">
-                    <span class="dark:text-gray-200">Agriconnect</span>
+                    <span class="dark:text-gray-200 text-ireng">Agriconnect</span>
                     <span class="text-xs font-normal text-content2">Petani tebu</span>
                 </div>
             </section>
@@ -25,7 +25,7 @@
                     <section class="menu-section px-4">
                         <ul class="menu-items">
                             <a href="{{ route('petani.index') }}">
-                                <li class="menu-item dark:text-white hover:bg-accent hover:text-white">
+                                <li class="menu-item text-ireng dark:text-white hover:bg-accent hover:text-white">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 opacity-75" fill="none"
                                         viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -39,7 +39,7 @@
                             <li class="dark:text-white">
                                 <input type="checkbox" id="menu-1" class="menu-toggle" />
                                 <label
-                                    class="menu-item justify-between hover:bg-accent hover:text-white dark:text-white"
+                                    class="menu-item justify-between hover:bg-accent hover:text-white text-ireng dark:text-white"
                                     for="menu-1">
                                     <div class="flex gap-2 ">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 opacity-75"
@@ -64,27 +64,27 @@
                                     <div class="min-h-0">
                                         <label class="menu-item menu-item-disabled ml-6">Pantau lahan</label>
                                         <a href="{{ route('pantau.air') }}"
-                                            class="menu-item ml-6 dark:text-white hover:bg-accent hover:text-white">Irigasi</a>
+                                            class="menu-item ml-6 dark:text-white text-ireng hover:bg-accent hover:text-white">Irigasi</a>
                                         <a href="{{ route('pantau.suhu') }}"
-                                            class="menu-item ml-6 dark:text-white hover:bg-accent hover:text-white">Suhu
+                                            class="menu-item ml-6 dark:text-white text-ireng hover:bg-accent hover:text-white">Suhu
                                             Lahan</a>
                                         <a href="{{ route('pantau.kelembapan') }}"
-                                            class="menu-item ml-6 dark:text-white hover:bg-accent hover:text-white">Kelembapan
+                                            class="menu-item ml-6 dark:text-white text-ireng hover:bg-accent hover:text-white">Kelembapan
                                         </a>
                                         <a href="{{ route('pantau.nutrisi') }}"
-                                            class="menu-item ml-6 dark:text-white hover:bg-accent hover:text-white">Nutrisi
+                                            class="menu-item ml-6 dark:text-white text-ireng hover:bg-accent hover:text-white">Nutrisi
                                             Tanaman</a>
                                         <a href="{{ route('pantau.curah-hujan') }}"
-                                            class="menu-item ml-6 dark:text-white hover:bg-accent hover:text-white">Curah
+                                            class="menu-item ml-6 dark:text-white text-ireng hover:bg-accent hover:text-white">Curah
                                             hujan</a>
                                         <a href="{{ route('pantau.tanggal') }}"
-                                            class="menu-item ml-6 dark:text-white hover:bg-accent hover:text-white">Tanggal
+                                            class="menu-item ml-6 dark:text-white text-ireng hover:bg-accent hover:text-white">Tanggal
                                             tanam <span class="badge badge-flat-success">AI Powered</span></a>
                                     </div>
                                 </div>
                             </li>
                             <a href="{{ route('product.index') }}">
-                                <li class="menu-item dark:text-white hover:bg-accent hover:text-white">
+                                <li class="menu-item dark:text-white text-ireng hover:bg-accent hover:text-white">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="opacity-75" width="22"
                                         height="22" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
                                         fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -100,16 +100,15 @@
                     </section>
                 </nav>
             </section>
-            <section class="sidebar-footer justify-end pt-2 dark:bg-ireng bg-white dark:text-white">
-                <div class="divider my-0"></div>
+            <section class="sidebar-footer justify-end pt-2 dark:bg-ireng bg-white dark:text-white border-t dark:border-t-zinc-700">
                 <div class="dropdown z-50 flex h-fit w-full cursor-pointer">
                     <label class="whites mx-2 flex h-fit w-full cursor-pointer p-0" tabindex="0">
                         <div class="flex flex-row gap-4 p-4">
-                            <div class="avatar-square avatar avatar-md">
+                            <div class="avatar-square avatar avatar-md rounded-full">
                                 <img src="https://i.pravatar.cc/150?img=30" alt="avatar" />
                             </div>
 
-                            <div class="flex flex-col">
+                            <div class="flex flex-col text-ireng dark:text-white">
                                 <span>{{ Auth::user()->name }}</span>
                             </div>
                         </div>
