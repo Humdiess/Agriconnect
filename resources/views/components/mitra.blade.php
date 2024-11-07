@@ -49,7 +49,7 @@
     .container-block {
         container-type: inline-size;
     }
-    @container (max-width: 1100px) {
+    @media (max-width: 1100px) {
         .container-block svg:nth-child(3),
         .container-block svg:nth-child(4) {
             display: none;

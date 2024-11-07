@@ -12,7 +12,7 @@
         <input type="checkbox" id="sidebar-mobile-fixed" class="sidebar-state" />
         <label for="sidebar-mobile-fixed" class="sidebar-overlay"></label>
         <aside
-            class="sidebar sidebar-fixed-left sidebar-mobile h-full justify-start max-sm:fixed max-sm:-translate-x-full bg-white dark:bg-ireng border-r dark:border-zinc-700">
+            class="sidebar w-64 sidebar-fixed-left sidebar-mobile h-full justify-start max-sm:fixed max-sm:-translate-x-full bg-white dark:bg-ireng border-r dark:border-zinc-700">
             <section class="sidebar-title items-center p-4">
                 <img src="{{ asset('img/logo/app-logo.png') }}" alt="logo" class="h-10 w-10 rounded-full">
                 <div class="flex flex-col ml-4">
@@ -140,8 +140,6 @@
         </aside>
     </div>
     <div class="flex w-full min-h-svh flex-col p-4">
-
-
         <div class="my-4">
             @yield('content')
         </div>
