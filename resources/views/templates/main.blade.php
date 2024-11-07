@@ -8,9 +8,9 @@
     </div>
 </div>
 <div class="flex flex-row sm:gap-3 pt-8 md:pt-0">
-    <div class="sm:w-full sm:max-w-[18rem]">
+    <div class="sm:w-full sm:max-w-[16rem]">
         <input type="checkbox" id="sidebar-mobile-fixed" class="sidebar-state" />
-        <label for="sidebar-mobile-fixed" class="sidebar-overlay"></label>
+        <label for="sidebar-mobile-fixed text-white" class="sidebar-overlay"></label>
         <aside
             class="sidebar w-64 sidebar-fixed-left sidebar-mobile h-full justify-start max-sm:fixed max-sm:-translate-x-full bg-white dark:bg-ireng border-r dark:border-zinc-700">
             <section class="sidebar-title items-center p-4">
