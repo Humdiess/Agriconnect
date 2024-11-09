@@ -68,7 +68,8 @@
                                     <dl>
                                         <dt class="text-sm font-medium text-accent dark:text-gray-400 truncate">Suhu Lahan
                                         </dt>
-                                        <dd class="text-lg font-semibold text-gray-900 dark:text-white">28°C</dd>
+                                        {{-- suhu --}}
+                                        <dd class="text-lg font-semibold text-gray-900 dark:text-white">{{ $suhu }}°C</dd>
                                     </dl>
                                 </div>
                             </div>
