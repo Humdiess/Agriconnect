@@ -9,6 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>AgriConnect</title>
 
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     {{-- icon --}}
     <link rel="icon" type="image/x-icon" href="{{ asset('img/logo/header-logo.png') }}">
 
@@ -54,7 +56,7 @@
     scrollbar-width: none;  /* Firefox */
 }
     </style>
-    
+
     <meta name="keywords" content="pertanian, petani, platform online, AgriConnect, teknologi pertanian">
     <meta name="author" content="AgriConnect Team">
     <meta name="robots" content="index, follow">

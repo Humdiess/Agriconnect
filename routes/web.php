@@ -54,10 +54,12 @@ Route::middleware('guest')->group(function () {
 });
 Route::post('/logout', [AuthController::class, 'logout'])->name('auth.logout')->middleware('auth');
 
+Route::post('/dashboard-tani/update-ip', [PetaniController::class, 'updateIp'])->name('dashboard.update-ip');
 
 // Petani Fiturs (is_farmer=true)
 Route::middleware([IsFarmer::class])->group(function () {
     Route::get('/dashboard-tani', [PetaniController::class, 'index'])->name('petani.index');
+    Route::post('/dashboard-tani', [PetaniController::class, 'generateRecommendation'])->name('dashboard.generate');
     Route::prefix('pantau')->group(function () {
         Route::get('/air', function () {
             $active = 'pantau-air';

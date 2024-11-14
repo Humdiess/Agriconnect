@@ -8,8 +8,7 @@
             <div class="mx-auto py-6 sm:px-6 lg:px-8">
                 <!-- Gambaran Umum AI -->
                 <div class="flex items-center justify-between mb-4">
-                    <h2 class="text-lg font-semibold text-gray-900 dark:text-white">Tindakan yang direkomendasikan untuk
-                        pertanian tebu</h2>
+                    <h2 class="text-lg font-semibold text-gray-900 dark:text-white">Tindakan yang direkomendasikan Lahan kamu</h2>
                     <span
                         class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-lg text-xs font-medium bg-accent/20 text-accent dark:bg-accent/30 dark:text-accent">Didukung
                         oleh AI ✨</span>
@@ -17,7 +16,7 @@
                 <div class="shadow-sm rounded-lg overflow-hidden mb-6 border dark:border-zinc-600">
                     <div class="px-4 py-5 sm:p-6">
                         <ul class="space-y-3" id="recommended-actions">
-                            <li class="flex items-start">
+                            {{-- <li class="flex items-start">
                                 <svg class="flex-shrink-0 h-5 w-5 text-accent" xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd"
@@ -46,7 +45,7 @@
                                 </svg>
                                 <p class="ml-3 text-sm text-gray-700 dark:text-gray-300">Lakukan pengairan yang cukup untuk
                                     menjaga kelembaban tanah optimal bagi tebu</p>
-                            </li>
+                            </li> --}}
                         </ul>
                     </div>
                 </div>
@@ -69,7 +68,7 @@
                                         <dt class="text-sm font-medium text-accent dark:text-gray-400 truncate">Suhu Lahan
                                         </dt>
                                         {{-- suhu --}}
-                                        <dd class="text-lg font-semibold text-gray-900 dark:text-white">{{ $suhu }}°C</dd>
+                                        <dd id="suhu" class="text-lg font-semibold text-gray-900 dark:text-white">{{ $temperature }}°C</dd>
                                     </dl>
                                 </div>
                             </div>
@@ -95,7 +94,7 @@
                                     <dl>
                                         <dt class="text-sm font-medium text-accent dark:text-gray-400 truncate">Kelembaban
                                             Tanah</dt>
-                                        <dd class="text-lg font-semibold text-gray-900 dark:text-white">65%</dd>
+                                        <dd id="moisture" class="text-lg font-semibold text-gray-900 dark:text-white">{{ $moisture }} %</dd>
                                     </dl>
                                 </div>
                             </div>
@@ -369,8 +368,239 @@
                         </div>
                     </div>
                 </div>
+
+                <h2 class="text-lg font-semibold text-gray-900 dark:text-white mt-8 mb-4">Pengaturan Alat IoT</h2>
+                <div class="shadow-sm rounded-lg overflow-hidden border dark:border-zinc-600">
+                    <div class="px-4 py-5 sm:p-6">
+                        <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white">Tambah/Perbarui Alamat IP ESP32</h3>
+                        <form action="{{ route('dashboard.update-ip') }}" method="POST" class="mt-5">
+                            @csrf
+                            <div class="flex flex-col sm:flex-row items-center gap-4">
+                                <label for="ip_address" class="text-sm font-medium text-accent dark:text-gray-400">
+                                    Alamat IP ESP32
+                                </label>
+                                <input type="text" id="ip_address" name="ip_address"
+                                       class="flex-1 mt-1 block w-full px-3 py-2 border rounded-md shadow-sm text-gray-900 dark:text-white dark:bg-zinc-700 border-gray-300 dark:border-zinc-600 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                                       placeholder="Masukkan IP ESP32">
+                                <button type="submit"
+                                        class="inline-flex justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-accent hover:bg-accent/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent">
+                                    Simpan IP
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <h2 class="text-lg font-semibold text-gray-900 dark:text-white mt-8 mb-4">Pengaturan Request Data</h2>
+                <div class="shadow-sm rounded-lg overflow-hidden border dark:border-zinc-600">
+                    <div class="px-4 py-5 sm:p-6">
+                        <label for="auto-request-toggle" class="flex items-center cursor-pointer">
+                            <span class="text-sm font-medium text-accent dark:text-gray-400 mr-3">Auto Request Data</span>
+                            <div class="relative">
+                                <input type="checkbox" id="auto-request-toggle" class="sr-only" checked>
+                                <div class="block bg-gray-300 dark:bg-gray-600 w-10 h-6 rounded-full"></div>
+                                <div class="dot absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition"></div>
+                            </div>
+                        </label>
+                        <p class="mt-2 text-sm text-gray-700 dark:text-gray-300">Pilih apakah ingin melakukan {{ $ip }} request otomatis atau hanya saat halaman di-refresh.</p>
+                    </div>
+                </div>
             </div>
         </main>
+
         <x-mitra />
+
     </div>
+    <style>
+        /* Untuk toggle switch */
+        #auto-request-toggle:checked + .block {
+            background-color: #4A90E2;
+        }
+        #auto-request-toggle:checked + .block .dot {
+            transform: translateX(100%);
+        }
+    </style>
+
+<script>
+let autoRequest = localStorage.getItem('autoRequest') === 'true'; // Ambil status dari local storage
+let autoRequestInterval;
+
+// Fungsi untuk memulai auto request
+function startAutoRequest() {
+    autoRequestInterval = setInterval(checkDataChanges, 30000); // Memeriksa perubahan data setiap 30 detik
+}
+
+// Fungsi untuk menghentikan auto request
+function stopAutoRequest() {
+    clearInterval(autoRequestInterval);
+}
+
+// Fungsi untuk menginisialisasi toggle berdasarkan local storage
+function initializeToggle() {
+    const toggle = document.getElementById('auto-request-toggle');
+    toggle.checked = autoRequest; // Setel posisi toggle sesuai dengan nilai dari local storage
+
+    if (autoRequest) {
+        startAutoRequest();
+    }
+
+    // Event listener untuk toggle switch
+    toggle.addEventListener('change', function () {
+        autoRequest = this.checked;
+        localStorage.setItem('autoRequest', autoRequest); // Simpan status ke local storage
+        if (autoRequest) {
+            startAutoRequest();
+        } else {
+            stopAutoRequest();
+        }
+    });
+}
+
+// Panggil fungsi generateResponse hanya saat halaman dimuat
+document.addEventListener('DOMContentLoaded', function () {
+    generateResponse(); // Jalankan request saat halaman dimuat
+    initializeToggle(); // Inisialisasi toggle dari local storage
+});
+
+
+// Event listener untuk toggle switch
+document.getElementById('auto-request-toggle').addEventListener('change', function () {
+    autoRequest = this.checked; // Update status auto request berdasarkan toggle
+    if (autoRequest) {
+        startAutoRequest();
+    } else {
+        stopAutoRequest();
+    }
+});
+
+// Panggil fungsi generateResponse hanya saat halaman dimuat
+document.addEventListener('DOMContentLoaded', function () {
+    generateResponse();
+    if (autoRequest) {
+        startAutoRequest();
+    }
+});
+
+// Fungsi untuk menampilkan loading placeholder
+// Fungsi untuk menampilkan loading placeholder
+function showLoadingPlaceholder() {
+    document.getElementById('recommended-actions').innerHTML = `
+        <li class="flex items-start animate-pulse">
+            <div class="flex-shrink-0 h-5 w-5 rounded-full bg-gray-300 dark:bg-gray-600"></div>
+            <div class="ml-3 flex-1">
+                <div class="h-4 bg-gray-300 dark:bg-gray-600 rounded w-3/4"></div>
+            </div>
+        </li>
+        <li class="flex items-start animate-pulse">
+            <div class="flex-shrink-0 h-5 w-5 rounded-full bg-gray-300 dark:bg-gray-600"></div>
+            <div class="ml-3 flex-1">
+                <div class="h-4 bg-gray-300 dark:bg-gray-600 rounded w-2/3"></div>
+            </div>
+        </li>
+        <li class="flex items-start animate-pulse">
+            <div class="flex-shrink-0 h-5 w-5 rounded-full bg-gray-300 dark:bg-gray-600"></div>
+            <div class="ml-3 flex-1">
+                <div class="h-4 bg-gray-300 dark:bg-gray-600 rounded w-4/5"></div>
+            </div>
+        </li>
+    `;
+}
+
+let previousSuhu = '';
+let previousMoisture = '';
+let isGenerating = false;
+
+// Fungsi untuk mengkonversi markdown ke HTML
+function convertMarkdownToHtml(text) {
+    // Konversi teks yang diapit ** atau * menjadi bold
+    return text.replace(/\*\*(.*?)\*\*|\*(.*?)\*/g, (match, g1, g2) => {
+        const content = g1 || g2;
+        return `<strong>${content}</strong>`;
+    });
+}
+
+function checkDataChanges() {
+    const suhuValue = document.getElementById('suhu').textContent.replace('°C', '').trim();
+    const moistureValue = document.getElementById('moisture').textContent.replace('%', '').trim();
+
+    if (!isGenerating && (suhuValue !== previousSuhu || moistureValue !== previousMoisture)) {
+        previousSuhu = suhuValue;
+        previousMoisture = moistureValue;
+        generateResponse();
+    }
+}
+
+function generateResponse() {
+    if (isGenerating) return;
+
+    isGenerating = true;
+    showLoadingPlaceholder();
+
+    const suhuValue = document.getElementById('suhu').textContent.replace('°C', '').trim();
+    const moistureValue = document.getElementById('moisture').textContent.replace('%', '').trim();
+
+    const text = `Berdasarkan data sensor:
+    - Suhu: ${suhuValue}°C
+    - Kelembaban: ${moistureValue}%
+
+    Berikan maksimal 3 boleh hanya satu, buat rekomendasinya hanya rekomendasi singkat gitu, kalau ada data yang ga masuk akal, nanti kamu kasih pesan dan beri tahu kalau data saat ini ga masuk akal, jadi ga panjang2 amat yang penting jelas, dan di setiapakhir masing2 point rekomendasi, akan di beri sebab secara singkat dengan d kasih tanda kurung d sebabnya, menyesuaikan kondisi real saat ini, rekomendasi perawatan tanaman tebu dengan spesifik mencantumkan jumlah/takaran yang diperlukan.
+    Setiap rekomendasi harus fokus pada perawatan tebu dan mencakup tindakan seperti pemupukan, pengairan, atau pengendalian hama.
+    Berikan dalam format list dengan awalan "-" (strip). selalu berikan cetak tebal pada angka dan bahan ada resource yang digunakan`;
+
+    fetch("/dashboard-tani", {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+        },
+        body: JSON.stringify({ text: text })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.text) {
+            const recommendations = data.text
+                .split('\n')
+                .filter(line => line.trim().startsWith('-'))
+                .map(line => {
+                    // Konversi markdown ke HTML untuk setiap baris
+                    const processedLine = convertMarkdownToHtml(line.trim().substring(1).trim());
+                    return `
+                        <li class="flex items-start">
+                            <svg class="flex-shrink-0 h-5 w-5 text-accent" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                            <p class="ml-3 text-sm text-gray-700 dark:text-gray-300">${processedLine}</p>
+                        </li>
+                    `;
+                })
+                .join('');
+
+            const recommendedActions = document.getElementById('recommended-actions');
+            recommendedActions.style.opacity = '0';
+            recommendedActions.innerHTML = recommendations;
+            setTimeout(() => {
+                recommendedActions.style.transition = 'opacity 0.5s ease-in-out';
+                recommendedActions.style.opacity = '1';
+            }, 100);
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        document.getElementById('recommended-actions').innerHTML = `
+            <li class="flex items-start">
+                <svg class="flex-shrink-0 h-5 w-5 text-red-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm-1-9h2V5H9v4zm0 6h2v-2H9v2z" clip-rule="evenodd" />
+                </svg>
+                <p class="ml-3 text-sm text-red-500">Terjadi kesalahan saat mengambil rekomendasi</p>
+            </li>
+        `;
+    })
+    .finally(() => {
+        isGenerating = false;
+    });
+}
+
+setInterval(checkDataChanges, 30000);
+document.addEventListener('DOMContentLoaded', generateResponse);
+</script>
 @endsection
