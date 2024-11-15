@@ -96,6 +96,15 @@
                                     Products
                                 </li>
                             </a>
+                            <a href="{{ route('petani.scan') }}">
+                                <li class="menu-item dark:text-white text-ireng hover:bg-accent hover:text-white">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 opacity-75" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h4l3 7h4l3-7h4" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M10 10V3m4 7V3" />
+                                    </svg>
+                                    Scan tanaman
+                                </li>
+                            </a>
                         </ul>
                     </section>
                 </nav>

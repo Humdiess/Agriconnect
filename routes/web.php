@@ -90,6 +90,11 @@ Route::middleware([IsFarmer::class])->group(function () {
             return view('frontend.pantau.tanggal', compact('active'));
         })->name('pantau.tanggal');
     });
+
+    Route::get('/dashboard-tani/scan', function () {
+        $active = 'scan';
+        return view('petani.scan', compact('active'));
+    })->name('petani.scan');
 });
 
 
