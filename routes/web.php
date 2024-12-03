@@ -95,6 +95,8 @@ Route::middleware([IsFarmer::class])->group(function () {
         $active = 'scan';
         return view('petani.scan', compact('active'));
     })->name('petani.scan');
+
+    Route::delete('/dashboard/hapus-alat', [PetaniController::class, 'deleteDevice'])->name('delete-device');
 });
 
 

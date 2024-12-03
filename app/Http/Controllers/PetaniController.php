@@ -21,6 +21,7 @@ class PetaniController extends Controller
      */
     public function index()
     {
+        $hasSettings = Setting::count() > 5;
         // Mengambil IP dari database atau menggunakan nilai default jika tidak tersedia
         $esp32_ip = Setting::get('esp32_ip', 'http://default-ip');
 
@@ -41,7 +42,7 @@ class PetaniController extends Controller
         }
 
         $active = 'dashboard';
-        return view('petani.dashboard', compact('active', 'moisture', 'temperature', 'ip'));
+        return view('petani.dashboard', compact('active', 'moisture', 'temperature', 'ip', 'hasSettings'));
     }
 
     /**

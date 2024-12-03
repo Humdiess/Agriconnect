@@ -7,12 +7,17 @@
         <main class="w-full bg-white dark:bg-ireng">
             <div class="mx-auto py-6 sm:px-6 lg:px-8">
                 <!-- Gambaran Umum AI -->
-                <div class="flex items-center justify-between mb-4">
-                    <h2 class="text-lg font-semibold text-gray-900 dark:text-white">Tindakan yang direkomendasikan Lahan kamu</h2>
+                <div class="flex sm:flex-col items-center justify-between mb-4">
+                    <h2 class="text-lg font-semibold text-gray-900 dark:text-white">Tindakan yang direkomendasikan untuk Lahan kamu</h2>
                     <span
                         class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-lg text-xs font-medium bg-accent/20 text-accent dark:bg-accent/30 dark:text-accent">Didukung
                         oleh AI ✨</span>
                 </div>
+                @if(!$hasSettings)
+                    <div class="text-sm text-yellow-600 dark:text-yellow-400 mb-4">
+                        <strong>Peringatan:</strong> Rekomendasi ini hanya berdasarkan data default, bukan data aktual dari perangkat Anda.
+                    </div>
+                @endif
                 <div class="shadow-sm rounded-lg overflow-hidden mb-6 border dark:border-zinc-600">
                     <div class="px-4 py-5 sm:p-6">
                         <ul class="space-y-3" id="recommended-actions">
