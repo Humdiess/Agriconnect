@@ -1,7 +1,9 @@
-@include('frontend.layouts.header')
-@php
+<x-main-layout>
+
+{{-- @php
     use App\Helpers\CurrencyHelper;
-@endphp
+@endphp --}}
+
 <!-- Shop Hero Section -->
 <section class="shop-hero-container flex flex-col justify-center items-center relative pt-16 pb-8 overflow-hidden">
     <!-- Aurora Effects -->
@@ -71,7 +73,7 @@
                                 </h3>
                                 <div class="flex justify-between items-center">
                                     <span class="text-xl font-bold text-accent">Rp.
-                                        {{ CurrencyHelper::getFormat($product->price) }}</span>
+                                        {{-- {{ CurrencyHelper::getFormat($product->price) }}</span> --}}
                                     <button
                                         class="px-4 py-2 bg-accent text-white rounded-lg hover:bg-accent-dark transition-colors duration-300">Beli</button>
                                 </div>
@@ -148,4 +150,5 @@
         filterProducts();
     });
 </script>
-@include('frontend.layouts.footer')
+</x-main-layout>
+

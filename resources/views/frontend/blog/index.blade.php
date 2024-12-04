@@ -1,4 +1,4 @@
-@include('frontend.layouts.header')
+<x-main-layout>
 
 <div class="min-h-screen dark:bg-ireng dark:text-white bg-white text-ireng overflow-hidden">
 
@@ -308,4 +308,4 @@
     </script>
 @endpush
 
-@include('frontend.layouts.footer')
+</x-main-layout>

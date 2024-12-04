@@ -1,6 +1,4 @@
-@extends('frontend.layouts.main')
-
-@section('content')
+<x-main-layout>
     <div class="min-h-screen bg-white/80 dark:bg-ireng/30 backdrop-blur-md flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8">
         <div class="max-w-md w-full space-y-8 bg-white dark:bg-zinc-900 p-12 rounded-xl shadow-md border border-gray-200 dark:border-gray-700">
             <div class="mb-4">
@@ -23,4 +21,4 @@
             </div>
         </div>
     </div>
-@endsection
+</x-main-layout>

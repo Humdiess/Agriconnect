@@ -1,5 +1,4 @@
-@include('frontend.layouts.header')
-
+<x-main-layout>
 <div class="min-h-screen flex justify-center p-4 pt-14 md:mt-0 md:pt-0">
     <div id="container" class="w-full max-w-2xl rounded-3xl overflow-hidden flex flex-col mt-24">
         <div class="p-8 md:pt-0 flex-grow overflow-hidden flex flex-col">
@@ -74,7 +73,6 @@
     </div>
 </div>
 
-@include('frontend.layouts.footer')
 <div class="h-20"></div>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -249,5 +247,5 @@
     });
 </script>
 
-
+</x-main-layout>
 

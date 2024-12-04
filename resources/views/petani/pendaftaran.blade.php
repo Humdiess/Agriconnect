@@ -1,4 +1,4 @@
-@include('auth.layouts.header')
+<x-app-layout>
 <div class="min-h-screen bg-ireng/30 dark:bg-ireng flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8">
     <div
         class="max-w-md w-full space-y-6 bg-white dark:bg-ireng p-8 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700">
@@ -56,4 +56,4 @@
         </form>
     </div>
 </div>
-@include('auth.layouts.footer')
+</x-app-layout>

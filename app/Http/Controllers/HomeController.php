@@ -20,7 +20,7 @@ class HomeController extends Controller
     public function blog()
     {
         $active = 'blog';
-        return view('frontend.home.blog', compact('active'));
+        return view('frontend.blog.index', compact('active'));
     }
     public function agrishop(Request $request)
     {

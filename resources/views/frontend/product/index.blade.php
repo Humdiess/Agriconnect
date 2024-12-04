@@ -1,6 +1,4 @@
-@extends('templates.main')
-
-@section('content')
+<x-main-layout>
 <div class="container mx-auto px-8 py-8">
     <div class="mb-8 flex flex-col sm:flex-row justify-between items-start sm:items-center">
         <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-0">Products</h2>
@@ -69,4 +67,5 @@
         @endforeach
     </div>
 </div>
-@endsection
+</x-main-layout>
+
