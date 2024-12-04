@@ -1,4 +1,4 @@
-@include('frontend.layouts.header')
+<x-main-layout>
 
 <style>
     .aurora-bg {
@@ -310,4 +310,4 @@
     </div>
 </section>
 
-@include('frontend.layouts.footer')
+</x-main-layout>
