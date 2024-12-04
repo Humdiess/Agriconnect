@@ -13,6 +13,8 @@ class TaniController extends Controller
 {
     public function index()
     {
+        // dd(env("GEMINI_API_KEY"));
+
         $active = 'tani-ai';
         return view('frontend.tani.index', compact('active'));
     }
@@ -59,7 +61,9 @@ class TaniController extends Controller
         $data = $request->json()->all();
         $text = $data['text'];
 
-        $client = new Client("AIzaSyBjwXRk3Twk1kgq13sz6WHGchYnyc9JgxU");
+        // $client = new Client("AIzaSyBgVfmLyjHhdRhotwGz4XSnlXjn6wVedGI");
+
+        $client = new Client(env("GEMINI_API_KEY"));
 
         $response = $client->geminiPro()->generateContent(
             new TextPart($text)

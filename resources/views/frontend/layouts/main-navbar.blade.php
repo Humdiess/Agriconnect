@@ -49,12 +49,12 @@
                 @auth
                     @if (Auth::user()->is_farmer)
                         <a href="{{ route('petani.index') }}"
-                            class="hidden lg:block text-accent border border-accent hover:bg-accent-dark px-4 py-2 rounded-md text-sm font-medium {{ $active == 'tani-ai' ? 'ring-2 ring-green-400 dark:ring-green-300' : '' }}">
+                            class="hidden lg:block text-accent border border-accent hover:bg-accent-dark px-4 py-2 rounded-md text-sm font-medium">
                             <i class="fa-solid fa-seedling me-3"></i> Dashboard Tani
                         </a>
                     @else
                         <a href="{{ route('tani.pendaftaran') }}"
-                            class="hidden lg:block text-accent border border-accent hover:bg-accent-dark px-4 py-2 rounded-md text-sm font-medium {{ $active == 'tani-ai' ? 'ring-2 ring-green-400 dark:ring-green-300' : '' }}">
+                            class="hidden lg:block text-accent border border-accent hover:bg-accent-dark px-4 py-2 rounded-md text-sm font-medium">
                             <i class="fa-solid fa-seedling me-3"></i> Jadi petani
                         </a>
                     @endif
