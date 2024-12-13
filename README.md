@@ -1,98 +1,127 @@
-<p align="center"><a href="https://agriconnect.my.id" target="_blank"><img src="./public/img/logo/app-logo.png" width="400" alt="Agriconnect logo"></a></p>
+<p align="center">
+  <a href="https://agriconnect.my.id" target="_blank">
+    <img src="./public/img/logo/app-logo.png" width="400" alt="Agriconnect logo">
+  </a>
+</p>
 
-## Tentang AgriConnect
+<h1 align="center">AgriConnect</h1>
+<p align="center">
+  <i>Inovasi Digital untuk Petani Tebu di Sidoarjo</i>
+</p>
 
-[AgriConnect](https://agriconnect.my.id) AgriConnect adalah platform inovatif untuk petani tebu di Sidoarjo yang memanfaatkan teknologi IoT dan AI untuk memaksimalkan hasil panen. Kami percaya bahwa teknologi dapat memberikan pengalaman bertani yang lebih efisien dan memberdayakan para petani menuju masa depan yang lebih baik.
-
-Website ini dibangun menggunakan framework Laravel, yang memberikan sintaks ekspresif dan elegan, memudahkan pengembangan aplikasi web yang kokoh dan bertenaga.
-
-### Fitur AgriConnect
-
-- Sistem [IoT dan sensor pintar](https://agriconnect.my.id) untuk monitoring lahan secara real-time.
-- Algoritma AI untuk membantu pengambilan keputusan pertanian.
-- Penjualan hasil panen langsung ke pasar melalui platform kami.
-- Peningkatan produktivitas dengan bantuan teknologi modern.
-
-## Cara Memulai dengan AgriConnect
-
-Untuk mulai menggunakan AgriConnect, kunjungi [agriconnect.my.id](https://agriconnect.my.id) dan daftarkan diri Anda sebagai petani. Platform kami menyediakan panduan untuk menggunakan layanan kami secara efektif.
-
-## Kunjungi Kami
-
-Untuk informasi lebih lanjut, kunjungi website kami di [agriconnect.my.id](https://agriconnect.my.id).
-
-Tentu, berikut adalah bagian tambahan mengenai langkah-langkah menginstal proyek AgriConnect dari GitLab dan menjalankannya:
+<p align="center">
+  <a href="https://github.com/laravel/framework" target="_blank">
+    <img src="https://img.shields.io/badge/Framework-Laravel-red?style=flat-square&logo=laravel" alt="Laravel">
+  </a>
+  <a href="https://nodejs.org/" target="_blank">
+    <img src="https://img.shields.io/badge/Node.js-v16.0-green?style=flat-square&logo=node.js" alt="Node.js">
+  </a>
+  <a href="https://gitlab.com/username/agriconnect" target="_blank">
+    <img src="https://img.shields.io/badge/GitLab-Repository-orange?style=flat-square&logo=gitlab" alt="GitLab">
+  </a>
+</p>
 
 ---
 
-## Langkah-Langkah Menginstal AgriConnect
+## ✨ Tentang AgriConnect
 
-Jika Anda ingin mengkloning dan menjalankan proyek ini secara lokal, ikuti langkah-langkah berikut:
+[AgriConnect](https://agriconnect.my.id) adalah platform inovatif berbasis teknologi **IoT** dan **AI** yang dirancang khusus untuk membantu petani tebu meningkatkan produktivitas hasil panen mereka. Dengan teknologi modern, kami bertujuan menciptakan pengalaman bertani yang efisien dan berkelanjutan.
+
+### 🌱 Fitur Utama
+
+- 📊 **Monitoring Lahan Secara Real-time:** Sistem IoT dan sensor pintar untuk mengawasi kondisi lahan.
+- 🧰 **Algoritma AI:** Membantu pengambilan keputusan pertanian berdasarkan data.
+- 🛒 **Pasar Digital:** Penjualan hasil panen langsung ke pasar melalui platform.
+- 💡 **Panduan Teknologi Modern:** Solusi untuk meningkatkan produktivitas petani.
+
+---
+
+## ✏️ Cara Memulai dengan AgriConnect
+
+1. Kunjungi [agriconnect.my.id](https://agriconnect.my.id).
+2. Daftarkan diri Anda sebagai petani.
+3. Ikuti panduan untuk menggunakan fitur IoT dan AI.
+
+---
+
+## ⚙️ Langkah-Langkah Instalasi Lokal
+
+Jika Anda ingin menjalankan proyek ini di komputer Anda, ikuti langkah-langkah berikut:
 
 ### Prasyarat
 
 Pastikan Anda telah menginstal:
 
 - **PHP >= 8.0**
-- **Composer** untuk mengelola dependensi
-- **Node.js dan NPM/Yarn** untuk pengelolaan JavaScript
-- **Git** untuk mengkloning proyek
-- **Laravel** untuk menjalankan server lokal
+- **Composer** (Pengelola dependensi PHP)
+- **Node.js & NPM/Yarn** (Untuk pengelolaan aset frontend)
+- **Git** (Untuk mengkloning proyek)
 
 ### Langkah Instalasi
 
 1. **Kloning Repository**
-   ```
+   ```bash
    git clone https://gitlab.com/username/agriconnect.git
    ```
 
 2. **Masuk ke Direktori Proyek**
-   ```
+   ```bash
    cd agriconnect
    ```
 
-3. **Instal Dependensi PHP dengan Composer**
-   ```
+3. **Instal Dependensi PHP**
+   ```bash
    composer install
    ```
 
 4. **Instal Dependensi Frontend**
-   ```
+   ```bash
    npm install
    ```
-   atau jika menggunakan Yarn:
-   ```
+   atau gunakan Yarn:
+   ```bash
    yarn install
    ```
 
-5. **Buat File Konfigurasi .env**
-   ```
+5. **Buat File Konfigurasi**
+   ```bash
    cp .env.example .env
    ```
-   Sesuaikan konfigurasi `.env` sesuai dengan kebutuhan Anda, terutama pengaturan database.
+   Sesuaikan file `.env` sesuai dengan konfigurasi lokal Anda.
 
 6. **Generate App Key**
-   ```
+   ```bash
    php artisan key:generate
    ```
 
-7. **Migrasi Database**
-   ```
+7. **Migrasikan Database**
+   ```bash
    php artisan migrate
    ```
 
-8. **Menjalankan Server Lokal**
-   ```
+8. **Jalankan Server Lokal**
+   ```bash
    php artisan serve
    ```
 
-9. **Jalankan Build Dev untuk Frontend**
-   ```
+9. **Build Aset Frontend**
+   ```bash
    npm run dev
    ```
-   atau jika menggunakan Yarn:
-   ```
+   atau:
+   ```bash
    yarn dev
    ```
 
-Sekarang, proyek Anda seharusnya berjalan di [http://localhost:8000](http://localhost:8000).
+Sekarang Anda dapat mengakses proyek ini di [http://localhost:8000](http://localhost:8000).
+
+---
+
+## 🌐 Kunjungi Kami
+
+Untuk informasi lebih lanjut, kunjungi website kami di [agriconnect.my.id](https://agriconnect.my.id) atau hubungi kami melalui email support.
+
+---
+
+<p align="center">Dibangun dengan ❤ oleh Tim AgriConnect</p>
+
