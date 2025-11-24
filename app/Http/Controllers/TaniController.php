@@ -58,17 +58,31 @@ class TaniController extends Controller
 
     public function chat(Request $request)
     {
-        $data = $request->json()->all();
-        $text = $data['text'];
+        try {
+            $data = $request->json()->all();
+            
+            if (!isset($data['text'])) {
+                return response()->json(['error' => 'Text input is required'], 400);
+            }
+            
+            $text = $data['text'];
+            $apiKey = env("GEMINI_API_KEY");
 
-        // $client = new Client("AIzaSyBgVfmLyjHhdRhotwGz4XSnlXjn6wVedGI");
+            if (!$apiKey) {
+                Log::error('GEMINI_API_KEY not found in .env');
+                return response()->json(['error' => 'Server configuration error'], 500);
+            }
 
-        $client = new Client(env("GEMINI_API_KEY"));
+            $client = new Client($apiKey);
 
-        $response = $client->geminiPro()->generateContent(
-            new TextPart($text)
-        );
+            $response = $client->generativeModel('gemini-2.5-flash')->generateContent(
+                new TextPart($text)
+            );
 
-        return response()->json(['text' => $response->text()]);
+            return response()->json(['text' => $response->text()]);
+        } catch (\Exception $e) {
+            Log::error('Gemini API Error in TaniController: ' . $e->getMessage());
+            return response()->json(['error' => 'An error occurred while processing your request.'], 500);
+        }
     }
 }

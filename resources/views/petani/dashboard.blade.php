@@ -1,6 +1,7 @@
 @extends('templates.main')
 
 @section('content')
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Konten Utama -->
     <div class="flex flex-col w-full">
         <!-- Isi Halaman -->
@@ -364,13 +365,9 @@
                     <div class="px-4 py-5 sm:p-6">
                         <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white">Grafik Rendemen Tebu 5
                             Tahun Terakhir</h3>
-                        <div class="mt-5">
-                            <!-- Placeholder untuk grafik -->
-                            <div
-                                class="bg-gray-100 dark:bg-gray-800 h-64 flex items-center justify-center text-gray-500 dark:text-gray-400">
-                                Grafik Rendemen Tebu
+                            <div class="relative h-64">
+                                <canvas id="yieldChart"></canvas>
                             </div>
-                        </div>
                     </div>
                 </div>
 
@@ -546,45 +543,75 @@ function generateResponse() {
     const suhuValue = document.getElementById('suhu').textContent.replace('°C', '').trim();
     const moistureValue = document.getElementById('moisture').textContent.replace('%', '').trim();
 
-    const text = `Berdasarkan data sensor:
-    - Suhu: ${suhuValue}°C
-    - Kelembaban: ${moistureValue}%
-
-    Berikan maksimal 3 boleh hanya satu, buat rekomendasinya hanya rekomendasi singkat gitu, kalau ada data yang ga masuk akal, nanti kamu kasih pesan dan beri tahu kalau data saat ini ga masuk akal, jadi ga panjang2 amat yang penting jelas, dan di setiapakhir masing2 point rekomendasi, akan di beri sebab secara singkat dengan d kasih tanda kurung d sebabnya, menyesuaikan kondisi real saat ini, rekomendasi perawatan tanaman tebu dengan spesifik mencantumkan jumlah/takaran yang diperlukan.
-    Setiap rekomendasi harus fokus pada perawatan tebu dan mencakup tindakan seperti pemupukan, pengairan, atau pengendalian hama.
-    Berikan dalam format list dengan awalan "-" (strip). selalu berikan cetak tebal pada angka dan bahan ada resource yang digunakan`;
-
     fetch("/dashboard-tani", {
         method: "POST",
         headers: {
             'Content-Type': 'application/json',
             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
         },
-        body: JSON.stringify({ text: text })
+        body: JSON.stringify({ 
+            temperature: suhuValue,
+            moisture: moistureValue
+        })
     })
     .then(response => response.json())
     .then(data => {
-        if (data.text) {
-            const recommendations = data.text
-                .split('\n')
-                .filter(line => line.trim().startsWith('-'))
-                .map(line => {
-                    // Konversi markdown ke HTML untuk setiap baris
-                    const processedLine = convertMarkdownToHtml(line.trim().substring(1).trim());
-                    return `
-                        <li class="flex items-start">
-                            <svg class="flex-shrink-0 h-5 w-5 text-accent" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+        if (data.recommendations) {
+            const recommendationsHtml = data.recommendations.map(rec => {
+                let iconColor = 'text-accent';
+                let iconPath = '';
+                
+                // Icon mapping based on category
+                switch(rec.category) {
+                    case 'Pengairan':
+                        iconPath = 'M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.061 1.061l1.59-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.061l1.59 1.59zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z'; // Sun/Weather icon placeholder, replaced with drop below
+                        iconPath = 'M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z'; // Water dropish
+                        // Better water drop path
+                        iconPath = 'M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12 18a.75.75 0 01-.75-.75V12a.75.75 0 011.5 0v5.25c0 .414-.336.75-.75.75zM12 9a.75.75 0 01-.75-.75V6a.75.75 0 011.5 0v2.25c0 .414-.336.75-.75.75z'; // Exclamation? No.
+                        // Let's use generic paths for now or specific SVGs if possible.
+                        // Using simple paths for clarity
+                        iconPath = 'M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.061 1.061l1.59-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.061l1.59 1.59zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z'; 
+                        if(rec.category === 'Pengairan') {
+                             iconPath = 'M8 16a2 2 0 002-2H6a2 2 0 002 2zm.995-14.901a1 1 0 10-1.99 0A5.002 5.002 0 003 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z';
+                             iconColor = 'text-blue-500';
+                        } else if (rec.category === 'Pemupukan') {
+                            iconPath = 'M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z';
+                            iconColor = 'text-green-500';
+                        } else if (rec.category === 'Hama') {
+                            iconPath = 'M12 2a8 8 0 00-8 8c0 1.333.333 2.667 1 4 .667 1.333 1 2.667 1 4v2a2 2 0 002 2h8a2 2 0 002-2v-2c0-1.333.333-2.667 1-4 .667-1.333 1-2.667 1-4a8 8 0 00-8-8z';
+                            iconColor = 'text-red-500';
+                        } else {
+                            iconPath = 'M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z';
+                            iconColor = 'text-accent';
+                        }
+                        break;
+                    default:
+                         iconPath = 'M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z';
+                }
+
+                return `
+                    <li class="flex items-start p-3 bg-gray-50 dark:bg-zinc-700/50 rounded-lg">
+                        <div class="flex-shrink-0">
+                            <svg class="h-6 w-6 ${iconColor}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="${iconPath}" clip-rule="evenodd" />
                             </svg>
-                            <p class="ml-3 text-sm text-gray-700 dark:text-gray-300">${processedLine}</p>
-                        </li>
-                    `;
-                })
-                .join('');
+                        </div>
+                        <div class="ml-3 w-full">
+                            <p class="text-sm font-medium text-gray-900 dark:text-white">${rec.action}</p>
+                            <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">${rec.detail}</p>
+                            <div class="mt-1">
+                                <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200">
+                                    ${rec.category}
+                                </span>
+                            </div>
+                        </div>
+                    </li>
+                `;
+            }).join('');
 
             const recommendedActions = document.getElementById('recommended-actions');
             recommendedActions.style.opacity = '0';
-            recommendedActions.innerHTML = recommendations;
+            recommendedActions.innerHTML = recommendationsHtml;
             setTimeout(() => {
                 recommendedActions.style.transition = 'opacity 0.5s ease-in-out';
                 recommendedActions.style.opacity = '1';
@@ -609,5 +636,70 @@ function generateResponse() {
 
 setInterval(checkDataChanges, 30000);
 document.addEventListener('DOMContentLoaded', generateResponse);
+
+// Chart.js Implementation
+document.addEventListener('DOMContentLoaded', function() {
+    const ctx = document.getElementById('yieldChart').getContext('2d');
+    const yieldData = @json($yieldData);
+    
+    const labels = Object.keys(yieldData);
+    const data = Object.values(yieldData);
+
+    // Get accent color from CSS variable or default
+    const accentColor = getComputedStyle(document.documentElement).getPropertyValue('--color-accent') || '#4A90E2';
+    
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Rendemen (%)',
+                data: data,
+                backgroundColor: 'rgba(74, 144, 226, 0.6)', // Transparan accent
+                borderColor: 'rgba(74, 144, 226, 1)', // Solid accent
+                borderWidth: 1,
+                borderRadius: 4,
+                hoverBackgroundColor: 'rgba(74, 144, 226, 0.8)'
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: false,
+                    min: 5, // Set minimum y-axis value for better visualization
+                    grid: {
+                        color: document.documentElement.classList.contains('dark') ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'
+                    },
+                    ticks: {
+                        color: document.documentElement.classList.contains('dark') ? '#9ca3af' : '#4b5563'
+                    }
+                },
+                x: {
+                    grid: {
+                        display: false
+                    },
+                    ticks: {
+                        color: document.documentElement.classList.contains('dark') ? '#9ca3af' : '#4b5563'
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return 'Rendemen: ' + context.parsed.y + '%';
+                        }
+                    }
+                }
+            }
+        }
+    });
+});
+
 </script>
 @endsection

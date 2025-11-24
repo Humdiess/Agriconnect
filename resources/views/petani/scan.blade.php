@@ -78,49 +78,74 @@
         const loadingSpinner = document.getElementById('loadingSpinner');
         const cameraOverlay = document.getElementById('cameraOverlay');
 
-        // Hasil analisis palsu
-        const fakeAnalysis = [
-            "Tanaman terlihat sehat, tetapi perlu disiram lebih sering.",
-            "Terdapat tanda-tanda daun yang menguning, mungkin karena kekurangan nitrogen.",
-            "Tanah terlihat kurang subur, tambahkan pupuk organik.",
-            "Tanaman menunjukkan tanda-tanda serangan hama ringan di daun bagian atas.",
-            "Pastikan tanaman mendapat sinar matahari yang cukup setiap hari."
-        ];
-
         // Aktifkan kamera
         if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-            navigator.mediaDevices.getUserMedia({ video: true })
+            navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } })
                 .then(stream => {
                     camera.srcObject = stream;
                 })
                 .catch(error => {
                     console.error('Gagal mengakses kamera:', error);
-                    alert('Kamera tidak tersedia. Pastikan perangkat memiliki kamera.');
+                    alert('Kamera tidak tersedia. Pastikan izin kamera diberikan.');
                 });
         }
 
-        // Ambil gambar dan tampilkan hasil
+        // Ambil gambar dan kirim ke server
         captureButton.addEventListener('click', () => {
             // Tampilkan overlay loading
             cameraOverlay.classList.remove('hidden');
             loadingSpinner.classList.remove('hidden');
+            captureButton.disabled = true;
+            captureButton.innerText = 'Menganalisis...';
 
-            // Simulasi waktu proses
-            setTimeout(() => {
-                cameraOverlay.classList.add('hidden');
-                loadingSpinner.classList.add('hidden');
+            // Buat canvas untuk mengambil gambar dari video
+            const canvas = document.createElement('canvas');
+            canvas.width = camera.videoWidth;
+            canvas.height = camera.videoHeight;
+            const context = canvas.getContext('2d');
+            context.drawImage(camera, 0, 0, canvas.width, canvas.height);
 
-                // Tampilkan modal analisis
-                analysisList.innerHTML = ''; // Hapus hasil sebelumnya
-                const results = fakeAnalysis.sort(() => 0.5 - Math.random()).slice(0, 3);
-                results.forEach(result => {
-                    const li = document.createElement('li');
-                    li.innerHTML = `<svg class="inline-block w-5 h-5 text-green-500 mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>${result}`;
-                    analysisList.appendChild(li);
+            // Konversi canvas ke Blob
+            canvas.toBlob(blob => {
+                const formData = new FormData();
+                formData.append('image', blob, 'capture.jpg');
+                formData.append('_token', '{{ csrf_token() }}');
+
+                // Kirim ke server
+                fetch('{{ route("petani.analyze") }}', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    analysisList.innerHTML = ''; // Hapus hasil sebelumnya
+                    
+                    if (data.error) {
+                        const li = document.createElement('li');
+                        li.className = 'text-red-500';
+                        li.innerText = data.error;
+                        analysisList.appendChild(li);
+                    } else {
+                        // Format hasil (Markdown simple conversion if needed, or just text)
+                        // Memecah teks menjadi poin-poin jika memungkinkan, atau tampilkan paragraf
+                        const li = document.createElement('li');
+                        li.innerHTML = data.text.replace(/\n/g, '<br>');
+                        analysisList.appendChild(li);
+                    }
+
+                    analysisModal.classList.remove('hidden');
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Terjadi kesalahan saat menganalisis gambar.');
+                })
+                .finally(() => {
+                    cameraOverlay.classList.add('hidden');
+                    loadingSpinner.classList.add('hidden');
+                    captureButton.disabled = false;
+                    captureButton.innerText = 'Ambil Gambar';
                 });
-
-                analysisModal.classList.remove('hidden');
-            }, 2000); // 2 detik loading
+            }, 'image/jpeg', 0.8);
         });
 
         // Tutup modal
