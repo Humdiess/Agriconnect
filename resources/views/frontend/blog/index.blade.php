@@ -36,12 +36,20 @@
         <section class="bg-white dark:bg-ireng">
             <div class="w-full px-5 py-6 mx-auto space-y-5 sm:py-8 md:py-12 sm:space-y-8 md:space-y-16 max-w-7xl">
 
+                @if($news->isEmpty())
+                <div class="flex flex-col items-center justify-center py-20">
+                    <svg class="w-20 h-20 text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path></svg>
+                    <h2 class="text-2xl font-bold text-gray-600 dark:text-gray-400">Belum ada berita saat ini.</h2>
+                    <p class="text-gray-500 dark:text-gray-500 mt-2">Silakan kembali lagi nanti untuk update terbaru.</p>
+                </div>
+                @else
+
                 @if($featured)
                 <div class="flex flex-col items-center sm:px-5 md:flex-row">
                     <div class="w-full md:w-1/2">
                         <a href="{{ route('agri.berita.show', $featured->slug) }}" class="block">
                             <img class="object-cover w-full h-full rounded-lg max-h-64 sm:max-h-96"
-                                src="{{ $featured->image ? asset('storage/' . $featured->image) : 'https://via.placeholder.com/800x600' }}">
+                                src="{{ $featured->image ? asset('storage/' . $featured->image) : 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=2070&auto=format&fit=crop' }}">
                         </a>
                     </div>
                     <div class="flex flex-col items-start justify-center w-full h-full py-6 mb-6 md:mb-0 md:w-1/2">
@@ -64,7 +72,7 @@
                     <div class="flex flex-col items-start col-span-12 space-y-3 sm:col-span-6 xl:col-span-4">
                         <a href="{{ route('agri.berita.show', $item->slug) }}" class="block">
                             <img class="object-cover w-full mb-2 overflow-hidden rounded-lg shadow-sm max-h-56"
-                                src="{{ $item->image ? asset('storage/' . $item->image) : 'https://via.placeholder.com/400x300' }}">
+                                src="{{ $item->image ? asset('storage/' . $item->image) : 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=2070&auto=format&fit=crop' }}">
                         </a>
                         <div
                             class="bg-green-500 flex items-center px-3 py-1.5 leading-none rounded-full text-xs font-medium uppercase text-white inline-block">
@@ -78,6 +86,7 @@
                     </div>
                     @endforeach
                 </div>
+                @endif
             </div>
         </section>
 

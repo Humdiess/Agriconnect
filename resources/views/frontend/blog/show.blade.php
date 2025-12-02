@@ -22,11 +22,9 @@
                     </div>
                 </div>
 
-                @if($news->image)
                 <div class="mb-10 rounded-xl overflow-hidden shadow-lg">
-                    <img src="{{ asset('storage/' . $news->image) }}" alt="{{ $news->title }}" class="w-full h-auto object-cover">
+                    <img src="{{ $news->image ? asset('storage/' . $news->image) : 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=2070&auto=format&fit=crop' }}" alt="{{ $news->title }}" class="w-full h-auto object-cover">
                 </div>
-                @endif
 
                 <div class="prose prose-lg dark:prose-invert max-w-none">
                     {!! nl2br(e($news->content)) !!}
@@ -40,7 +38,7 @@
                     @foreach($related as $item)
                     <div class="flex flex-col">
                         <a href="{{ route('agri.berita.show', $item->slug) }}" class="block mb-4">
-                            <img src="{{ $item->image ? asset('storage/' . $item->image) : 'https://via.placeholder.com/400x300' }}" alt="{{ $item->title }}" class="w-full h-48 object-cover rounded-lg">
+                            <img src="{{ $item->image ? asset('storage/' . $item->image) : 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=2070&auto=format&fit=crop' }}" alt="{{ $item->title }}" class="w-full h-48 object-cover rounded-lg">
                         </a>
                         <div class="text-xs font-medium text-green-500 uppercase mb-2">{{ $item->category }}</div>
                         <h4 class="text-lg font-bold mb-2">

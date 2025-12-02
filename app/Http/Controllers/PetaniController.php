@@ -57,6 +57,42 @@ class PetaniController extends Controller
         return view('petani.dashboard', compact('active', 'moisture', 'temperature', 'ip', 'hasSettings', 'yieldData'));
     }
 
+    public function pantauAir()
+    {
+        $active = 'pantau-air';
+        return view('frontend.pantau.air', compact('active'));
+    }
+
+    public function pantauSuhu()
+    {
+        $active = 'pantau-suhu';
+        return view('frontend.pantau.suhu', compact('active'));
+    }
+
+    public function pantauKelembaban()
+    {
+        $active = 'pantau-kelembaban';
+        return view('frontend.pantau.kelembaban', compact('active'));
+    }
+
+    public function pantauNutrisi()
+    {
+        $active = 'pantau-nutrisi';
+        return view('frontend.pantau.nutrisi', compact('active'));
+    }
+
+    public function pantauCurahHujan()
+    {
+        $active = 'pantau-curah-hujan';
+        return view('frontend.pantau.curah-hujan', compact('active'));
+    }
+
+    public function pantauTanggal()
+    {
+        $active = 'pantau-curah-hujan';
+        return view('frontend.pantau.tanggal', compact('active'));
+    }
+
     /**
      * Menghasilkan rekomendasi berdasarkan teks yang diberikan.
      *

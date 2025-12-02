@@ -35,7 +35,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $validated = $request->validate([
             'name' => 'required|string|max:255',
             'description' => 'nullable|string',
             'price' => 'required|integer',
@@ -47,25 +47,14 @@ class ProductController extends Controller
             'pengiriman' => 'nullable|string|max:255',
         ]);
 
-        $data = [
-            'id' => Str::uuid(),
-            'user_id' => auth()->id(),  // Menyimpan id user yang menjual produk
-            'name' => $request->name,
-            'description' => $request->description,
-            'price' => $request->price,
-            'stock' => $request->stock,
-            'category' => $request->category,
-            'lokasi' => $request->lokasi,
-            'pengiriman' => $request->pengiriman,
-            'sertifikasi' => $request->sertifikasi,
-            'created_at' => now(),
-        ];
+        $validated['id'] = Str::uuid();
+        $validated['user_id'] = auth()->id();
 
         if ($request->hasFile('image')) {
-            $data['image'] = $request->file('image')->store('products', 'public');
+            $validated['image'] = $request->file('image')->store('products', 'public');
         }
 
-        DB::table('products')->insert($data);
+        Product::create($validated);
 
         return redirect()->route('product.index')->with('success', 'Product created successfully!');
     }
@@ -94,7 +83,7 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        $request->validate([
+        $validated = $request->validate([
             'name' => 'required|string|max:255',
             'description' => 'nullable|string',
             'price' => 'required|integer',
@@ -106,40 +95,15 @@ class ProductController extends Controller
             'pengiriman' => 'nullable|string|max:255',
         ]);
 
-        // Ambil data yang ada di tabel products berdasarkan id
-        $product = DB::table('products')->where('id', $product->id)->first();
-
-        if (!$product) {
-            return redirect()->back()->withErrors('Product not found!');
-        }
-
-        // Siapkan data yang akan diperbarui
-        $data = [
-            'name' => $request->name,
-            'description' => $request->description,
-            'price' => $request->price,
-            'stock' => $request->stock,
-            'category' => $request->category,
-            'lokasi' => $request->lokasi,
-            'pengiriman' => $request->pengiriman,
-            'sertifikasi' => $request->sertifikasi,
-            'updated_at' => now(),
-        ];
-
-        // Cek apakah ada file gambar baru yang diupload
         if ($request->hasFile('image')) {
-            // Hapus gambar lama jika ada
             if ($product->image) {
                 Storage::disk('public')->delete($product->image);
             }
-            // Simpan gambar baru
-            $data['image'] = $request->file('image')->store('products', 'public');
+            $validated['image'] = $request->file('image')->store('products', 'public');
         }
 
-        // Update data produk di database
-        DB::table('products')->where('id', $product->id)->update($data);
+        $product->update($validated);
 
-        // Redirect kembali dengan pesan sukses
         return redirect()->route('product.index')->with('success', 'Product updated successfully!');
     }
 
@@ -148,22 +112,12 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        // Cari produk berdasarkan id
-        $product = DB::table('products')->where('id', $product->id)->first();
-
-        if (!$product) {
-            return redirect()->back()->withErrors('Product not found!');
-        }
-
-        // Hapus gambar dari storage jika ada
         if ($product->image) {
             Storage::disk('public')->delete($product->image);
         }
 
-        // Hapus produk dari database
-        DB::table('products')->where('id', $product->id)->delete();
+        $product->delete();
 
-        // Redirect kembali dengan pesan sukses
         return redirect()->route('product.index')->with('success', 'Product deleted successfully!');
     }
     public function agrishop_show(Product $product)

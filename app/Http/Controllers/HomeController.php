@@ -22,8 +22,8 @@ class HomeController extends Controller
     public function blog()
     {
         $active = 'blog';
-        $news = News::where('is_published', true)->latest()->paginate(9);
-        $featured = News::where('is_published', true)->latest()->first();
+        $news = News::with('user')->where('is_published', true)->latest()->paginate(9);
+        $featured = News::with('user')->where('is_published', true)->latest()->first();
         return view('frontend.blog.index', compact('active', 'news', 'featured'));
     }
 
