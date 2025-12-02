@@ -29,6 +29,7 @@ Route::get('/create-storage-link', function () {
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/agri-kontak', [HomeController::class, 'contact'])->name('agri.contact');
 Route::get('/agri-berita', [HomeController::class, 'blog'])->name('agri.berita');
+Route::get('/agri-berita/{slug}', [HomeController::class, 'showBlogPost'])->name('agri.berita.show');
 
 // Agrishop
 Route::get('/agri-shop', [HomeController::class, 'agrishop'])->name('agri.shop');
@@ -99,6 +100,11 @@ Route::middleware([IsFarmer::class])->group(function () {
     Route::post('/dashboard-tani/scan', [PetaniController::class, 'analyzeImage'])->name('petani.analyze');
 
     Route::delete('/dashboard/hapus-alat', [PetaniController::class, 'deleteDevice'])->name('delete-device');
+});
+
+// Admin Routes
+Route::middleware(['auth', \App\Http\Middleware\IsAdmin::class])->prefix('admin')->name('admin.')->group(function () {
+    Route::resource('news', \App\Http\Controllers\NewsController::class);
 });
 
 

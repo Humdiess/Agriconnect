@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
+use App\Models\News;
+
 class HomeController extends Controller
 {
     public function index()
@@ -20,7 +22,21 @@ class HomeController extends Controller
     public function blog()
     {
         $active = 'blog';
-        return view('frontend.blog.index', compact('active'));
+        $news = News::where('is_published', true)->latest()->paginate(9);
+        $featured = News::where('is_published', true)->latest()->first();
+        return view('frontend.blog.index', compact('active', 'news', 'featured'));
+    }
+
+    public function showBlogPost($slug)
+    {
+        $active = 'blog';
+        $news = News::where('slug', $slug)->where('is_published', true)->firstOrFail();
+        $related = News::where('category', $news->category)
+            ->where('id', '!=', $news->id)
+            ->where('is_published', true)
+            ->limit(3)
+            ->get();
+        return view('frontend.blog.show', compact('active', 'news', 'related'));
     }
     public function agrishop(Request $request)
     {
